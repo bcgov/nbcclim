@@ -15,37 +15,38 @@
 
 library(plyr) # for joining all dataframes
 
-## reading in daily weather records from individual stations
-daily <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv", pattern="*.csv")
-for(i in daily) {
-  assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/", i))))
-}
-
-## merging all dataframes into one
-wxstn_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
-                          George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, HudsonBayMtn, Kluskus_10424986, MacJxn_2289305, McbridePk,
-                          MiddleforkWx, NondaWx, PGTIS_AMAT, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
-
-write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv", row.names = FALSE)
-
-## reading in hourly weather records
-rm(list=ls())
-hourly <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", pattern="*.csv")
-for(i in hourly) {
-  assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", i))))
-}
-
-## merging all hourly dataframes for wind plots
-hourly_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
-                          George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, Kluskus_10424986, MacJxn_2289305, McbridePk,
-                          MiddleforkWx, NondaWx, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
-
-## only keeping relevant wind columns
-wind_df <- hourly_df[, c("Site", "Date", "Day", "WS", "WD")]
-
-write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
-
-rm(list=ls())
+# Data cleanning
+# ## reading in daily weather records from individual stations
+# daily <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv", pattern="*.csv")
+# for(i in daily) {
+#   assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/", i))))
+# }
+#
+# ## merging all dataframes into one
+# wxstn_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
+#                           George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, HudsonBayMtn, Kluskus_10424986, MacJxn_2289305, McbridePk,
+#                           MiddleforkWx, NondaWx, PGTIS_AMAT, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
+#
+# write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv", row.names = FALSE)
+#
+# ## reading in hourly weather records
+# rm(list=ls())
+# hourly <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", pattern="*.csv")
+# for(i in hourly) {
+#   assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", i))))
+# }
+#
+# ## merging all hourly dataframes for wind plots
+# hourly_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
+#                           George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, Kluskus_10424986, MacJxn_2289305, McbridePk,
+#                           MiddleforkWx, NondaWx, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
+#
+# ## only keeping relevant wind columns
+# wind_df <- hourly_df[, c("Site", "Date", "Day", "WS", "WD")]
+#
+# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
+#
+# rm(list=ls())
 
 wxstn_df <- read.csv("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv")
 wind_df <- read.csv("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv")
