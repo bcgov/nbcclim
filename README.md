@@ -11,9 +11,15 @@ A web-application for visualising and downloading Northern British Columbia clim
 
 Provides interactive web-application to view climate data station locations, visualise time-series records (including temperature, precipitation, wind, solar radiation etc), obtain statistical summaries and download data.
 
+### Example
+
+Below provides a snapshot of the app showing climate records for one climate station of choice once the app is live.
+
+![](tools/readme/Example.png)
+
 ### Project Status
 
-This project is under development.
+Currently, this project is under development.
 
 ### Getting Help or Reporting an Issue
 
