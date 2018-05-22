@@ -1,11 +1,11 @@
 # Copyright 2018 Province of British Columbia
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 # http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
@@ -97,7 +97,8 @@ server <- function(input, output) {
   ## average daily temperature plot
   output$tempplot <- renderPlotly({
     plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)") %>%
-      ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years)) +
+      ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
+                                          text = paste("<br>Date:", as.Date(Date), "<br>Value", value))) +
       geom_line(size = 0.3, alpha = 0.7) +
       xlab("") +
       ylab("") +
@@ -107,13 +108,14 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-      ggplotly(plot)
+      ggplotly(plot, tooltip = c("text"))
   })
 
   ## average daily total precipitation plot
   output$precipplot <- renderPlotly({
     plot <- subset(ggplot_long(), variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
-      ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years)) +
+      ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
+                                          text = paste("<br>Date:", as.Date(Date), "<br>Value", value))) +
       geom_line(size = 0.3, alpha = 0.7) +
       xlab("") +
       ylab("") +
@@ -123,7 +125,7 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-    ggplotly(plot)
+    ggplotly(plot, tooltip = c("text"))
   })
 
   ## average wind speed and direction plot for summer and winter seasons
@@ -162,7 +164,8 @@ server <- function(input, output) {
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
-    plot <- ggplot(ggplot_data(), aes(dates, GS_max, group = years, colour = years)) +
+    plot <- ggplot(ggplot_data(), aes(dates, GS_max, group = years, colour = years,
+                                      text = paste("<br>Date:", as.Date(Date), "<br>Value", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
       scale_color_brewer(palette = "Paired") +
@@ -171,7 +174,7 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
             axis.title.y = element_text(size = 10))
-    p <- ggplotly(plot)
+    p <- ggplotly(plot, tooltip = c("text"))
 
     ## adjusting y axis position so it doesn't overlap axis labels
     p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
@@ -194,7 +197,8 @@ server <- function(input, output) {
       p %>% layout(margin = list(l = 75))
 
     } else {
-    plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years)) +
+    plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
+                                      text = paste("<br>Date:", as.Date(Date), "<br>Value", SR_avg))) +
       geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
       scale_color_brewer(palette = "Paired") +
@@ -203,7 +207,7 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
             axis.title.y = element_text(size = 10))
-    p <- ggplotly(plot)
+    p <- ggplotly(plot, tooltip = c("text"))
 
     ## adjusting y axis position so it doesn't overlap axis labels
     p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
