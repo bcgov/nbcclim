@@ -201,8 +201,19 @@ server <- function(input, output) {
 
   ## datatable
   output$table <- renderDataTable(datatable({
-    wxstn_df
-
+    data <- annual_sum[annual_sum$Site == "Blackhawk", ]
+    if (input$sum_tbl == "Annual") {
+      data <- annual_sum[annual_sum$Site == input$sum_site, ]
+    }
+    if (input$sum_tbl == "Monthly") {
+      data <- monthly_sum[monthly_sum$Site == input$sum_site, ]
+    }
+    if (input$sum_tbl == "Seasonal") {
+      data <- seasonal_sum[seasonal_sum$Site == input$sum_site, ]
+    }
+    if (input$sum_tbl == "Growing season") {
+      data <- gseason_sum[gseason_sum$Site == input$sum_site, ]
+    }
+    data
   }))
-
 }

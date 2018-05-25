@@ -22,10 +22,10 @@ library(shiny)
 
 ## Shiny user interface
 
-ui <- navbarPage("",
+ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Stations</b></h4>"),
 
-  tabPanel("Interactive Map",
-    titlePanel("Northern British Columbia Climate Research Stations"),
+  tabPanel(HTML("<h4>Interactive Map</h4>"),
+    # titlePanel("Northern British Columbia Climate Research Stations"),
 
     fluidRow(
       column(4, offset = 1, br(),
@@ -52,7 +52,15 @@ ui <- navbarPage("",
       )
     ),
 
-  tabPanel("Statistics",
+  tabPanel(HTML("<h4>Statistics</h4>"),
+    selectInput("sum_site",
+                label = "Site",
+                choices = c(levels(wxstn_df$Site))),
+
+    selectInput("sum_tbl",
+                label = "Summary type",
+                choices = c("Annual", "Monthly", "Seasonal", "Growing season")),
+
     dataTableOutput("table")
     )
 )

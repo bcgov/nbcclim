@@ -10,3 +10,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
+
+library(shiny)
+
+source("R/01_load.R")
+source("R/02_clean.R")
+source("R/03_analysis.R")
+runApp("R/shiny/")
