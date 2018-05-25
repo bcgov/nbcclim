@@ -100,4 +100,4 @@ gseason <- sum_long %>%
          max = round(max(value, na.rm = TRUE), 2),
          min = round(min(value, na.rm = TRUE), 2))
 gseason_sum <- melt(gseason, id.vars = c("Site", "gseason", "variable"), variable.name = "gseason_summary")
-gseason_sum <- dcast(gseason_sum, Site + gseason + grow_season_summary ~ variable)
+gseason_sum <- dcast(gseason_sum, Site + gseason + gseason_summary ~ variable)
