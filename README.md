@@ -15,7 +15,7 @@ Provides interactive web-application to view climate data station locations, vis
 
 Below provides a snapshot of the app showing climate records for one climate station of choice once the app is live.
 
-![](tools/readme/Example.png)
+![](tools/readme/Example.jpg)
 
 ### Project Status
 
