@@ -10,42 +10,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
-library(ggplot2)
-library(viridis) # for colour palettes
-library(scales) # for percentage axis label
-library(leaflet)
-library(plotly) # for interactive plots
-library(shiny)
-
-
-## Shiny user interface
-
-ui <- fluidPage(
-  titlePanel("Northern British Columbia Climate Research Stations"),
-
-  fluidRow(
-    column(4, offset = 1, br(),
-           leafletOutput("wsmap", height = "500px"),
-           htmlOutput("statsum"),
-           br(),
-           selectInput(inputId = "selected_site",
-                       label = "Download Station Data",
-                       choices = c("All stations", levels(wxstn_df$Site))),
-           downloadButton("download", "Download")
-    ),
-
-    fluidRow(
-      column(6, offset = -1,
-             fluidRow(column(12, plotlyOutput("tempplot", height = "400px"))),
-             fluidRow(column(12, plotlyOutput("precipplot", height = "400px"))),
-             fluidRow(column(12, plotOutput("windplot", height = "300px"))),
-             fluidRow(column(12, plotlyOutput("gustplot", height = "300px"))),
-             fluidRow(column(12, plotlyOutput("solarplot", height = "300px")))
-      )
-    )
-  )
-)
-
 
 ## Shiny server
 
@@ -62,10 +26,10 @@ server <- function(input, output) {
                                "Latitude: ", unique(wxstn_df$Latitude), "<br>",
                                "Longitude: ", unique(wxstn_df$Longitude), "<br>",
                                "Elevation: ", unique(wxstn_df$Elevation), "m"
-                               ))
+                 ))
   })
 
-  ## generate reactive dataframe
+  ## generate reactive dataframes
   ggplot_data <- reactive({
     req(input$wsmap_marker_click$id)
     site <- input$wsmap_marker_click$id
@@ -108,7 +72,7 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-      ggplotly(plot, tooltip = c("text"))
+    ggplotly(plot, tooltip = c("text"))
   })
 
   ## average daily total precipitation plot
@@ -128,7 +92,7 @@ server <- function(input, output) {
     ggplotly(plot, tooltip = c("text"))
   })
 
-  ## average wind speed and direction plot for summer and winter seasons
+  ## average wind speed and direction plot for summer and winter growing seasons
   output$windplot <- renderPlot({
     if (all(is.na(ggplot_wind()$WS))) {
       ggplot(ggplot_wind(), mapping = aes(WD, fill = WS)) +
@@ -141,26 +105,24 @@ server <- function(input, output) {
         theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
               strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
 
-      } else {
+    } else {
       filter(ggplot_wind(), !is.na(WS)) %>%
-      ggplot(ggplot_wind, mapping = aes(WD, fill = WS)) +
-      geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)), alpha = 0.8,
-                     colour = "grey30") +
-      scale_y_continuous(labels = percent) +
-      scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-      scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"),
-                         labels = c(">9", "6 - 9", "3 - 6", "<3"), direction = -1) +
-      xlab("") +
-      ylab("") +
-      facet_grid(. ~ Season) +
-      coord_polar() +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
-            strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+        ggplot(ggplot_wind, mapping = aes(WD, fill = WS)) +
+        geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)), alpha = 0.8,
+                       colour = "grey30") +
+        scale_y_continuous(labels = percent) +
+        scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
+        scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"),
+                           labels = c(">9", "6 - 9", "3 - 6", "<3"), direction = -1) +
+        xlab("") +
+        ylab("") +
+        facet_grid(. ~ gseason) +
+        coord_polar() +
+        theme_light() +
+        theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
+              strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
     }
   })
-
-
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
@@ -197,21 +159,21 @@ server <- function(input, output) {
       p %>% layout(margin = list(l = 75))
 
     } else {
-    plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
-                                      text = paste("<br>Date:", as.Date(Date), "<br>Value", SR_avg))) +
-      geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
-      scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_color_brewer(palette = "Paired") +
-      xlab("") +
-      ylab("Smoothened Insolation (W/m^2)") +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
-            axis.title.y = element_text(size = 10))
-    p <- ggplotly(plot, tooltip = c("text"))
+      plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
+                                        text = paste("<br>Date:", as.Date(Date), "<br>Value", SR_avg))) +
+        geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
+        scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+        scale_color_brewer(palette = "Paired") +
+        xlab("") +
+        ylab("Smoothened Insolation (W/m^2)") +
+        theme_light() +
+        theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+              axis.title.y = element_text(size = 10))
+      p <- ggplotly(plot, tooltip = c("text"))
 
-    ## adjusting y axis position so it doesn't overlap axis labels
-    p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
-    p %>% layout(margin = list(l = 75))
+      ## adjusting y axis position so it doesn't overlap axis labels
+      p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
+      p %>% layout(margin = list(l = 75))
     }
   })
 
@@ -224,10 +186,23 @@ server <- function(input, output) {
       if (input$selected_site == "All stations") {
         write.csv(wxstn_df, file, row.names = FALSE)
       } else {
-      write.csv(wxstn_df[wxstn_df$Site %in% input$selected_site,], file, row.names = FALSE)
+        write.csv(wxstn_df[wxstn_df$Site %in% input$selected_site,], file, row.names = FALSE)
       }
     }
   )
-}
 
-shinyApp(ui, server)
+  ## select time range
+  # observeEvent(input$selected_site, {
+  #   updateSliderInput(session, "timerange",
+  #                     min = wxstn_df[wxstn_df$Site %in% input$selected_site, "Date"][1],
+  #                     max = wxstn_df[wxstn_df$Site %in% input$selected_site, "Date"][nrow(wxstn_df[wxstn_df$Site %in% input$selected_site,])])
+  # })
+
+
+  ## datatable
+  output$table <- renderDataTable(datatable({
+    wxstn_df
+
+  }))
+
+}
