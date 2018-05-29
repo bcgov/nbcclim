@@ -40,8 +40,8 @@ wxstn_df[wxstn_df$months == "September"| wxstn_df$months == "October" | wxstn_df
 ## classifying months to summer and winter growing seasons
 wxstn_df$gseason <- NA
 wxstn_df[wxstn_df$months == "October" | wxstn_df$months == "November" | wxstn_df$months == "December"| wxstn_df$months == "January" |
-          wxstn_df$months == "February" | wxstn_df$months == "March"| wxstn_df$months == "April" , "gseason"] <- "Winter"
-wxstn_df[wxstn_df$months == "May" | wxstn_df$months == "June"| wxstn_df$months == "July" | wxstn_df$months == "August" | wxstn_df$months == "September", "gseason"] <- "Summer"
+          wxstn_df$months == "February" | wxstn_df$months == "March"| wxstn_df$months == "April" , "gseason"] <- "Winter (Oct-Apr)"
+wxstn_df[wxstn_df$months == "May" | wxstn_df$months == "June"| wxstn_df$months == "July" | wxstn_df$months == "August" | wxstn_df$months == "September", "gseason"] <- "Summer (May-Sep)"
 
 ## converting wind speed from m/s to km/h
 wind_df$WS <- wind_df$WS * 3.6
