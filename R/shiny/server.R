@@ -85,11 +85,11 @@ server <- function(input, output) {
       ylab("") +
       facet_grid(variable ~ ., scales = "free_y") +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_color_brewer(palette = "Paired", guide_legend(title = "")) +
+      scale_color_brewer(palette = "Paired") +
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-    ggplotly(plot, tooltip = c("text"))
+   ggplotly(plot, tooltip = c("text"))
   })
 
   ## average wind speed and direction plot for summer and winter growing seasons
@@ -162,6 +162,7 @@ server <- function(input, output) {
       plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
                                         text = paste("<br>Date:", as.Date(Date), "<br>Value", SR_avg))) +
         geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
+        stat_summary(aes(color = year), geom = "point", fun.y = mean) +
         scale_x_date(date_breaks = "1 month", date_labels = "%b") +
         scale_color_brewer(palette = "Paired") +
         xlab("") +
@@ -199,21 +200,28 @@ server <- function(input, output) {
   # })
 
 
-  ## datatable
-  output$table <- renderDataTable(datatable({
-    data <- annual_sum[annual_sum$Site == "Blackhawk", ]
-    if (input$sum_tbl == "Annual") {
-      data <- annual_sum[annual_sum$Site == input$sum_site, ]
+   ## datatable
+  suminput <- reactive({
+    switch(input$sum_tbl,
+           "Annual" = annual_sum[annual_sum$Site == input$sum_site, ],
+           "Monthly" = monthly_sum[monthly_sum$Site == input$sum_site, ],
+           "Seasonal" = seasonal_sum[seasonal_sum$Site == input$sum_site, ],
+           "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
+  })
+
+  output$table <- renderDataTable(
+    suminput()
+  )
+
+
+  ## download file
+  output$exportstats <- downloadHandler(
+    filename <- function() {
+      paste0(input$sum_site, "_", input$sum_tbl, "summary", ".csv")
+    },
+    content <- function(file) {
+      write.csv(suminput(), file, row.names = FALSE)
     }
-    if (input$sum_tbl == "Monthly") {
-      data <- monthly_sum[monthly_sum$Site == input$sum_site, ]
-    }
-    if (input$sum_tbl == "Seasonal") {
-      data <- seasonal_sum[seasonal_sum$Site == input$sum_site, ]
-    }
-    if (input$sum_tbl == "Growing season") {
-      data <- gseason_sum[gseason_sum$Site == input$sum_site, ]
-    }
-    data
-  }))
+  )
 }
+

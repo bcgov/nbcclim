@@ -61,7 +61,9 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
                 label = "Summary type",
                 choices = c("Annual", "Monthly", "Seasonal", "Growing season")),
 
-    dataTableOutput("table")
+    dataTableOutput("table"),
+
+    downloadButton("exportstats", "Export")
     ),
 
   tabPanel(HTML("<h4>Real Time Data</h4>"),
