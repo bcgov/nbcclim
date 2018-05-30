@@ -31,9 +31,12 @@ server <- function(input, output) {
 
   ## generate reactive dataframes
   ggplot_data <- reactive({
-    req(input$wsmap_marker_click$id)
+    if (is.null(input$wsmap_marker_click$id)){
+      wxstn_df[wxstn_df$Site == "Blackhawk",]
+    } else {
     site <- input$wsmap_marker_click$id
     wxstn_df[wxstn_df$Site %in% site,]
+    }
   })
 
   ggplot_long <- reactive({
@@ -49,13 +52,15 @@ server <- function(input, output) {
   })
 
   output$statsum <- renderUI({
-    str1 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
-    str2 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
-    str3 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
-    str4 <- paste("Maximum daily precipitation:", round(max(ggplot_data()$Rain_sum, na.rm = TRUE), 1), "mm", sep = " ")
-    str5 <- paste("Maximum gust speed:", round(max(ggplot_data()$GS_max, na.rm = TRUE), 1), "m/s", sep = " ")
+    str0 <- "Click on a station to see climate data."
+    str1 <- paste("<b>Summary Stistics: </b>", input$wsmap_marker_click$id)
+    str2 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
+    str3 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
+    str4 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
+    str5 <- paste("Maximum daily precipitation:", round(max(ggplot_data()$Rain_sum, na.rm = TRUE), 1), "mm", sep = " ")
+    str6 <- paste("Maximum gust speed:", round(max(ggplot_data()$GS_max, na.rm = TRUE), 1), "m/s", sep = " ")
 
-    HTML(paste(str1, str2, str3, str4, str5, sep = '<br/>'))
+    HTML(paste(str0, str1, str2, str3, str4, str5, str6, sep = '<br/>'))
   })
 
   ## average daily temperature plot
@@ -162,7 +167,7 @@ server <- function(input, output) {
       plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
                                         text = paste("<br>Date:", as.Date(Date), "<br>Value", SR_avg))) +
         geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
-        stat_summary(aes(color = year), geom = "point", fun.y = mean) +
+        # stat_summary(aes(color = years), geom = "point", fun.y = mean) +
         scale_x_date(date_breaks = "1 month", date_labels = "%b") +
         scale_color_brewer(palette = "Paired") +
         xlab("") +
@@ -217,7 +222,7 @@ server <- function(input, output) {
   ## download file
   output$exportstats <- downloadHandler(
     filename <- function() {
-      paste0(input$sum_site, "_", input$sum_tbl, "summary", ".csv")
+      paste0(input$sum_site, "_", input$sum_tbl, "_summary", ".csv")
     },
     content <- function(file) {
       write.csv(suminput(), file, row.names = FALSE)
