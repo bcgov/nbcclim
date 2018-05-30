@@ -17,12 +17,13 @@ server <- function(input, output) {
 
   ## leaflet map
   output$wsmap <- renderLeaflet({
+    # filtered_df <- wxstn_df %>%
+      # filter(Site == input$wsmap_marker_click$id)
+
     leaflet() %>%
       addProviderTiles("CartoDB.Positron") %>%
       addMarkers(data = wxstn_df, ~unique(Longitude), ~unique(Latitude), layerId = ~unique(Site),
-                 # clusterOptions = markerClusterOptions(),
                  popup = paste("<b>", unique(wxstn_df$Site), "</b>", "<br>",
-                               "Start Date: ", wxstn_df$Date[1], "<br>",
                                "Latitude: ", unique(wxstn_df$Latitude), "<br>",
                                "Longitude: ", unique(wxstn_df$Longitude), "<br>",
                                "Elevation: ", unique(wxstn_df$Elevation), "m"
@@ -51,23 +52,30 @@ server <- function(input, output) {
     wind_df[wind_df$Site %in% site, ]
   })
 
-  output$statsum <- renderUI({
-    str0 <- "Click on a station to see climate data."
-    str1 <- paste("<b>Summary Stistics: </b>", input$wsmap_marker_click$id)
-    str2 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
-    str3 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
-    str4 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", sep = " ")
-    str5 <- paste("Maximum daily precipitation:", round(max(ggplot_data()$Rain_sum, na.rm = TRUE), 1), "mm", sep = " ")
-    str6 <- paste("Maximum gust speed:", round(max(ggplot_data()$GS_max, na.rm = TRUE), 1), "m/s", sep = " ")
+  output$caption <- renderUI({
+    HTML("Click on a station to see climate data and summary statistics.")
+  })
 
-    HTML(paste(str0, str1, str2, str3, str4, str5, str6, sep = '<br/>'))
+  output$statsum <- renderUI({
+    req(input$wsmap_marker_click$id)
+    str1 <- paste("<h4><b>", input$wsmap_marker_click$id, "</b></h4>")
+    str2 <- paste("Data range:", filter(wxstn_df, Site == input$wsmap_marker_click$id)$Date[1], "to",
+                  filter(wxstn_df, Site == input$wsmap_marker_click$id)$Date[nrow(filter(wxstn_df, Site == input$wsmap_marker_click$id))], "<br/>")
+    str3 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", "<br/>", sep = " ")
+    str4 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", "<br/>", sep = " ")
+    str5 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", "<br/>", sep = " ")
+    str6 <- paste("Maximum daily precipitation:", round(max(ggplot_data()$Rain_sum, na.rm = TRUE), 1), "mm", "<br/>", sep = " ")
+    str7 <- paste("Maximum gust speed:", round(max(ggplot_data()$GS_max, na.rm = TRUE), 1), "m/s", "<br/>", sep = " ")
+    str8 <- "<br/>*All plots are from daily records except for windrose using hourly wind speed and directions."
+
+    HTML(paste(str1, str2, str3, str4, str5, str6, str7, str8))
   })
 
   ## average daily temperature plot
   output$tempplot <- renderPlotly({
     plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)") %>%
       ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
-                                          text = paste("<br>Date:", as.Date(Date), "<br>Value", value))) +
+                                          text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
       geom_line(size = 0.3, alpha = 0.7) +
       xlab("") +
       ylab("") +
@@ -84,7 +92,7 @@ server <- function(input, output) {
   output$precipplot <- renderPlotly({
     plot <- subset(ggplot_long(), variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
       ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
-                                          text = paste("<br>Date:", as.Date(Date), "<br>Value", value))) +
+                                          text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
       geom_line(size = 0.3, alpha = 0.7) +
       xlab("") +
       ylab("") +
@@ -132,7 +140,7 @@ server <- function(input, output) {
   ## average wind gust plot
   output$gustplot <- renderPlotly({
     plot <- ggplot(ggplot_data(), aes(dates, GS_max, group = years, colour = years,
-                                      text = paste("<br>Date:", as.Date(Date), "<br>Value", GS_max))) +
+                                      text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
       scale_color_brewer(palette = "Paired") +
@@ -165,7 +173,7 @@ server <- function(input, output) {
 
     } else {
       plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
-                                        text = paste("<br>Date:", as.Date(Date), "<br>Value", SR_avg))) +
+                                        text = paste("<br>Date:", as.Date(Date), "<br>Value:", SR_avg))) +
         geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
         # stat_summary(aes(color = years), geom = "point", fun.y = mean) +
         scale_x_date(date_breaks = "1 month", date_labels = "%b") +

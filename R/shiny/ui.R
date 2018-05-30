@@ -30,6 +30,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     fluidRow(
       column(4, offset = 1, br(),
              leafletOutput("wsmap", height = "500px"),
+             htmlOutput("caption"),
              htmlOutput("statsum"),
              br(),
              selectInput(inputId = "selected_site",
