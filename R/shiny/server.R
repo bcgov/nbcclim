@@ -17,9 +17,6 @@ server <- function(input, output) {
 
   ## leaflet map
   output$wsmap <- renderLeaflet({
-    # filtered_df <- wxstn_df %>%
-      # filter(Site == input$wsmap_marker_click$id)
-
     leaflet() %>%
       addProviderTiles("CartoDB.Positron") %>%
       addMarkers(data = wxstn_df, ~unique(Longitude), ~unique(Latitude), layerId = ~unique(Site),
@@ -32,9 +29,7 @@ server <- function(input, output) {
 
   ## generate reactive dataframes
   ggplot_data <- reactive({
-    if (is.null(input$wsmap_marker_click$id)){
-      wxstn_df[wxstn_df$Site == "Blackhawk",]
-    } else {
+    req(input$wsmap_marker_click$id)
     site <- input$wsmap_marker_click$id
     wxstn_df[wxstn_df$Site %in% site,]
     }
