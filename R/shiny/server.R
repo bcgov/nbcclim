@@ -32,7 +32,6 @@ server <- function(input, output) {
     req(input$wsmap_marker_click$id)
     site <- input$wsmap_marker_click$id
     wxstn_df[wxstn_df$Site %in% site,]
-    }
   })
 
   ggplot_long <- reactive({
