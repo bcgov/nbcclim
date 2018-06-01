@@ -68,10 +68,18 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     ),
 
   tabPanel(HTML("<h4>Real Time Data</h4>"),
-    HTML("<a href='http://datagarrison.com/users/300234062103550/300234065020820/plots.php'><h4>Canoe Mountain Alpine</h4></a><br>"),
-    HTML("<a href='http://datagarrison.com/users/300234062103550/300234064336030/plots.php'><h4>McBride Peak</h4></a><br>"),
-    HTML("<a href='http://datagarrison.com/users/300234062103550/300234065500940/plots.php'><h4>Nonda Mountain</h4></a><br>"),
-    HTML("<a href='http://datagarrison.com/users/300234062103550/300234065506710/plots.php'><h4>Pink Mountain Alpine</h4></a><br>"),
-    HTML("<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php'><h4>Hudson Bay Mountain Alpine</h4></a><br>")
-    )
+           fluidRow(
+             column(3,
+                    selectInput("station", "Select station",
+                                c("Canoe", "Hudson Bay Mountain", "McBride Peak", "Nonda", "Pink Mountain"))
+             ),
+             fluidRow(
+               column(6,
+                      fluidRow(column(12, plotOutput("rt_tempplot", height = "300px"))),
+                      fluidRow(column(12, plotOutput("rt_precipplot", height = "300px"))),
+                      fluidRow(column(12, plotOutput("rt_windplot", height = "300px")))
+                      )
+             )
+          )
+        )
 )

@@ -230,5 +230,86 @@ server <- function(input, output) {
       write.csv(suminput(), file, row.names = FALSE)
     }
   )
+
+
+  ## real time station data
+  rt_df <- eventReactive(input$station, {
+    ## reading in weekly data
+    if (input$station == "Canoe") {
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_003.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
+      }
+    else if (input$station == "Hudson Bay Mountain") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2284502_mm", "Pressure_10369385_mbar", "Temperature_3324931_deg_C", "RH_3324931_.", "Wind.Speed_10918298_m.s", "Gust.Speed_10918298_m.s", "Wind.Direction_10918298_deg", "Solar.Radiation_10485755_W.m.2")], 168)
+      }
+    else if (input$station == "McBride Peak") {
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2007476_mm", "Pressure_3247631_mbar", "Temperature_10492947_deg_C", "RH_10492947_.", "Wind.Speed_3330635_m.s", "Gust.Speed_3330635_m.s", "Wind.Direction_3330635_deg", "Solar.Radiation_2280206_W.m.2")], 168)
+      }
+    else if (input$station == "Nonda") {
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_004.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3241737_deg_C", "RH_3241737_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
+      } else {
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440494_mm", "Pressure_3247633_mbar", "Temperature_2450352_deg_C", "RH_2450352_.", "Wind.Speed_3330634_m.s", "Gust.Speed_3330634_m.s", "Wind.Direction_3330634_deg", "Solar.Radiation_1114619_W.m.2")], 168)
+      }
+
+    ## data cleaning
+    colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temperature_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
+    df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
+    df$WS_avg <- df$WS_avg * 3.6
+    df$WS_avg <- cut(df$WS_avg, c(-Inf, 3, 6, 9, Inf))
+    return(df)
+    }
+
+  )
+
+  output$rt_tempplot <- renderPlot(
+    ggplot(rt_df(), aes(Date_Time)) +
+      geom_line(aes(y = Temperature_avg, colour = "Temperature"), size = 1, alpha = 0.7) +
+      geom_line(aes(y = RH_avg/5, colour = "Relative Humidity"), size = 1, alpha = 0.7) + # /5 for second axis transformation
+      xlab("") +
+      scale_x_datetime(date_breaks = "1 day") +
+      scale_y_continuous(name = "Temperature degree C",
+                         sec.axis = sec_axis(~.*5, name = "Relative Humidity (%)")) + # *5 from original/left axis
+      scale_color_manual(values = c("#fb6a4a", "#6baed6")) +
+      theme_light() +
+      theme(panel.grid.minor = element_blank(), strip.background = element_blank(),
+            legend.position = c(0.95, 0.9), legend.background = element_blank(), legend.title = element_blank())
+  )
+
+  output$rt_precipplot <- renderPlot(
+    ggplot(rt_df(), aes(Date_Time)) +
+      geom_bar(aes(y = Rain_sum, fill = "Precipitation"), stat = "identity") +
+      geom_line(aes(y = Pressure_avg - 770, colour = "Pressure"), size = 0.8) +
+      xlab("") +
+      scale_x_datetime(date_breaks = "1 day") +
+      scale_y_continuous(name = "Precipitation (mm)",
+                         sec.axis = sec_axis(~.+770, name = "Pressure (mb)")) +
+      scale_fill_manual(values = "#67a9cf") +
+      scale_colour_manual(values = "grey") +
+      theme_light() +
+      theme(panel.grid.minor = element_blank(), strip.background = element_blank(),
+            legend.position = c(0.95, 0.9), legend.background = element_blank(), legend.title = element_blank())
+  )
+
+  output$rt_windplot <- renderPlot(
+    filter(rt_df(), !is.na(WS_avg)) %>%
+      ggplot(rt_df(), mapping = aes(WD_avg, fill = WS_avg)) +
+      geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)), alpha = 0.8,
+                     colour = "grey30") +
+      scale_y_continuous(labels = percent) +
+      scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
+      scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"),
+                         labels = c(">9", "6 - 9", "3 - 6", "<3"), direction = -1) +
+      xlab("") +
+      ylab("") +
+      coord_polar() +
+      theme_light() +
+      theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
+            strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+
+  )
 }
 
