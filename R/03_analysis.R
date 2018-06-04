@@ -67,37 +67,49 @@ wind_df[wind_df$months == "May" | wind_df$months == "June"| wind_df$months == "J
 ## statistical summaries
 summ <- select(wxstn_df, c("Site", "months", "years", "seasons", "gseason", "Temp_avg",
                            "Temp_min", "Temp_max", "Rain_sum", "Pressure_avg", "RH_avg", "DP_avg",
-                           "WS_avg", "GS_max", "SR_avg"))
+                           "WS_avg", "WD_avg", "GS_max", "SR_avg"))
+
+## convert wind direction from degree to radians
+summ$WD_avg <- atan(sin(summ$WD_avg*pi/180)/cos(summ$WD_avg*pi/180))*(180/pi)
+
 sum_long <- melt(summ, id.vars = c("Site", "months", "years", "seasons", "gseason"))
 
 annual <- sum_long %>%
   group_by(Site, years, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
-         max = round(max(value, na.rm = TRUE), 2),
-         min = round(min(value, na.rm = TRUE), 2))
+            max = round(max(value, na.rm = TRUE), 2),
+            min = round(min(value, na.rm = TRUE), 2))
 annual_sum <- melt(annual, id.vars = c("Site", "years", "variable"), variable.name = "annual")
 annual_sum <- dcast(annual_sum, Site + years + annual ~ variable)
 
 monthly <- sum_long %>%
   group_by(Site, months, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
-         max = round(max(value, na.rm = TRUE), 2),
-         min = round(min(value, na.rm = TRUE), 2))
+            max = round(max(value, na.rm = TRUE), 2),
+            min = round(min(value, na.rm = TRUE), 2))
 monthly_sum <- melt(monthly, id.vars = c("Site", "months", "variable"), variable.name = "monthly")
 monthly_sum <- dcast(monthly_sum, Site + months + monthly ~ variable)
+
+month_year <- sum_long %>%
+  group_by(Site, years, months, variable) %>%
+  summarise(mean = round(mean(value, na.rm = TRUE), 2),
+            max = round(max(value, na.rm = TRUE), 2),
+            min = round(min(value, na.rm = TRUE), 2))
+month_year_sum <- melt(month_year, id.vars = c("Site", "years", "months", "variable"), variable.name = "monthly")
+month_year_sum <- dcast(month_year_sum, Site + years + months + monthly ~ variable)
 
 seasonal <- sum_long %>%
   group_by(Site, seasons, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
-         max = round(max(value, na.rm = TRUE), 2),
-         min = round(min(value, na.rm = TRUE), 2))
+            max = round(max(value, na.rm = TRUE), 2),
+            min = round(min(value, na.rm = TRUE), 2))
 seasonal_sum <- melt(seasonal, id.vars = c("Site", "seasons", "variable"), variable.name = "seasonal")
 seasonal_sum <- dcast(seasonal_sum, Site + seasons + seasonal ~ variable)
 
 gseason <- sum_long %>%
   group_by(Site, gseason, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
-         max = round(max(value, na.rm = TRUE), 2),
-         min = round(min(value, na.rm = TRUE), 2))
+            max = round(max(value, na.rm = TRUE), 2),
+            min = round(min(value, na.rm = TRUE), 2))
 gseason_sum <- melt(gseason, id.vars = c("Site", "gseason", "variable"), variable.name = "grow_season")
 gseason_sum <- dcast(gseason_sum, Site + gseason + grow_season ~ variable)
