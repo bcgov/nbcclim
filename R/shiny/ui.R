@@ -24,7 +24,7 @@ library(shiny)
 
 ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Stations</b></h4>"),
 
-  tabPanel(HTML("<h4>Interactive Map</h4>"),
+  tabPanel(HTML("<h4>Long-term Records</h4>"),
     # titlePanel("Northern British Columbia Climate Research Stations"),
 
     fluidRow(
@@ -58,7 +58,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     downloadButton("exportstats", "Export")
     ),
 
-  tabPanel(HTML("<h4>Real Time Data</h4>"),
+  tabPanel(HTML("<h4>Real-time Data</h4>"),
            fluidRow(
              column(4, offset = 1, br(),
                     leafletOutput("rtmap", height = "500px"),

@@ -337,7 +337,7 @@ server <- function(input, output) {
   })
 
   output$rtcap <- renderUI({
-    HTML("Click on a station to view or download real time data.")
+    HTML("Click on a station to view or download real-time data.")
   })
 
   output$rtstation <- renderUI({
@@ -347,7 +347,7 @@ server <- function(input, output) {
   ## download
   output$downloadrt <- downloadHandler(
     filename = function() {
-      paste0(input$rtmap_marker_click$id, "_reat_time.csv")
+      paste0(input$rtmap_marker_click$id, "_reat-time.csv")
     },
     content = function(file) {
       write.csv(rt_df(), file, row.names = FALSE)
