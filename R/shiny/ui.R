@@ -52,32 +52,30 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     ),
 
   tabPanel(HTML("<h4>Statistics</h4>"),
-    selectInput("sum_site",
-                label = "Site",
-                choices = c(levels(wxstn_df$Site))),
-
-    selectInput("sum_tbl",
-                label = "Summary type",
-                choices = c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
-
+    selectInput("sum_site", "Site", c(levels(wxstn_df$Site))),
+    selectInput("sum_tbl", "Summary type", c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
     dataTableOutput("table"),
-
     downloadButton("exportstats", "Export")
     ),
 
   tabPanel(HTML("<h4>Real Time Data</h4>"),
            fluidRow(
-             column(3,
-                    selectInput("station", "Select station",
-                                c("Blackhawk", "Canoe", "Hourglass", "Hudson Bay Mountain", "McBride Peak", "Nonda", "Pink Mountain"))
+             column(4, offset = 1, br(),
+                    leafletOutput("rtmap", height = "500px"),
+                    htmlOutput("rtcap"),
+                    htmlOutput("rtstation"),
+                    # selectInput(inputId = "rt_site",
+                    #             label = "Download Last Week's Data",
+                    #             choices = levels(rt$Site)),
+                    downloadButton("downloadrt", "Download")
              ),
              fluidRow(
                column(6,
                       fluidRow(column(12, plotlyOutput("rt_tempplot", height = "300px"))),
                       fluidRow(column(12, plotlyOutput("rt_precipplot", height = "300px"))),
                       fluidRow(column(12, plotOutput("rt_windplot", height = "300px"))),
-                      fluidRow(column(12, plotlyOutput("rt_gustplot", height = "300px"))),
-                      fluidRow(column(12, plotlyOutput("rt_solarplot", height = "300px")))
+                      fluidRow(column(12, plotlyOutput("rt_gustplot", height = "280px"))),
+                      fluidRow(column(12, plotlyOutput("rt_solarplot", height = "280px")))
                       )
              )
           )

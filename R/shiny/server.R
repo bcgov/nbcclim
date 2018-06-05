@@ -49,7 +49,7 @@ server <- function(input, output) {
   })
 
   output$caption <- renderUI({
-    HTML("Click on a station to see climate data and summary statistics.")
+    HTML("Click on a station to view climate data and summary statistics.")
   })
 
   output$statsum <- renderUI({
@@ -230,29 +230,43 @@ server <- function(input, output) {
 
 
   ## real time station data
-  rt_df <- eventReactive(input$station, {
+  output$rtmap <- renderLeaflet({
+    leaflet() %>%
+      addProviderTiles("CartoDB.Positron") %>%
+      addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
+      addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = F)) %>%
+      addMarkers(data = rt, ~Longitude, ~Latitude, layerId = rt$Site,
+                 popup = paste("<b>", rt$Site, "</b>", "<br>",
+                               "Latitude: ", rt$Latitude, "<br>",
+                               "Longitude: ", rt$Longitude, "<br>",
+                               "Elevation: ", rt$Elevation, "m"
+                 ))
+  })
+
+  rt_df <- eventReactive(input$rtmap_marker_click$id, {
     ## reading in weekly data
-    if (input$station == "Blackhawk") {
+    req(input$rtmap_marker_click$id)
+    if (input$rtmap_marker_click$id == "Blackhawk") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__008.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440445_mm", "Pressure_10090144_mbar", "Temperature_10097057_deg_C", "RH_10097057_.", "Wind.Speed_10573245_m.s", "Gust.Speed_10573245_m.s", "Wind.Direction_10573207_deg", "Solar.Radiation_10085816_W.m.2")], 168)
       }
-    else if (input$station == "Canoe") {
+    else if (input$rtmap_marker_click$id == "Canoe") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_003.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
       }
-    else if (input$station == "Hourglass") {
+    else if (input$rtmap_marker_click$id == "Hourglass") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440451_mm", "Pressure_9659383_mbar", "Temperature_9674041_deg_C", "RH_9674041_.", "Wind.Speed_10573254_m.s", "Gust.Speed_10573254_m.s", "Wind.Direction_10573201_deg", "Solar.Radiation_9672288_W.m.2")], 168)
       }
-    else if (input$station == "Hudson Bay Mountain") {
+    else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2284502_mm", "Pressure_10369385_mbar", "Temperature_3324931_deg_C", "RH_3324931_.", "Wind.Speed_10918298_m.s", "Gust.Speed_10918298_m.s", "Wind.Direction_10918298_deg", "Solar.Radiation_10485755_W.m.2")], 168)
       }
-    else if (input$station == "McBride Peak") {
+    else if (input$rtmap_marker_click$id == "McBride Peak") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2007476_mm", "Pressure_3247631_mbar", "Temperature_10492947_deg_C", "RH_10492947_.", "Wind.Speed_3330635_m.s", "Gust.Speed_3330635_m.s", "Wind.Direction_3330635_deg", "Solar.Radiation_2280206_W.m.2")], 168)
       }
-    else if (input$station == "Nonda") {
+    else if (input$rtmap_marker_click$id == "Nonda") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_004.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3241737_deg_C", "RH_3241737_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
       } else {
@@ -261,7 +275,7 @@ server <- function(input, output) {
       }
 
     ## data cleaning
-    colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temperature_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
+    colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
     df$WS_avg <- df$WS_avg * 3.6
     df$WS_avg <- cut(df$WS_avg, c(-Inf, 3, 6, 9, Inf))
@@ -272,11 +286,12 @@ server <- function(input, output) {
 
   output$rt_tempplot <- renderPlotly(
     plot_ly(rt_df(), x = ~(Date_Time)) %>%
-      add_lines(y = ~Temperature_avg, name = "Temperature", line = list(color = "#fb8072")) %>%
+      add_lines(y = ~Temp_avg, name = "Temperature", line = list(color = "#fb8072")) %>%
       add_lines(y = ~RH_avg, name = "Relative Humidity", line = list(color = "#a6cee3"), yaxis = "y2") %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Temperature (degree C)"),
-             yaxis2 = list(overlaying = "y", side = "right", title = "Relative Humidity (%)"))
+             yaxis2 = list(overlaying = "y", side = "right", title = "Relative Humidity (%)"),
+             legend = list(y = 1.3)) # tweak so it doesn't block second axis
 
   )
 
@@ -286,7 +301,8 @@ server <- function(input, output) {
       add_lines(y = ~Pressure_avg, name = "Pressure", line = list(color = "grey"), yaxis = "y2") %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Precipitation (mm)"),
-             yaxis2 = list(overlaying = "y", side = "right", title = "Pressure (mb)"))
+             yaxis2 = list(overlaying = "y", side = "right", title = "Pressure (mb)"),
+             legend = list(y = 1.3))
   )
 
   output$rt_windplot <- renderPlot(
@@ -315,10 +331,28 @@ server <- function(input, output) {
 
   output$rt_solarplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fd8d3c")) %>%
+      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#cc4c02")) %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Solar Radiation (W/m^2)"))
   })
+
+  output$rtcap <- renderUI({
+    HTML("Click on a station to view or download real time data.")
+  })
+
+  output$rtstation <- renderUI({
+    HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>"))
+  })
+
+  ## download
+  output$downloadrt <- downloadHandler(
+    filename = function() {
+      paste0(input$rtmap_marker_click$id, "_reat_time.csv")
+    },
+    content = function(file) {
+      write.csv(rt_df(), file, row.names = FALSE)
+    }
+  )
 
 }
 

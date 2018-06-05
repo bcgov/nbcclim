@@ -27,3 +27,9 @@ wxstn_df$dates <- as.Date(wxstn_df$dates, "%m-%d")
 
 wind_df$Day <- as.Date(wind_df$Day, "%Y-%m-%d")
 wind_df$months <- months(wind_df$Day)
+
+## real time map data frame
+rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Canoe" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |
+               Site == "McBride Peak" | Site == "Nonda" | Site == "Pink Mountain",
+             select = c(Site, Longitude, Latitude, Elevation))
+rt <- subset(rt, !duplicated(rt$Site))
