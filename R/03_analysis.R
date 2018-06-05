@@ -48,7 +48,7 @@ wind_df$WS <- wind_df$WS * 3.6
 
 ## classifying wind speed into categories for windrose plot
 wind_df$WS <- cut(wind_df$WS, c(-Inf, 3, 6, 9, Inf))
-levels(wind_df$WS) <- rev(levels(wind_df$WS))
+wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"), labels = c(">9", "6 - 9", "3 - 6", "<3"))
 
 ## classifying months to 4 seasons
 wind_df$seasons <- NA
