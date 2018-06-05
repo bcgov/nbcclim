@@ -22,7 +22,7 @@ A web-application for visualising and downloading Northern British Columbia clim
 
 ### Features
 
-Provides interactive web-application to view climate data station locations, visualise time-series records (including temperature, precipitation, wind, solar radiation etc), obtain statistical summaries and download data.
+Provides interactive web-application to view climate data station locations, visualise long-term and real-time records (including temperature, precipitation, wind, solar radiation etc), obtain statistical summaries and download data.
 
 ### Project Status
 
