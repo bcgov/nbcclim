@@ -49,7 +49,8 @@ server <- function(input, output) {
   })
 
   output$caption <- renderUI({
-    HTML("Click on a station to view climate data and summary statistics.")
+    HTML(paste("Click on a station to view climate data and summary statistics.<br>",
+               "You can hover on the graph, zoom in and out, and select specific years for display."))
   })
 
   output$statsum <- renderUI({
@@ -353,6 +354,36 @@ server <- function(input, output) {
       write.csv(rt_df(), file, row.names = FALSE)
     }
   )
+
+  output$about <- renderUI({
+    HTML(paste("<h3><b>Climate Data</b></h3><br>",
+               "<font size=4>The column names in both the long-term record and real-time dataframes are coded as follows:<br>",
+               "<br>Rain_sum: total precipitation, mm<br>
+               Pressure_avg: averaged pressure, mbar<br>
+               Temp_max: maximum temperature, &deg;C<br>
+               Temp_min: minimum temperature, &deg;C<br>
+               Temp_avg: averaged temperature, &deg;C<br>
+               RH_avg: averaged relative humidity, %<br>
+               DP_avg: averaged dew point, &deg;C<br>
+               WS_avg: averaged wind speed, m/s<br>
+               GS_max: maximum gust speed, m/s<br>
+               WD_avg: averaged wind direction, &Phi;<br>
+               SR_avg: averaged solar radiation, W/m<sup>2</sup><br>
+               SD_avg: averaged snow depth, cm<br>
+               WC_avg: averaged water content, m<sup>3</sup>/m<sup>3</sup><br>
+               W_avg: averaged wetness, (%)<br>
+               WS_EC5: water content, EC5 m<sup>3</sup>/m<sup>3</sup><br></font>",
+               "<br><h3><b>Real-time Data</b></h3><br>",
+               "<font size=4>Please refer to the following links for complete real-time data records.<br></font>",
+               "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'><font size=4>Blackhawk</font></a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234065020820/plots.php' target='_blank'><font size=4>Canoe</font></a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234062105500/plots.php' target='_blank'><font size=4>Hourglass</font></a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php' target='_blank'><font size=4>Hudson Bay Mountain</font></a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'><font size=4>McBride Peak</font></a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234065500940/plots.php' target='_blank'><font size=4>Nonda</font></a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'><font size=4>Pink Mountain</font></a><br>"
+               ))
+  })
 
 }
 

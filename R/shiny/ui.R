@@ -64,9 +64,6 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
                     leafletOutput("rtmap", height = "500px"),
                     htmlOutput("rtcap"),
                     htmlOutput("rtstation"),
-                    # selectInput(inputId = "rt_site",
-                    #             label = "Download Last Week's Data",
-                    #             choices = levels(rt$Site)),
                     downloadButton("downloadrt", "Download")
              ),
              fluidRow(
@@ -79,5 +76,11 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
                       )
              )
           )
-        )
+        ),
+
+  tabPanel(HTML("<h4>About</h4>"),
+           fluidRow(
+             column(12, offset = 1, htmlOutput("about"))
+             )
+           )
 )
