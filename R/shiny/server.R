@@ -19,6 +19,8 @@ server <- function(input, output) {
   output$wsmap <- renderLeaflet({
     leaflet() %>%
       addProviderTiles("CartoDB.Positron") %>%
+      addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
+      addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = F)) %>%
       addMarkers(data = wxstn_df, ~unique(Longitude), ~unique(Latitude), layerId = ~unique(Site),
                  popup = paste("<b>", unique(wxstn_df$Site), "</b>", "<br>",
                                "Latitude: ", unique(wxstn_df$Latitude), "<br>",
@@ -200,13 +202,6 @@ server <- function(input, output) {
     }
   )
 
-  ## select time range
-  # observeEvent(input$selected_site, {
-  #   updateSliderInput(session, "timerange",
-  #                     min = wxstn_df[wxstn_df$Site %in% input$selected_site, "Date"][1],
-  #                     max = wxstn_df[wxstn_df$Site %in% input$selected_site, "Date"][nrow(wxstn_df[wxstn_df$Site %in% input$selected_site,])])
-  # })
-
 
    ## datatable
   suminput <- reactive({
@@ -271,27 +266,9 @@ server <- function(input, output) {
     df$WS_avg <- df$WS_avg * 3.6
     df$WS_avg <- cut(df$WS_avg, c(-Inf, 3, 6, 9, Inf))
     df$WS_avg <- factor(df$WS_avg, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"), labels = c(">9", "6 - 9", "3 - 6", "<3"))
-
-    # df_long <- melt(df, id.vars = "Date_Time")
-    # levels(df_long$variable) <- c("Precipitation", "Pressure", "Temperature", "Relative Humidity", "WS_avg", "Gust Speed", "WD_avg", "Solar Radiation")
-    # class(df_long$value) <- "numeric"
     return(df)
     }
   )
-
-  # output$rt_tempplot <- renderPlotly({
-  #   rt_plot <- subset(rt_df(), variable != "WS_avg" & variable != "WD_avg") %>%
-  #     ggplot(rt_df(), mapping = aes(Date_Time, value)) +
-  #     geom_line() +
-  #     xlab("") +
-  #     ylab("") +
-  #     scale_x_datetime(date_breaks = "1 day") +
-  #     facet_grid(variable~., scales = "free_y") +
-  #     theme_light() +
-  #     theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
-  #           strip.background = element_blank(), legend.title = element_blank())
-  #   ggplotly(rt_plot)}
-  # )
 
   output$rt_tempplot <- renderPlotly(
     plot_ly(rt_df(), x = ~(Date_Time)) %>%
@@ -300,6 +277,7 @@ server <- function(input, output) {
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Temperature (degree C)"),
              yaxis2 = list(overlaying = "y", side = "right", title = "Relative Humidity (%)"))
+
   )
 
   output$rt_precipplot <- renderPlotly(

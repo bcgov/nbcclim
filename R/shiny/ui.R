@@ -37,9 +37,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
                          label = "Download Station Data",
                          choices = c("All stations", levels(wxstn_df$Site))),
              downloadButton("download", "Download")
-             # sliderInput(inputId = "timerange", label = "Time Range", min = wxstn_df$Date[1],
-                         # max = wxstn_df$Date[nrow(wxstn_df)], value = c(wxstn_df$Date[1], wxstn_df$Date[nrow(wxstn_df)]))
-      ),
+                   ),
 
       fluidRow(
         column(6, offset = -1,
