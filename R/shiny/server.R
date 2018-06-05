@@ -79,7 +79,8 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-    ggplotly(plot, tooltip = c("text"))
+    ggplotly(plot, tooltip = c("text")) %>%
+      layout(margin = list(l = 35)) # to fully display the x and y axis labels
   })
 
   ## average daily total precipitation plot
@@ -96,7 +97,8 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-   ggplotly(plot, tooltip = c("text"))
+    ggplotly(plot, tooltip = c("text")) %>%
+      layout(margin = list(l = 35))
   })
 
   ## average wind speed and direction plot for summer and winter growing seasons
@@ -211,7 +213,8 @@ server <- function(input, output) {
   suminput <- reactive({
     switch(input$sum_tbl,
            "Annual" = annual_sum[annual_sum$Site == input$sum_site, ],
-           "Monthly" = monthly_sum[monthly_sum$Site == input$sum_site, ],
+           "Monthly all years" = monthly_sum[monthly_sum$Site == input$sum_site, ],
+           "Monthly per year" = month_year_sum[month_year_sum$Site == input$sum_site, ],
            "Seasonal" = seasonal_sum[seasonal_sum$Site == input$sum_site, ],
            "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
   })
@@ -235,9 +238,17 @@ server <- function(input, output) {
   ## real time station data
   rt_df <- eventReactive(input$station, {
     ## reading in weekly data
-    if (input$station == "Canoe") {
+    if (input$station == "Blackhawk") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__008.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440445_mm", "Pressure_10090144_mbar", "Temperature_10097057_deg_C", "RH_10097057_.", "Wind.Speed_10573245_m.s", "Gust.Speed_10573245_m.s", "Wind.Direction_10573207_deg", "Solar.Radiation_10085816_W.m.2")], 168)
+      }
+    else if (input$station == "Canoe") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_003.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
+      }
+    else if (input$station == "Hourglass") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440451_mm", "Pressure_9659383_mbar", "Temperature_9674041_deg_C", "RH_9674041_.", "Wind.Speed_10573254_m.s", "Gust.Speed_10573254_m.s", "Wind.Direction_10573201_deg", "Solar.Radiation_9672288_W.m.2")], 168)
       }
     else if (input$station == "Hudson Bay Mountain") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt",
@@ -260,49 +271,55 @@ server <- function(input, output) {
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
     df$WS_avg <- df$WS_avg * 3.6
     df$WS_avg <- cut(df$WS_avg, c(-Inf, 3, 6, 9, Inf))
+    df$WS_avg <- factor(df$WS_avg, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"), labels = c(">9", "6 - 9", "3 - 6", "<3"))
+
+    # df_long <- melt(df, id.vars = "Date_Time")
+    # levels(df_long$variable) <- c("Precipitation", "Pressure", "Temperature", "Relative Humidity", "WS_avg", "Gust Speed", "WD_avg", "Solar Radiation")
+    # class(df_long$value) <- "numeric"
     return(df)
     }
-
   )
 
-  output$rt_tempplot <- renderPlot(
-    ggplot(rt_df(), aes(Date_Time)) +
-      geom_line(aes(y = Temperature_avg, colour = "Temperature"), size = 1, alpha = 0.7) +
-      geom_line(aes(y = RH_avg/5, colour = "Relative Humidity"), size = 1, alpha = 0.7) + # /5 for second axis transformation
-      xlab("") +
-      scale_x_datetime(date_breaks = "1 day") +
-      scale_y_continuous(name = "Temperature degree C",
-                         sec.axis = sec_axis(~.*5, name = "Relative Humidity (%)")) + # *5 from original/left axis
-      scale_color_manual(values = c("#fb6a4a", "#6baed6")) +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), strip.background = element_blank(),
-            legend.position = c(0.95, 0.9), legend.background = element_blank(), legend.title = element_blank())
+  # output$rt_tempplot <- renderPlotly({
+  #   rt_plot <- subset(rt_df(), variable != "WS_avg" & variable != "WD_avg") %>%
+  #     ggplot(rt_df(), mapping = aes(Date_Time, value)) +
+  #     geom_line() +
+  #     xlab("") +
+  #     ylab("") +
+  #     scale_x_datetime(date_breaks = "1 day") +
+  #     facet_grid(variable~., scales = "free_y") +
+  #     theme_light() +
+  #     theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
+  #           strip.background = element_blank(), legend.title = element_blank())
+  #   ggplotly(rt_plot)}
+  # )
+
+  output$rt_tempplot <- renderPlotly(
+    plot_ly(rt_df(), x = ~(Date_Time)) %>%
+      add_lines(y = ~Temperature_avg, name = "Temperature", line = list(color = "#fb8072")) %>%
+      add_lines(y = ~RH_avg, name = "Relative Humidity", line = list(color = "#a6cee3"), yaxis = "y2") %>%
+      layout(xaxis = list(title = ""),
+             yaxis = list(title = "Temperature (degree C)"),
+             yaxis2 = list(overlaying = "y", side = "right", title = "Relative Humidity (%)"))
   )
 
-  output$rt_precipplot <- renderPlot(
-    ggplot(rt_df(), aes(Date_Time)) +
-      geom_bar(aes(y = Rain_sum, fill = "Precipitation"), stat = "identity") +
-      geom_line(aes(y = Pressure_avg - 770, colour = "Pressure"), size = 0.8) +
-      xlab("") +
-      scale_x_datetime(date_breaks = "1 day") +
-      scale_y_continuous(name = "Precipitation (mm)",
-                         sec.axis = sec_axis(~.+770, name = "Pressure (mb)")) +
-      scale_fill_manual(values = "#67a9cf") +
-      scale_colour_manual(values = "grey") +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), strip.background = element_blank(),
-            legend.position = c(0.95, 0.9), legend.background = element_blank(), legend.title = element_blank())
+  output$rt_precipplot <- renderPlotly(
+    plot_ly(rt_df(), x = ~Date_Time) %>%
+      add_bars(y = ~Rain_sum, name = "Precipitation", marker = list(color = "#67a9cf")) %>%
+      add_lines(y = ~Pressure_avg, name = "Pressure", line = list(color = "grey"), yaxis = "y2") %>%
+      layout(xaxis = list(title = ""),
+             yaxis = list(title = "Precipitation (mm)"),
+             yaxis2 = list(overlaying = "y", side = "right", title = "Pressure (mb)"))
   )
 
   output$rt_windplot <- renderPlot(
     filter(rt_df(), !is.na(WS_avg)) %>%
       ggplot(rt_df(), mapping = aes(WD_avg, fill = WS_avg)) +
-      geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)), alpha = 0.8,
-                     colour = "grey30") +
+      geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)),
+                     alpha = 0.8, colour = "grey30") +
       scale_y_continuous(labels = percent) +
       scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-      scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"),
-                         labels = c(">9", "6 - 9", "3 - 6", "<3"), direction = -1) +
+      scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"), direction = -1) +
       xlab("") +
       ylab("") +
       coord_polar() +
@@ -311,5 +328,20 @@ server <- function(input, output) {
             strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
 
   )
+
+  output$rt_gustplot <- renderPlotly({
+    plot_ly(rt_df(), x = ~Date_Time) %>%
+      add_lines(y = ~GS_max, name = "Gust Speed", line = list(color = "#80cdc1")) %>%
+      layout(xaxis = list(title = ""),
+             yaxis = list(title = "Maximum Gust Speed (m/s)"))
+  })
+
+  output$rt_solarplot <- renderPlotly({
+    plot_ly(rt_df(), x = ~Date_Time) %>%
+      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fd8d3c")) %>%
+      layout(xaxis = list(title = ""),
+             yaxis = list(title = "Solar Radiation (W/m^2)"))
+  })
+
 }
 

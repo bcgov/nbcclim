@@ -60,7 +60,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
 
     selectInput("sum_tbl",
                 label = "Summary type",
-                choices = c("Annual", "Monthly", "Seasonal", "Growing season")),
+                choices = c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
 
     dataTableOutput("table"),
 
@@ -71,13 +71,15 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
            fluidRow(
              column(3,
                     selectInput("station", "Select station",
-                                c("Canoe", "Hudson Bay Mountain", "McBride Peak", "Nonda", "Pink Mountain"))
+                                c("Blackhawk", "Canoe", "Hourglass", "Hudson Bay Mountain", "McBride Peak", "Nonda", "Pink Mountain"))
              ),
              fluidRow(
                column(6,
-                      fluidRow(column(12, plotOutput("rt_tempplot", height = "300px"))),
-                      fluidRow(column(12, plotOutput("rt_precipplot", height = "300px"))),
-                      fluidRow(column(12, plotOutput("rt_windplot", height = "300px")))
+                      fluidRow(column(12, plotlyOutput("rt_tempplot", height = "300px"))),
+                      fluidRow(column(12, plotlyOutput("rt_precipplot", height = "300px"))),
+                      fluidRow(column(12, plotOutput("rt_windplot", height = "300px"))),
+                      fluidRow(column(12, plotlyOutput("rt_gustplot", height = "300px"))),
+                      fluidRow(column(12, plotlyOutput("rt_solarplot", height = "300px")))
                       )
              )
           )
