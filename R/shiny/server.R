@@ -297,18 +297,24 @@ server <- function(input, output) {
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Temperature (degree C)"),
              yaxis2 = list(overlaying = "y", side = "right", title = "Relative Humidity (%)"),
-             legend = list(y = 1.3)) # tweak so it doesn't block second axis
+             # legend = list(y = 1.3)
+             margin = list(r = 50), showlegend = FALSE) # margin so second axis renders OK
 
   )
+
+  output$rttemp <- renderUI({
+    # HTML(paste("<font color='#fb8072'>Temperature</font><br>",
+               # tags$span(style="col=blue", round(rt_df()[168, "Temp_avg"], 1)), sep = ""))
+    })
 
   output$rt_precipplot <- renderPlotly(
     plot_ly(rt_df(), x = ~Date_Time) %>%
       add_bars(y = ~Rain_sum, name = "Precipitation", marker = list(color = "#67a9cf")) %>%
-      add_lines(y = ~Pressure_avg, name = "Pressure", line = list(color = "grey"), yaxis = "y2") %>%
+      add_lines(y = ~Pressure_avg, name = "Pressure", line = list(color = "#c0c0c0"), yaxis = "y2") %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Precipitation (mm)"),
              yaxis2 = list(overlaying = "y", side = "right", title = "Pressure (mb)"),
-             legend = list(y = 1.3))
+             margin = list(r = 50), showlegend = FALSE)
   )
 
   output$rt_windplot <- renderPlot(
@@ -330,7 +336,7 @@ server <- function(input, output) {
 
   output$rt_gustplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~GS_max, name = "Gust Speed", line = list(color = "#80cdc1")) %>%
+      add_lines(y = ~GS_max, name = "Gust Speed", line = list(color = "grey")) %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Maximum Gust Speed (m/s)"))
   })
