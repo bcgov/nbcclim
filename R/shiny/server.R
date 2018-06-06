@@ -11,9 +11,11 @@
 # See the License for the specific language governing permissions and limitations under the License.
 
 
-## Shiny server
+## Shiny server ##
 
 server <- function(input, output) {
+
+  ## Long-term records ####
 
   ## leaflet map
   output$wsmap <- renderLeaflet({
@@ -204,6 +206,8 @@ server <- function(input, output) {
   )
 
 
+  ## Statistics ####
+
    ## datatable
   suminput <- reactive({
     switch(input$sum_tbl,
@@ -218,8 +222,7 @@ server <- function(input, output) {
     suminput()
   )
 
-
-  ## download file
+  ## export file
   output$exportstats <- downloadHandler(
     filename <- function() {
       paste0(input$sum_site, "_", input$sum_tbl, "_summary", ".csv")
@@ -229,6 +232,8 @@ server <- function(input, output) {
     }
   )
 
+
+  ## Real-time data ####
 
   ## real time station data
   output$rtmap <- renderLeaflet({
@@ -355,6 +360,9 @@ server <- function(input, output) {
     }
   )
 
+
+  ## About ####
+
   output$about <- renderUI({
     HTML(paste("<h3><b>Climate Data</b></h3><br>",
                "<font size=4>The column names in both the long-term record and real-time dataframes are coded as follows:<br>",
@@ -370,9 +378,9 @@ server <- function(input, output) {
                WD_avg: averaged wind direction, &Phi;<br>
                SR_avg: averaged solar radiation, W/m<sup>2</sup><br>
                SD_avg: averaged snow depth, cm<br>
-               WC_avg: averaged water content, m<sup>3</sup>/m<sup>3</sup><br>
+               WC_avg: averaged soil moisture water content, m<sup>3</sup>/m<sup>3</sup><br>
                W_avg: averaged wetness, (%)<br>
-               WS_EC5: water content, EC5 m<sup>3</sup>/m<sup>3</sup><br></font>",
+               WS_EC5: averaged soil moisture water content from EC5 sensor, m<sup>3</sup>/m<sup>3</sup><br></font>",
                "<br><h3><b>Real-time Data</b></h3><br>",
                "<font size=4>Please refer to the following links for complete real-time data records.<br></font>",
                "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'><font size=4>Blackhawk</font></a><br>",
