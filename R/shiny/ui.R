@@ -71,10 +71,13 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
                       fluidRow(column(10, plotlyOutput("rt_tempplot", height = "300px")),
                                fluidRow(column(2, br(), br(), htmlOutput("rttemp")))
                                ),
-                      fluidRow(column(12, plotlyOutput("rt_precipplot", height = "300px"))),
+                      fluidRow(column(10, plotlyOutput("rt_precipplot", height = "300px")),
+                               fluidRow(column(2, br(), br(), htmlOutput("rtprecip")))),
                       fluidRow(column(12, plotOutput("rt_windplot", height = "300px"))),
-                      fluidRow(column(12, plotlyOutput("rt_gustplot", height = "280px"))),
-                      fluidRow(column(12, plotlyOutput("rt_solarplot", height = "280px")))
+                      fluidRow(column(10, plotlyOutput("rt_gustplot", height = "280px")),
+                               fluidRow(column(2, br(), br(), htmlOutput("rtgust")))),
+                      fluidRow(column(10, plotlyOutput("rt_solarplot", height = "280px")),
+                               fluidRow(column(2, br(), br(), htmlOutput("rtsolar"))))
                       )
              )
           )

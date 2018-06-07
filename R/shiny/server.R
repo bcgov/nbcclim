@@ -22,7 +22,7 @@ server <- function(input, output) {
     leaflet() %>%
       addProviderTiles("CartoDB.Positron") %>%
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
-      addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = F)) %>%
+      addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
       addMarkers(data = wxstn_df, ~unique(Longitude), ~unique(Latitude), layerId = ~unique(Site),
                  popup = paste("<b>", unique(wxstn_df$Site), "</b>", "<br>",
                                "Latitude: ", unique(wxstn_df$Latitude), "<br>",
@@ -60,9 +60,9 @@ server <- function(input, output) {
     str1 <- paste("<h4><b>", input$wsmap_marker_click$id, "</b></h4>")
     str2 <- paste("Data range:", filter(wxstn_df, Site == input$wsmap_marker_click$id)$Date[1], "to",
                   filter(wxstn_df, Site == input$wsmap_marker_click$id)$Date[nrow(filter(wxstn_df, Site == input$wsmap_marker_click$id))], "<br/>")
-    str3 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", "<br/>", sep = " ")
-    str4 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", "<br/>", sep = " ")
-    str5 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "°C", "<br/>", sep = " ")
+    str3 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "&deg;C", "<br/>", sep = " ")
+    str4 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "&deg;C", "<br/>", sep = " ")
+    str5 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "&deg;C", "<br/>", sep = " ")
     str6 <- paste("Maximum daily precipitation:", round(max(ggplot_data()$Rain_sum, na.rm = TRUE), 1), "mm", "<br/>", sep = " ")
     str7 <- paste("Maximum gust speed:", round(max(ggplot_data()$GS_max, na.rm = TRUE), 1), "m/s", "<br/>", sep = " ")
     str8 <- "<br/>*All plots are from daily records except for windrose using hourly wind speed and directions."
@@ -218,9 +218,9 @@ server <- function(input, output) {
            "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
   })
 
-  output$table <- renderDataTable(
+  output$table <- renderDataTable({
     suminput()
-  )
+  })
 
   ## export file
   output$exportstats <- downloadHandler(
@@ -290,7 +290,7 @@ server <- function(input, output) {
     }
   )
 
-  output$rt_tempplot <- renderPlotly(
+  output$rt_tempplot <- renderPlotly({
     plot_ly(rt_df(), x = ~(Date_Time)) %>%
       add_lines(y = ~Temp_avg, name = "Temperature", line = list(color = "#fb8072")) %>%
       add_lines(y = ~RH_avg, name = "Relative Humidity", line = list(color = "#a6cee3"), yaxis = "y2") %>%
@@ -300,24 +300,37 @@ server <- function(input, output) {
              # legend = list(y = 1.3)
              margin = list(r = 50), showlegend = FALSE) # margin so second axis renders OK
 
-  )
+  })
 
   output$rttemp <- renderUI({
-    # HTML(paste("<font color='#fb8072'>Temperature</font><br>",
-               # tags$span(style="col=blue", round(rt_df()[168, "Temp_avg"], 1)), sep = ""))
+    temp <- "<font color='#fb8072'>Temperature</font><br>"
+    t <- round(rt_df()[168, "Temp_avg"], 1)
+    rh <- "<font color='#a6cee3'>Relative Humidity</font><br>"
+    r <- round(rt_df()[168, "RH_avg"], 1)
+    HTML(paste(temp, "<font size='6', color='#fb8072'>", t, "</font>",  "<font color='#fb8072'> &deg;C</font><br>",
+               rh, "<font size='6', color='#a6cee3'>", r, "</font>", "<font color='#a6cee3'> %</font>", sep = ""))
     })
 
-  output$rt_precipplot <- renderPlotly(
+  output$rt_precipplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
       add_bars(y = ~Rain_sum, name = "Precipitation", marker = list(color = "#67a9cf")) %>%
-      add_lines(y = ~Pressure_avg, name = "Pressure", line = list(color = "#c0c0c0"), yaxis = "y2") %>%
+      add_lines(y = ~Pressure_avg, name = "Pressure", line = list(color = "#b0b0b0"), yaxis = "y2") %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Precipitation (mm)"),
              yaxis2 = list(overlaying = "y", side = "right", title = "Pressure (mb)"),
              margin = list(r = 50), showlegend = FALSE)
-  )
+  })
 
-  output$rt_windplot <- renderPlot(
+  output$rtprecip <- renderUI({
+    rain <- "<font color='#67a9cf'>Precipitation</font><br>"
+    r <- round(rt_df()[168, "Rain_sum"], 1)
+    pres <- "<font color='#b0b0b0'>Pressure</font><br>"
+    p <- round(rt_df()[168, "Pressure_avg"], 1)
+    HTML(paste(rain, "<font size='6', color='#67a9cf'>", r, "</font>",  "<font color='#67a9cf'> mm</font><br>",
+               pres, "<font size='6', color='#b0b0b0'>", p, "</font>", "<font color='#b0b0b0'> mb</font>", sep = ""))
+  })
+
+  output$rt_windplot <- renderPlot({
     filter(rt_df(), !is.na(WS_avg)) %>%
       ggplot(rt_df(), mapping = aes(WD_avg, fill = WS_avg)) +
       geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)),
@@ -332,20 +345,32 @@ server <- function(input, output) {
       theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
             strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
 
-  )
+  })
 
   output$rt_gustplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~GS_max, name = "Gust Speed", line = list(color = "grey")) %>%
+      add_lines(y = ~GS_max, name = "Gust Speed", line = list(color = "#505050")) %>%
       layout(xaxis = list(title = ""),
-             yaxis = list(title = "Maximum Gust Speed (m/s)"))
+             yaxis = list(title = "Maximum Gust Speed (m/s)"), margin = list(r = 50))
+  })
+
+  output$rtgust <- renderUI({
+    gust <- "<font color='#505050'>Gust Speed</font><br>"
+    g <- round(rt_df()[168, "GS_max"], 1)
+    HTML(paste(gust, "<font size='6', color='#505050'>", g, "</font>",  "<font color='#505050'> m/s</font><br>", sep = ""))
   })
 
   output$rt_solarplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#cc4c02")) %>%
+      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fd8d3c")) %>%
       layout(xaxis = list(title = ""),
-             yaxis = list(title = "Solar Radiation (W/m^2)"))
+             yaxis = list(title = "Solar Radiation (W/m^2)"), margin = list(r = 50))
+  })
+
+  output$rtsolar <- renderUI({
+    solar <- "<font color='#fd8d3c'>Solar Radiation</font><br>"
+    s <- round(rt_df()[168, "SR_avg"], 1)
+    HTML(paste(solar, "<font size='6', color='#fd8d3c'>", s, "</font>",  "<font color='#fd8d3c'> W/m<sup>2</sup></font><br>", sep = ""))
   })
 
   output$rtcap <- renderUI({
