@@ -174,8 +174,7 @@ server <- function(input, output) {
     } else {
       plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
                                         text = paste("<br>Date:", as.Date(Date), "<br>Value:", SR_avg))) +
-        geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3) +
-        # stat_summary(aes(color = years), geom = "point", fun.y = mean) +
+        geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3, na.rm = TRUE) +
         scale_x_date(date_breaks = "1 month", date_labels = "%b") +
         scale_color_brewer(palette = "Paired") +
         xlab("") +
@@ -378,7 +377,9 @@ server <- function(input, output) {
   })
 
   output$rtstation <- renderUI({
-    HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>"))
+    req(input$rtmap_marker_click$id)
+    HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>",
+               "Plots display the last available 7 days of records. For complete records, please see About page."))
   })
 
   ## download

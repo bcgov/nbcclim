@@ -63,7 +63,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
              column(4, offset = 1, br(),
                     leafletOutput("rtmap", height = "500px"),
                     htmlOutput("rtcap"),
-                    htmlOutput("rtstation"),
+                    htmlOutput("rtstation"), br(),
                     downloadButton("downloadrt", "Download")
              ),
              fluidRow(
