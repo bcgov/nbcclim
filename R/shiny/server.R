@@ -149,44 +149,35 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
             axis.title.y = element_text(size = 10))
-    p <- ggplotly(plot, tooltip = c("text"))
-
-    ## adjusting y axis position so it doesn't overlap axis labels
-    p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
-    p %>% layout(margin = list(l = 75))
+    p <- ggplotly(plot, tooltip = c("text")) %>%
+      layout(margin = list(l = 75)) ## adjusting y axis position so it doesn't overlap axis labels
   })
 
   ## average daily insolation plot
   output$solarplot <- renderPlotly({
-    if (all(is.na(ggplot_data()$SR_avg))) {
-      plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years)) +
+    if (all(is.na(ggplot_data()$monthly_inso))) {
+      plot <- ggplot(ggplot_data(), aes(months, monthly_inso, group = years, colour = years)) +
         theme_light() +
         xlab("") +
-        ylab("Smoothened Insolation (W/m^2)") +
+        ylab("Average Monthly Insolation (W/m^2)") +
         theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
               axis.title.y = element_text(size = 10))
-      p <- ggplotly(plot)
-
-      ## adjusting y axis position so it doesn't overlap axis labels
-      p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
-      p %>% layout(margin = list(l = 75))
+      p <- ggplotly(plot) %>%
+        layout(margin = list(l = 75))
 
     } else {
-      plot <- ggplot(ggplot_data(), aes(dates, SR_avg, group = years, colour = years,
-                                        text = paste("<br>Date:", as.Date(Date), "<br>Value:", SR_avg))) +
-        geom_line(stat = "smooth", method = "loess", se = FALSE, alpha = 0.7, size = 0.3, na.rm = TRUE) +
-        scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+      plot <- ggplot(ggplot_data(), aes(months, monthly_inso, group = years, colour = years,
+                                        text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
+        geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
+        # scale_x_date(date_labels = "%b") +
         scale_color_brewer(palette = "Paired") +
         xlab("") +
-        ylab("Smoothened Insolation (W/m^2)") +
+        ylab("Average Monthly Insolation (W/m^2)") +
         theme_light() +
         theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
               axis.title.y = element_text(size = 10))
-      p <- ggplotly(plot, tooltip = c("text"))
-
-      ## adjusting y axis position so it doesn't overlap axis labels
-      p[['x']][['layout']][['annotations']][[2]][['x']] <- -0.1
-      p %>% layout(margin = list(l = 75))
+      p <- ggplotly(plot, tooltip = c("text")) %>%
+        layout(margin = list(l = 75))
     }
   })
 

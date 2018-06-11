@@ -18,15 +18,13 @@ wxstn_df$Date <- as.Date(wxstn_df$Date, "%Y-%m-%d")
 ## adding years, months, and dates columns for indexing later
 wxstn_df$years <- substr(wxstn_df$Date, 1, 4)
 
-wxstn_df$months <- months(wxstn_df$Date)
-wxstn_df$months <- factor(wxstn_df$months, levels = c("January", "February", "March", "April",
-                                                      "May", "June", "July", "August", "September",
-                                                      "October", "November", "December"))
+wxstn_df$months <- months(wxstn_df$Date, abbreviate = TRUE)
+wxstn_df$months <- factor(wxstn_df$months, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
 wxstn_df$dates <- substr(wxstn_df$Date, 6, 10)
 wxstn_df$dates <- as.Date(wxstn_df$dates, "%m-%d")
 
 wind_df$Day <- as.Date(wind_df$Day, "%Y-%m-%d")
-wind_df$months <- months(wind_df$Day)
+wind_df$months <- months(wind_df$Day, abbreviate = TRUE)
 
 ## real time map data frame
 rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Canoe" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |

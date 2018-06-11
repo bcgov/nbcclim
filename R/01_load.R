@@ -26,7 +26,10 @@ library(plyr) # for joining all dataframes
 # wxstn_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
 #                           George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, HudsonBayMtn, Kluskus_10424986, MacJxn_2289305, McbridePk,
 #                           MiddleforkWx, NondaWx, PGTIS_AMAT, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
-#
+
+# ## formatting Month column
+# wxstn_df$Month <- substr(wxstn_df$Date, 1, 7)
+
 # write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv", row.names = FALSE)
 #
 # ## reading in hourly weather records

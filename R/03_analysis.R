@@ -16,12 +16,8 @@ library(reshape2) # for long dataframes
 
 ## calculating month average insolation
 wxstn_df <- wxstn_df %>%
-  group_by(Site, months) %>%
-  mutate(monthly_inso = mean(SR_avg, na.rm = TRUE))
-
-wxstn_df <- wxstn_df %>%
   group_by(Site, years, months) %>%
-  mutate(inso = mean(SR_avg, na.rm = TRUE))
+  mutate(monthly_inso = round(mean(SR_avg, na.rm = TRUE), 2))
 
 ## selecting variables needed for long dataframe
 df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "DP_avg"))
@@ -32,16 +28,16 @@ levels(df_long$variable) <- c("Precipitation (mm)", "Pressure (mb)", "Temperatur
 
 ## classifying months to 4 seasons
 wxstn_df$seasons <- NA
-wxstn_df[wxstn_df$months == "December"| wxstn_df$months == "January" | wxstn_df$months == "February", "seasons"] <- "Winter"
-wxstn_df[wxstn_df$months == "March"| wxstn_df$months == "April" | wxstn_df$months == "May", "seasons"] <- "Spring"
-wxstn_df[wxstn_df$months == "June"| wxstn_df$months == "July" | wxstn_df$months == "August", "seasons"] <- "Summer"
-wxstn_df[wxstn_df$months == "September"| wxstn_df$months == "October" | wxstn_df$months == "November", "seasons"] <- "Fall"
+wxstn_df[wxstn_df$months == "Dec"| wxstn_df$months == "Jan" | wxstn_df$months == "Feb", "seasons"] <- "Winter"
+wxstn_df[wxstn_df$months == "Mar"| wxstn_df$months == "Apr" | wxstn_df$months == "May", "seasons"] <- "Spring"
+wxstn_df[wxstn_df$months == "Jun"| wxstn_df$months == "Jul" | wxstn_df$months == "Aug", "seasons"] <- "Summer"
+wxstn_df[wxstn_df$months == "Sep"| wxstn_df$months == "Oct" | wxstn_df$months == "Nov", "seasons"] <- "Fall"
 
 ## classifying months to summer and winter growing seasons
 wxstn_df$gseason <- NA
-wxstn_df[wxstn_df$months == "October" | wxstn_df$months == "November" | wxstn_df$months == "December"| wxstn_df$months == "January" |
-          wxstn_df$months == "February" | wxstn_df$months == "March"| wxstn_df$months == "April" , "gseason"] <- "Winter (Oct-Apr)"
-wxstn_df[wxstn_df$months == "May" | wxstn_df$months == "June"| wxstn_df$months == "July" | wxstn_df$months == "August" | wxstn_df$months == "September", "gseason"] <- "Summer (May-Sep)"
+wxstn_df[wxstn_df$months == "Oct" | wxstn_df$months == "Nov" | wxstn_df$months == "Dec"| wxstn_df$months == "Jan" |
+          wxstn_df$months == "Feb" | wxstn_df$months == "Mar"| wxstn_df$months == "Apr" , "gseason"] <- "Winter (Oct-Apr)"
+wxstn_df[wxstn_df$months == "May" | wxstn_df$months == "Jun"| wxstn_df$months == "Jul" | wxstn_df$months == "Aug" | wxstn_df$months == "Sep", "gseason"] <- "Summer (May-Sep)"
 
 ## converting wind speed from m/s to km/h
 wind_df$WS <- wind_df$WS * 3.6
@@ -52,16 +48,16 @@ wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf
 
 ## classifying months to 4 seasons
 wind_df$seasons <- NA
-wind_df[wind_df$months == "December"| wind_df$months == "January" | wind_df$months == "February", "seasons"] <- "Winter"
-wind_df[wind_df$months == "March"| wind_df$months == "April" | wind_df$months == "May", "seasons"] <- "Spring"
-wind_df[wind_df$months == "June"| wind_df$months == "July" | wind_df$months == "August", "seasons"] <- "Summer"
-wind_df[wind_df$months == "September"| wind_df$months == "October" | wind_df$months == "November", "seasons"] <- "Fall"
+wind_df[wind_df$months == "Dec"| wind_df$months == "Jan" | wind_df$months == "Feb", "seasons"] <- "Winter"
+wind_df[wind_df$months == "Mar"| wind_df$months == "Apr" | wind_df$months == "May", "seasons"] <- "Spring"
+wind_df[wind_df$months == "Jun"| wind_df$months == "Jul" | wind_df$months == "Aug", "seasons"] <- "Summer"
+wind_df[wind_df$months == "Sep"| wind_df$months == "Oct" | wind_df$months == "Nov", "seasons"] <- "Fall"
 
 ## classifying months to summer and winter growing seasons
 wind_df$gseason <- NA
-wind_df[wind_df$months == "October" | wind_df$months == "November" | wind_df$months == "December"| wind_df$months == "January" |
-          wind_df$months == "February" | wind_df$months == "March"| wind_df$months == "April" , "gseason"] <- "Winter"
-wind_df[wind_df$months == "May" | wind_df$months == "June"| wind_df$months == "July" | wind_df$months == "August" | wind_df$months == "September", "gseason"] <- "Summer"
+wind_df[wind_df$months == "Oct" | wind_df$months == "Nov" | wind_df$months == "Dec"| wind_df$months == "Jan" |
+          wind_df$months == "Feb" | wind_df$months == "Mar"| wind_df$months == "Apr" , "gseason"] <- "Winter"
+wind_df[wind_df$months == "May" | wind_df$months == "Jun"| wind_df$months == "Jul" | wind_df$months == "Aug" | wind_df$months == "Sep", "gseason"] <- "Summer"
 
 
 ## statistical summaries
