@@ -197,9 +197,9 @@ server <- function(input, output) {
     },
     content = function(file) {
       if (input$selected_site == "All stations") {
-        write.csv(wxstn_df, file, row.names = FALSE)
+        write.csv(wxstn, file, row.names = FALSE)
       } else {
-        write.csv(wxstn_df[wxstn_df$Site %in% input$selected_site,], file, row.names = FALSE)
+        write.csv(wxstn[wxstn$Site %in% input$selected_site,], file, row.names = FALSE)
       }
     }
   )
