@@ -273,9 +273,9 @@ server <- function(input, output) {
     ## data cleaning
     colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
-    df$WS_avg <- df$WS_avg * 3.6
-    df$WS_avg <- cut(df$WS_avg, c(-Inf, 3, 6, 9, Inf))
-    df$WS_avg <- factor(df$WS_avg, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"), labels = c(">9", "6 - 9", "3 - 6", "<3"))
+    df$WD <- cut(df$WD_avg, 22.5*(0:16), right = FALSE, dig.lab = 4)
+    levels(df$WD) <- c("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW",
+                          "W", "WNE", "NW", "NNW")
     return(df)
     }
   )
@@ -320,41 +320,33 @@ server <- function(input, output) {
                pres, "<font size='6', color='#b0b0b0'>", p, "</font>", "<font color='#b0b0b0'> mb</font>", sep = ""))
   })
 
-  output$rt_windplot <- renderPlot({
-    filter(rt_df(), !is.na(WS_avg)) %>%
-      ggplot(rt_df(), mapping = aes(WD_avg, fill = WS_avg)) +
-      geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)),
-                     alpha = 0.8, colour = "grey30") +
-      scale_y_continuous(labels = percent) +
-      scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-      scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"), direction = -1) +
-      xlab("") +
-      ylab("") +
-      coord_polar() +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
-            strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
-
-  })
-
-  output$rt_gustplot <- renderPlotly({
-    plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~GS_max, name = "Gust Speed", line = list(color = "#505050")) %>%
+  output$rt_windplot <- renderPlotly({
+    plot_ly(rt_df(), x = ~Date_Time, text = ~paste("Wind Direction:", WD)) %>%
+      add_lines(y = ~WS_avg, name = "Wind Speed", line = list(color = "#2171b5")) %>%
+      add_lines(y = ~GS_max, name = "Gust Speed", line = list(dash = "dash", color = "#505050"), yaxis = "y2") %>%
       layout(xaxis = list(title = ""),
-             yaxis = list(title = "Maximum Gust Speed (m/s)"), margin = list(r = 50))
-  })
+             yaxis = list(title = "Wind Speed (m/s)"),
+             yaxis2 = list(overlaying = "y", side = "right", title = "Maximum Gust Speed (m/s)"),
+             margin = list(r = 50), showlegend = FALSE)
+      })
 
-  output$rtgust <- renderUI({
+  output$rtwind <- renderUI({
+    wind <- "<font color='#2171b5'>Wind Speed</font><br>"
+    w <- round(rt_df()[168, "WS_avg"], 1)
+    wd <- "<font color='#2171b5'>Wind Direction</font><br>"
+    d <- rt_df()[168, "WD"]
     gust <- "<font color='#505050'>Gust Speed</font><br>"
     g <- round(rt_df()[168, "GS_max"], 1)
-    HTML(paste(gust, "<font size='6', color='#505050'>", g, "</font>",  "<font color='#505050'> m/s</font><br>", sep = ""))
+    HTML(paste(wind, "<font size='6', color='#2171b5'>", w, "</font>", "<font color='#2171b5'>m/s</font><br>",
+               wd, "<font size='6', color='#2171b5'>", d, "</font><br>",
+               gust, "<font size='6', color='#505050'>", g, "</font>", "<font color='#505050'> m/s</font><br>", sep = ""))
   })
 
   output$rt_solarplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
       add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fd8d3c")) %>%
       layout(xaxis = list(title = ""),
-             yaxis = list(title = "Solar Radiation (W/m^2)"), margin = list(r = 50))
+             yaxis = list(title = "Solar Radiation (W/m^2)"))
   })
 
   output$rtsolar <- renderUI({
