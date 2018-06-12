@@ -25,7 +25,6 @@ library(shiny)
 ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Stations</b></h4>"),
 
   tabPanel(HTML("<h4>Long-term Records</h4>"),
-    # titlePanel("Northern British Columbia Climate Research Stations"),
 
     fluidRow(
       column(4, offset = 1, br(),
@@ -42,7 +41,6 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
       fluidRow(
         column(6, offset = -1,
                fluidRow(column(12, plotlyOutput("tempplot", height = "800px"))),
-               # fluidRow(column(12, plotlyOutput("precipplot", height = "400px"))),
                fluidRow(column(12, plotOutput("windplot", height = "300px"))),
                fluidRow(column(12, plotlyOutput("gustplot", height = "300px"))),
                fluidRow(column(12, plotlyOutput("solarplot", height = "300px")))

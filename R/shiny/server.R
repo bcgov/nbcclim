@@ -23,11 +23,11 @@ server <- function(input, output) {
       addProviderTiles("CartoDB.Positron") %>%
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
-      addMarkers(data = wxstn_df, ~unique(Longitude), ~unique(Latitude), layerId = ~unique(Site),
-                 popup = paste("<b>", unique(wxstn_df$Site), "</b>", "<br>",
-                               "Latitude: ", unique(wxstn_df$Latitude), "<br>",
-                               "Longitude: ", unique(wxstn_df$Longitude), "<br>",
-                               "Elevation: ", unique(wxstn_df$Elevation), "m"
+      addMarkers(data = wxstn_df, ~Longitude, ~Latitude, ~Site,
+                 popup = paste("<b>", wxstn_df$Site, "</b>", "<br>",
+                               "Latitude: ", wxstn_df$Latitude, "<br>",
+                               "Longitude: ", wxstn_df$Longitude, "<br>",
+                               "Elevation: ", wxstn_df$Elevation, "m"
                  ))
   })
 
@@ -89,23 +89,6 @@ server <- function(input, output) {
       layout(margin = list(l = 35)) # to fully display the x and y axis labels
   })
 
-  ## average daily total precipitation plot
-  output$precipplot <- renderPlotly({
-    plot <- subset(ggplot_long(), variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
-      ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
-                                          text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
-      geom_line(size = 0.3, alpha = 0.7) +
-      xlab("") +
-      ylab("") +
-      facet_grid(variable ~ ., scales = "free_y") +
-      scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_color_brewer(palette = "Paired") +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
-            strip.background = element_blank(), legend.title = element_blank())
-    ggplotly(plot, tooltip = c("text")) %>%
-      layout(margin = list(l = 35))
-  })
 
   ## average wind speed and direction plot for summer and winter growing seasons
   output$windplot <- renderPlot({
@@ -231,8 +214,8 @@ server <- function(input, output) {
     leaflet() %>%
       addProviderTiles("CartoDB.Positron") %>%
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
-      addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = F)) %>%
-      addMarkers(data = rt, ~Longitude, ~Latitude, layerId = rt$Site,
+      addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
+      addMarkers(data = rt, ~Longitude, ~Latitude, layerId = ~Site,
                  popup = paste("<b>", rt$Site, "</b>", "<br>",
                                "Latitude: ", rt$Latitude, "<br>",
                                "Longitude: ", rt$Longitude, "<br>",
