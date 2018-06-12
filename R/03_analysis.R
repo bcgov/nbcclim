@@ -20,11 +20,11 @@ wxstn_df <- wxstn_df %>%
   mutate(monthly_inso = round(mean(SR_avg, na.rm = TRUE), 2))
 
 ## selecting variables needed for long dataframe
-df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "DP_avg"))
+df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg"))
 
 ## converting table to long format for ggplots
 df_long <- melt(df, id.vars = c("Site", "Date", "dates", "months", "years"))
-levels(df_long$variable) <- c("Precipitation (mm)", "Pressure (mb)", "Temperature (degree C)", "Relative Humidity (%)", "Dew Point (degree C)")
+levels(df_long$variable) <- c("Precipitation (mm)", "Pressure (mb)", "Temperature (degree C)", "Relative Humidity (%)")
 
 ## classifying months to 4 seasons
 wxstn_df$seasons <- NA
@@ -119,3 +119,15 @@ gseason <- sum_long %>%
 gseason_sum <- melt(gseason, id.vars = c("Site", "gseason", "variable"), variable.name = "grow_season")
 gseason_sum <- dcast(gseason_sum, Site + gseason + grow_season ~ variable)
 gseason_sum$WD_avg <- ifelse(!is.na(gseason_sum$WD_avg) & gseason_sum$WD_avg < 0, gseason_sum$WD_avg + 360, gseason_sum$WD_avg)
+
+
+# ## outputting cleaned and analysed tables
+# write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/wxstn_df.csv", row.names = FALSE)
+# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/wind_df.csv", row.names = FALSE)
+# write.csv(rt, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/real_time_stn.csv", row.names = FALSE)
+# write.csv(df_long, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/wxstn_long.csv", row.names = FALSE)
+# write.csv(annual_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/annual_sum.csv", row.names = FALSE)
+# write.csv(monthly_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/monthly_sum.csv", row.names = FALSE)
+# write.csv(month_year_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/month_year_sum.csv", row.names = FALSE)
+# write.csv(seasonal_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/seasonal_sum.csv", row.names = FALSE)
+# write.csv(gseason_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/gseason_sum.csv", row.names = FALSE)
