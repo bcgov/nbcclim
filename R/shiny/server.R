@@ -72,7 +72,8 @@ server <- function(input, output) {
 
   ## average daily temperature plot
   output$tempplot <- renderPlotly({
-    plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)") %>%
+    plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
+                     variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
       ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
                                           text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
       geom_line(size = 0.3, alpha = 0.7) +
