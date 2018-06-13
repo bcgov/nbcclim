@@ -193,9 +193,27 @@ server <- function(input, output) {
            "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
   })
 
-  output$table <- renderDataTable({
-    suminput()
-  })
+  output$table <- renderFormattable({
+    # datatable(suminput()) %>% formatStyle(
+    #    columns = "years", Color = styleInterval(c(2000, 2200), c("yellow", "blue"))
+    # )
+
+    # as.datatable(
+    # if (input$sum_tbl == "Annual"){
+      formattable(suminput(),
+                list(
+                  obs_na = formatter("span", style = x ~ ifelse(x > 30, style(color = "pink"), NA))
+                  )
+                )
+      # )
+    # } else {
+    #   formattable(suminput(),
+    #              list(
+    #                obs_na = formatter("span", style = x ~ ifelse(x > 5, style(color = "pink"), NA))
+    #               )
+    #              )
+    # }
+      })
 
   ## export file
   output$exportstats <- downloadHandler(
