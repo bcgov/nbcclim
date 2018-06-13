@@ -17,6 +17,7 @@ library(scales) # for percentage axis label
 library(leaflet)
 library(plotly) # for interactive plots
 library(DT) # for rendering data tables
+library(formattable)
 library(shiny)
 
 
@@ -52,7 +53,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
   tabPanel(HTML("<h4>Statistics</h4>"),
     selectInput("sum_site", "Site", c(levels(wxstn_df$Site))),
     selectInput("sum_tbl", "Summary type", c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
-    dataTableOutput("table"),
+    formattableOutput("table"),
     downloadButton("exportstats", "Export")
     ),
 
