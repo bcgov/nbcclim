@@ -110,7 +110,8 @@ server <- function(input, output) {
                        colour = "grey30") +
         scale_y_continuous(labels = percent) +
         scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-        scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"), direction = -1) +
+        scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
+                           labels = c(">9", "6 - 9", "3 - 6", "<3")) +
         xlab("") +
         ylab("") +
         facet_grid(. ~ gseason) +
