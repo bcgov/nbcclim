@@ -44,7 +44,7 @@ wind_df$WS <- wind_df$WS * 3.6
 
 ## classifying wind speed into categories for windrose plot
 wind_df$WS <- cut(wind_df$WS, c(-Inf, 3, 6, 9, Inf))
-wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"), labels = c(">9", "6 - 9", "3 - 6", "<3"))
+wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"))
 
 ## classifying months to 4 seasons
 wind_df$seasons <- NA
@@ -74,7 +74,8 @@ annual <- sum_long %>%
   group_by(Site, years, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
-            min = round(min(value, na.rm = TRUE), 2))
+            min = round(min(value, na.rm = TRUE), 2),
+            obs_na = sum(is.na(value)))
 annual_sum <- melt(annual, id.vars = c("Site", "years", "variable"), variable.name = "annual")
 annual_sum <- dcast(annual_sum, Site + years + annual ~ variable)
 
@@ -85,7 +86,8 @@ monthly <- sum_long %>%
   group_by(Site, months, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
-            min = round(min(value, na.rm = TRUE), 2))
+            min = round(min(value, na.rm = TRUE), 2),
+            obs_na = sum(is.na(value)))
 monthly_sum <- melt(monthly, id.vars = c("Site", "months", "variable"), variable.name = "monthly")
 monthly_sum <- dcast(monthly_sum, Site + months + monthly ~ variable)
 monthly_sum$WD_avg <- ifelse(!is.na(monthly_sum$WD_avg) & monthly_sum$WD_avg < 0, monthly_sum$WD_avg + 360, monthly_sum$WD_avg)
@@ -95,7 +97,8 @@ month_year <- sum_long %>%
   group_by(Site, years, months, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
-            min = round(min(value, na.rm = TRUE), 2))
+            min = round(min(value, na.rm = TRUE), 2),
+            obs_na = sum(is.na(value)))
 month_year_sum <- melt(month_year, id.vars = c("Site", "years", "months", "variable"), variable.name = "monthly")
 month_year_sum <- dcast(month_year_sum, Site + years + months + monthly ~ variable)
 month_year_sum$WD_avg <- ifelse(!is.na(month_year_sum$WD_avg) & month_year_sum$WD_avg < 0, month_year_sum$WD_avg + 360, month_year_sum$WD_avg)
@@ -103,9 +106,11 @@ month_year_sum$WD_avg <- ifelse(!is.na(month_year_sum$WD_avg) & month_year_sum$W
 
 seasonal <- sum_long %>%
   group_by(Site, seasons, variable) %>%
+  count(value) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
-            min = round(min(value, na.rm = TRUE), 2))
+            min = round(min(value, na.rm = TRUE), 2),
+            obs_na = sum(is.na(value)))
 seasonal_sum <- melt(seasonal, id.vars = c("Site", "seasons", "variable"), variable.name = "seasonal")
 seasonal_sum <- dcast(seasonal_sum, Site + seasons + seasonal ~ variable)
 seasonal_sum$WD_avg <- ifelse(!is.na(seasonal_sum$WD_avg) & seasonal_sum$WD_avg < 0, seasonal_sum$WD_avg + 360, seasonal_sum$WD_avg)
@@ -115,7 +120,8 @@ gseason <- sum_long %>%
   group_by(Site, gseason, variable) %>%
   summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
-            min = round(min(value, na.rm = TRUE), 2))
+            min = round(min(value, na.rm = TRUE), 2),
+            obs_na = sum(is.na(value)))
 gseason_sum <- melt(gseason, id.vars = c("Site", "gseason", "variable"), variable.name = "grow_season")
 gseason_sum <- dcast(gseason_sum, Site + gseason + grow_season ~ variable)
 gseason_sum$WD_avg <- ifelse(!is.na(gseason_sum$WD_avg) & gseason_sum$WD_avg < 0, gseason_sum$WD_avg + 360, gseason_sum$WD_avg)
