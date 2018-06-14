@@ -194,26 +194,24 @@ server <- function(input, output) {
   })
 
   output$table <- renderFormattable({
-    # datatable(suminput()) %>% formatStyle(
-    #    columns = "years", Color = styleInterval(c(2000, 2200), c("yellow", "blue"))
-    # )
-
-    # as.datatable(
     # if (input$sum_tbl == "Annual"){
-      formattable(suminput(),
-                list(
-                  obs_na = formatter("span", style = x ~ ifelse(x > 30, style(color = "pink"), NA))
-                  )
-                )
-      # )
+      formattable(suminput(), lapply((1:nrow(suminput()))[(1:nrow(suminput())) %% 4 == 0], function(row) {
+          ## row numbers that are multiplicates of 4
+          area(row, 4:14) ~ formatter("span", style = x ~ ifelse(x > 30, style(color = "#ce1256"), NA))
+        }
+      ))
+    # } else if (input$sum_tbl == "Monthly per year"){
+    #   formattable(suminput(), lapply(1:nrow(suminput()))[(1:nrow(suminput())) %% 4 == 0], function(row) {
+    #     area(row, 4:15) ~ formatter("span", style = x ~ ifelse(x > 5, style(color = "#ce1256"), NA))
+    #   }
+    #   ))
     # } else {
-    #   formattable(suminput(),
-    #              list(
-    #                obs_na = formatter("span", style = x ~ ifelse(x > 5, style(color = "pink"), NA))
-    #               )
-    #              )
+    #   formattable(suminput(), lapply((1:nrow(suminput()))[(1:nrow(suminput())) %% 4 == 0], function(row) {
+    #     area(row, 4:14) ~ formatter("span", style = x ~ ifelse(x > 5, style(color = "#ce1256"), NA))
+    #   }
+    #   ))
     # }
-      })
+    })
 
   ## export file
   output$exportstats <- downloadHandler(
