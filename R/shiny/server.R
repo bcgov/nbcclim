@@ -193,25 +193,14 @@ server <- function(input, output) {
            "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
   })
 
-  output$table <- renderFormattable({
-    # if (input$sum_tbl == "Annual"){
-      formattable(suminput(), lapply((1:nrow(suminput()))[(1:nrow(suminput())) %% 4 == 0], function(row) {
-          ## row numbers that are multiplicates of 4
-          area(row, 4:14) ~ formatter("span", style = x ~ ifelse(x > 30, style(color = "#ce1256"), NA))
-        }
-      ))
-    # } else if (input$sum_tbl == "Monthly per year"){
-    #   formattable(suminput(), lapply(1:nrow(suminput()))[(1:nrow(suminput())) %% 4 == 0], function(row) {
-    #     area(row, 4:15) ~ formatter("span", style = x ~ ifelse(x > 5, style(color = "#ce1256"), NA))
-    #   }
-    #   ))
-    # } else {
-    #   formattable(suminput(), lapply((1:nrow(suminput()))[(1:nrow(suminput())) %% 4 == 0], function(row) {
-    #     area(row, 4:14) ~ formatter("span", style = x ~ ifelse(x > 5, style(color = "#ce1256"), NA))
-    #   }
-    #   ))
-    # }
-    })
+  output$table <- renderDataTable({
+    suminput()
+  })
+
+  output$caveat <- renderUI({
+    HTML("obs_na shows the number of NAs during the period of statistical summary.
+         Please use the summary results with caution.<br>")
+  })
 
   ## export file
   output$exportstats <- downloadHandler(
