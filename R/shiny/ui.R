@@ -53,6 +53,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     selectInput("sum_site", "Site", c(levels(wxstn_df$Site))),
     selectInput("sum_tbl", "Summary type", c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
     dataTableOutput("table"),
+    htmlOutput("caveat"),
     downloadButton("exportstats", "Export")
     ),
 

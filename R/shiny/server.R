@@ -193,6 +193,11 @@ server <- function(input, output) {
            "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
   })
 
+  output$caveat <- renderUI({
+    HTML("obs_na shows the number of NAs during the period of statistical summary.
+         Please use the summary results with caution.<br>")
+    })
+
   output$table <- renderDataTable({
     suminput()
   })
