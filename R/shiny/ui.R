@@ -35,7 +35,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
              br(),
              selectInput(inputId = "selected_site",
                          label = "Download Station Data",
-                         choices = c("All stations", levels(wxstn_df$Site))),
+                         choices = c("All stations", levels(wxstn$Site))),
              downloadButton("download", "Download")
                    ),
 
@@ -51,7 +51,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     ),
 
   tabPanel(HTML("<h4>Statistics</h4>"),
-    selectInput("sum_site", "Site", c(levels(wxstn_df$Site))),
+    selectInput("sum_site", "Site", c(levels(wxstn$Site))),
     selectInput("sum_tbl", "Summary type", c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
     dataTableOutput("table"),
     htmlOutput("caveat"),

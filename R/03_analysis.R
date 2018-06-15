@@ -128,12 +128,12 @@ gseason_sum$WD_avg <- ifelse(!is.na(gseason_sum$WD_avg) & gseason_sum$WD_avg < 0
 
 
 # ## outputting cleaned and analysed tables
-# write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/wxstn_df.csv", row.names = FALSE)
-# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/wind_df.csv", row.names = FALSE)
-# write.csv(rt, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/real_time_stn.csv", row.names = FALSE)
-# write.csv(df_long, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/wxstn_long.csv", row.names = FALSE)
-# write.csv(annual_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/annual_sum.csv", row.names = FALSE)
-# write.csv(monthly_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/monthly_sum.csv", row.names = FALSE)
-# write.csv(month_year_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/month_year_sum.csv", row.names = FALSE)
-# write.csv(seasonal_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/seasonal_sum.csv", row.names = FALSE)
-# write.csv(gseason_sum, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/shiny_files/gseason_sum.csv", row.names = FALSE)
+# write.csv(wxstn_df, "H:/shiny/data/wxstn_df.csv", row.names = FALSE)
+# write.csv(wind_df, "H:/shiny/data/wind_df.csv", row.names = FALSE)
+# write.csv(rt, "H:/shiny/data/real_time_stn.csv", row.names = FALSE)
+# write.csv(df_long, "H:/shiny/data/wxstn_long.csv", row.names = FALSE)
+# write.csv(annual_sum, "H:/shiny/data/annual_sum.csv", row.names = FALSE)
+# write.csv(monthly_sum, "H:/shiny/data/monthly_sum.csv", row.names = FALSE)
+# write.csv(month_year_sum, "H:/shiny/data/month_year_sum.csv", row.names = FALSE)
+# write.csv(seasonal_sum, "H:/shiny/data/seasonal_sum.csv", row.names = FALSE)
+# write.csv(gseason_sum, "H:/shiny/data/gseason_sum.csv", row.names = FALSE)
