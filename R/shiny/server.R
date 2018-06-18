@@ -23,11 +23,11 @@ server <- function(input, output) {
       addProviderTiles("CartoDB.Positron") %>%
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
-      addMarkers(data = wxstn_df, ~Longitude, ~Latitude, ~Site,
-                 popup = paste("<b>", wxstn_df$Site, "</b>", "<br>",
-                               "Latitude: ", wxstn_df$Latitude, "<br>",
-                               "Longitude: ", wxstn_df$Longitude, "<br>",
-                               "Elevation: ", wxstn_df$Elevation, "m"
+      addMarkers(data = wxstn_sites, ~Longitude, ~Latitude, ~Site,
+                 popup = paste("<b>", wxstn_sites$Site, "</b>", "<br>",
+                               "Latitude: ", wxstn_sites$Latitude, "<br>",
+                               "Longitude: ", wxstn_sites$Longitude, "<br>",
+                               "Elevation: ", wxstn_sites$Elevation, "m"
                  ))
   })
 
