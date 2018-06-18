@@ -126,7 +126,6 @@ gseason_sum <- melt(gseason, id.vars = c("Site", "gseason", "variable"), variabl
 gseason_sum <- dcast(gseason_sum, Site + gseason + grow_season ~ variable)
 gseason_sum$WD_avg <- ifelse(!is.na(gseason_sum$WD_avg) & gseason_sum$WD_avg < 0, gseason_sum$WD_avg + 360, gseason_sum$WD_avg)
 
-
 # ## outputting cleaned and analysed tables
 # write.csv(wxstn_df, "H://nbcclimate/data/wxstn_df.csv", row.names = FALSE)
 # write.csv(wind_df, "H://nbcclimate/data/wind_df.csv", row.names = FALSE)
