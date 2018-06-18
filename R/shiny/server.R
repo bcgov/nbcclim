@@ -334,15 +334,15 @@ server <- function(input, output) {
 
   output$rt_solarplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fd8d3c")) %>%
+      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fc8d59")) %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Solar Radiation (W/m^2)"))
   })
 
   output$rtsolar <- renderUI({
-    solar <- "<font color='#fd8d3c'>Solar Radiation</font><br>"
+    solar <- "<font color='#fc8d59'>Solar Radiation</font><br>"
     s <- round(rt_df()[168, "SR_avg"], 1)
-    HTML(paste(solar, "<font size='6', color='#fd8d3c'>", s, "</font>",  "<font color='#fd8d3c'> W/m<sup>2</sup></font><br>", sep = ""))
+    HTML(paste(solar, "<font size='6', color='#fc8d59'>", s, "</font>",  "<font color='#fc8d59'> W/m<sup>2</sup></font><br>", sep = ""))
   })
 
   output$rtcap <- renderUI({
