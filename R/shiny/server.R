@@ -70,7 +70,7 @@ server <- function(input, output) {
     HTML(paste(str1, str2, str3, str4, str5, str6, str7, str8))
   })
 
-  ## average daily temperature plot
+  ## average daily temperature, relative humidity, precipitation and pressure plot
   output$tempplot <- renderPlotly({
     plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
                      variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%

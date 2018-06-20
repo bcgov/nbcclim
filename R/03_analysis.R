@@ -20,11 +20,11 @@ wxstn_df <- wxstn_df %>%
   mutate(monthly_inso = round(mean(SR_avg, na.rm = TRUE), 2))
 
 ## selecting variables needed for long dataframe
-df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg"))
+df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Temp_avg", "RH_avg", "Rain_sum", "Pressure_avg"))
 
 ## converting table to long format for ggplots
 df_long <- melt(df, id.vars = c("Site", "Date", "dates", "months", "years"))
-levels(df_long$variable) <- c("Precipitation (mm)", "Pressure (mb)", "Temperature (degree C)", "Relative Humidity (%)")
+levels(df_long$variable) <- c("Temperature (degree C)", "Relative Humidity (%)", "Precipitation (mm)", "Pressure (mb)")
 
 ## classifying months to 4 seasons
 wxstn_df$seasons <- NA
