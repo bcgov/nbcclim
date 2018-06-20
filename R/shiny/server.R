@@ -384,7 +384,7 @@ server <- function(input, output) {
                SR_avg: averaged solar radiation, W/m<sup>2</sup><br>
                SD_avg: averaged snow depth, cm<br>
                WC_avg: averaged soil moisture water content, m<sup>3</sup>/m<sup>3</sup><br>
-               W_avg: averaged wetness, (%)<br>
+               W_avg: averaged wetness, %<br>
                WS_EC5: averaged soil moisture water content from EC5 sensor, m<sup>3</sup>/m<sup>3</sup><br></font>",
                "<br><h3><b>Real-time Data</b></h3><br>",
                "<font size=4>Please refer to the following links for complete real-time data records.<br></font>",
