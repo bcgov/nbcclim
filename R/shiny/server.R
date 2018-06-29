@@ -172,10 +172,11 @@ server <- function(input, output) {
       paste0(input$selected_site, ".csv")
     },
     content = function(file) {
+      wxstn_download <- wxstn_df[, !names(wxstn_df) %in% c("years", "months", "dates", "monthly_inso", "seasons", "gseason")]
       if (input$selected_site == "All stations") {
-        write.csv(wxstn, file, row.names = FALSE)
+        write.csv(wxstn_download, file, row.names = FALSE)
       } else {
-        write.csv(wxstn[wxstn$Site %in% input$selected_site,], file, row.names = FALSE)
+        write.csv(wxstn_download[wxstn_download$Site %in% input$selected_site,], file, row.names = FALSE)
       }
     }
   )
