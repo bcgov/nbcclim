@@ -124,7 +124,7 @@ server <- function(input, output) {
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
-    plot <- ggplot(ggplot_data(), aes(dates, GS_max, group = years, colour = years,
+    plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
                                       text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
@@ -141,7 +141,7 @@ server <- function(input, output) {
   ## average daily insolation plot
   output$solarplot <- renderPlotly({
     if (all(is.na(ggplot_data()$monthly_inso))) {
-      plot <- ggplot(ggplot_data(), aes(months, monthly_inso, group = years, colour = years)) +
+      plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years)) +
         theme_light() +
         xlab("") +
         ylab("Average Monthly Insolation (W/m^2)") +
@@ -151,7 +151,7 @@ server <- function(input, output) {
         layout(margin = list(l = 75))
 
     } else {
-      plot <- ggplot(ggplot_data(), aes(months, monthly_inso, group = years, colour = years,
+      plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years,
                                         text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
         geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
         # scale_x_date(date_labels = "%b") +
