@@ -13,6 +13,7 @@
 
 library(ggplot2)
 library(viridis) # for colour palettes
+library(RColorBrewer)
 library(scales) # for percentage axis label
 library(leaflet)
 library(plotly) # for interactive plots

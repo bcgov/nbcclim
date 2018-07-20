@@ -72,6 +72,7 @@ server <- function(input, output) {
 
   ## average daily temperature, relative humidity, precipitation and pressure plot
   output$tempplot <- renderPlotly({
+    pal = c(brewer.pal(12, "Paired")[1:10], brewer.pal(12, "Paired")[12])
     plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
                      variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
       ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
@@ -81,7 +82,7 @@ server <- function(input, output) {
       ylab("") +
       facet_grid(variable ~ ., scales = "free_y") +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_colour_brewer(palette = "Paired") +
+      scale_color_manual(values = pal) +
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
@@ -124,11 +125,12 @@ server <- function(input, output) {
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
+    pal = c(brewer.pal(12, "Paired")[1:10], brewer.pal(12, "Paired")[12])
     plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
                                       text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_color_brewer(palette = "Paired") +
+      scale_colour_manual(values = pal) +
       xlab("") +
       ylab("Maximum Gust Speed (m/s)") +
       theme_light() +
@@ -140,6 +142,7 @@ server <- function(input, output) {
 
   ## average daily insolation plot
   output$solarplot <- renderPlotly({
+    pal = c(brewer.pal(12, "Paired")[1:10], brewer.pal(12, "Paired")[12])
     if (all(is.na(ggplot_data()$monthly_inso))) {
       plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years)) +
         theme_light() +
@@ -155,7 +158,7 @@ server <- function(input, output) {
                                         text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
         geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
         # scale_x_date(date_labels = "%b") +
-        scale_color_brewer(palette = "Paired") +
+        scale_colour_manual(values = pal) +
         xlab("") +
         ylab("Average Monthly Insolation (W/m^2)") +
         theme_light() +
