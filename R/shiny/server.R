@@ -373,8 +373,10 @@ server <- function(input, output) {
   ## About ####
 
   output$about <- renderUI({
-    HTML(paste("<h3><b>Climate Data</b></h3><br>",
-               "<font size=4>The column names in both the long-term record and real-time dataframes are coded as follows:<br>",
+    HTML(paste("<h3><b>Climate Data</b></h3>",
+               "<font size=4>Long-term data are summarised daily records except for wind speed and
+               direction which use hourly records. Real-time data are hourly records. The column names
+               in both the long-term record and real-time dataframes are coded as follows:<br>",
                "<br>Rain_sum: total precipitation, mm<br>
                Pressure_avg: averaged pressure, mbar<br>
                Temp_max: maximum temperature, &deg;C<br>
@@ -390,7 +392,7 @@ server <- function(input, output) {
                WC_avg: averaged soil moisture water content, m<sup>3</sup>/m<sup>3</sup><br>
                W_avg: averaged wetness, %<br>
                WS_EC5: averaged soil moisture water content from EC5 sensor, m<sup>3</sup>/m<sup>3</sup><br></font>",
-               "<br><h3><b>Real-time Data</b></h3><br>",
+               "<br><h3><b>Real-time Data</b></h3>",
                "<font size=4>Please refer to the following links for complete real-time data records.<br></font>",
                "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'><font size=4>Blackhawk</font></a><br>",
                "<a href='http://datagarrison.com/users/300234062103550/300234065020820/plots.php' target='_blank'><font size=4>Canoe</font></a><br>",
@@ -398,7 +400,13 @@ server <- function(input, output) {
                "<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php' target='_blank'><font size=4>Hudson Bay Mountain</font></a><br>",
                "<a href='http://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'><font size=4>McBride Peak</font></a><br>",
                "<a href='http://datagarrison.com/users/300234062103550/300234065500940/plots.php' target='_blank'><font size=4>Nonda</font></a><br>",
-               "<a href='http://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'><font size=4>Pink Mountain</font></a><br>"
+               "<a href='http://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'><font size=4>Pink Mountain</font></a><br>",
+               "<br><h3><b>Contact</b></h3>",
+               "<font size=4><b>Vanessa Foord</b> (Research Climatologist): Vanessa.Foord@gov.bc.ca<br>
+               <b>Alexandre Bevington</b> (Research Earth Scientist): Alexandre.Bevington@gov.bc.ca<br>
+               <b>Jane Wang</b> (Research Assistant / Website-support): Yuexian.Wang@gov.bc.ca<br>
+               <br>The code for creating this website application is
+               <a href='https://github.com/bcgov/nbcclim' target='_blank'><font size=4>available on GitHub</font></a><font size=4>."
                ))
   })
 
