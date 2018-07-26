@@ -24,10 +24,11 @@ server <- function(input, output) {
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
       addMarkers(data = wxstn_sites, ~Longitude, ~Latitude, ~Site,
-                 popup = paste("<b>", wxstn_sites$Site, "</b>", "<br>",
+                 popup = paste0("<b>", wxstn_sites$Site, "</b>", "<br>",
                                "Latitude: ", wxstn_sites$Latitude, "<br>",
                                "Longitude: ", wxstn_sites$Longitude, "<br>",
-                               "Elevation: ", wxstn_sites$Elevation, "m"
+                               "Elevation: ", wxstn_sites$Elevation, "m", "<br>"
+                               # ,"<img src='", wxstn_sites$Site, ".png'", "/>"
                  ))
   })
 
