@@ -84,7 +84,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
 
   tabPanel(HTML("<h4>About</h4>"),
            fluidRow(
-             column(12, offset = 1, htmlOutput("about"))
+             column(10, offset = 1, htmlOutput("about"))
              )
            )
 )
