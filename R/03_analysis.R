@@ -131,7 +131,6 @@ gseason_sum$WD_avg <- ifelse(!is.na(gseason_sum$WD_avg) & gseason_sum$WD_avg < 0
 # write.csv(wind_df, "H://nbcclimate/data/wind_df.csv", row.names = FALSE)
 # write.csv(rt, "H://nbcclimate/data/real_time_stn.csv", row.names = FALSE)
 # write.csv(wxstn_sites, "H:/nbcclimate/data/wxstn_sites.csv", row.names = FALSE)
-# write.csv(df_long, "H://nbcclimate/data/wxstn_long.csv", row.names = FALSE)
 # write.csv(annual_sum, "H://nbcclimate/data/annual_sum.csv", row.names = FALSE)
 # write.csv(monthly_sum, "H://nbcclimate/data/monthly_sum.csv", row.names = FALSE)
 # write.csv(month_year_sum, "H://nbcclimate/data/month_year_sum.csv", row.names = FALSE)
