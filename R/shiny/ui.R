@@ -24,7 +24,7 @@ library(shiny)
 ## Shiny user interface
 
 ui <- navbarPage(
-  theme = "css/bcgov.css",
+  theme = "css/bcgov.css", title = "Northern BC Climate",
 
   tabPanel(HTML("Long-term Records"),
     fluidRow(
