@@ -23,10 +23,10 @@ library(shiny)
 
 ## Shiny user interface
 
-ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Stations</b></h4>"),
+ui <- navbarPage(
+  theme = "css/bcgov.css",
 
-  tabPanel(HTML("<h4>Long-term Records</h4>"),
-
+  tabPanel(HTML("Long-term Records"),
     fluidRow(
       column(4, offset = 1, br(),
              leafletOutput("wsmap", height = "500px"),
@@ -50,7 +50,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
       )
     ),
 
-  tabPanel(HTML("<h4>Statistics</h4>"),
+  tabPanel(HTML("Statistics"),
     selectInput("sum_site", "Site", wxstn_sites$Site),
     selectInput("sum_tbl", "Summary type", c("Annual", "Monthly all years", "Monthly per year", "Seasonal", "Growing season")),
     dataTableOutput("table"),
@@ -58,7 +58,7 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
     downloadButton("exportstats", "Export")
     ),
 
-  tabPanel(HTML("<h4>Real-time Data</h4>"),
+  tabPanel(HTML("Real-time Data"),
            fluidRow(
              column(4, offset = 1, br(),
                     leafletOutput("rtmap", height = "500px"),
@@ -82,9 +82,38 @@ ui <- navbarPage(HTML("<h4><b>Northern British Columbia Climate Research Station
           )
         ),
 
-  tabPanel(HTML("<h4>About</h4>"),
+  tabPanel(HTML("About"),
            fluidRow(
              column(10, offset = 1, htmlOutput("about"))
              )
-           )
+           ),
+
+  tags$head(tags$script(src="js/bcgov.js")),
+  tags$head(tags$link(rel="shortcut icon", href="/images/favicon.ico")),
+  footer = HTML('<div id="footer">
+                <img src="/images/back-to-top.png" alt="Back to top" title="Back to top" class="back-to-top footer-overlap" style="bottom: 10px; display: inline;">
+                <div id="footerWrapper">
+                <div id="footerAdminSection">
+                <div id="footerAdminLinksContainer" class="container">
+                <div id="footerAdminLinks" class="row">
+                <ul class="inline">
+                <li data-order="0">
+                <a href="//www2.gov.bc.ca/gov/content/home/disclaimer" target="_self">Disclaimer</a>
+                </li>
+                <li data-order="1">
+                <a href="//www2.gov.bc.ca/gov/content/home/privacy" target="_self">Privacy</a>
+                </li>
+                <li data-order="2">
+                <a href="//www2.gov.bc.ca/gov/content/home/accessibility" target="_self">Accessibility</a>
+                </li>
+                <li data-order="3">
+                <a href="//www2.gov.bc.ca/gov/content/home/copyright" target="_self">Copyright</a>
+                </li>
+                </ul>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>')
 )
+
