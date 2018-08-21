@@ -27,8 +27,11 @@ ui <- navbarPage(
   theme = "css/bcgov.css", title = "Northern BC Climate",
 
   tabPanel(HTML("Long-term Records"),
-    fluidRow(
-      column(4, offset = 1, br(),
+      fluidRow(
+        column(12, offset = 1, HTML("<h3>Northern British Columbia Climate Research Stations</h3>"))
+      ),
+      fluidRow(
+        column(4, offset = 1, br(),
              leafletOutput("wsmap", height = "500px"),
              htmlOutput("caption"),
              htmlOutput("statsum"),
