@@ -14,11 +14,10 @@ body {
 body {
     font-family: "Myriad Pro", Calibri, Arial, 'sans serif';
     Rcolor: #494949;
-
 }
 
 .navbar {
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .navbar-default {
@@ -84,7 +83,7 @@ body {
 }
 
 .leaflet-container {
-    font-family: Myriad-Pro, Calibri, Arial, 'sans serif';;
+    font-family: "Myriad Pro", Calibri, Arial, 'sans serif';
 }
 
 .leaflet-popup td {
