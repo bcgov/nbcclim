@@ -407,7 +407,7 @@ server <- function(input, output) {
                <b>Alexandre Bevington</b> (Research Earth Scientist): Alexandre.Bevington@gov.bc.ca<br>
                <b>Jane Wang</b> (Research Assistant / Website-support): Yuexian.Wang@gov.bc.ca<br>
                <br>The code for creating this website application is
-               <a href='https://github.com/bcgov/nbcclim' target='_blank'>available on GitHub</a><br>."
+               <a href='https://github.com/bcgov/nbcclim' target='_blank'>available on GitHub.</a><br>"
                ))
   })
 
