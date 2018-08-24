@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Myriad-Pro';
+	font-family: 'Myriad Pro';
 }
 
 html {
@@ -8,11 +8,11 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 body {
-    font-family: Myriad-Pro, Calibri, Arial, 'sans serif';
+    font-family: "Myriad Pro", Calibri, Arial, 'sans serif';
     Rcolor: #494949;
 
 }
