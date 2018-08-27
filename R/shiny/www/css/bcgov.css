@@ -9,6 +9,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
+  margin-top: 100px;
   margin-bottom: 100px;
 }
 
@@ -18,8 +19,8 @@ body {
 }
 
 .navbar {
-    margin-bottom: 10px;
     position: fixed;
+    top: 0;
     width: 100%;
 }
 
