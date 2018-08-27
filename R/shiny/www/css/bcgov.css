@@ -6,6 +6,7 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 100px;
@@ -18,6 +19,8 @@ body {
 
 .navbar {
     margin-bottom: 10px;
+    position: fixed;
+    width: 100%;
 }
 
 .navbar-default {
