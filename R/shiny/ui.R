@@ -28,7 +28,7 @@ ui <- navbarPage(
 
   tabPanel(HTML("Long-term Records"),
       fluidRow(
-        column(12, offset = 1, HTML("<h3>Northern British Columbia Climate Research Stations</h3>"))
+        column(12, offset = 1, HTML("<h2>Northern British Columbia Climate Research Stations</h2>"))
       ),
       fluidRow(
         column(4, offset = 1, br(),
