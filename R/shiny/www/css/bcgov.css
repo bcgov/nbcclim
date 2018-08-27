@@ -9,7 +9,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-top: 100px;
+  margin-top: 70px;
   margin-bottom: 100px;
 }
 
@@ -88,6 +88,7 @@ body {
 
 .leaflet-container {
     font-family: "Myriad Pro", Calibri, Arial, 'sans serif';
+    z-index: 1;
 }
 
 .leaflet-popup td {
