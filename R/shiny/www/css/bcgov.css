@@ -91,6 +91,17 @@ body {
     z-index: 1;
 }
 
+.leaflet-popup-content-wrapper {
+  border: 4px #979797 solid;
+  border-radius: 5px;
+  opacity: 0.85;
+}
+
+.leaflet-popup-tip {
+  background: #979797;
+  opacity: 0.85;
+}
+
 .leaflet-popup td {
     border: 1px #f0f0f0 solid;
     padding: 2px 5px;
