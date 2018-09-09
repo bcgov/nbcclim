@@ -17,7 +17,7 @@ library(reshape2) # for long dataframes
 ## calculating month average insolation
 wxstn_df <- wxstn_df %>%
   group_by(Site, years, months) %>%
-  mutate(monthly_inso = round(mean(SR_avg, na.rm = TRUE), 2))
+  dplyr::mutate(monthly_inso = round(mean(SR_avg, na.rm = TRUE), 2))
 
 ## selecting variables needed for long dataframe
 df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Temp_avg", "RH_avg", "Rain_sum", "Pressure_avg"))
@@ -72,7 +72,7 @@ sum_long <- melt(summ, id.vars = c("Site", "months", "years", "seasons", "gseaso
 
 annual <- sum_long %>%
   group_by(Site, years, variable) %>%
-  summarise(mean = round(mean(value, na.rm = TRUE), 2),
+  dplyr::summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
             min = round(min(value, na.rm = TRUE), 2),
             obs_na = sum(is.na(value)))
@@ -84,7 +84,7 @@ annual_sum$WD_avg <- ifelse(!is.na(annual_sum$WD_avg) & annual_sum$WD_avg < 0, a
 
 monthly <- sum_long %>%
   group_by(Site, months, variable) %>%
-  summarise(mean = round(mean(value, na.rm = TRUE), 2),
+  dplyr::summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
             min = round(min(value, na.rm = TRUE), 2),
             obs_na = sum(is.na(value)))
@@ -95,7 +95,7 @@ monthly_sum$WD_avg <- ifelse(!is.na(monthly_sum$WD_avg) & monthly_sum$WD_avg < 0
 
 month_year <- sum_long %>%
   group_by(Site, years, months, variable) %>%
-  summarise(mean = round(mean(value, na.rm = TRUE), 2),
+  dplyr::summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
             min = round(min(value, na.rm = TRUE), 2),
             obs_na = sum(is.na(value)))
@@ -107,7 +107,7 @@ month_year_sum$WD_avg <- ifelse(!is.na(month_year_sum$WD_avg) & month_year_sum$W
 seasonal <- sum_long %>%
   group_by(Site, seasons, variable) %>%
   count(value) %>%
-  summarise(mean = round(mean(value, na.rm = TRUE), 2),
+  dplyr::summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
             min = round(min(value, na.rm = TRUE), 2),
             obs_na = sum(is.na(value)))
@@ -118,7 +118,7 @@ seasonal_sum$WD_avg <- ifelse(!is.na(seasonal_sum$WD_avg) & seasonal_sum$WD_avg 
 
 gseason <- sum_long %>%
   group_by(Site, gseason, variable) %>%
-  summarise(mean = round(mean(value, na.rm = TRUE), 2),
+  dplyr::summarise(mean = round(mean(value, na.rm = TRUE), 2),
             max = round(max(value, na.rm = TRUE), 2),
             min = round(min(value, na.rm = TRUE), 2),
             obs_na = sum(is.na(value)))
