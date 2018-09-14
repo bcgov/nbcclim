@@ -51,5 +51,5 @@ library(plyr) # for joining all dataframes
 #
 # rm(list=ls())
 
-wxstn_df <- read.csv("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv")
-wind_df <- read.csv("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv")
+wxstn_df <- read.csv("../data/wxstn/wxstn.csv")
+wind_df <- read.csv("../data/wxstn/hourly/hourly.csv")
