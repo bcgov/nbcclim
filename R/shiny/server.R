@@ -260,6 +260,14 @@ server <- function(input, output) {
     else if (input$rtmap_marker_click$id == "Nonda") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_005.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3557164_deg_C", "RH_3557164_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
+      }
+    else if (input$rtmap_marker_click$id == "Bowron Pit") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234060368070/temp/BC__020.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_10931775_mm", "Pressure_3513112_mbar", "Temperature_3352997_deg_C", "RH_3352997_.", "Wind.Speed_3587416_m.s", "Gust.Speed_3587416_m.s", "Wind.Direction_3587446_deg", "Solar.Radiation_3543115_W.m.2")], 168)
+      }
+    else if (input$rtmap_marker_click$id == "Gunnal") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.txt",
+                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_3550156_mm", "Pressure_3513113_mbar", "Temperature_3557163_deg_C", "RH_3557163_.", "Wind.Speed_3516045_m.s", "Gust.Speed_3516045_m.s", "Wind.Direction_3516045_deg", "Solar.Radiation_3543143_W.m.2")], 168)
       } else {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440494_mm", "Pressure_3247633_mbar", "Temperature_2450352_deg_C", "RH_2450352_.", "Wind.Speed_3330634_m.s", "Gust.Speed_3330634_m.s", "Wind.Direction_3330634_deg", "Solar.Radiation_1114619_W.m.2")], 168)

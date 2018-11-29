@@ -28,7 +28,7 @@ wind_df$months <- months(wind_df$Day, abbreviate = TRUE)
 
 ## stations data frame
 ## real time stations
-rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Canoe" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |
+rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Bowron Pit" | Site == "Canoe" | Site == "Gunnel" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |
                Site == "McBride Peak" | Site == "Nonda" | Site == "Pink Mountain", select = c(Site, Longitude, Latitude, Elevation))
 rt <- subset(rt, !duplicated(rt$Site))
 
