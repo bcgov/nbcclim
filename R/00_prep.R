@@ -17,7 +17,7 @@ library(tidyverse)
 
 updates <- dir("../data/wxstn/WxUpdates/csv/", pattern = "csv")
 
-for (i in 18:length(updates)) {
+for (i in 1:length(updates)) {
   df <- read_csv(paste0("../data/wxstn/WxUpdates/csv/", updates[i]), na = "NA")
 
   df_out <- df %>%
