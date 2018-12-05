@@ -11,48 +11,55 @@
 # See the License for the specific language governing permissions and limitations under the License.
 
 # Stand alone script for preparing weather station data from the site ready for next steps
-
+# Updating all wind seasor records
 
 library(tidyverse)
 
-updates <- dir("../data/wxstn/WxUpdates/csv/", pattern = "csv")
+## reading in updated files with new wind records
+updates <- dir("G:/!Workgrp/Research/JWang/WxUpdates_Hly2018/csv/", pattern = "csv")
 
+## station list to be updated
+originals <- c("Blackhawk.csv", "BoulderCr.csv", "Bulkley_1113677.csv", "Canoe.csv", "CPF_1113682.CSV",
+               "CrystalLk_1305871.csv", "Dunster10099920.csv", "Endako_11597013.csv", "George_1177893.csv",
+               "Hourglass_9702605.csv", "Kluskus_10424986.csv", "MacJxn_2289305.csv", "McbridePk.csv",
+               "MiddleforkWx.csv", "NondaWx.csv", "PinkMtnWx.csv", "SaxtonLakeWx.csv", "Thompson.csv", "WillowBowron_1095439.csv")
+
+## adding new records to originals, then output to directory
 for (i in 1:length(updates)) {
-  df <- read_csv(paste0("../data/wxstn/WxUpdates/csv/", updates[i]), na = "NA")
+  df <- read_csv(paste0("G:/!Workgrp/Research/JWang/WxUpdates_Hly2018/csv/", updates[i]))
+  df_orig <- read_csv(paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", originals[i]))
+
+  print(updates[i])
+  print(names(df))
+
+  df_orig <- select(df_orig, Site, Date, Day, WS, WD)
 
   df_out <- df %>%
-    select(grep("Day|Date|Time|Rain|rain|Pressure|pressure|Temp|temp|RH|Rh|rh|Dew|dew|Wind.Speed|Wind.speed|wind.speed|Gust|gust|Wind.Direction|Wind.direction|wind.direction|Solar|solar",
+    select(grep("Date|Day|Wind.Speed|Wind.speed|wind.speed|Wind.Direction|Wind.direction|wind.direction",
                 colnames(df))) %>%
-    rename("Rain_sum" = names(df[grep("Rain|rain", colnames(df))]),
-           "Temp_avg" = names(df[grep("Temp|temp", colnames(df))]),
-           "GS_max" = names(df[grep("Gust|gust", colnames(df))])) %>%
-    group_by(Day) %>%
-    mutate(Rain_sum = sum(Rain_sum, na.rm = TRUE),
-           Temp_max = max(Temp_avg, na.rm = TRUE),
-           Temp_min = min(Temp_avg, na.rm = TRUE),
-           GS_max = max(GS_max, na.rm = TRUE)) %>%
-    gather(key = "sensor", value = "value", -grep("Date|Time", names(df)), -Day) %>%
-    filter(complete.cases(value) & !is.infinite(value)) %>%
-    group_by(Day, sensor) %>%
-    add_tally() %>%
-    filter(n == 24) %>%
-    dplyr::summarise(value = mean(value, na.rm = TRUE)) %>%
-    spread("sensor", "value") %>%
-    rename("Date" = "Day",
-           "Pressure_avg" = names(df[grep("Pressure|pressure", colnames(df))]),
-           "RH_avg" = names(df[grep("RH|Rh|rh", colnames(df))]),
-           "DP_avg" = names(df[grep("Dew|dew", colnames(df))]),
-           "WS_avg" = names(df[grep("Wind.Speed|Wind.speed|wind.speed", colnames(df))]),
-           "WD_avg" = names(df[grep("Wind.Direction|Wind.direction|wind.direction", colnames(df))]),
-           "SR_avg" = names(df[grep("Solar|solar", colnames(df))])
-           ) %>%
-    select(Date, Rain_sum, Pressure_avg, Temp_max, Temp_min, Temp_avg, RH_avg,
-           DP_avg, WS_avg, GS_max, WD_avg, SR_avg)
+    rename("Date" = names(df[grep("Date|date", colnames(df))]),
+           "Day" = names(df[grep("Day|day", colnames(df))]),
+           "WS" = names(df[grep("Wind.Speed|Wind.speed|wind.speed", colnames(df))]),
+           "WD" = names(df[grep("Wind.Direction|Wind.direction|wind.direction", colnames(df))]))
 
+  print("summary of cleaned df")
+  print(summary(df_out))
+  print(summary(df_orig))
+
+  df_out <- full_join(df_orig, df_out)
+
+  ## filling in all rows with Site names
+  df_out$Site <- df_orig$Site[1]
+
+  df_out <- select(df_out, Site, Date, Day, WS, WD)
+
+  print("summary of final df")
   print(summary(df_out))
   print(head(df_out))
+  print(head(df_orig))
 
-  # write_csv(df_out, paste0("../data/wxstn/WxUpdates/csv/summaries/", updates[i]))
+  browser()
+  write_csv(df_out, paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/updates/", updates[i]))
 
 }
 
