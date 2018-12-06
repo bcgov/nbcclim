@@ -13,7 +13,7 @@
 # The data are collected from Northern B.C. climate research stations
 
 
-library(plyr) # for joining all dataframes
+# library(plyr) # for joining all dataframes
 
 # Data cleanning
 ## reading in daily weather records from individual stations
@@ -47,9 +47,9 @@ library(plyr) # for joining all dataframes
 # ## only keeping relevant wind columns
 # wind_df <- hourly_df[, c("Site", "Date", "Day", "WS", "WD")]
 
-write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
+# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
 
-rm(list=ls())
+# rm(list=ls())
 
 wxstn_df <- read.csv("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv")
 wind_df <- read.csv("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv")

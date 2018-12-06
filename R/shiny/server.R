@@ -73,7 +73,7 @@ server <- function(input, output) {
 
   ## average daily temperature, relative humidity, precipitation and pressure plot
   output$tempplot <- renderPlotly({
-    pal = c(brewer.pal(12, "Paired")[1:10], brewer.pal(12, "Paired")[12])
+    pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
     plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
                      variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
       ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
@@ -126,7 +126,7 @@ server <- function(input, output) {
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
-    pal = c(brewer.pal(12, "Paired")[1:10], brewer.pal(12, "Paired")[12])
+    pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
     plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
                                       text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
@@ -143,7 +143,7 @@ server <- function(input, output) {
 
   ## average daily insolation plot
   output$solarplot <- renderPlotly({
-    pal = c(brewer.pal(12, "Paired")[1:10], brewer.pal(12, "Paired")[12])
+    pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
     if (all(is.na(ggplot_data()$monthly_inso))) {
       plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years)) +
         theme_light() +
