@@ -14,9 +14,9 @@
 
 
 # library(plyr) # for joining all dataframes
-
-# Data cleanning
-## reading in daily weather records from individual stations
+#
+# # Data cleanning
+# ## reading in daily weather records from individual stations
 # daily <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv", pattern="*.csv")
 # for(i in daily) {
 #   assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/", i))))
@@ -40,12 +40,15 @@
 # }
 #
 # ## merging all hourly dataframes for wind plots
-# hourly_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
-#                           George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, Kluskus_10424986, MacJxn_2289305, McbridePk,
-#                           MiddleforkWx, NondaWx, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
+# hourly_df <- join_all(list(BlackhawkWx, BoulderCrWx, BowronPitWx, BulkleyPGTISWx, CanoeMtnWx, CoalmineWx, CPFPGTISWx, CrystalWx, DunsterWx,
+#                            EndakoWx, GeorgeWx, `Gunnel_1-2combined`, Gunnel3Wx, HourglassWx, HudsonBayMt2Wx, KluskusWx, MacJxnWx, McBridePkWx,
+#                            MiddleforkWx, NondaMtnWx, PinkMtnWx, SaxtonWx, ThompsonWx, WillowBowron_1095439), type = "full")
 #
 # ## only keeping relevant wind columns
-# wind_df <- hourly_df[, c("Site", "Date", "Day", "WS", "WD")]
+# wind_df <- hourly_df[, c("Site", "Day", "WS", "WD")]
+#
+# ## deleting NAs in Dates that do not contain any wind records
+# wind_df <- wind_df[complete.cases(wind_df$Day), ]
 
 # write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
 
