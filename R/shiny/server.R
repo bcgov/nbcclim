@@ -25,10 +25,10 @@ server <- function(input, output) {
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
       addMarkers(data = wxstn_sites, ~Longitude, ~Latitude, ~Site,
                  popup = paste0("<b>", wxstn_sites$Site, "</b>", "<br>",
-                               "Latitude: ", wxstn_sites$Latitude, "<br>",
-                               "Longitude: ", wxstn_sites$Longitude, "<br>",
-                               "Elevation: ", wxstn_sites$Elevation, "m", "<br>"
-                               # ,"<img src='", wxstn_sites$Site, ".png'", "/>"
+                                "Latitude: ", wxstn_sites$Latitude, "<br>",
+                                "Longitude: ", wxstn_sites$Longitude, "<br>",
+                                "Elevation: ", wxstn_sites$Elevation, "m", "<br>"
+                                # ,"<img src='", wxstn_sites$Site, ".png'", "/>"
                  ))
   })
 
@@ -96,7 +96,6 @@ server <- function(input, output) {
   output$windplot <- renderPlot({
     if (all(is.na(ggplot_wind()$WS))) {
       ggplot(ggplot_wind(), mapping = aes(WD, fill = WS)) +
-        scale_y_continuous(labels = percent) +
         scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
         xlab("") +
         ylab("") +
@@ -106,21 +105,19 @@ server <- function(input, output) {
               strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
 
     } else {
-      filter(ggplot_wind(), !is.na(WS)) %>%
-        ggplot(ggplot_wind, mapping = aes(WD, fill = WS)) +
-        geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)), alpha = 0.8,
+      ggplot(ggplot_wind(), aes(WD, fill = WS)) +
+        geom_histogram(stat = "identity", mapping = aes(y = n, width = 1), alpha = 0.8,
                        colour = "grey30") +
-        scale_y_continuous(labels = percent) +
-        scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-        scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
-                           labels = c(">9", "6 - 9", "3 - 6", "<3")) +
-        xlab("") +
-        ylab("") +
+        scale_x_discrete(breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
+        scale_fill_viridis_d(guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
+                             labels = c(">9", "6 - 9", "3 - 6", "<3")) +
+        labs(title = "", x = "", y = "") +
         facet_grid(. ~ gseason) +
-        coord_polar() +
+        coord_polar(start = -0.25) + # tilt the polar plot to the correct direction
         theme_light() +
         theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
               strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+
     }
   })
 
@@ -128,7 +125,7 @@ server <- function(input, output) {
   output$gustplot <- renderPlotly({
     pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
     plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
-                                      text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
+                                               text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
       scale_colour_manual(values = pal) +
@@ -156,7 +153,7 @@ server <- function(input, output) {
 
     } else {
       plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years,
-                                        text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
+                                                 text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
         geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
         # scale_x_date(date_labels = "%b") +
         scale_colour_manual(values = pal) +
@@ -188,7 +185,7 @@ server <- function(input, output) {
 
   ## Statistics ####
 
-   ## datatable
+  ## datatable
   suminput <- reactive({
     switch(input$sum_tbl,
            "Annual" = annual_sum[annual_sum$Site == input$sum_site, ],
@@ -240,47 +237,47 @@ server <- function(input, output) {
     if (input$rtmap_marker_click$id == "Blackhawk") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__009.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440445_mm", "Pressure_10090144_mbar", "Temperature_10097057_deg_C", "RH_10097057_.", "Wind.Speed_10573245_m.s", "Gust.Speed_10573245_m.s", "Wind.Direction_10573207_deg", "Solar.Radiation_10085816_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "Canoe") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "Hourglass") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440451_mm", "Pressure_9659383_mbar", "Temperature_9674041_deg_C", "RH_9674041_.", "Wind.Speed_10573254_m.s", "Gust.Speed_10573254_m.s", "Wind.Direction_10573201_deg", "Solar.Radiation_9672288_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2284502_mm", "Pressure_10369385_mbar", "Temperature_3324931_deg_C", "RH_3324931_.", "Wind.Speed_10918298_m.s", "Gust.Speed_10918298_m.s", "Wind.Direction_10918298_deg", "Solar.Radiation_10485755_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "McBride Peak") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2007476_mm", "Pressure_3247631_mbar", "Temperature_10492947_deg_C", "RH_10492947_.", "Wind.Speed_3330635_m.s", "Gust.Speed_3330635_m.s", "Wind.Direction_3330635_deg", "Solar.Radiation_2280206_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "Nonda") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_005.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3557164_deg_C", "RH_3557164_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "Bowron Pit") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234060368070/temp/BC__020.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_10931775_mm", "Pressure_3513112_mbar", "Temperature_3352997_deg_C", "RH_3352997_.", "Wind.Speed_3587416_m.s", "Gust.Speed_3587416_m.s", "Wind.Direction_3587446_deg", "Solar.Radiation_3543115_W.m.2")], 168)
-      }
+    }
     else if (input$rtmap_marker_click$id == "Gunnal") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_3550156_mm", "Pressure_3513113_mbar", "Temperature_3557163_deg_C", "RH_3557163_.", "Wind.Speed_3516045_m.s", "Gust.Speed_3516045_m.s", "Wind.Direction_3516045_deg", "Solar.Radiation_3543143_W.m.2")], 168)
-      } else {
+    } else {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.txt",
                           sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440494_mm", "Pressure_3247633_mbar", "Temperature_2450352_deg_C", "RH_2450352_.", "Wind.Speed_3330634_m.s", "Gust.Speed_3330634_m.s", "Wind.Direction_3330634_deg", "Solar.Radiation_1114619_W.m.2")], 168)
-      }
+    }
 
     ## data cleaning
     colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
     df$WD <- cut(df$WD_avg, 22.5*(0:16), right = FALSE, dig.lab = 4)
     levels(df$WD) <- c("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW",
-                          "W", "WNE", "NW", "NNW")
+                       "W", "WNE", "NW", "NNW")
     return(df)
-    }
+  }
   )
 
   output$rt_tempplot <- renderPlotly({
@@ -302,7 +299,7 @@ server <- function(input, output) {
     r <- round(rt_df()[168, "RH_avg"], 1)
     HTML(paste(temp, "<font size='6', color='#fb8072'>", t, "</font>",  "<font color='#fb8072'> &deg;C</font><br>",
                rh, "<font size='6', color='#a6cee3'>", r, "</font>", "<font color='#a6cee3'> %</font>", sep = ""))
-    })
+  })
 
   output$rt_precipplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
@@ -331,7 +328,7 @@ server <- function(input, output) {
              yaxis = list(title = "Wind Speed (m/s)"),
              yaxis2 = list(overlaying = "y", side = "right", title = "Maximum Gust Speed (m/s)"),
              margin = list(r = 50), showlegend = FALSE)
-      })
+  })
 
   output$rtwind <- renderUI({
     wind <- "<font color='#2171b5'>Wind Speed</font><br>"
@@ -416,8 +413,8 @@ server <- function(input, output) {
                <b>Jane Wang</b> (Research Assistant / Website-support): Yuexian.Wang@gov.bc.ca<br>
                <br>The code for creating this website application is
                <a href='https://github.com/bcgov/nbcclim' target='_blank'>available on GitHub.</a><br>"
-               ))
+    ))
   })
 
-}
+  }
 
