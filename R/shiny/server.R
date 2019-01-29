@@ -401,7 +401,9 @@ server <- function(input, output) {
                "<br><h1>Real-time Data</h1>",
                "Please refer to the following links for complete real-time data records.<br>",
                "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'>Blackhawk</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234060368070/plots.php'  target='_blank'>Bowron Pit</a><br>",
                "<a href='http://datagarrison.com/users/300234062103550/300234065020820/plots.php' target='_blank'>Canoe</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234065873520/plots.php'  target='_blank'>Gunnel</a><br>",
                "<a href='https://datagarrison.com/users/300234062103550/300234062105500/plots.php' target='_blank'>Hourglass</a><br>",
                "<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php' target='_blank'>Hudson Bay Mountain</a><br>",
                "<a href='http://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'>McBride Peak</a><br>",
@@ -410,7 +412,7 @@ server <- function(input, output) {
                "<h1>Contact</h1>",
                "<b>Vanessa Foord</b> (Research Climatologist): Vanessa.Foord@gov.bc.ca<br>
                <b>Alexandre Bevington</b> (Research Earth Scientist): Alexandre.Bevington@gov.bc.ca<br>
-               <b>Jane Wang</b> (Research Assistant / Website-support): Yuexian.Wang@gov.bc.ca<br>
+               <b>Jane Wang</b> (Application Support): https://twitter.com/janewyx<br>
                <br>The code for creating this website application is
                <a href='https://github.com/bcgov/nbcclim' target='_blank'>available on GitHub.</a><br>"
     ))
