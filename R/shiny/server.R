@@ -362,9 +362,45 @@ server <- function(input, output) {
   output$rtstation <- renderUI({
     req(input$rtmap_marker_click$id)
     HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>",
-               "Plots display the last available 7 days of records. For complete records, please see About page."))
-  })
-
+               "Plots display the last available 7 days of records. For complete records, please see About page.",
+               if (input$rtmap_marker_click$id == "Blackhawk") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__009.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__009.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+               else if (input$rtmap_marker_click$id == "Canoe") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+               else if (input$rtmap_marker_click$id == "Hourglass") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+               else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+               else if (input$rtmap_marker_click$id == "McBride Peak") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+               else if (input$rtmap_marker_click$id == "Nonda") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_005.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_005.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT."
+               }
+               else if (input$rtmap_marker_click$id == "Bowron Pit") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234060368070/temp/BC__020.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234060368070/temp/BC__020.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+               else if (input$rtmap_marker_click$id == "Gunnal") {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               } else {
+                 "<br><a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+                 <a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               }
+    ))
+    })
+  
   ## download
   output$downloadrt <- downloadHandler(
     filename = function() {
