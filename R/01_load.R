@@ -13,9 +13,9 @@
 # The data are collected from Northern B.C. climate research stations
 
 
-library(plyr) # for joining all dataframes
-
-# Data cleanning
+# library(plyr) # for joining all dataframes
+#
+# # Data cleanning
 # ## reading in daily weather records from individual stations
 # daily <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv", pattern="*.csv")
 # for(i in daily) {
@@ -23,13 +23,13 @@ library(plyr) # for joining all dataframes
 # }
 #
 # ## merging all dataframes into one
-# wxstn_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
-#                           George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, HudsonBayMtn, Kluskus_10424986, MacJxn_2289305, McbridePk,
+# wxstn_df <- join_all(list(Blackhawk, BowronPitWx, BoulderCr, Bulkley_1113677, Canoe, CoalmineWx, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
+#                           George_1177893, `Gunnel_1-2combined`, Gunnel3, Hourglass_9702605, HudsonBayMtn, Kluskus_10424986, MacJxn_2289305, McbridePk,
 #                           MiddleforkWx, NondaWx, PGTIS_AMAT, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
-
-# ## formatting Month column
+#
+# # ## formatting Month column
 # wxstn_df$Month <- substr(wxstn_df$Date, 1, 7)
-
+#
 # write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv", row.names = FALSE)
 #
 # ## reading in hourly weather records
@@ -40,17 +40,25 @@ library(plyr) # for joining all dataframes
 # }
 #
 # ## merging all hourly dataframes for wind plots
-# hourly_df <- join_all(list(Blackhawk, BoulderCr, Bulkley_1113677, Canoe, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
-#                           George_1177893, `Gunnel_1-2combined`, Hourglass_9702605, Kluskus_10424986, MacJxn_2289305, McbridePk,
-#                           MiddleforkWx, NondaWx, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
+# hourly_df <- join_all(list(BlackhawkWx, BoulderCrWx, BowronPitWx, BulkleyPGTISWx, CanoeMtnWx, CoalmineWx, CPFPGTISWx, CrystalWx, DunsterWx,
+#                            EndakoWx, GeorgeWx, `Gunnel_1-2combined`, Gunnel3Wx, HourglassWx, HudsonBayMt2Wx, KluskusWx, MacJxnWx, McBridePkWx,
+#                            MiddleforkWx, NondaMtnWx, PinkMtnWx, SaxtonWx, ThompsonWx, WillowBowron_1095439), type = "full")
 #
 # ## only keeping relevant wind columns
-# wind_df <- hourly_df[, c("Site", "Date", "Day", "WS", "WD")]
+# wind_df <- hourly_df[, c("Site", "Day", "WS", "WD")]
 #
-# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
-#
-# rm(list=ls())
+# ## deleting NAs in Dates that do not contain any wind records
+# wind_df <- wind_df[complete.cases(wind_df$Day), ]
 
-wxstn <- read.csv("Z:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv")
+# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
+
+rm(list=ls())
+setwd("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/")
+# <<<<<<< HEAD
+wxstn <- read.csv("data/WxStns/wxstn.csv")
 wxstn_df <- wxstn
-wind_df <- read.csv("Z:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv")
+wind_df <- read.csv("data/WxStns/hourly.csv")
+# =======
+# wxstn_df <- read.csv("G:/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/data/WxStns/wxstn.csv")
+# wind_df <- read.csv("Z:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv")
+# >>>>>>> fd4057be0f8cb48b62c6b3f3d23b2b8d28430022

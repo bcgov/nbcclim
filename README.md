@@ -1,7 +1,7 @@
 <a id="devex-badge" rel="Exploration" href="https://github.com/BCDevExchange/assets/blob/master/README.md"><img alt="Being designed and built, but in the lab. May change, disappear, or be buggy." style="border-width:0" src="https://assets.bcdevexchange.org/images/badges/exploration.svg" title="Being designed and built, but in the lab. May change, disappear, or be buggy." /></a>
 
 Northern B.C. Climate Research Stations
-=====
+=======================================
 
 ### Overview
 
@@ -13,16 +13,15 @@ Provides interactive web-application to view climate data station locations, vis
 
 ### Examples
 
-Below are snapshots of the app showing long-term and real-time climate records.
+Below are snapshots of the application showing long-term and real-time climate records.
 
 ![](tools/readme/Example_main.png)
-
 
 ![](tools/readme/Example_rt.png)
 
 ### Project Status
 
-Currently, this project is under development.
+This project is under development.
 
 ### Getting Help or Reporting an Issue
 

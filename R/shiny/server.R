@@ -10,6 +10,40 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
+# wxstn = read.csv("G:/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/data/wxstn.csv")
+library(reshape2)
+library(ggplot2)
+library(viridis) # for colour palettes
+library(RColorBrewer)
+library(leaflet)
+library(plotly) # for interactive plots
+library(DT) # for rendering data tables
+library(shiny)
+
+# setwd("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/nbcclim/R/shiny")
+wxstn_df <- read.csv("data/wxstn_df.csv")
+wind_df <- read.csv("data/wind_df.csv")
+rt <- read.csv("data/real_time_stn.csv")
+wxstn_sites <- read.csv("data/wxstn_sites.csv")
+annual_sum <- read.csv("data/annual_sum.csv")
+monthly_sum <- read.csv("data/monthly_sum.csv")
+month_year_sum <- read.csv("data/month_year_sum.csv")
+seasonal_sum <- read.csv("data/seasonal_sum.csv")
+gseason_sum <- read.csv("data/gseason_sum.csv")
+
+wxstn_df$dates <- as.Date(wxstn_df$dates)
+wxstn_df$years <- as.character(wxstn_df$years)
+wxstn_df$months <- factor(wxstn_df$months, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+
+df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Temp_avg", "RH_avg", "Rain_sum", "Pressure_avg"))
+
+## converting table to long format for ggplots
+df_long <- melt(df, id.vars = c("Site", "Date", "dates", "months", "years"))
+levels(df_long$variable) <- c("Temperature (degree C)", "Relative Humidity (%)", "Precipitation (mm)", "Pressure (mb)")
+
+wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"))
+wind_df$WD <- as.factor(wind_df$WD)
+icons <- awesomeIcons(icon = "circle",  markerColor = "blue", iconColor = "#ffffff", library = "fa")
 
 ## Shiny server ##
 
@@ -23,11 +57,12 @@ server <- function(input, output) {
       addProviderTiles("CartoDB.Positron") %>%
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
-      addMarkers(data = wxstn_df, ~Longitude, ~Latitude, ~Site,
-                 popup = paste("<b>", wxstn_df$Site, "</b>", "<br>",
-                               "Latitude: ", wxstn_df$Latitude, "<br>",
-                               "Longitude: ", wxstn_df$Longitude, "<br>",
-                               "Elevation: ", wxstn_df$Elevation, "m"
+      addMarkers(data = wxstn_sites, ~Longitude, ~Latitude, ~Site,
+                 popup = paste0("<b>", wxstn_sites$Site, "</b>", "<br>",
+                                "Latitude: ", wxstn_sites$Latitude, "<br>",
+                                "Longitude: ", wxstn_sites$Longitude, "<br>",
+                                "Elevation: ", wxstn_sites$Elevation, "m", "<br>"
+                                # ,"<img src='", wxstn_sites$Site, ".png'", "/>"
                  ))
   })
 
@@ -70,8 +105,9 @@ server <- function(input, output) {
     HTML(paste(str1, str2, str3, str4, str5, str6, str7, str8))
   })
 
-  ## average daily temperature plot
+  ## average daily temperature, relative humidity, precipitation and pressure plot
   output$tempplot <- renderPlotly({
+    pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
     plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
                      variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
       ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
@@ -81,7 +117,7 @@ server <- function(input, output) {
       ylab("") +
       facet_grid(variable ~ ., scales = "free_y") +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_colour_brewer(palette = "Paired") +
+      scale_color_manual(values = pal) +
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
@@ -94,7 +130,6 @@ server <- function(input, output) {
   output$windplot <- renderPlot({
     if (all(is.na(ggplot_wind()$WS))) {
       ggplot(ggplot_wind(), mapping = aes(WD, fill = WS)) +
-        scale_y_continuous(labels = percent) +
         scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
         xlab("") +
         ylab("") +
@@ -104,31 +139,30 @@ server <- function(input, output) {
               strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
 
     } else {
-      filter(ggplot_wind(), !is.na(WS)) %>%
-        ggplot(ggplot_wind, mapping = aes(WD, fill = WS)) +
-        geom_histogram(binwidth = 30, mapping = aes(y = (..count..)/sum(..count..)), alpha = 0.8,
+      ggplot(ggplot_wind(), aes(WD, fill = WS)) +
+        geom_histogram(stat = "identity", mapping = aes(y = n, width = 1), alpha = 0.8,
                        colour = "grey30") +
-        scale_y_continuous(labels = percent) +
-        scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-        scale_fill_viridis(discrete = TRUE, guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
-                           labels = c(">9", "6 - 9", "3 - 6", "<3")) +
-        xlab("") +
-        ylab("") +
+        scale_x_discrete(breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
+        scale_fill_viridis_d(guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
+                             labels = c(">9", "6 - 9", "3 - 6", "<3")) +
+        labs(title = "", x = "", y = "") +
         facet_grid(. ~ gseason) +
-        coord_polar() +
+        coord_polar(start = -0.25) + # tilt the polar plot to the correct direction
         theme_light() +
         theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
               strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+
     }
   })
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
-    plot <- ggplot(ggplot_data(), aes(dates, GS_max, group = years, colour = years,
-                                      text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
+    pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
+    plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
+                                               text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
       geom_line(size = 0.3, alpha = 0.7) +
       scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_color_brewer(palette = "Paired") +
+      scale_colour_manual(values = pal) +
       xlab("") +
       ylab("Maximum Gust Speed (m/s)") +
       theme_light() +
@@ -140,8 +174,9 @@ server <- function(input, output) {
 
   ## average daily insolation plot
   output$solarplot <- renderPlotly({
+    pal = colorRampPalette(brewer.pal(11, "Paired"))(13)
     if (all(is.na(ggplot_data()$monthly_inso))) {
-      plot <- ggplot(ggplot_data(), aes(months, monthly_inso, group = years, colour = years)) +
+      plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years)) +
         theme_light() +
         xlab("") +
         ylab("Average Monthly Insolation (W/m^2)") +
@@ -151,11 +186,11 @@ server <- function(input, output) {
         layout(margin = list(l = 75))
 
     } else {
-      plot <- ggplot(ggplot_data(), aes(months, monthly_inso, group = years, colour = years,
-                                        text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
+      plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years,
+                                                 text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
         geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
         # scale_x_date(date_labels = "%b") +
-        scale_color_brewer(palette = "Paired") +
+        scale_colour_manual(values = pal) +
         xlab("") +
         ylab("Average Monthly Insolation (W/m^2)") +
         theme_light() +
@@ -172,10 +207,11 @@ server <- function(input, output) {
       paste0(input$selected_site, ".csv")
     },
     content = function(file) {
+      wxstn_download <- wxstn_df[, !names(wxstn_df) %in% c("years", "months", "dates", "monthly_inso", "seasons", "gseason")]
       if (input$selected_site == "All stations") {
-        write.csv(wxstn, file, row.names = FALSE)
+        write.csv(wxstn_download, file, row.names = FALSE)
       } else {
-        write.csv(wxstn[wxstn$Site %in% input$selected_site,], file, row.names = FALSE)
+        write.csv(wxstn_download[wxstn_download$Site %in% input$selected_site,], file, row.names = FALSE)
       }
     }
   )
@@ -183,7 +219,7 @@ server <- function(input, output) {
 
   ## Statistics ####
 
-   ## datatable
+  ## datatable
   suminput <- reactive({
     switch(input$sum_tbl,
            "Annual" = annual_sum[annual_sum$Site == input$sum_site, ],
@@ -193,27 +229,14 @@ server <- function(input, output) {
            "Growing season" = gseason_sum[gseason_sum$Site == input$sum_site, ])
   })
 
-  output$table <- renderFormattable({
-    # datatable(suminput()) %>% formatStyle(
-    #    columns = "years", Color = styleInterval(c(2000, 2200), c("yellow", "blue"))
-    # )
+  output$table <- renderDataTable({
+    suminput()
+  })
 
-    # as.datatable(
-    # if (input$sum_tbl == "Annual"){
-      formattable(suminput(),
-                list(
-                  obs_na = formatter("span", style = x ~ ifelse(x > 30, style(color = "pink"), NA))
-                  )
-                )
-      # )
-    # } else {
-    #   formattable(suminput(),
-    #              list(
-    #                obs_na = formatter("span", style = x ~ ifelse(x > 5, style(color = "pink"), NA))
-    #               )
-    #              )
-    # }
-      })
+  output$caveat <- renderUI({
+    HTML("obs_na shows the number of NAs during the period of statistical summary.
+         Please use the summary results with caution.<br>")
+  })
 
   ## export file
   output$exportstats <- downloadHandler(
@@ -246,41 +269,49 @@ server <- function(input, output) {
     ## reading in weekly data
     req(input$rtmap_marker_click$id)
     if (input$rtmap_marker_click$id == "Blackhawk") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__008.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440445_mm", "Pressure_10090144_mbar", "Temperature_10097057_deg_C", "RH_10097057_.", "Wind.Speed_10573245_m.s", "Gust.Speed_10573245_m.s", "Wind.Direction_10573207_deg", "Solar.Radiation_10085816_W.m.2")], 168)
-      }
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/300234062107550_live.txt", # Dawson_Creek__009.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2440445_mm", "Pressure_10090144_mbar", "Temperature_10097057_deg_C", "RH_10097057b_.", "Wind.Speed_10573245_m.s", "Gust.Speed_10573245_m.s", "Wind.Direction_10573207_deg", "Solar.Radiation_10085816_W.m.2")], 168)
+    }
     else if (input$rtmap_marker_click$id == "Canoe") {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_003.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
-      }
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/300234065020820_live.txt", # 20143961_004.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732b_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
+    }
     else if (input$rtmap_marker_click$id == "Hourglass") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440451_mm", "Pressure_9659383_mbar", "Temperature_9674041_deg_C", "RH_9674041_.", "Wind.Speed_10573254_m.s", "Gust.Speed_10573254_m.s", "Wind.Direction_10573201_deg", "Solar.Radiation_9672288_W.m.2")], 168)
-      }
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/300234062105500_live.txt", # Dawson_creek__006.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2440451_mm", "Pressure_9659383_mbar", "Temperature_9674041_deg_C", "RH_9674041_.", "Wind.Speed_10573254_m.s", "Gust.Speed_10573254_m.s", "Wind.Direction_10573201_deg", "Solar.Radiation_9672288_W.m.2")], 168) #
+    }
     else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2284502_mm", "Pressure_10369385_mbar", "Temperature_3324931_deg_C", "RH_3324931_.", "Wind.Speed_10918298_m.s", "Gust.Speed_10918298_m.s", "Wind.Direction_10918298_deg", "Solar.Radiation_10485755_W.m.2")], 168)
-      }
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/300234065724550_live.txt", # 20143959_003.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2284502_mm", "Pressure_10369385_mbar", "Temperature_3324931_deg_C", "RH_3324931b_.", "Wind.Speed_10918298_m.s", "Gust.Speed_10918298_m.s", "Wind.Direction_10918298_deg", "Solar.Radiation_10485755_W.m.2")], 168)
+    }
     else if (input$rtmap_marker_click$id == "McBride Peak") {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2007476_mm", "Pressure_3247631_mbar", "Temperature_10492947_deg_C", "RH_10492947_.", "Wind.Speed_3330635_m.s", "Gust.Speed_3330635_m.s", "Wind.Direction_3330635_deg", "Solar.Radiation_2280206_W.m.2")], 168)
-      }
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.txt", # 10839071_004.txt
+                          sep = "\t", skip = 2, header = T)[,c("Date_Time","Rain_2007476_mm","Pressure_3247631_mbar", "Temperature_10492947_deg_C", "RH_10492947b_.", "Wind.Speed_3330635_m.s", "Gust.Speed_3330635_m.s", "Wind.Direction_3330635_deg", "Solar.Radiation_2280206_W.m.2")], 168)
+    }
     else if (input$rtmap_marker_click$id == "Nonda") {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_004.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3241737_deg_C", "RH_3241737_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
-      } else {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.txt",
-                          sep = "\t", skip = 2)[, c("Date_Time", "Rain_2440494_mm", "Pressure_3247633_mbar", "Temperature_2450352_deg_C", "RH_2450352_.", "Wind.Speed_3330634_m.s", "Gust.Speed_3330634_m.s", "Wind.Direction_3330634_deg", "Solar.Radiation_1114619_W.m.2")], 168)
-      }
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/300234065500940_live.txt", # 10890475_005.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3557164_deg_C", "RH_3557164b_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
+    }
+    else if (input$rtmap_marker_click$id == "Bowron Pit") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234060368070/temp/300234060368070_live.txt", # BC__020.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_10931775_mm", "Pressure_3513112_mbar", "Temperature_3352997_deg_C", "RH_3352997b_.", "Wind.Speed_3587416_m.s", "Gust.Speed_3587416_m.s", "Wind.Direction_3587446_deg", "Solar.Radiation_3543115_W.m.2")], 168)
+    }
+    else if (input$rtmap_marker_click$id == "Gunnal") {
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/300234065873520_live.txt", # Gunneltest_006.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_3550156_mm", "Pressure_3513113_mbar", "Temperature_3557163_deg_C", "RH_3557163b_.", "Wind.Speed_3516045_m.s", "Gust.Speed_3516045_m.s", "Wind.Direction_3516045_deg", "Solar.Radiation_3543143_W.m.2")], 168)
+    } else {
+      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065506710/temp/300234065506710_live.txt", # 10890467_008.txt
+                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2440494_mm", "Pressure_3247633_mbar", "Temperature_2450352_deg_C", "RH_2450352b_.", "Wind.Speed_3330634_m.s", "Gust.Speed_3330634_m.s", "Wind.Direction_3330634_deg", "Solar.Radiation_1114619_W.m.2")], 168)
+    }
 
     ## data cleaning
     colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
     df$WD <- cut(df$WD_avg, 22.5*(0:16), right = FALSE, dig.lab = 4)
     levels(df$WD) <- c("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW",
-                          "W", "WNE", "NW", "NNW")
+                       "W", "WNE", "NW", "NNW")
     return(df)
-    }
+  }
   )
 
   output$rt_tempplot <- renderPlotly({
@@ -302,7 +333,7 @@ server <- function(input, output) {
     r <- round(rt_df()[168, "RH_avg"], 1)
     HTML(paste(temp, "<font size='6', color='#fb8072'>", t, "</font>",  "<font color='#fb8072'> &deg;C</font><br>",
                rh, "<font size='6', color='#a6cee3'>", r, "</font>", "<font color='#a6cee3'> %</font>", sep = ""))
-    })
+  })
 
   output$rt_precipplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
@@ -331,7 +362,7 @@ server <- function(input, output) {
              yaxis = list(title = "Wind Speed (m/s)"),
              yaxis2 = list(overlaying = "y", side = "right", title = "Maximum Gust Speed (m/s)"),
              margin = list(r = 50), showlegend = FALSE)
-      })
+  })
 
   output$rtwind <- renderUI({
     wind <- "<font color='#2171b5'>Wind Speed</font><br>"
@@ -347,15 +378,15 @@ server <- function(input, output) {
 
   output$rt_solarplot <- renderPlotly({
     plot_ly(rt_df(), x = ~Date_Time) %>%
-      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fd8d3c")) %>%
+      add_lines(y = ~SR_avg, name = "Solar Radiation", line = list(color = "#fc8d59")) %>%
       layout(xaxis = list(title = ""),
              yaxis = list(title = "Solar Radiation (W/m^2)"))
   })
 
   output$rtsolar <- renderUI({
-    solar <- "<font color='#fd8d3c'>Solar Radiation</font><br>"
+    solar <- "<font color='#fc8d59'>Solar Radiation</font><br>"
     s <- round(rt_df()[168, "SR_avg"], 1)
-    HTML(paste(solar, "<font size='6', color='#fd8d3c'>", s, "</font>",  "<font color='#fd8d3c'> W/m<sup>2</sup></font><br>", sep = ""))
+    HTML(paste(solar, "<font size='6', color='#fc8d59'>", s, "</font>",  "<font color='#fc8d59'> W/m<sup>2</sup></font><br>", sep = ""))
   })
 
   output$rtcap <- renderUI({
@@ -364,9 +395,45 @@ server <- function(input, output) {
 
   output$rtstation <- renderUI({
     req(input$rtmap_marker_click$id)
-    HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>",
-               "Plots display the last available 7 days of records. For complete records, please see About page."))
-  })
+    HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>"#,
+               # "Plots display the last available 7 days of records. For complete records, please see About page.",
+               # if (input$rtmap_marker_click$id == "Blackhawk") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__009.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__009.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+               # else if (input$rtmap_marker_click$id == "Canoe") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+               # else if (input$rtmap_marker_click$id == "Hourglass") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__006.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+               # else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/20143959_003.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+               # else if (input$rtmap_marker_click$id == "McBride Peak") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234064336030/temp/10839071_004.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+               # else if (input$rtmap_marker_click$id == "Nonda") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_005.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_005.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT."
+               # }
+               # else if (input$rtmap_marker_click$id == "Bowron Pit") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234060368070/temp/BC__020.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234060368070/temp/BC__020.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+               # else if (input$rtmap_marker_click$id == "Gunnal") {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # } else {
+               #   "<br><a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
+               #   <a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_008.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+               # }
+    ))
+    })
 
   ## download
   output$downloadrt <- downloadHandler(
@@ -382,8 +449,10 @@ server <- function(input, output) {
   ## About ####
 
   output$about <- renderUI({
-    HTML(paste("<h3><b>Climate Data</b></h3><br>",
-               "<font size=4>The column names in both the long-term record and real-time dataframes are coded as follows:<br>",
+    HTML(paste("<h1>Climate Data</h1>",
+               "Long-term data are summarised daily records except for wind speed and
+               direction which use hourly records. Real-time data are hourly records. The column names
+               in both the long-term record and real-time dataframes are coded as follows:<br>",
                "<br>Rain_sum: total precipitation, mm<br>
                Pressure_avg: averaged pressure, mbar<br>
                Temp_max: maximum temperature, &deg;C<br>
@@ -397,19 +466,27 @@ server <- function(input, output) {
                SR_avg: averaged solar radiation, W/m<sup>2</sup><br>
                SD_avg: averaged snow depth, cm<br>
                WC_avg: averaged soil moisture water content, m<sup>3</sup>/m<sup>3</sup><br>
-               W_avg: averaged wetness, (%)<br>
-               WS_EC5: averaged soil moisture water content from EC5 sensor, m<sup>3</sup>/m<sup>3</sup><br></font>",
-               "<br><h3><b>Real-time Data</b></h3><br>",
-               "<font size=4>Please refer to the following links for complete real-time data records.<br></font>",
-               "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'><font size=4>Blackhawk</font></a><br>",
-               "<a href='http://datagarrison.com/users/300234062103550/300234065020820/plots.php' target='_blank'><font size=4>Canoe</font></a><br>",
-               "<a href='https://datagarrison.com/users/300234062103550/300234062105500/plots.php' target='_blank'><font size=4>Hourglass</font></a><br>",
-               "<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php' target='_blank'><font size=4>Hudson Bay Mountain</font></a><br>",
-               "<a href='http://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'><font size=4>McBride Peak</font></a><br>",
-               "<a href='http://datagarrison.com/users/300234062103550/300234065500940/plots.php' target='_blank'><font size=4>Nonda</font></a><br>",
-               "<a href='http://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'><font size=4>Pink Mountain</font></a><br>"
-               ))
+               W_avg: averaged wetness, %<br>
+               WS_EC5: averaged soil moisture water content from EC5 sensor, m<sup>3</sup>/m<sup>3</sup><br>",
+               "<br><h1>Real-time Data</h1>",
+               "Please refer to the following links for complete real-time data records.<br>",
+               "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'>Blackhawk</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234060368070/plots.php'  target='_blank'>Bowron Pit</a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234065020820/plots.php' target='_blank'>Canoe</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234065873520/plots.php'  target='_blank'>Gunnel</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234062105500/plots.php' target='_blank'>Hourglass</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php' target='_blank'>Hudson Bay Mountain</a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'>McBride Peak</a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234065500940/plots.php' target='_blank'>Nonda</a><br>",
+               "<a href='http://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'>Pink Mountain</a><br>",
+               "<h1>Contact</h1>",
+               "<b>Vanessa Foord</b> (Research Climatologist): Vanessa.Foord@gov.bc.ca<br>
+               <b>Alexandre Bevington</b> (Research Earth Scientist): Alexandre.Bevington@gov.bc.ca<br>
+               <b>Jane Wang</b> (Application Support): https://twitter.com/janewyx<br>
+               <br>The code for creating this website application is
+               <a href='https://github.com/bcgov/nbcclim' target='_blank'>available on GitHub.</a><br>"
+    ))
   })
 
-}
+  }
 
