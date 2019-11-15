@@ -20,16 +20,16 @@ library(plotly) # for interactive plots
 library(DT) # for rendering data tables
 library(shiny)
 
-# setwd("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/nbcclim/R/shiny")
-wxstn_df <- read.csv("data/wxstn_df.csv")
-wind_df <- read.csv("data/wind_df.csv")
-rt <- read.csv("data/real_time_stn.csv")
-wxstn_sites <- read.csv("data/wxstn_sites.csv")
-annual_sum <- read.csv("data/annual_sum.csv")
-monthly_sum <- read.csv("data/monthly_sum.csv")
-month_year_sum <- read.csv("data/month_year_sum.csv")
-seasonal_sum <- read.csv("data/seasonal_sum.csv")
-gseason_sum <- read.csv("data/gseason_sum.csv")
+
+wxstn_df <- read.csv("../../data/wxstn_df.csv")
+wind_df <- read.csv("../../data/wind_df.csv")
+rt <- read.csv("../../data/real_time_stn.csv")
+wxstn_sites <- read.csv("../../data/wxstn_sites.csv")
+annual_sum <- read.csv("../../data/annual_sum.csv")
+monthly_sum <- read.csv("../../data/monthly_sum.csv")
+month_year_sum <- read.csv("../../data/month_year_sum.csv")
+seasonal_sum <- read.csv("../../data/seasonal_sum.csv")
+gseason_sum <- read.csv("../../data/gseason_sum.csv")
 
 wxstn_df$dates <- as.Date(wxstn_df$dates)
 wxstn_df$years <- as.character(wxstn_df$years)
@@ -489,4 +489,3 @@ server <- function(input, output) {
   })
 
   }
-

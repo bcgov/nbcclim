@@ -19,7 +19,7 @@ library(plotly) # for interactive plots
 library(DT) # for rendering data tables
 library(shiny)
 
-
+wxstn_sites <- read.csv("../../data/wxstn_sites.csv")
 ## Shiny user interface
 
 ui <- navbarPage(theme = "css/bcgov.css", title = "Northern BC Climate",
@@ -117,4 +117,3 @@ ui <- navbarPage(theme = "css/bcgov.css", title = "Northern BC Climate",
                                </div>
                                </div>')
 )
-
