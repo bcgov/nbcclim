@@ -279,7 +279,7 @@ server <- function(input, output) {
                              "Pink Mountain"="300234065506710/temp/300234065506710"
                            )
     filename <- paste("https://datagarrison.com/users/300234062103550/",garrison_stnids_dict[input$rtmap_marker_click$id],"_live.txt",sep="")
-    df <- tail(read.csv(filename,sep = "\t", skip = 2, header = T), 168)
+    df <- tail(read.csv(filename,sep = "\t", skip = 2, header = T), 336)
 
     #need to find the column for each needed variable and then reorg
     generic_names <- c('Date_Time','Rain','Pressure','Temperature','RH','Wind.Speed','Gust.Speed','Wind.Direction','Solar.Radiation')
