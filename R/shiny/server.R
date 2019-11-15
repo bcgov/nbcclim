@@ -268,42 +268,32 @@ server <- function(input, output) {
   rt_df <- eventReactive(input$rtmap_marker_click$id, {
     ## reading in weekly data
     req(input$rtmap_marker_click$id)
-    if (input$rtmap_marker_click$id == "Blackhawk") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/300234062107550_live.txt", # Dawson_Creek__009.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2440445_mm", "Pressure_10090144_mbar", "Temperature_10097057_deg_C", "RH_10097057b_.", "Wind.Speed_10573245_m.s", "Gust.Speed_10573245_m.s", "Wind.Direction_10573207_deg", "Solar.Radiation_10085816_W.m.2")], 168)
-    }
-    else if (input$rtmap_marker_click$id == "Canoe") {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065020820/temp/300234065020820_live.txt", # 20143961_004.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_10892830_mm", "Pressure_3247647_mbar", "Temperature_10804732_deg_C", "RH_10804732b_.", "Wind.Speed_10918296_m.s", "Gust.Speed_10918296_m.s", "Wind.Direction_10918296_deg", "Solar.Radiation_10400749_W.m.2")], 168)
-    }
-    else if (input$rtmap_marker_click$id == "Hourglass") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/300234062105500_live.txt", # Dawson_creek__006.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2440451_mm", "Pressure_9659383_mbar", "Temperature_9674041_deg_C", "RH_9674041b_.", "Wind.Speed_10573254_m.s", "Gust.Speed_10573254_m.s", "Wind.Direction_10573201_deg", "Solar.Radiation_9672288_W.m.2")], 168) #
-    }
-    else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/300234065724550_live.txt", # 20143959_003.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2284502_mm", "Pressure_10369385_mbar", "Temperature_3324931_deg_C", "RH_3324931b_.", "Wind.Speed_10918298_m.s", "Gust.Speed_10918298_m.s", "Wind.Direction_10918298_deg", "Solar.Radiation_10485755_W.m.2")], 168)
-    }
-    else if (input$rtmap_marker_click$id == "McBride Peak") {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.txt", # 10839071_004.txt
-                          sep = "\t", skip = 2, header = T)[,c("Date_Time","Rain_2007476_mm","Pressure_3247631_mbar", "Temperature_10492947_deg_C", "RH_10492947b_.", "Wind.Speed_3330635_m.s", "Gust.Speed_3330635_m.s", "Wind.Direction_3330635_deg", "Solar.Radiation_2280206_W.m.2")], 168)
-    }
-    else if (input$rtmap_marker_click$id == "Nonda") {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065500940/temp/300234065500940_live.txt", # 10890475_005.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_10540414_mm", "Pressure_3247646_mbar", "Temperature_3557164_deg_C", "RH_3557164b_.", "Wind.Speed_3284783_m.s", "Gust.Speed_3284783_m.s", "Wind.Direction_3284783_deg", "Solar.Radiation_10328367_W.m.2")], 168)
-    }
-    else if (input$rtmap_marker_click$id == "Bowron Pit") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234060368070/temp/300234060368070_live.txt", # BC__020.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_10931775_mm", "Pressure_3513112_mbar", "Temperature_3352997_deg_C", "RH_3352997b_.", "Wind.Speed_3587416_m.s", "Gust.Speed_3587416_m.s", "Wind.Direction_3587446_deg", "Solar.Radiation_3543115_W.m.2")], 168)
-    }
-    else if (input$rtmap_marker_click$id == "Gunnal") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/300234065873520_live.txt", # Gunneltest_006.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_3550156_mm", "Pressure_3513113_mbar", "Temperature_3557163_deg_C", "RH_3557163b_.", "Wind.Speed_3516045_m.s", "Gust.Speed_3516045_m.s", "Wind.Direction_3516045_deg", "Solar.Radiation_3543143_W.m.2")], 168)
-    } else {
-      df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234065506710/temp/300234065506710_live.txt", # 10890467_008.txt
-                          sep = "\t", skip = 2, header = T)[, c("Date_Time", "Rain_2440494_mm", "Pressure_3247633_mbar", "Temperature_2450352_deg_C", "RH_2450352b_.", "Wind.Speed_3330634_m.s", "Gust.Speed_3330634_m.s", "Wind.Direction_3330634_deg", "Solar.Radiation_1114619_W.m.2")], 168)
-    }
+    garrison_stnids_dict <- c("Blackhawk"="300234062107550/temp/300234062107550",
+                             "Canoe"="300234065020820/temp/300234065020820",
+                             "Hourglass"="300234062105500/temp/300234062105500",
+                             "Hudson Bay Mountain"="300234065724550/temp/300234065724550",
+                             "McBride Peak"="300234064336030/temp/300234064336030",
+                             "Nonda"="300234065500940/temp/300234065500940",
+                             "Bowron Pit"="300234060368070/temp/300234060368070",
+                             "Gunnel"="300234065873520/temp/300234065873520",
+                             "Pink Mountain"="300234065506710/temp/300234065506710"
+                           )
+    filename <- paste("https://datagarrison.com/users/300234062103550/",garrison_stnids_dict[input$rtmap_marker_click$id],"_live.txt",sep="")
+    df <- tail(read.csv(filename,sep = "\t", skip = 2, header = T), 168)
 
+    #need to find the column for each needed variable and then reorg
+    generic_names <- c('Date_Time','Rain','Pressure','Temperature','RH','Wind.Speed','Gust.Speed','Wind.Direction','Solar.Radiation')
+    theorder <- sapply(generic_names,function(pat) {which(grepl(pattern=pat,x=names(df),fixed=T))})
+    if (class(theorder) == "list") {
+      outorder <- rep(0,9)
+      for (anidx in seq(1,length(theorder))) {
+        varidx <- theorder[[anidx]]
+        if (length(varidx) == 1) outorder[anidx] <- varidx
+        else outorder[anidx] <- varidx[[1]]
+      }
+      theorder <- outorder
+    }
+    df <- df[,theorder]
     ## data cleaning
     colnames(df) <- c("Date_Time", "Rain_sum", "Pressure_avg", "Temp_avg", "RH_avg", "WS_avg", "GS_max", "WD_avg", "SR_avg")
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
