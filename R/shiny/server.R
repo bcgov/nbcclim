@@ -36,7 +36,7 @@ wxstn_df$years <- as.character(wxstn_df$years)
 wxstn_df$months <- factor(wxstn_df$months, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
 
 df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Temp_avg", "RH_avg", "Rain_sum", "Pressure_avg"))
-
+browser()
 ## converting table to long format for ggplots
 df_long <- melt(df, id.vars = c("Site", "Date", "dates", "months", "years"))
 levels(df_long$variable) <- c("Temperature (degree C)", "Relative Humidity (%)", "Precipitation (mm)", "Pressure (mb)")
@@ -268,16 +268,16 @@ server <- function(input, output) {
   rt_df <- eventReactive(input$rtmap_marker_click$id, {
     ## reading in weekly data
     req(input$rtmap_marker_click$id)
-    garrison_stnids_dict <- c("Blackhawk"="300234062107550/temp/300234062107550",
-                             "Canoe"="300234065020820/temp/300234065020820",
-                             "Hourglass"="300234062105500/temp/300234062105500",
-                             "Hudson Bay Mountain"="300234065724550/temp/300234065724550",
-                             "McBride Peak"="300234064336030/temp/300234064336030",
-                             "Nonda"="300234065500940/temp/300234065500940",
-                             "Bowron Pit"="300234060368070/temp/300234060368070",
-                             "Gunnel"="300234065873520/temp/300234065873520",
-                             "Pink Mountain"="300234065506710/temp/300234065506710"
-                           )
+    garrison_stnids_dict <- c(  "Blackhawk"="300234062107550/temp/300234062107550",
+                                "Canoe"="300234065020820/temp/300234065020820",
+                                "Hourglass"="300234062105500/temp/300234062105500",
+                                "Hudson Bay Mountain"="300234065724550/temp/300234065724550",
+                                "McBride Peak"="300234064336030/temp/300234064336030",
+                                "Nonda"="300234065500940/temp/300234065500940",
+                                "Bowron Pit"="300234060368070/temp/300234060368070",
+                                "Gunnel"="300234065873520/temp/300234065873520",
+                                "Pink Mountain"="300234065506710/temp/300234065506710"
+                              )
     filename <- paste("https://datagarrison.com/users/300234062103550/",garrison_stnids_dict[input$rtmap_marker_click$id],"_live.txt",sep="")
     df <- tail(read.csv(filename,sep = "\t", skip = 2, header = T), 336)
 
@@ -285,6 +285,9 @@ server <- function(input, output) {
     generic_names <- c('Date_Time','Rain','Pressure','Temperature','RH','Wind.Speed','Gust.Speed','Wind.Direction','Solar.Radiation')
     theorder <- sapply(generic_names,function(pat) {which(grepl(pattern=pat,x=names(df),fixed=T))})
     if (class(theorder) == "list") {
+      #Some stations have multiple sensors for a given variable causing sapply to output a list
+      #rather than a vector. Need to find these and pick the first occurrence blindly, some checking here
+      #To make sure the chosen data is at least valid would be good.
       outorder <- rep(0,9)
       for (anidx in seq(1,length(theorder))) {
         varidx <- theorder[[anidx]]
@@ -428,7 +431,7 @@ server <- function(input, output) {
   ## download
   output$downloadrt <- downloadHandler(
     filename = function() {
-      paste0(input$rtmap_marker_click$id, "_reat-time.csv")
+      paste0(input$rtmap_marker_click$id, "_real-time.csv")
     },
     content = function(file) {
       write.csv(rt_df(), file, row.names = FALSE)
