@@ -11,54 +11,115 @@
 # See the License for the specific language governing permissions and limitations under the License.
 
 # The data are collected from Northern B.C. climate research stations
+library(tidyverse)
+
+## concat new data with full dataset
+wxstn <- read.csv("data/wxstn_df.csv") %>%
+  select(Site, Longitude,	Latitude, Elevation, Date, Rain_sum, Pressure_avg, Temp_max, Temp_min, Temp_avg, RH_avg,
+         DP_avg, WS_avg, GS_max, WD_avg, SR_avg) %>%
+  mutate(Date = as.Date(Date))
+
+wxstn_sites <- read.csv("data/wxstn_sites.csv")
+
+## reading in updated files with new wind records
+wx_updated <- dir("data/processed", pattern = "_wx.csv", full.names = TRUE)
+
+## list of names according to original wxstn naming
+site_dict = tibble(orig = 'BoulderCr', change_to = 'Boulder Creek') %>%
+  add_row(orig = 'Bulkley PGTIS 1', change_to = 'Bulkley') %>%
+  add_row(orig = 'ChiefLk', change_to = 'Chief Lake') %>%
+  add_row(orig = 'CPF PGTIS 3', change_to = 'Central Plateau Finlay') %>%
+  add_row(orig = 'CrystalLk', change_to = 'Crystal Lake') %>%
+  add_row(orig = 'George', change_to = 'George Lake') %>%
+  add_row(orig = 'HudsonBayMtn2', change_to = 'Hudson Bay Mountain') %>%
+  add_row(orig = 'MacJxn', change_to = 'Mackenzie Junction') %>%
+  add_row(orig = 'SaxtonLakeWx', change_to = 'Saxton Lake') %>%
+  add_row(orig = 'Sunbeam', change_to = 'McBride Peak') %>%
+  add_row(orig = 'Middlefork', change_to = 'Middlefork Creek') %>%
+  add_row(orig = 'NondaWx', change_to = 'Nonda') %>%
+  add_row(orig = 'PinkMtnWx', change_to = 'Pink Mountain') %>%
+  add_row(orig = 'WillowBowron PGTIS 2', change_to = 'Willow-Bowron')
 
 
-# library(plyr) # for joining all dataframes
-#
-# # Data cleanning
-# ## reading in daily weather records from individual stations
-# daily <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv", pattern="*.csv")
-# for(i in daily) {
-#   assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/", i))))
-# }
-#
-# ## merging all dataframes into one
-# wxstn_df <- join_all(list(Blackhawk, BowronPitWx, BoulderCr, Bulkley_1113677, Canoe, CoalmineWx, CPF_1113682, CrystalLk_1305871, Dunster10099920, Endako_11597013,
-#                           George_1177893, `Gunnel_1-2combined`, Gunnel3, Hourglass_9702605, HudsonBayMtn, Kluskus_10424986, MacJxn_2289305, McbridePk,
-#                           MiddleforkWx, NondaWx, PGTIS_AMAT, PinkMtnWx, SaxtonLakeWx, Thompson, WillowBowron_1095439), type = "full")
-#
-# # ## formatting Month column
-# wxstn_df$Month <- substr(wxstn_df$Date, 1, 7)
-#
-# write.csv(wxstn_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/wxstn.csv", row.names = FALSE)
-#
-# ## reading in hourly weather records
-# rm(list=ls())
-# hourly <- list.files(path = "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", pattern="*.csv")
-# for(i in hourly) {
-#   assign(unlist(strsplit(i, "[.]"))[1], read.csv((paste0("G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/", i))))
-# }
-#
-# ## merging all hourly dataframes for wind plots
-# hourly_df <- join_all(list(BlackhawkWx, BoulderCrWx, BowronPitWx, BulkleyPGTISWx, CanoeMtnWx, CoalmineWx, CPFPGTISWx, CrystalWx, DunsterWx,
-#                            EndakoWx, GeorgeWx, `Gunnel_1-2combined`, Gunnel3Wx, HourglassWx, HudsonBayMt2Wx, KluskusWx, MacJxnWx, McBridePkWx,
-#                            MiddleforkWx, NondaMtnWx, PinkMtnWx, SaxtonWx, ThompsonWx, WillowBowron_1095439), type = "full")
-#
-# ## only keeping relevant wind columns
-# wind_df <- hourly_df[, c("Site", "Day", "WS", "WD")]
-#
-# ## deleting NAs in Dates that do not contain any wind records
-# wind_df <- wind_df[complete.cases(wind_df$Day), ]
+for (i in 1:length(wx_updated)) {
+  df <- read_csv(wx_updated[i]) %>%
+    rename("Date" = "Day") %>%
+    mutate(Date = as.Date(Date))
 
-# write.csv(wind_df, "G:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv", row.names = FALSE)
+  fname <- str_match(basename(wx_updated[i]), "(.*)\\..*$")[ , 2]
+  site_name <- gsub('_wx', '', fname)
 
-rm(list=ls())
-setwd("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/")
-# <<<<<<< HEAD
-wxstn <- read.csv("data/WxStns/wxstn.csv")
-wxstn_df <- wxstn
-wind_df <- read.csv("data/WxStns/hourly.csv")
-# =======
-# wxstn_df <- read.csv("G:/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/data/WxStns/wxstn.csv")
-# wind_df <- read.csv("Z:/!Workgrp/Research/JWang/ClimateData/WxStns/csv/hourly/hourly.csv")
-# >>>>>>> fd4057be0f8cb48b62c6b3f3d23b2b8d28430022
+  ## get the correct site name
+  if (site_name %in% site_dict$orig) {
+    site_name <- as.character(site_dict[site_dict$orig == site_name, 'change_to'])
+    df$Site <- site_name
+  }
+
+
+  ## filter out calculated variables from orig wxstn of the matching site
+  orig_wx <- wxstn %>%
+    filter(Site == site_name)
+
+  ## join updated and orig tables
+  if (nrow(orig_wx) > 0) {
+    print(paste("----------------------- Data exist in wxstn for", site_name))
+
+    print(range(df$Date))
+    print(range(orig_wx$Date))
+    print(dim(wxstn))
+
+    ## check to see if the new data have old dates inclusive and replace old data
+    if (((min(range(df$Date)) - 1) == min(range(orig_wx$Date))) |
+        min(range(df$Date)) == min(range(orig_wx$Date))) {
+      print(paste("------------- Truncating original wxstn data for", site_name))
+      print(head(wxstn %>%
+                   filter(Site == site_name)))
+
+      ## keep the rest of the sites' data from wxstn, then append new ones
+      wxstn <- wxstn %>%
+        filter(Site != site_name)
+    }
+  }
+
+  print(paste("----- Concatenating wxstn data with new data from", site_name))
+
+  print(dim(orig_wx))
+  print(dim(wxstn))
+
+  wxstn <- plyr::join_all(list(wxstn, df), type = 'full')
+
+
+  print(paste("------------------ Orig row count for this site:", nrow(orig_wx)))
+  print(paste("------------------ Final row count for this site:", nrow(wxstn %>%
+                                                             filter(Site == site_name))))
+
+}
+
+wxstn[wxstn$Site == 'McBride Peak', 'Site'] <- 'Sunbeam'
+wxstn[wxstn$Site == 'Cassiat Mt', 'Site'] <- 'Cassiar Mt'
+
+wxstn <- wxstn %>%
+  arrange((Site))
+
+
+## join site coordinates
+write.csv(wxstn, "data/wxstn_2022.csv", row.names = FALSE)
+
+## reading in hourly weather records
+hourly <- dir("data/processed/", pattern = "wind.csv", full.names = TRUE)
+
+for(i in hourly) {
+  wind_ls <- purrr::map(hourly, read.csv)
+}
+
+## merging all hourly dataframes for wind plots
+hourly_df <- plyr::join_all(wind_ls, type = "full")
+
+## only keeping relevant wind columns
+wind_df <- hourly_df[, c("Site", "Day", "WS", "WD")]
+
+## deleting NAs in Dates that do not contain any wind records
+wind_df <- wind_df[complete.cases(wind_df$Day), ]
+
+write.csv(wind_df, "data/hourly.csv", row.names = FALSE)
+

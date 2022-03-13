@@ -11,9 +11,14 @@
 # See the License for the specific language governing permissions and limitations under the License.
 
 
+wxstn_df = read.csv('data/wxstn_2022.csv')
+
 ## converting Date column as date class
 wxstn_df$Date <- as.Date(wxstn_df$Date)
 wxstn_df$Date <- as.Date(wxstn_df$Date, "%Y-%m-%d")
+
+## formatting Month column
+wxstn_df$Month <- substr(wxstn_df$Date, 1, 7)
 
 ## adding years, months, and dates columns for indexing later
 wxstn_df$years <- substr(wxstn_df$Date, 1, 4)
@@ -31,6 +36,10 @@ wind_df$months <- months(wind_df$Day, abbreviate = TRUE)
 rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Bowron Pit" | Site == "Canoe" | Site == "Gunnel" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |
                Site == "McBride Peak" | Site == "Nonda" | Site == "Pink Mountain", select = c(Site, Longitude, Latitude, Elevation))
 rt <- subset(rt, !duplicated(rt$Site))
+
+rt <- rt %>%
+  tibble::add_row(Site = 'McBride Mountain', Longitude = -120.12108,
+                  Latitude = 53.33869, Elevation = 2000)
 
 ## long-term weather stations
 wxstn_sites <- subset(wxstn_df, select = c(Site, Longitude, Latitude, Elevation))
