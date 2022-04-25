@@ -13,12 +13,7 @@
 
 library(shiny)
 
-# C:\Users\bevington\Dropbox\FLNRO_p1\Research_Climate\Project_Shiny\nbcclim\R
-source("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/nbcclim/R/01_load.R")
-source("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/nbcclim/R/02_clean.R")
-source("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/nbcclim/R/03_analysis.R")
-
-runApp("C:/Users/bevington/Dropbox/FLNRO_p1/Research_Climate/Project_Shiny/nbcclim/R/shiny/")
+runApp("R/shiny/")
 
 
-# rsconnect::showLogs(appPath = name='nbcclimate')
+# rsconnect::showLogs(appPath = 'nbcclimate')
