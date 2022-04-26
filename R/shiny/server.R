@@ -315,9 +315,9 @@ server <- function(input, output) {
 
   output$rttemp <- renderUI({
     temp <- "<font color='#fb8072'>Temperature</font><br>"
-    t <- round(rt_df()[168, "Temp_avg"], 1)
+    t <- round(rt_df()[input$rt_days*24, "Temp_avg"], 1)
     rh <- "<font color='#a6cee3'>Relative Humidity</font><br>"
-    r <- round(rt_df()[168, "RH_avg"], 1)
+    r <- round(rt_df()[input$rt_days*24, "RH_avg"], 1)
     HTML(paste(temp, "<font size='6', color='#fb8072'>", t, "</font>",  "<font color='#fb8072'> &deg;C</font><br>",
                rh, "<font size='6', color='#a6cee3'>", r, "</font>", "<font color='#a6cee3'> %</font>", sep = ""))
   })
@@ -334,9 +334,9 @@ server <- function(input, output) {
 
   output$rtprecip <- renderUI({
     rain <- "<font color='#67a9cf'>Precipitation</font><br>"
-    r <- round(rt_df()[168, "Rain_sum"], 1)
+    r <- round(rt_df()[input$rt_days*24, "Rain_sum"], 1)
     pres <- "<font color='#b0b0b0'>Pressure</font><br>"
-    p <- round(rt_df()[168, "Pressure_avg"], 1)
+    p <- round(rt_df()[input$rt_days*24, "Pressure_avg"], 1)
     HTML(paste(rain, "<font size='6', color='#67a9cf'>", r, "</font>",  "<font color='#67a9cf'> mm</font><br>",
                pres, "<font size='6', color='#b0b0b0'>", p, "</font>", "<font color='#b0b0b0'> mb</font>", sep = ""))
   })
@@ -353,11 +353,11 @@ server <- function(input, output) {
 
   output$rtwind <- renderUI({
     wind <- "<font color='#2171b5'>Wind Speed</font><br>"
-    w <- round(rt_df()[168, "WS_avg"], 1)
+    w <- round(rt_df()[input$rt_days*24, "WS_avg"], 1)
     wd <- "<font color='#2171b5'>Wind Direction</font><br>"
-    d <- rt_df()[168, "WD"]
+    d <- rt_df()[input$rt_days*24, "WD"]
     gust <- "<font color='#505050'>Gust Speed</font><br>"
-    g <- round(rt_df()[168, "GS_max"], 1)
+    g <- round(rt_df()[input$rt_days*24, "GS_max"], 1)
     HTML(paste(wind, "<font size='6', color='#2171b5'>", w, "</font>", "<font color='#2171b5'>m/s</font><br>",
                wd, "<font size='6', color='#2171b5'>", d, "</font><br>",
                gust, "<font size='6', color='#505050'>", g, "</font>", "<font color='#505050'> m/s</font><br>", sep = ""))
@@ -372,7 +372,7 @@ server <- function(input, output) {
 
   output$rtsolar <- renderUI({
     solar <- "<font color='#fc8d59'>Solar Radiation</font><br>"
-    s <- round(rt_df()[168, "SR_avg"], 1)
+    s <- round(rt_df()[input$rt_days*24, "SR_avg"], 1)
     HTML(paste(solar, "<font size='6', color='#fc8d59'>", s, "</font>",  "<font color='#fc8d59'> W/m<sup>2</sup></font><br>", sep = ""))
   })
 
