@@ -390,7 +390,7 @@ server <- function(input, output) {
   ## download
   output$downloadrt <- downloadHandler(
     filename = function() {
-      paste0(input$rtmap_marker_click$id, "_", Sys.Date(), "_", input$rt_days,"d_", real-time_data.csv")
+      paste0(input$rtmap_marker_click$id, "_", Sys.Date(), "_", input$rt_days,"d_realtime_hourly_data.csv")
     },
     content = function(file) {
       write.csv(rt_df(), file, row.names = FALSE)
