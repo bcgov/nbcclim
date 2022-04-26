@@ -466,7 +466,7 @@ server <- function(input, output) {
                "<a href='https://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'>Pink Mountain</a><br>",
                "<h1>Contact</h1>",
                "<b>Vanessa Foord</b> (Research Climatologist): Vanessa.Foord@gov.bc.ca<br>
-               <b>Alexandre Bevington</b> (Research Earth Scientist): Alexandre.Bevington@gov.bc.ca<br>
+               <b>Alexandre Bevington</b> (Research Hydrologist): Alexandre.Bevington@gov.bc.ca<br>
                <b>Jane Wang</b> (Application Support): https://twitter.com/janewyx<br>
                <br>The code for creating this website application is
                <a href='https://github.com/bcgov/nbcclim' target='_blank'>available on GitHub.</a><br>"
