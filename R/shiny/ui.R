@@ -54,6 +54,7 @@ ui <- navbarPage(theme = "css/bcgov.css", title = "Northern BC Climate",
                             column(4, offset = 1, br(),
                                    leafletOutput("rtmap", height = "500px"),
                                    htmlOutput("rtcap"),
+                                   sliderInput("rt_days","Number of days to display", min = 1, max = 20, value = 7, step = 1, ticks = F),
                                    htmlOutput("rtstation"), br(),
                                    downloadButton("downloadrt", "Download")
                             ),

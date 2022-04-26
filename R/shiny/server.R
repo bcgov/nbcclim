@@ -230,54 +230,56 @@ server <- function(input, output) {
                  ))
   })
 
+
+
   rt_df <- eventReactive(input$rtmap_marker_click$id, {
 
     ## reading in weekly data
     req(input$rtmap_marker_click$id)
     if (input$rtmap_marker_click$id == "Blackhawk") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/300234062107550_live.txt", # Dawson_Creek__010.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Canoe") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065020820/temp/300234065020820_live.txt", # 20143961_004.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Hourglass") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/300234062105500_live.txt", # Dawson_creek__006.txt
-                          sep = "\t", skip = 2, header = T), 168)  %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24)  %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/300234065724550_live.txt", # 20143959_003.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "McBride Peak") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.txt", # 10839071_004.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Nonda") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065500940/temp/300234065500940_live.txt", # 10890475_008.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Bowron Pit") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065022520/temp/300234065022520_live.txt", # BowronPit2_018.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Gunnel") {
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/300234065873520_live.txt", # Gunneltest_006.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     } else {
 
       ## Pink Mountain
       df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065506710/temp/300234065506710_live.txt", # 10890467_009.txt
-                          sep = "\t", skip = 2, header = T), 168) %>%
+                          sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
 
@@ -381,44 +383,9 @@ server <- function(input, output) {
   output$rtstation <- renderUI({
     req(input$rtmap_marker_click$id)
     HTML(paste("<h4><b>", input$rtmap_marker_click$id, "</b></h4>",
-               "Plots display the last available 7 days of records. For complete records, please see About page.",
-               if (input$rtmap_marker_click$id == "Blackhawk") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__010.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/300234062107550_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-               else if (input$rtmap_marker_click$id == "Canoe") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/300234065020820_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-               else if (input$rtmap_marker_click$id == "Hourglass") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__009.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/300234062105500_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-               else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/10746708_006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/300234065724550_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-               else if (input$rtmap_marker_click$id == "McBride Peak") {
-                 # <br><a href='http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-               else if (input$rtmap_marker_click$id == "Nonda") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_008.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/300234065500940_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT."
-               }
-               else if (input$rtmap_marker_click$id == "Bowron Pit") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234065022520/temp/BowronPit2_018.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065022520/temp/300234065022520_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-               else if (input$rtmap_marker_click$id == "Gunnel") {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/300234065873520_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               } else {
-                 # <br><a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_009.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/300234065506710_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
-               }
-    ))
-    })
+               "Plots display the last available",
+               input$rt_days,
+               "days of records. For complete records, please see About page."))})
 
   ## download
   output$downloadrt <- downloadHandler(
