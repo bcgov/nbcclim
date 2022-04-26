@@ -235,22 +235,22 @@ server <- function(input, output) {
     ## reading in weekly data
     req(input$rtmap_marker_click$id)
     if (input$rtmap_marker_click$id == "Blackhawk") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__010.txt", # Dawson_Creek__010.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062107550/temp/300234062107550_live.txt", # Dawson_Creek__010.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Canoe") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.txt", # 20143961_004.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065020820/temp/300234065020820_live.txt", # 20143961_004.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Hourglass") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__009.txt", # Dawson_creek__006.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234062105500/temp/300234062105500_live.txt", # Dawson_creek__006.txt
                           sep = "\t", skip = 2, header = T), 168)  %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/10746708_006.txt", # 20143959_003.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065724550/temp/300234065724550_live.txt", # 20143959_003.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     }
@@ -260,23 +260,23 @@ server <- function(input, output) {
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Nonda") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_008.txt", # 10890475_008.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065500940/temp/300234065500940_live.txt", # 10890475_008.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Bowron Pit") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065022520/temp/BowronPit2_018.txt", # BowronPit2_018.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065022520/temp/300234065022520_live.txt", # BowronPit2_018.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     }
     else if (input$rtmap_marker_click$id == "Gunnel") {
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.txt", # Gunneltest_006.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065873520/temp/300234065873520_live.txt", # Gunneltest_006.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     } else {
 
       ## Pink Mountain
-      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_009.txt", # 10890467_009.txt
+      df <- tail(read.csv("https://datagarrison.com/users/300234062103550/300234065506710/temp/300234065506710_live.txt", # 10890467_009.txt
                           sep = "\t", skip = 2, header = T), 168) %>%
         dplyr::select(matches(col_str))
     }
@@ -384,19 +384,19 @@ server <- function(input, output) {
                "Plots display the last available 7 days of records. For complete records, please see About page.",
                if (input$rtmap_marker_click$id == "Blackhawk") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__010.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/Dawson_Creek__010.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234062107550/temp/300234062107550_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                }
                else if (input$rtmap_marker_click$id == "Canoe") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/20143961_004.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234065020820/temp/300234065020820_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                }
                else if (input$rtmap_marker_click$id == "Hourglass") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__009.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/Dawson_creek__009.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234062105500/temp/300234062105500_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                }
                else if (input$rtmap_marker_click$id == "Hudson Bay Mountain") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/10746708_006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/10746708_006.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234065724550/temp/300234065724550_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                }
                else if (input$rtmap_marker_click$id == "McBride Peak") {
                  # <br><a href='http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
@@ -404,18 +404,18 @@ server <- function(input, output) {
                }
                else if (input$rtmap_marker_click$id == "Nonda") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_008.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/10890475_008.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT."
+                 "<a href='https://datagarrison.com/users/300234062103550/300234065500940/temp/300234065500940_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT."
                }
                else if (input$rtmap_marker_click$id == "Bowron Pit") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234065022520/temp/BowronPit2_018.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065022520/temp/BowronPit2_018.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234065022520/temp/300234065022520_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                }
                else if (input$rtmap_marker_click$id == "Gunnel") {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/Gunneltest_006.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234065873520/temp/300234065873520_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                } else {
                  # <br><a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_009.dtf'  target='_blank'><u>Refresh</u></a> plots by opening DTF.<br>
-                 "<a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/10890467_009.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
+                 "<a href='https://datagarrison.com/users/300234062103550/300234065506710/temp/300234065506710_live.txt'  target='_blank'><u>Refresh</u></a> plots by opening TXT.<br>"
                }
     ))
     })
