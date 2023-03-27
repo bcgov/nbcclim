@@ -86,7 +86,7 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
             strip.background = element_blank(), legend.title = element_blank())
-    ggplotly(plot, tooltip = c("text")) %>%
+    ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
       layout(margin = list(l = 35)) # to fully display the x and y axis labels
   })
 
@@ -133,7 +133,7 @@ server <- function(input, output) {
       theme_light() +
       theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
             axis.title.y = element_text(size = 10))
-    p <- ggplotly(plot, tooltip = c("text")) %>%
+    p <- ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
       layout(margin = list(l = 75)) ## adjusting y axis position so it doesn't overlap axis labels
   })
 
@@ -147,7 +147,7 @@ server <- function(input, output) {
         ylab("Average Monthly Insolation (W/m^2)") +
         theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
               axis.title.y = element_text(size = 10))
-      p <- ggplotly(plot) %>%
+      p <- ggplotly(plot, dynamicTicks = T) %>%
         layout(margin = list(l = 75))
 
     } else {
@@ -161,7 +161,7 @@ server <- function(input, output) {
         theme_light() +
         theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
               axis.title.y = element_text(size = 10))
-      p <- ggplotly(plot, tooltip = c("text")) %>%
+      p <- ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
         layout(margin = list(l = 75))
     }
   })
