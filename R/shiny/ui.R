@@ -83,7 +83,7 @@ ui <- navbarPage(theme = "css/bcgov.css", title = "Northern BC Climate",
                  tags$head(tags$script(src="js/bcgov.js")),
                  tags$head(tags$link(rel="shortcut icon", href="/images/favicon.ico")),
                  footer = HTML('<div id="footer">
-                               <img src="/images/back-to-top.png" alt="Back to top" title="Back to top" class="back-to-top footer-overlap" style="bottom: 10px; display: inline;">
+                               <img src="images/back-to-top.png" alt="Back to top" title="Back to top" class="back-to-top footer-overlap" style="bottom: 10px; display: inline;">
                                <div id="footerWrapper">
                                <div id="footerAdminSection">
                                <div id="footerAdminLinksContainer" class="container">
