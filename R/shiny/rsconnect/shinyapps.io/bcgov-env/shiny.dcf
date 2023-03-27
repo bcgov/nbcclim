@@ -1,0 +1,13 @@
+name: shiny
+title: shiny
+username:
+account: bcgov-env
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7899943
+bundleId: 7014848
+url: https://bcgov-env.shinyapps.io/shiny/
+when: 1679942470.70881
+lastSyncTime: 1679942470.70883
+asMultiple: FALSE
+asStatic: FALSE
