@@ -12,6 +12,9 @@
 
 # The data are collected from Northern B.C. climate research stations
 library(tidyverse)
+library(glue)
+
+YEAR =  2023
 
 ## concat new data with full dataset
 wxstn <- read.csv("data/wxstn_df.csv") %>%
@@ -19,42 +22,31 @@ wxstn <- read.csv("data/wxstn_df.csv") %>%
          DP_avg, WS_avg, GS_max, WD_avg, SR_avg) %>%
   mutate(Date = as.Date(Date))
 
+##
+## QC !!
+##
+## validate lat long elev are numeric
+is.numeric(wxstn$Latitude)
+is.numeric(wxstn$Longitude)
+is.numeric(wxstn$elevation)
+
+## validate there is no NA in the wxstn Site
+print(unique(wxstn$Site))
+
+
 wxstn_sites <- read.csv("data/wxstn_sites.csv")
 
 ## reading in updated files with new wind records
 wx_updated <- dir("data/processed", pattern = "_wx.csv", full.names = TRUE)
 
-## list of names according to original wxstn naming
-site_dict = tibble(orig = 'BoulderCr', change_to = 'Boulder Creek') %>%
-  add_row(orig = 'Bulkley PGTIS 1', change_to = 'Bulkley') %>%
-  add_row(orig = 'ChiefLk', change_to = 'Chief Lake') %>%
-  add_row(orig = 'CPF PGTIS 3', change_to = 'Central Plateau Finlay') %>%
-  add_row(orig = 'CrystalLk', change_to = 'Crystal Lake') %>%
-  add_row(orig = 'George', change_to = 'George Lake') %>%
-  add_row(orig = 'HudsonBayMtn2', change_to = 'Hudson Bay Mountain') %>%
-  add_row(orig = 'MacJxn', change_to = 'Mackenzie Junction') %>%
-  add_row(orig = 'SaxtonLakeWx', change_to = 'Saxton Lake') %>%
-  add_row(orig = 'Sunbeam', change_to = 'McBride Peak') %>%
-  add_row(orig = 'Middlefork', change_to = 'Middlefork Creek') %>%
-  add_row(orig = 'NondaWx', change_to = 'Nonda') %>%
-  add_row(orig = 'PinkMtnWx', change_to = 'Pink Mountain') %>%
-  add_row(orig = 'WillowBowron PGTIS 2', change_to = 'Willow-Bowron')
 
-
+## update wxstn df
 for (i in 1:length(wx_updated)) {
   df <- read_csv(wx_updated[i]) %>%
     rename("Date" = "Day") %>%
     mutate(Date = as.Date(Date))
 
-  fname <- str_match(basename(wx_updated[i]), "(.*)\\..*$")[ , 2]
-  site_name <- gsub('_wx', '', fname)
-
-  ## get the correct site name
-  if (site_name %in% site_dict$orig) {
-    site_name <- as.character(site_dict[site_dict$orig == site_name, 'change_to'])
-    df$Site <- site_name
-  }
-
+  site_name <- df$Site[1]
 
   ## filter out calculated variables from orig wxstn of the matching site
   orig_wx <- wxstn %>%
@@ -95,15 +87,16 @@ for (i in 1:length(wx_updated)) {
 
 }
 
-wxstn[wxstn$Site == 'McBride Peak', 'Site'] <- 'Sunbeam'
-wxstn[wxstn$Site == 'Cassiat Mt', 'Site'] <- 'Cassiar Mt'
+wxstn[wxstn$Site == "Hudson Bay Mountain", "Latitude"] <- 54.77375
+wxstn[wxstn$Site == "Hudson Bay Mountain", "Longitude"] <- -127.27216
+wxstn[wxstn$Site == "Hudson Bay Mountain", "Elevation"] <- 1670
 
 wxstn <- wxstn %>%
   arrange((Site))
 
 
 ## join site coordinates
-write.csv(wxstn, "data/wxstn_2022.csv", row.names = FALSE)
+write.csv(wxstn, glue("data/wxstn_{YEAR}.csv"), row.names = FALSE)
 
 ## reading in hourly weather records
 hourly <- dir("data/processed/", pattern = "wind.csv", full.names = TRUE)
@@ -121,5 +114,5 @@ wind_df <- hourly_df[, c("Site", "Day", "WS", "WD")]
 ## deleting NAs in Dates that do not contain any wind records
 wind_df <- wind_df[complete.cases(wind_df$Day), ]
 
-write.csv(wind_df, "data/hourly.csv", row.names = FALSE)
+write.csv(wind_df, glue("data/hourly_{YEAR}.csv"), row.names = FALSE)
 

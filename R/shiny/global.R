@@ -47,4 +47,4 @@ icons <- awesomeIcons(icon = "circle",  markerColor = "blue", iconColor = "#ffff
 col_str <- "Date_Time|Rain|Pressure|Temperature|RH|Wind.Speed|Gust.Speed|Wind.Direction|Solar"
 
 ## define colour by year palette
-pal = rep(colorRampPalette(brewer.pal(12, "Paired"))(10), 2)
+pal = rep(colorRampPalette(brewer.pal(12, "Paired"))(10), 5)

@@ -10,8 +10,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
+library(tidyverse)
+library(glue)
 
-wxstn_df = read.csv('data/wxstn_2022.csv')
+YEAR = 2023
+
+wxstn_df = read.csv(glue("data/wxstn_{YEAR}.csv"))
+
+# join all year's hourly wind data
+hourly <- dir("data/", pattern = "hourly", full.names = TRUE)
+
+for(i in hourly) {
+  wind_ls <- purrr::map(hourly, read.csv)
+}
+
+wind_df <- plyr::join_all(wind_ls, type = "full")
+wind_df$Day <- as.Date(wind_df$Day, "%Y-%m-%d")
+wind_df$months <- months(wind_df$Day, abbreviate = TRUE)
 
 ## converting Date column as date class
 wxstn_df$Date <- as.Date(wxstn_df$Date)
@@ -28,19 +43,19 @@ wxstn_df$months <- factor(wxstn_df$months, levels = c("Jan", "Feb", "Mar", "Apr"
 wxstn_df$dates <- substr(wxstn_df$Date, 6, 10)
 wxstn_df$dates <- as.Date(wxstn_df$dates, "%m-%d")
 
-wind_df$Day <- as.Date(wind_df$Day, "%Y-%m-%d")
-wind_df$months <- months(wind_df$Day, abbreviate = TRUE)
-
 ## stations data frame
 ## real time stations
-rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Bowron Pit" | Site == "Canoe" | Site == "Gunnel" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |
-               Site == "McBride Peak" | Site == "Nonda" | Site == "Pink Mountain", select = c(Site, Longitude, Latitude, Elevation))
+rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Bowron Pit" | Site == "Canoe" |
+               Site == "Gunnel" | Site == "Hourglass" | Site == "Hudson Bay Mountain" |
+               Site == "Nonda" | Site == "Pink Mountain",
+             select = c(Site, Longitude, Latitude, Elevation))
 rt <- subset(rt, !duplicated(rt$Site))
 
 rt <- rt %>%
-  tibble::add_row(Site = 'McBride Mountain', Longitude = -120.12108,
+  tibble::add_row(Site = 'McBride Peak', Longitude = -120.12108,
                   Latitude = 53.33869, Elevation = 2000)
 
 ## long-term weather stations
 wxstn_sites <- subset(wxstn_df, select = c(Site, Longitude, Latitude, Elevation))
 wxstn_sites <- subset(wxstn_sites, !duplicated(wxstn_sites$Site))
+

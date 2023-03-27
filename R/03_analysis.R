@@ -10,7 +10,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and limitations under the License.
 
-library(DT)
 library(dplyr) # for data analysis
 library(reshape2) # for long dataframes
 
@@ -137,7 +136,6 @@ gseason_sum <- melt(gseason, id.vars = c("Site", "gseason", "variable"), variabl
 gseason_sum <- dcast(gseason_sum, Site + gseason + grow_season ~ variable)
 gseason_sum$WD_avg <- ifelse(!is.na(gseason_sum$WD_avg) & gseason_sum$WD_avg < 0, gseason_sum$WD_avg + 360, gseason_sum$WD_avg)
 
-getwd()
 
 ## outputting cleaned and analysed tables ####
 write.csv(wxstn_df, "data/wxstn_df.csv", row.names = FALSE)

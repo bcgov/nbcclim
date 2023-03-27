@@ -1,0 +1,289 @@
+"Site","gseason","grow_season","Temp_avg","Temp_min","Temp_max","Rain_sum","Pressure_avg","RH_avg","DP_avg","WS_avg","WD_avg","GS_max","SR_avg"
+"Atlin Monarch Mt","Summer (May-Sep)","mean",5.73,2.7,9.28,1.14,856.06,76.58,1.52,2.76,26.89,8.95,197.7
+"Atlin Monarch Mt","Summer (May-Sep)","max",18.86,14.96,22.92,24.2,870.5,100,8.98,7.05,88.98,23.01,395.78
+"Atlin Monarch Mt","Summer (May-Sep)","min",-4.98,-7.94,-2.57,0,842.9,32.55,-11.76,0.1,270.72,3.52,9.05
+"Atlin Monarch Mt","Summer (May-Sep)","obs_na",610,610,610,301,1069,610,610,825,872,825,568
+"Atlin Monarch Mt","Winter (Oct-Apr)","mean",-9.32,-11.65,-6.99,0.12,853.23,86.07,-11.36,2.34,14.85,7.87,62.2
+"Atlin Monarch Mt","Winter (Oct-Apr)","max",9.05,6.31,13.69,11.2,1054.8,100,5.25,9.57,89.68,39.33,307.75
+"Atlin Monarch Mt","Winter (Oct-Apr)","min",-34.72,-36.15,-33.06,0,803.8,30.68,-37.13,0,270.15,0,1.6
+"Atlin Monarch Mt","Winter (Oct-Apr)","obs_na",849,849,849,424,1486,849,849,930,1209,930,762
+"Atlin School","Summer (May-Sep)","mean",10.23,5.19,15.42,0.65,NA,68.75,4.13,0.39,23.06,3.83,87.76
+"Atlin School","Summer (May-Sep)","max",20.29,14,29.95,19.4,-Inf,98.9,13.94,1.36,89.44,8.53,190.46
+"Atlin School","Summer (May-Sep)","min",0.23,-4.67,2.69,0,Inf,35.1,-8.38,0,270.79,1.11,1.85
+"Atlin School","Summer (May-Sep)","obs_na",59,59,59,59,1223,189,189,59,59,59,59
+"Atlin School","Winter (Oct-Apr)","mean",-5.78,-9.56,-1.82,0.3,NA,79.87,-8.88,0.28,3.26,3.17,28.4
+"Atlin School","Winter (Oct-Apr)","max",10.35,7.9,16.7,38,-Inf,99.98,6.89,1.96,89.92,12.99,174.58
+"Atlin School","Winter (Oct-Apr)","min",-33.58,-37.34,-29.39,0,Inf,40.27,-36.5,0,270.78,0,0.65
+"Atlin School","Winter (Oct-Apr)","obs_na",0,0,0,0,1698,212,212,0,0,0,0
+"Barren","Summer (May-Sep)","mean",11.07,5.54,16.56,1.92,894.21,72.82,5.68,0.87,30.47,7.22,192.03
+"Barren","Summer (May-Sep)","max",21.9,13.62,29.44,61.2,905.21,98.69,12.69,2.66,88.72,13.09,354.9
+"Barren","Summer (May-Sep)","min",0.6,-3.57,2.88,0,875.8,44.46,-4.14,0.02,279.56,3.52,29.57
+"Barren","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Barren","Winter (Oct-Apr)","mean",-4.33,-8.46,-0.52,0.91,890.14,84.43,-6.87,0.65,15.96,6.23,69.8
+"Barren","Winter (Oct-Apr)","max",4.58,1.26,11.25,24.2,909.08,100,1.97,3.12,89.03,13.59,294.78
+"Barren","Winter (Oct-Apr)","min",-29.43,-34.18,-25.84,0,863.58,47.33,-31.66,0,270.49,0,2.07
+"Barren","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Bednesti Tamarac","Summer (May-Sep)","mean",13.25,7.83,19.1,1.23,NA,68.2,6.95,1.13,NA,7.4,NA
+"Bednesti Tamarac","Summer (May-Sep)","max",23.83,16.89,31.89,10.2,-Inf,93.52,14.4,3.03,-Inf,12.84,-Inf
+"Bednesti Tamarac","Summer (May-Sep)","min",6.29,0.91,7.77,0,Inf,44.73,0.38,0.39,Inf,3.78,Inf
+"Bednesti Tamarac","Summer (May-Sep)","obs_na",0,0,0,0,63,0,0,0,63,0,63
+"Bednesti Tamarac","Winter (Oct-Apr)","mean",3.54,0.19,7.01,1.14,NA,80.62,0.17,1,NA,6.86,NA
+"Bednesti Tamarac","Winter (Oct-Apr)","max",10.22,8.44,13.81,6.8,-Inf,98.35,3.99,2.71,-Inf,13.35,-Inf
+"Bednesti Tamarac","Winter (Oct-Apr)","min",-2.14,-5.54,-0.37,0,Inf,51.97,-3.27,0.13,Inf,3.27,Inf
+"Bednesti Tamarac","Winter (Oct-Apr)","obs_na",0,0,0,0,22,0,0,0,22,0,22
+"Blackhawk","Summer (May-Sep)","mean",11.52,3.28,18.33,1.74,903.13,70.7,5.32,1.13,23.64,8.19,190.47
+"Blackhawk","Summer (May-Sep)","max",28.2,18.01,39.86,56.8,920.44,100,17.14,4.53,89.97,20.41,353.38
+"Blackhawk","Summer (May-Sep)","min",-3.84,-11.61,-2.48,0,879.11,32.53,-11.4,0,270.09,0.25,14.05
+"Blackhawk","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,265,0,0
+"Blackhawk","Winter (Oct-Apr)","mean",-5.22,-11.82,0.72,0.49,900.73,79.14,-8.77,1.01,20.19,7.37,68.24
+"Blackhawk","Winter (Oct-Apr)","max",15.98,9.85,25.96,23,929.98,100,7.31,6.79,89.97,25.42,276.6
+"Blackhawk","Winter (Oct-Apr)","min",-41.05,-46.42,-31.77,0,871.9,30.69,-43.78,0,270.38,0,2.22
+"Blackhawk","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,318,0,0
+"Boulder Creek","Summer (May-Sep)","mean",12.81,6.63,19.42,1.51,965,79.51,8.57,0.33,352.92,-Inf,190.69
+"Boulder Creek","Summer (May-Sep)","max",26.02,16.61,37.21,34,984.37,100,17.05,1.46,89.5,14.1,368.27
+"Boulder Creek","Summer (May-Sep)","min",1.22,-4.59,4.99,0,944.64,31.63,-7.2,0,270.03,-Inf,25.09
+"Boulder Creek","Summer (May-Sep)","obs_na",0,0,0,126,0,23,23,73,73,0,202
+"Boulder Creek","Winter (Oct-Apr)","mean",-1.5,-5.19,2.67,1.27,963.65,89.2,-3.49,0.24,358.2,-Inf,58.34
+"Boulder Creek","Winter (Oct-Apr)","max",13.82,10.21,24.07,49.6,997.32,100,11.93,1.89,89.98,15.21,293.27
+"Boulder Creek","Winter (Oct-Apr)","min",-32.86,-36.46,-29.06,0,931.48,26,-35.87,0,270.02,-Inf,0.82
+"Boulder Creek","Winter (Oct-Apr)","obs_na",0,0,0,213,0,27,27,199,199,0,134
+"Bowron Pit","Summer (May-Sep)","mean",12.23,5.57,18.91,2.08,931.78,78.32,7.81,0.21,343.74,5.01,179.62
+"Bowron Pit","Summer (May-Sep)","max",27.8,18.06,38.53,28.4,949.89,99.07,17.44,1.53,88.45,11.58,359.37
+"Bowron Pit","Summer (May-Sep)","min",0.35,-7.67,5.26,0,915.4,44.14,-5.4,0,270.43,1.51,23.8
+"Bowron Pit","Summer (May-Sep)","obs_na",16,16,15,15,15,16,16,15,157,15,16
+"Bowron Pit","Winter (Oct-Apr)","mean",-2.28,-7.64,2.96,1.5,931.37,82.62,-5.29,0.31,345.6,5.36,63.52
+"Bowron Pit","Winter (Oct-Apr)","max",13.06,9.24,24.22,32,963.18,99.96,10.7,2.45,89.95,18.12,274.98
+"Bowron Pit","Winter (Oct-Apr)","min",-38.63,-45.01,-30.2,0,902.5,40.02,-41.69,0,270.5,0,2.17
+"Bowron Pit","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,212,0,0
+"Bulkley","Summer (May-Sep)","mean",13.19,Inf,-Inf,1.41,944.72,74.97,7.68,0.26,5.39,3.46,132.84
+"Bulkley","Summer (May-Sep)","max",27.88,Inf,39.66,27.6,963.48,100,17.92,1.19,89.98,7.98,322.6
+"Bulkley","Summer (May-Sep)","min",0.47,-6.74,-Inf,0,919.27,32.17,-10.12,0,270.77,0.19,21.5
+"Bulkley","Summer (May-Sep)","obs_na",9,0,0,58,0,83,83,0,0,0,14
+"Bulkley","Winter (Oct-Apr)","mean",-1.72,-6.6,3.05,0.89,943.82,81.83,-4.89,0.33,352.32,3.33,35.61
+"Bulkley","Winter (Oct-Apr)","max",16.78,12.12,26.21,22.2,969.24,100,10.84,1.77,89.8,10.02,241.08
+"Bulkley","Winter (Oct-Apr)","min",-36.24,-43.56,-27.9,0,907.59,28.25,-39.08,0,270.07,0,1.28
+"Bulkley","Winter (Oct-Apr)","obs_na",0,0,0,119,0,1,1,0,0,0,157
+"Canoe","Summer (May-Sep)","mean",5.66,2.75,8.82,1.92,779.98,76.44,1.3,4.65,349.43,-Inf,210.31
+"Canoe","Summer (May-Sep)","max",24.55,20.79,28.94,47.6,791.95,100,10.84,13.71,88.62,49.31,429.26
+"Canoe","Summer (May-Sep)","min",-9.24,-10.65,-7.58,0,762.82,28.77,-12.54,0,271.67,-Inf,25.46
+"Canoe","Summer (May-Sep)","obs_na",0,0,0,127,127,0,0,84,189,0,0
+"Canoe","Winter (Oct-Apr)","mean",-7.46,-9.8,-5.02,0.2,772.45,86.82,-9.56,5.05,347.97,-Inf,82.05
+"Canoe","Winter (Oct-Apr)","max",10.73,8.49,14.51,31.01,793.62,100,4.21,17.49,89.84,30.99,327.38
+"Canoe","Winter (Oct-Apr)","min",-32.57,-35.97,-30.41,0,748.41,15,-34.88,0,270.09,-Inf,3.58
+"Canoe","Winter (Oct-Apr)","obs_na",0,0,0,14,16,0,0,168,214,0,0
+"Cassiar Mt","Summer (May-Sep)","mean",6.81,4,10.07,1.87,837.47,79.6,3.21,0.57,0.1,6.83,187.13
+"Cassiar Mt","Summer (May-Sep)","max",19.44,15.46,24.1,34.6,852.73,99.63,11.81,2.71,89.9,20.22,375.05
+"Cassiar Mt","Summer (May-Sep)","min",-3.77,-7.19,-2.77,0,824.61,38.13,-7.42,0,278.63,0,18.43
+"Cassiar Mt","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Cassiar Mt","Winter (Oct-Apr)","mean",-9.27,-11.81,-6.49,0.27,829.57,84.66,-11.54,0.5,358.04,5.74,66.9
+"Cassiar Mt","Winter (Oct-Apr)","max",7.59,4.61,11.05,21.2,848.91,99.7,3.02,7.11,88.79,28.57,276.5
+"Cassiar Mt","Winter (Oct-Apr)","min",-29.89,-32.91,-27.83,0,803.25,37.35,-32.21,0,271.13,0,4.57
+"Cassiar Mt","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Central Plateau Finlay","Summer (May-Sep)","mean",13.2,6.61,20.54,1.63,945.31,75.54,7.93,0.23,353.27,3.15,120.29
+"Central Plateau Finlay","Summer (May-Sep)","max",27.3,17.53,38.59,31,964.05,100,18.33,0.96,89.96,8.72,356.45
+"Central Plateau Finlay","Summer (May-Sep)","min",0.9,-5.31,3.74,0,919.28,29.75,-10.15,0,270.14,0.19,14.99
+"Central Plateau Finlay","Summer (May-Sep)","obs_na",0,0,0,128,100,23,23,0,0,0,1
+"Central Plateau Finlay","Winter (Oct-Apr)","mean",-1.73,Inf,-Inf,1.09,944.7,81.67,-4.98,0.31,348.69,-Inf,32.95
+"Central Plateau Finlay","Winter (Oct-Apr)","max",17.15,Inf,26.09,41.4,974.52,100,11.07,1.69,89.89,11.69,262.34
+"Central Plateau Finlay","Winter (Oct-Apr)","min",-35.61,-42.08,-Inf,0,908.36,26.88,-41.21,0,270.02,-Inf,0.82
+"Central Plateau Finlay","Winter (Oct-Apr)","obs_na",3,0,0,0,49,97,97,14,0,0,0
+"Chapman","Summer (May-Sep)","mean",11.08,3.21,18.65,1.69,917.71,74.79,5.92,0.2,11.74,5.15,183.4
+"Chapman","Summer (May-Sep)","max",19.97,13.88,32.1,34.8,929.25,98.02,12.7,0.84,89.43,10.57,336.3
+"Chapman","Summer (May-Sep)","min",2.14,-5.48,5.62,0,899.2,47.5,-4.46,0,270.38,2.52,29.52
+"Chapman","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Chapman","Winter (Oct-Apr)","mean",-4.2,-9.89,1.44,0.95,915.45,84.13,-6.86,0.1,1.71,3.63,62.78
+"Chapman","Winter (Oct-Apr)","max",10.39,4.53,21.44,19,936.54,99.98,6.06,1.34,89.63,11.58,262.12
+"Chapman","Winter (Oct-Apr)","min",-38.86,-42.81,-31.19,0,887.28,42.52,-41.46,0,271.66,0,1.23
+"Chapman","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Chief Lake","Summer (May-Sep)","mean",12.54,4.89,20.03,1.81,927.82,74.43,7.29,0.26,358.02,4.42,184.5
+"Chief Lake","Summer (May-Sep)","max",26.57,17.51,38.28,23.2,946.52,99.31,16.13,2.63,89.38,11.58,336.92
+"Chief Lake","Summer (May-Sep)","min",0.25,-9.3,4.3,0,911.27,37.3,-5.89,0,270.54,0,27.59
+"Chief Lake","Summer (May-Sep)","obs_na",0,0,0,0,153,0,0,0,153,0,153
+"Chief Lake","Winter (Oct-Apr)","mean",-2.65,-7.93,2.25,1.08,926.97,80.89,-5.94,0.4,359.01,4.76,61.55
+"Chief Lake","Winter (Oct-Apr)","max",15.07,10.07,24.56,23.4,949.17,100,9.69,4.95,89.5,16.62,279.89
+"Chief Lake","Winter (Oct-Apr)","min",-32.62,-43.3,-26.49,0,899.43,38.87,-35.12,0,270.28,0,1.7
+"Chief Lake","Winter (Oct-Apr)","obs_na",0,0,0,0,218,0,0,0,218,0,218
+"Coalmine","Summer (May-Sep)","mean",12.21,6.47,18.33,2.35,918.54,77.38,7.69,0,352.89,2.79,64.98
+"Coalmine","Summer (May-Sep)","max",29.73,21.15,39.8,33.2,936.06,98.87,16.81,0.04,88.96,7.55,139.73
+"Coalmine","Summer (May-Sep)","min",0.03,-5.79,4.14,0,902.88,41.11,-5.16,0,270.42,0,12.01
+"Coalmine","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Coalmine","Winter (Oct-Apr)","mean",-2.14,-6.19,2.02,1.67,916.9,83.98,-4.82,0,340.93,3.04,23.6
+"Coalmine","Winter (Oct-Apr)","max",13.67,9.95,22.13,26.6,937.9,100,11.38,0.15,89.23,7.55,97.7
+"Coalmine","Winter (Oct-Apr)","min",-36.94,-41.39,-31.84,0,878.32,38.92,-39.67,0,270.12,0,0.76
+"Coalmine","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Crystal Lake","Summer (May-Sep)","mean",12.48,4.6,19.58,1.94,927.04,71.4,6.5,1.02,10.17,-Inf,211.05
+"Crystal Lake","Summer (May-Sep)","max",27.69,16.94,38.31,53.4,945.14,96.05,16.75,4.22,89.38,18.74,423.19
+"Crystal Lake","Summer (May-Sep)","min",0.42,-9,4.64,0,902.65,30.79,-9.95,0.03,270.02,-Inf,25.46
+"Crystal Lake","Summer (May-Sep)","obs_na",0,0,0,34,0,0,0,13,572,0,121
+"Crystal Lake","Winter (Oct-Apr)","mean",-3.37,-8.79,1.49,1.49,925.48,82.61,-6.22,0.84,356.5,-Inf,71.49
+"Crystal Lake","Winter (Oct-Apr)","max",15.66,10.76,24.63,41.8,955.4,98.04,9.92,4.2,89.98,18.37,315.68
+"Crystal Lake","Winter (Oct-Apr)","min",-37.79,-44.87,-27.65,0,897.7,44.05,-41.27,0,270.13,-Inf,1.6
+"Crystal Lake","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,27,678,0,63
+"Dunster","Summer (May-Sep)","mean",12.95,7.63,19.06,1.73,912.82,73.55,7.7,0.56,2.29,5.64,222.74
+"Dunster","Summer (May-Sep)","max",27.01,18.75,37.21,26.2,928.8,96.98,16.63,2.59,89.96,14.1,524.84
+"Dunster","Summer (May-Sep)","min",-0.21,-3.57,4.04,0,890.5,33.87,-7.66,0,270.14,1.48,22.59
+"Dunster","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Dunster","Winter (Oct-Apr)","mean",-1.63,-4.72,1.57,1.11,911.64,82.24,-4.53,0.78,340.65,5.95,69.91
+"Dunster","Winter (Oct-Apr)","max",13.9,11.2,23.5,32.6,937.07,97.61,10.47,3.13,89.96,15.21,412.02
+"Dunster","Winter (Oct-Apr)","min",-30.94,-32.6,-29.32,0,883.67,37.78,-33.37,0,270.01,0,2.02
+"Dunster","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Endako","Summer (May-Sep)","mean",11.16,Inf,-Inf,1.4,917.15,70.86,5.29,0.92,359.53,-Inf,222.33
+"Endako","Summer (May-Sep)","max",25.4,Inf,36.77,35,935.75,95.94,16.15,3.51,89.8,16.14,419.68
+"Endako","Summer (May-Sep)","min",-0.44,-8.16,-Inf,0,889.48,36.08,-7.49,0,270.15,-Inf,24.42
+"Endako","Summer (May-Sep)","obs_na",11,0,0,26,37,11,11,5,5,0,0
+"Endako","Winter (Oct-Apr)","mean",-3.59,-8.73,1.41,0.82,913.9,81.14,-6.64,0.72,1.76,4.93,77.26
+"Endako","Winter (Oct-Apr)","max",13.61,9.85,23.02,34,943.42,97.23,9.98,4.01,89.97,18.37,319.37
+"Endako","Winter (Oct-Apr)","min",-33.43,-40.06,-25.67,0,879.18,38.02,-37.21,0,270.03,0,1.96
+"Endako","Winter (Oct-Apr)","obs_na",0,0,0,0,208,0,0,0,55,0,0
+"George Lake","Summer (May-Sep)","mean",12.09,Inf,-Inf,1.33,913.64,69.34,5.76,0.5,5.48,4.61,185.95
+"George Lake","Summer (May-Sep)","max",28.31,Inf,38.25,66.61,932.04,99.01,14.78,3.01,89.97,12.99,375.52
+"George Lake","Summer (May-Sep)","min",0.04,-6.42,-Inf,0,886.68,36.32,-8.17,0,270.07,0.5,26.34
+"George Lake","Summer (May-Sep)","obs_na",247,0,0,76,0,247,247,0,206,0,205
+"George Lake","Winter (Oct-Apr)","mean",-3.46,Inf,-Inf,0.84,910.79,81.85,-6.49,0.47,359.47,4,63.43
+"George Lake","Winter (Oct-Apr)","max",14.21,Inf,25.65,28.6,940.04,100,10.35,4.39,89.89,15.21,301.13
+"George Lake","Winter (Oct-Apr)","min",-34.1,-39.22,-Inf,0,875.77,39.01,-37.22,0,270.08,0,0.92
+"George Lake","Winter (Oct-Apr)","obs_na",58,0,0,114,0,58,58,0,343,0,212
+"Gnat Pass","Summer (May-Sep)","mean",6.39,3.6,9.71,1.89,831.47,77.34,2.27,3.62,12.44,11.53,193.87
+"Gnat Pass","Summer (May-Sep)","max",17.99,14.19,22.01,21.4,846.79,98.61,9.43,11.31,89.84,33.77,396.76
+"Gnat Pass","Summer (May-Sep)","min",-6.22,-9.51,-2.22,0,802.8,26.1,-12.1,0,270.03,0,32.18
+"Gnat Pass","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Gnat Pass","Winter (Oct-Apr)","mean",-6.77,-8.95,-4.54,0.18,822.95,83.03,-9.45,3.16,8.64,9.71,71.34
+"Gnat Pass","Winter (Oct-Apr)","max",10,5.82,13.26,11.8,847.56,97.96,5.37,12.22,89.5,36.55,308.44
+"Gnat Pass","Winter (Oct-Apr)","min",-25.64,-30.41,-23.36,0,791.07,12.34,-31.05,0,270.08,0,3.83
+"Gnat Pass","Winter (Oct-Apr)","obs_na",0,0,0,0,22,0,0,0,0,0,0
+"Gunnel","Summer (May-Sep)","mean",7.43,4.62,10.46,511.15,853.38,73.74,9.05,7.19,5.39,10.71,170.97
+"Gunnel","Summer (May-Sep)","max",23.91,20.53,29.66,20480.5,1025.48,298.1,261.42,278.69,90,49.31,382.34
+"Gunnel","Summer (May-Sep)","min",-11.66,-14.08,-9.99,0,1.18,3.51,-12.41,0,270.67,0,-4.87
+"Gunnel","Summer (May-Sep)","obs_na",708,708,707,707,723,708,708,824,828,824,883
+"Gunnel","Winter (Oct-Apr)","mean",-7.27,-10.6,-3.88,0.11,866.9,68.93,-12.84,3.06,1.28,10.98,66.22
+"Gunnel","Winter (Oct-Apr)","max",14.93,14.09,16,7.6,1025.42,99.91,4.52,8.55,89.5,31.7,291.5
+"Gunnel","Winter (Oct-Apr)","min",-36.08,-37.82,-35.27,0,812.34,9.54,-38.75,0,270.79,0,2.9
+"Gunnel","Winter (Oct-Apr)","obs_na",1059,1059,1059,1059,1061,1059,1059,1227,1243,1227,1271
+"Hourglass","Summer (May-Sep)","mean",11.64,6.74,16.57,1.73,885.27,65.69,4.7,2.05,25.07,-Inf,208.96
+"Hourglass","Summer (May-Sep)","max",29.7,21.84,36.74,106.6,901.55,99.23,15.5,7.3,89.67,19.85,399.84
+"Hourglass","Summer (May-Sep)","min",-4.91,-9.75,-3.45,0,862,25.81,-13.07,0,270.43,-Inf,14.05
+"Hourglass","Summer (May-Sep)","obs_na",0,0,0,49,49,0,0,97,295,0,0
+"Hourglass","Winter (Oct-Apr)","mean",-4.42,-8.37,-0.52,0.39,881.71,73.58,-8.8,2.2,22.34,-Inf,76.66
+"Hourglass","Winter (Oct-Apr)","max",15.38,10.17,22.85,19,910.11,95.53,8.49,10.41,89.72,26.27,318.48
+"Hourglass","Winter (Oct-Apr)","min",-35.91,-38.91,-33.85,0,853.2,19.06,-39.01,0,270.02,-Inf,4.05
+"Hourglass","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,213,424,0,0
+"Hudson Bay Mountain","Summer (May-Sep)","mean",6.5,3.91,9.48,1.49,829.79,79.12,2.63,4.96,17.62,-Inf,190.69
+"Hudson Bay Mountain","Summer (May-Sep)","max",23.66,20.53,27.58,29.6,846.23,100,11.98,16.17,89.92,38.78,386.92
+"Hudson Bay Mountain","Summer (May-Sep)","min",-5.49,-8.46,-3.6,0,810.32,29,-9.65,1.18,270.02,-Inf,17.65
+"Hudson Bay Mountain","Summer (May-Sep)","obs_na",0,0,0,119,0,0,0,124,0,0,0
+"Hudson Bay Mountain","Winter (Oct-Apr)","mean",-5.92,-8.16,-3.65,0.25,822.76,86.72,-8.16,5.29,16.92,-Inf,74.6
+"Hudson Bay Mountain","Winter (Oct-Apr)","max",12.04,10.05,15.1,25.61,847.35,100,7.65,23.81,89.92,49.31,304.62
+"Hudson Bay Mountain","Winter (Oct-Apr)","min",-30.35,-31.92,-29.32,0,795.68,15.35,-32.56,0,270.15,-Inf,5.71
+"Hudson Bay Mountain","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,147,43,0,0
+"Kluskus","Summer (May-Sep)","mean",10.66,Inf,-Inf,1.5,889.69,69.99,4.53,0.67,12.56,-Inf,208.22
+"Kluskus","Summer (May-Sep)","max",26.52,Inf,36.15,35.6,906.78,98.49,14.08,3.26,89.9,28.71,385.52
+"Kluskus","Summer (May-Sep)","min",-2.36,-13.12,-Inf,0,873.08,37.72,-8.55,0,270.12,-Inf,26.81
+"Kluskus","Summer (May-Sep)","obs_na",80,0,0,49,0,80,80,80,757,0,0
+"Kluskus","Winter (Oct-Apr)","mean",-4.02,-10.25,2,0.81,885.2,80.97,-7.19,0.59,359.85,5.96,76.74
+"Kluskus","Winter (Oct-Apr)","max",12.5,7.47,24.12,25,913.34,99.98,8.48,3.87,89.83,18.37,300.72
+"Kluskus","Winter (Oct-Apr)","min",-38.42,-45.99,-27.96,0,858.65,42.55,-41.39,0,270.02,0,2.17
+"Kluskus","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,0,908,0,0
+"Mackenzie Junction","Summer (May-Sep)","mean",12.54,4.87,19.77,1.56,931.46,71.35,6.62,1.14,332.9,6.95,202.12
+"Mackenzie Junction","Summer (May-Sep)","max",27.46,17.3,38.7,46.4,951.64,96.65,17.12,3.03,89.85,18.74,381.55
+"Mackenzie Junction","Summer (May-Sep)","min",-2.34,-9.85,4.45,0,904.26,32.88,-10.31,0,270.03,0,17.7
+"Mackenzie Junction","Summer (May-Sep)","obs_na",0,0,0,42,40,0,0,0,0,0,189
+"Mackenzie Junction","Winter (Oct-Apr)","mean",-3.77,-8.73,0.85,1.06,930.47,81.82,-6.71,0.96,346.52,5.73,68.9
+"Mackenzie Junction","Winter (Oct-Apr)","max",14.36,10.25,23.83,29.2,961,97.97,9.93,3.56,89.96,15.4,320.71
+"Mackenzie Junction","Winter (Oct-Apr)","min",-34.99,-40.82,-27.27,0,899.97,43.25,-38.5,0,270.02,0,2.17
+"Mackenzie Junction","Winter (Oct-Apr)","obs_na",0,0,0,213,0,0,0,0,9,0,43
+"McDonnel","Summer (May-Sep)","mean",12.39,Inf,-Inf,1.57,907.36,76.46,7.64,0.26,19.4,5.44,178.92
+"McDonnel","Summer (May-Sep)","max",20.41,Inf,31.15,23.2,925.08,95.65,12.6,1.17,89.55,10.07,348.64
+"McDonnel","Summer (May-Sep)","min",5.24,-2.42,-Inf,0,884.4,54.2,0.7,0,271.72,2.01,36.08
+"McDonnel","Summer (May-Sep)","obs_na",94,0,0,0,0,94,94,0,0,0,0
+"McDonnel","Winter (Oct-Apr)","mean",5.52,Inf,-Inf,1.19,901.14,86.86,3.25,0.17,5.69,4.48,68.16
+"McDonnel","Winter (Oct-Apr)","max",9.48,Inf,20.39,16.4,925.74,95.8,7.42,1.68,89.16,11.58,264.73
+"McDonnel","Winter (Oct-Apr)","min",-3,-7.48,-Inf,0,872.45,72.27,-3.76,0,270.68,0,1.49
+"McDonnel","Winter (Oct-Apr)","obs_na",212,0,0,0,0,212,212,0,0,0,0
+"Middlefork Creek","Summer (May-Sep)","mean",9.07,-0.72,17.29,2.6,901.08,74.3,3.34,1.05,4.34,7.34,194.63
+"Middlefork Creek","Summer (May-Sep)","max",23.89,13.55,36.5,94.2,921.05,100,15.38,4.37,89.97,18.18,384.94
+"Middlefork Creek","Summer (May-Sep)","min",-8.05,-19.49,-3.93,0,876.87,33.17,-15.02,0,270.05,3.02,10.71
+"Middlefork Creek","Summer (May-Sep)","obs_na",0,0,0,0,0,0,0,0,0,0,0
+"Middlefork Creek","Winter (Oct-Apr)","mean",-11.08,-19.58,-2.89,0.25,898.4,78.81,-14.61,1,354.7,5.88,71.09
+"Middlefork Creek","Winter (Oct-Apr)","max",12.01,2.66,25.17,10.6,929.74,100,5.11,4.94,89.97,18.74,307.33
+"Middlefork Creek","Winter (Oct-Apr)","min",-46.5,-53.55,-37.96,0,868.75,38.15,-51.27,0,270.07,0,2.59
+"Middlefork Creek","Winter (Oct-Apr)","obs_na",0,0,0,0,3,0,0,0,0,0,8
+"Mt Edziza","Summer (May-Sep)","mean",5.26,2.51,8.37,2.1,831.27,82.45,2.07,2.62,NA,10.86,146.67
+"Mt Edziza","Summer (May-Sep)","max",19.06,15.63,25.02,17.6,847.4,100,9.7,12.1,-Inf,25.89,346.25
+"Mt Edziza","Summer (May-Sep)","min",-3.46,-6.33,-2.22,0,811.07,33.1,-6.88,0,Inf,0,21.23
+"Mt Edziza","Summer (May-Sep)","obs_na",0,0,0,345,76,0,0,0,401,0,227
+"Mt Edziza","Winter (Oct-Apr)","mean",-7.02,-9.12,-4.84,0.03,822.32,87.04,-9.08,1.49,NA,6.32,53.2
+"Mt Edziza","Winter (Oct-Apr)","max",9.19,5.8,14.55,0.8,843.45,100,4.1,11.56,-Inf,30.07,244.16
+"Mt Edziza","Winter (Oct-Apr)","min",-26.04,-29.12,-22.99,0,795.48,26.96,-28.46,0,Inf,0,0.6
+"Mt Edziza","Winter (Oct-Apr)","obs_na",0,0,0,545,83,0,0,0,637,0,332
+"Nonda","Summer (May-Sep)","mean",6.24,Inf,-Inf,1.86,826.95,72.91,1.15,4.67,18.19,14.84,189.46
+"Nonda","Summer (May-Sep)","max",20.24,Inf,24.51,58.6,842.85,100,11.97,17.48,89.97,39.76,419.94
+"Nonda","Summer (May-Sep)","min",-10.81,-14.1,-Inf,0,802.95,25.4,-11.57,0,270.15,0,12.85
+"Nonda","Summer (May-Sep)","obs_na",423,0,0,155,75,423,423,0,329,0,0
+"Nonda","Winter (Oct-Apr)","mean",-7.73,Inf,-Inf,0.13,819.17,74.24,-12.08,5.26,19.07,-Inf,67.16
+"Nonda","Winter (Oct-Apr)","max",12.74,Inf,15.62,22.2,848.53,100,4.48,20.56,89.95,46.94,318.27
+"Nonda","Winter (Oct-Apr)","min",-37.09,-39.58,-Inf,0,790.97,10.33,-40.45,0,270.2,-Inf,4.15
+"Nonda","Winter (Oct-Apr)","obs_na",743,0,0,425,309,743,743,97,530,0,0
+"North Fraser","Summer (May-Sep)","mean",14.92,Inf,-Inf,1.08,NA,71.36,NA,0.9,334.08,-Inf,NA
+"North Fraser","Summer (May-Sep)","max",29.07,Inf,37.97,29.81,-Inf,95.33,-Inf,1.71,89.68,-Inf,-Inf
+"North Fraser","Summer (May-Sep)","min",5.16,-2.69,-Inf,0,Inf,44.56,Inf,0.54,271.04,-Inf,Inf
+"North Fraser","Summer (May-Sep)","obs_na",153,0,0,229,261,153,261,153,153,0,261
+"North Fraser","Winter (Oct-Apr)","mean",3.41,Inf,-Inf,NA,NA,87.88,NA,0.83,343.91,-Inf,NA
+"North Fraser","Winter (Oct-Apr)","max",8.03,Inf,13.5,-Inf,-Inf,97.87,-Inf,1.33,86.7,-Inf,-Inf
+"North Fraser","Winter (Oct-Apr)","min",0.17,-3.84,-Inf,Inf,Inf,63.27,Inf,0.34,274.05,-Inf,Inf
+"North Fraser","Winter (Oct-Apr)","obs_na",210,0,0,229,229,210,229,210,210,0,229
+"Northern Dancer","Summer (May-Sep)","mean",6.04,3.25,9.39,1.78,NA,75.77,1.67,2.27,NA,10.52,204.67
+"Northern Dancer","Summer (May-Sep)","max",17.19,15.37,22.23,23.4,-Inf,96.18,9.3,4.93,-Inf,14.09,400.46
+"Northern Dancer","Summer (May-Sep)","min",-4.94,-7.48,-1.21,0,Inf,38.46,-7.88,0.57,Inf,5.03,15.31
+"Northern Dancer","Summer (May-Sep)","obs_na",0,0,0,0,120,0,0,109,120,109,0
+"Northern Dancer","Winter (Oct-Apr)","mean",-9.69,-11.88,-7.43,0.22,NA,81.14,-12.55,2.39,NA,10.41,70.4
+"Northern Dancer","Winter (Oct-Apr)","max",5.39,2.69,8.22,10.6,-Inf,95.33,0.11,10,-Inf,25.16,293.53
+"Northern Dancer","Winter (Oct-Apr)","min",-28.7,-30.76,-26.49,0,Inf,27.62,-31.28,0,Inf,0,3.68
+"Northern Dancer","Winter (Oct-Apr)","obs_na",0,0,0,0,212,0,0,40,212,40,0
+"Pink Mountain","Summer (May-Sep)","mean",6.67,Inf,-Inf,1.91,819.68,71.89,1.39,4.37,8.61,-Inf,206.1
+"Pink Mountain","Summer (May-Sep)","max",25.48,Inf,29.84,51.6,835.92,100,12.91,12.52,89.6,31.96,421.35
+"Pink Mountain","Summer (May-Sep)","min",-11.99,-13.66,-Inf,0,796.13,21,-14.8,0,270.54,-Inf,20.4
+"Pink Mountain","Summer (May-Sep)","obs_na",304,0,0,139,197,304,304,426,1158,0,206
+"Pink Mountain","Winter (Oct-Apr)","mean",-8.27,Inf,-Inf,0.36,812.04,75.08,-12.33,5.16,11.4,-Inf,77.07
+"Pink Mountain","Winter (Oct-Apr)","max",13.91,Inf,16.11,252.25,841.44,99.99,5.97,14.13,89.85,36.17,322.7
+"Pink Mountain","Winter (Oct-Apr)","min",-37.81,-38.71,-Inf,0,784.93,13.33,-40.77,0,270.13,-Inf,0.6
+"Pink Mountain","Winter (Oct-Apr)","obs_na",162,0,0,208,318,161,162,636,1778,0,303
+"Saxton Lake","Summer (May-Sep)","mean",12.37,4.89,18.97,1.38,929.02,72.75,6.68,1.55,1.65,-Inf,226.22
+"Saxton Lake","Summer (May-Sep)","max",26.43,21.32,36.44,32.6,947.9,100,17.49,5.88,89.91,19.48,411.34
+"Saxton Lake","Summer (May-Sep)","min",-0.15,-9.46,2.89,0,903.38,38.73,-8.82,0,270.01,-Inf,29.05
+"Saxton Lake","Summer (May-Sep)","obs_na",0,0,0,0,0,7,7,86,139,0,0
+"Saxton Lake","Winter (Oct-Apr)","mean",-3.33,-9.25,1.78,0.88,927.72,82.27,-6.34,1.28,347.98,6.64,80.94
+"Saxton Lake","Winter (Oct-Apr)","max",15.79,12.16,25.56,35.8,958.25,100,9.88,5.56,89.92,23.93,315.94
+"Saxton Lake","Winter (Oct-Apr)","min",-38.96,-47.33,-27.34,0,892.74,36.67,-41.82,0,270.02,0,2.38
+"Saxton Lake","Winter (Oct-Apr)","obs_na",0,0,0,0,0,6,6,0,213,0,0
+"Stone Creek","Summer (May-Sep)","mean",15.41,Inf,-Inf,0.34,912.87,61.69,NA,1.65,7.15,-Inf,NA
+"Stone Creek","Summer (May-Sep)","max",30.01,Inf,37.73,8.8,921.83,98.02,-Inf,5.14,88.02,-Inf,-Inf
+"Stone Creek","Summer (May-Sep)","min",5.91,1.25,-Inf,0,896.35,33.7,Inf,0.85,280.71,-Inf,Inf
+"Stone Creek","Summer (May-Sep)","obs_na",70,0,0,0,70,70,174,70,70,0,174
+"Stone Creek","Winter (Oct-Apr)","mean",4.07,Inf,-Inf,0.25,909.95,78.54,NA,2.66,5.14,-Inf,NA
+"Stone Creek","Winter (Oct-Apr)","max",8.88,Inf,12.49,2.06,917.88,99.92,-Inf,5.16,64.08,-Inf,-Inf
+"Stone Creek","Winter (Oct-Apr)","min",1.2,-1.8,-Inf,0,904.08,53.98,Inf,0.73,286.19,-Inf,Inf
+"Stone Creek","Winter (Oct-Apr)","obs_na",18,0,0,0,18,18,35,18,18,0,35
+"Sunbeam","Summer (May-Sep)","mean",6.67,Inf,-Inf,2.31,798.94,75.68,2.14,3.6,353.83,-Inf,199.79
+"Sunbeam","Summer (May-Sep)","max",25.71,Inf,30.24,44.8,812.29,100,10.94,12.25,89.6,49.31,415.72
+"Sunbeam","Summer (May-Sep)","min",-8.37,-9.68,-Inf,0,776.27,29.29,-12.21,0,270.24,-Inf,13.95
+"Sunbeam","Summer (May-Sep)","obs_na",91,0,0,0,238,91,220,82,638,0,4
+"Sunbeam","Winter (Oct-Apr)","mean",-6.27,Inf,-Inf,0.38,792.37,87.37,-8.48,4.11,347.95,-Inf,80.04
+"Sunbeam","Winter (Oct-Apr)","max",12.2,Inf,15.89,22,818.64,100,5.78,13.08,89.75,35.81,323.74
+"Sunbeam","Winter (Oct-Apr)","min",-32.91,-35.27,-Inf,0,763.62,11.78,-34.98,0,270.02,-Inf,5.87
+"Sunbeam","Winter (Oct-Apr)","obs_na",166,0,0,1,255,166,395,113,872,0,68
+"Thompson","Summer (May-Sep)","mean",11.89,5.99,17.93,1.19,913.97,66.77,4.99,0.98,4.78,-Inf,207.06
+"Thompson","Summer (May-Sep)","max",27.91,18.28,37.65,38.8,932.69,100,14.27,4.24,89.9,14.84,401.88
+"Thompson","Summer (May-Sep)","min",-0.31,-5.57,0.33,0,893.94,27.25,-8.85,0,270.08,-Inf,25.93
+"Thompson","Summer (May-Sep)","obs_na",0,0,0,45,0,0,0,78,117,0,0
+"Thompson","Winter (Oct-Apr)","mean",-2.66,-6.46,1.48,0.77,910.49,80.76,-5.94,0.79,350.77,-Inf,74.34
+"Thompson","Winter (Oct-Apr)","max",14.24,10.35,23.45,34.8,940.06,100,10.08,4.62,89.92,19.67,323.79
+"Thompson","Winter (Oct-Apr)","min",-31.63,-36.46,-26.11,0,874.84,30.95,-35.76,0,270.03,-Inf,1.96
+"Thompson","Winter (Oct-Apr)","obs_na",0,0,0,60,0,0,0,3,212,0,0
+"Willow-Bowron","Summer (May-Sep)","mean",12.98,Inf,-Inf,1.46,944.81,77.65,8.15,0.08,6.18,-Inf,131.78
+"Willow-Bowron","Summer (May-Sep)","max",26.82,Inf,38.76,29.8,963.65,100,18.56,0.79,89.97,7.05,324.73
+"Willow-Bowron","Summer (May-Sep)","min",0.62,-6.3,-Inf,0,919.08,28.79,-7.75,0,270.08,-Inf,17.96
+"Willow-Bowron","Summer (May-Sep)","obs_na",47,0,0,106,0,47,47,164,543,0,45
+"Willow-Bowron","Winter (Oct-Apr)","mean",-1.54,-6.37,3.21,0.99,943.84,83.35,-4.46,0.15,359.74,-Inf,35.64
+"Willow-Bowron","Winter (Oct-Apr)","max",16.88,12.55,25.91,43.4,974.67,100,11.25,1.35,89.98,9.28,256.71
+"Willow-Bowron","Winter (Oct-Apr)","min",-36.47,-43.3,-29.52,0,908.1,33.25,-39.04,0,270.05,-Inf,0.92
+"Willow-Bowron","Winter (Oct-Apr)","obs_na",0,0,0,0,0,0,0,146,793,0,0

@@ -1,25 +1,20 @@
-[![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
+![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# Northern B.C. Climate Research Stations
+Northern B.C. Climate Research Stations
+=======================================
 
 ### Overview
 
-A web-application for visualising and downloading Northern British
-Columbia climate research data.
-
-Open the app (<https://bcgov-env.shinyapps.io/nbcclim/>)
+A web-application for visualising and downloading Northern British Columbia climate research data.
 
 ### Features
 
-Provides interactive web-application to view climate data station
-locations, visualise long-term and real-time records (including
-temperature, precipitation, wind, solar radiation etc), obtain
-statistical summaries and download data.
+Provides interactive web-application to view climate data station locations, visualise long-term and real-time records (including temperature, precipitation, wind, solar radiation etc), obtain statistical summaries and download data.
 
 ### Examples
 
-Below are snapshots of the application showing long-term and real-time
-climate records.
+Below are snapshots of the application showing long-term and real-time climate records.
 
 ![](tools/readme/Example_main.png)
 
@@ -31,17 +26,13 @@ This project is under development.
 
 ### Getting Help or Reporting an Issue
 
-To report bugs/issues/feature requests, please file an
-[issue](https://github.com/bcgov/nbcclim/issues/).
+To report bugs/issues/feature requests, please file an [issue](https://github.com/bcgov/nbcclim/issues/).
 
 ### How to Contribute
 
-If you would like to contribute to the package, please see our
-[CONTRIBUTING](CONTRIBUTING.md) guidelines.
+If you would like to contribute to the package, please see our [CONTRIBUTING](CONTRIBUTING.md) guidelines.
 
-Please note that this project is released with a [Contributor Code of
-Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
-to abide by its terms.
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ### License
 
@@ -59,5 +50,4 @@ to abide by its terms.
 
 ------------------------------------------------------------------------
 
-*This project was created using the
-[bcgovr](https://github.com/bcgov/bcgovr) package.*
+*This project was created using the [bcgovr](https://github.com/bcgov/bcgovr) package.*
