@@ -36,7 +36,7 @@ server <- function(input, output) {
     req(input$wsmap_marker_click$id)
     site <- input$wsmap_marker_click$id
     wxstn_df[wxstn_df$Site %in% site,]
-  })
+    })
 
   ggplot_long <- reactive({
     req(input$wsmap_marker_click$id)
@@ -57,35 +57,60 @@ server <- function(input, output) {
 
   output$statsum <- renderUI({
     req(input$wsmap_marker_click$id)
+    t <- wxstn_df %>% filter(Site == input$wsmap_marker_click$id)
     str1 <- paste("<h4><b>", input$wsmap_marker_click$id, "</b></h4>")
-    str2 <- paste("Data range:", filter(wxstn_df, Site == input$wsmap_marker_click$id)$Date[1], "to",
-                  filter(wxstn_df, Site == input$wsmap_marker_click$id)$Date[nrow(filter(wxstn_df, Site == input$wsmap_marker_click$id))], "<br/>")
-    str3 <- paste("Maximum temperature:", round(max(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "&deg;C", "<br/>", sep = " ")
-    str4 <- paste("Minimum temperature:", round(min(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "&deg;C", "<br/>", sep = " ")
-    str5 <- paste("Average temperature:", round(mean(ggplot_data()$Temp_avg, na.rm = TRUE), 1), "&deg;C", "<br/>", sep = " ")
-    str6 <- paste("Maximum daily precipitation:", round(max(ggplot_data()$Rain_sum, na.rm = TRUE), 1), "mm", "<br/>", sep = " ")
-    str7 <- paste("Maximum gust speed:", round(max(ggplot_data()$GS_max, na.rm = TRUE), 1), "m/s", "<br/>", sep = " ")
+    str2 <- paste("Data range:", t$Date[1], "to", t$Date[nrow(t)], "<br/>")
+    str3 <- paste("Maximum temperature:", round(as.numeric(max(t$Temp_avg, na.rm = TRUE)), 1), "&deg;C", "<br/>", sep = " ")
+    str4 <- paste("Minimum temperature:", round(as.numeric(min(t$Temp_avg, na.rm = TRUE)), 1), "&deg;C", "<br/>", sep = " ")
+    str5 <- paste("Average temperature:", round(as.numeric(mean(t$Temp_avg, na.rm = TRUE)), 1), "&deg;C", "<br/>", sep = " ")
+    str6 <- paste("Maximum daily precipitation:", round(as.numeric(max(t$Rain_sum, na.rm = TRUE)), 1), "mm", "<br/>", sep = " ")
+    str7 <- paste("Maximum gust speed:", round(as.numeric(max(t$GS_max, na.rm = TRUE)), 1), "m/s", "<br/>", sep = " ")
     str8 <- "<br/>*All plots are from daily records except for windrose using hourly wind speed and directions."
+    str9 <- "<br/>**All data have been cleaned and erronious data points removed. However, errors may be present."
+    str10 <- "<br/>***For more information about the stations, or to report errors, please see the 'About' page."
 
-    HTML(paste(str1, str2, str3, str4, str5, str6, str7, str8))
+    HTML(paste(str1, str2, str3, str4, str5, str6, str7, str8, str9, str10))
   })
 
   ## average daily temperature, relative humidity, precipitation and pressure plot
   output$tempplot <- renderPlotly({
 
-    plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
+    if(input$plot_type == "By Day of Year") {
+      plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
                      variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
-      ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
-                                          text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
-      geom_line(size = 0.3, alpha = 0.7) +
-      xlab("") +
-      ylab("") +
-      facet_grid(variable ~ ., scales = "free_y") +
-      scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_color_manual(values = pal) +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
-            strip.background = element_blank(), legend.title = element_blank())
+        ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
+                                            text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
+        geom_line(size = 0.3, alpha = 0.7) +
+        xlab("") +
+        ylab("") +
+        facet_grid(variable ~ ., scales = "free_y") +
+        scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+        scale_color_manual(values = pal) +
+        theme_light() +
+        theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
+              strip.background = element_blank(), legend.title = element_blank())
+      # ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
+      #   layout(margin = list(l = 35)) # to fully display the x and y axis labels
+    }
+
+    if(input$plot_type == "By Date") {
+      plot <- subset(ggplot_long(), variable == "Temperature (degree C)" | variable == "Relative Humidity (%)" |
+                       variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
+        ggplot(ggplot_long(), mapping = aes(as.Date(Date), value, group = years, colour = years,
+                                          text = paste("<br>Date:", Date, "<br>Value:", value))) +
+        geom_line(size = 0.3, alpha = 0.7) +
+        xlab("") +
+        ylab("") +
+        facet_grid(variable ~ ., scales = "free_y") +
+        scale_x_date(date_breaks = "1 year", date_labels = "%b") +
+        scale_color_manual(values = pal) +
+        theme_light() +
+        theme(panel.grid.minor = element_blank(), strip.text = element_text(colour = "black"),
+              strip.background = element_blank(), legend.title = element_blank())
+      # ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
+      #   layout(margin = list(l = 35)) # to fully display the x and y axis labels
+    }
+
     ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
       layout(margin = list(l = 35)) # to fully display the x and y axis labels
   })
@@ -93,77 +118,136 @@ server <- function(input, output) {
 
   ## average wind speed and direction plot for summer and winter growing seasons
   output$windplot <- renderPlot({
-    if (all(is.na(ggplot_wind()$WS))) {
-      ggplot(ggplot_wind(), mapping = aes(WD, fill = WS)) +
-        scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-        xlab("") +
-        ylab("") +
-        coord_polar() +
-        theme_light() +
-        theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
-              strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
 
-    } else {
-      ggplot(ggplot_wind(), aes(WD, fill = WS)) +
-        geom_histogram(stat = "identity", mapping = aes(y = n, width = 1), alpha = 0.8,
-                       colour = "grey30") +
-        scale_x_discrete(breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
-        scale_fill_viridis_d(guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
-                             labels = c(">9", "6 - 9", "3 - 6", "<3")) +
-        labs(title = "", x = "", y = "") +
-        facet_grid(. ~ gseason) +
-        coord_polar(start = -0.25) + # tilt the polar plot to the correct direction
-        theme_light() +
-        theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
-              strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+      if (all(is.na(ggplot_wind()$WS))) {
+        ggplot(ggplot_wind(), mapping = aes(WD, fill = WS)) +
+          scale_x_continuous(limits = c(0, 360), breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
+          xlab("") +
+          ylab("") +
+          coord_polar() +
+          theme_light() +
+          theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
+                strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+
+      } else {
+        ggplot(ggplot_wind(), aes(WD, fill = WS)) +
+          geom_histogram(stat = "identity", mapping = aes(y = n, width = 1), alpha = 0.8,
+                         colour = "grey30") +
+          scale_x_discrete(breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
+          scale_fill_viridis_d(guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,
+                               labels = c(">9", "6 - 9", "3 - 6", "<3")) +
+          labs(title = "", x = "", y = "") +
+          facet_grid(. ~ gseason) +
+          coord_polar(start = -0.25) + # tilt the polar plot to the correct direction
+          theme_light() +
+          theme(panel.grid.minor = element_blank(), text = element_text(size = 14),
+                strip.text = element_text(colour = "black", size = 14), strip.background = element_blank())
+
 
     }
+
+
+
   })
 
   ## average wind gust plot
   output$gustplot <- renderPlotly({
 
-    plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
-                                               text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
-      geom_line(size = 0.3, alpha = 0.7) +
-      scale_x_date(date_breaks = "1 month", date_labels = "%b") +
-      scale_colour_manual(values = pal) +
-      xlab("") +
-      ylab("Maximum Gust Speed (m/s)") +
-      theme_light() +
-      theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
-            axis.title.y = element_text(size = 10))
-    p <- ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
+    if(input$plot_type == "By Day of Year") {
+
+      plot <- ggplot(ungroup(ggplot_data()), aes(dates, GS_max, group = years, colour = years,
+                                                 text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
+        geom_line(size = 0.3, alpha = 0.7) +
+        scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+        scale_colour_manual(values = pal) +
+        xlab("") +
+        ylab("Maximum Gust Speed (m/s)") +
+        theme_light() +
+        theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+              axis.title.y = element_text(size = 10))
+    }
+
+    if(input$plot_type == "By Date") {
+
+        plot <- ggplot(ungroup(ggplot_data()), aes(as.Date(Date), GS_max, group = years, colour = years,
+                                                          text = paste("<br>Date:", as.Date(Date), "<br>Value:", GS_max))) +
+          geom_line(size = 0.3, alpha = 0.7) +
+          scale_x_date(date_breaks = "1 month", date_labels = "%b") +
+          scale_colour_manual(values = pal) +
+          xlab("") +
+          ylab("Maximum Gust Speed (m/s)") +
+          theme_light() +
+          theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+                axis.title.y = element_text(size = 10))
+    }
+
+    ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
       layout(margin = list(l = 75)) ## adjusting y axis position so it doesn't overlap axis labels
   })
 
   ## average daily insolation plot
   output$solarplot <- renderPlotly({
 
-    if (all(is.na(ggplot_data()$monthly_inso))) {
-      plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years)) +
-        theme_light() +
-        xlab("") +
-        ylab("Average Monthly Insolation (W/m^2)") +
-        theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
-              axis.title.y = element_text(size = 10))
-      p <- ggplotly(plot, dynamicTicks = T) %>%
-        layout(margin = list(l = 75))
+    if(input$plot_type == "By Day of Year") {
 
-    } else {
-      plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years,
-                                                 text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
-        geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
-        # scale_x_date(date_labels = "%b") +
-        scale_colour_manual(values = pal) +
-        xlab("") +
-        ylab("Average Monthly Insolation (W/m^2)") +
-        theme_light() +
-        theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
-              axis.title.y = element_text(size = 10))
-      p <- ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
-        layout(margin = list(l = 75))
+      if (all(is.na(ggplot_data()$monthly_inso))) {
+        plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years)) +
+          theme_light() +
+          xlab("") +
+          ylab("Average Monthly Insolation (W/m^2)") +
+          theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+                axis.title.y = element_text(size = 10))
+        p <- ggplotly(plot, dynamicTicks = T) %>%
+          layout(margin = list(l = 75))
+
+      } else {
+        plot <- ggplot(ungroup(ggplot_data()), aes(months, monthly_inso, group = years, colour = years,
+                                                   text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
+          geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
+          # scale_x_date(date_labels = "%b") +
+          scale_colour_manual(values = pal) +
+          xlab("") +
+          ylab("Average Monthly Insolation (W/m^2)") +
+          theme_light() +
+          theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+                axis.title.y = element_text(size = 10))
+        # p <- ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
+        #   layout(margin = list(l = 75))
+      }
     }
+
+    if(input$plot_type == "By Date") {
+
+      if (all(is.na(ggplot_data()$monthly_inso))) {
+        plot <- ggplot(ungroup(ggplot_data()), aes(as.Date(Date) , monthly_inso, group = years, colour = years)) +
+          theme_light() +
+          xlab("") +
+          ylab("Average Monthly Insolation (W/m^2)") +
+          theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+                axis.title.y = element_text(size = 10))
+
+      } else {
+        plot <-
+          ggplot(ungroup(ggplot_data()), aes(as.Date(Date) , monthly_inso, group = years, colour = years,
+                                                   text = paste("<br>Month:", Month, "<br>Value:", monthly_inso))) +
+          geom_line(alpha = 0.7, size = 0.3, na.rm = TRUE) +
+          # scale_x_date(date_labels = "%b") +
+          scale_colour_manual(values = pal) +
+          xlab("") +
+          ylab("Average Monthly Insolation (W/m^2)") +
+          theme_light() +
+          scale_x_date(date_breaks = "1 year", date_labels = "%b") +
+
+          theme(panel.grid.minor = element_blank(), legend.title = element_blank(),
+                axis.title.y = element_text(size = 10))
+      }
+
+    }
+    ggplotly(plot, tooltip = c("text"), dynamicTicks = T) %>%
+      layout(margin = list(l = 35)) # to fully display the x and y axis labels
+
+
+
   })
 
   ## download file
