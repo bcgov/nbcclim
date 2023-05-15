@@ -19,7 +19,7 @@ YEAR =  2023
 ## concat new data with full dataset
 wxstn <- read.csv("data/wxstn_df.csv") %>%
   select(Site, Longitude,	Latitude, Elevation, Date, Rain_sum, Pressure_avg, Temp_max, Temp_min, Temp_avg, RH_avg,
-         DP_avg, WS_avg, GS_max, WD_avg, SR_avg) %>%
+         DP_avg, WS_avg, GS_max, WD_avg, SR_avg, WC_avg_5cm, WC_avg_15cm, WC_avg_30cm, ST_avg, W_avg, SD_avg) %>%
   mutate(Date = as.Date(Date))
 
 ##
@@ -38,7 +38,6 @@ wxstn_sites <- read.csv("data/wxstn_sites.csv")
 
 ## reading in updated files with new wind records
 wx_updated <- dir("data/processed", pattern = "_wx.csv", full.names = TRUE)
-
 
 ## update wxstn df
 for (i in 1:length(wx_updated)) {
@@ -87,13 +86,9 @@ for (i in 1:length(wx_updated)) {
 
 }
 
-wxstn[wxstn$Site == "Hudson Bay Mountain", "Latitude"] <- 54.77375
-wxstn[wxstn$Site == "Hudson Bay Mountain", "Longitude"] <- -127.27216
-wxstn[wxstn$Site == "Hudson Bay Mountain", "Elevation"] <- 1670
 
 wxstn <- wxstn %>%
   arrange((Site))
-
 
 ## join site coordinates
 write.csv(wxstn, glue("data/wxstn_{YEAR}.csv"), row.names = FALSE)

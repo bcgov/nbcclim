@@ -28,14 +28,14 @@ df_long <- melt(df, id.vars = c("Site", "Date", "dates", "months", "years"))
 levels(df_long$variable) <- c("Temperature (degree C)", "Relative Humidity (%)", "Precipitation (mm)", "Pressure (mb)")
 
 ## classifying months to 4 seasons
-wxstn_df$seasons <- NA
+wxstn_df$seasons <- ""
 wxstn_df[wxstn_df$months == "Dec"| wxstn_df$months == "Jan" | wxstn_df$months == "Feb", "seasons"] <- "Winter"
 wxstn_df[wxstn_df$months == "Mar"| wxstn_df$months == "Apr" | wxstn_df$months == "May", "seasons"] <- "Spring"
 wxstn_df[wxstn_df$months == "Jun"| wxstn_df$months == "Jul" | wxstn_df$months == "Aug", "seasons"] <- "Summer"
 wxstn_df[wxstn_df$months == "Sep"| wxstn_df$months == "Oct" | wxstn_df$months == "Nov", "seasons"] <- "Fall"
 
 ## classifying months to summer and winter growing seasons
-wxstn_df$gseason <- NA
+wxstn_df$gseason <- ""
 wxstn_df[wxstn_df$months == "Oct" | wxstn_df$months == "Nov" | wxstn_df$months == "Dec"| wxstn_df$months == "Jan" |
            wxstn_df$months == "Feb" | wxstn_df$months == "Mar"| wxstn_df$months == "Apr" , "gseason"] <- "Winter (Oct-Apr)"
 wxstn_df[wxstn_df$months == "May" | wxstn_df$months == "Jun"| wxstn_df$months == "Jul" | wxstn_df$months == "Aug" | wxstn_df$months == "Sep", "gseason"] <- "Summer (May-Sep)"
@@ -72,8 +72,11 @@ wind_df <- wind_df %>%
 
 ## statistical summaries ####
 summ <- select(wxstn_df, c("Site", "months", "years", "seasons", "gseason", "Temp_avg",
-                           "Temp_min", "Temp_max", "Rain_sum", "Pressure_avg", "RH_avg", "DP_avg",
-                           "WS_avg", "WD_avg", "GS_max", "SR_avg"))
+                           "Temp_min", "Temp_max", "Rain_sum", "Pressure_avg", "RH_avg",
+                           "DP_avg", "WS_avg", "WD_avg", "GS_max", "SR_avg",
+                           "WC_avg_15cm", "WC_avg_5cm", "WC_avg_30cm", "ST_avg",
+                           "W_avg", "SD_avg"
+                           ))
 
 ## convert wind direction unit for calculating mean
 summ$WD_avg <- atan(sin(summ$WD_avg*pi/180)/cos(summ$WD_avg*pi/180))*(180/pi)

@@ -23,7 +23,8 @@ server <- function(input, output) {
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
       addAwesomeMarkers(data = wxstn_sites, ~Longitude, ~Latitude, ~Site,icon = icons,
-                 popup = paste0("<b>", wxstn_sites$Site, "</b>", "<br>",
+                        label = wxstn_sites$Site,
+                        popup = paste0("<b>", wxstn_sites$Site, "</b>", "<br>",
                                 "Latitude: ", wxstn_sites$Latitude, "<br>",
                                 "Longitude: ", wxstn_sites$Longitude, "<br>",
                                 "Elevation: ", wxstn_sites$Elevation, "m", "<br>"
@@ -340,7 +341,7 @@ server <- function(input, output) {
                           sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
     }
-    else if (input$rtmap_marker_click$id == "McBride Peak") {
+    else if (input$rtmap_marker_click$id == "Sunbeam") {
       df <- tail(read.csv("http://datagarrison.com/users/300234062103550/300234064336030/temp/300234064336030_live.txt", # 10839071_004.txt
                           sep = "\t", skip = 2, header = T), input$rt_days*24) %>%
         dplyr::select(matches(col_str))
@@ -500,10 +501,12 @@ server <- function(input, output) {
                GS_max: maximum gust speed, m/s<br>
                WD_avg: averaged wind direction, &Phi;<br>
                SR_avg: averaged solar radiation, W/m<sup>2</sup><br>
-               SD_avg: averaged snow depth, cm<br>
-               WC_avg: averaged soil moisture water content, m<sup>3</sup>/m<sup>3</sup><br>
+               WC_avg_5cm: water Content, m<sup>3</sup>/m<sup>3</sup> 5 cm<br>
+               WC_avg_15cm: water Content, m<sup>3</sup>/m<sup>3</sup> 15 cm <br>
+               WC_avg_30cm: water Content, m<sup>3</sup>/m<sup>3</sup> 30 cm<br>
+               ST_avg: averaged soil temperature, &deg;C<br>
                W_avg: averaged wetness, %<br>
-               WS_EC5: averaged soil moisture water content from EC5 sensor, m<sup>3</sup>/m<sup>3</sup><br>",
+               SD_avg: averaged snow depth, cm<br>",
                "<br><h1>Real-time Data</h1>",
                "Please refer to the following links for complete real-time data records.<br>",
                "<br><a href='https://datagarrison.com/users/300234062103550/300234062107550/plots.php'  target='_blank'>Blackhawk</a><br>",
@@ -512,7 +515,7 @@ server <- function(input, output) {
                "<a href='https://datagarrison.com/users/300234062103550/300234065873520/plots.php'  target='_blank'>Gunnel</a><br>",
                "<a href='https://datagarrison.com/users/300234062103550/300234062105500/plots.php' target='_blank'>Hourglass</a><br>",
                "<a href='https://datagarrison.com/users/300234062103550/300234065724550/plots.php' target='_blank'>Hudson Bay Mountain</a><br>",
-               "<a href='https://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'>McBride Peak</a><br>",
+               "<a href='https://datagarrison.com/users/300234062103550/300234064336030/plots.php' target='_blank'>Sunbeam</a><br>",
                "<a href='https://datagarrison.com/users/300234062103550/300234065500940/plots.php' target='_blank'>Nonda</a><br>",
                "<a href='https://datagarrison.com/users/300234062103550/300234065506710/plots.php' target='_blank'>Pink Mountain</a><br>",
                "<h1>Contact</h1>",

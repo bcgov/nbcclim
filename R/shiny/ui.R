@@ -29,7 +29,7 @@ ui <- navbarPage(theme = "css/bcgov.css", title = "Northern BC Climate",
                                                choices = c("By Date","By Day of Year")),
                                    selectInput(inputId = "selected_site",
                                                label = "Download Station Data",
-                                               choices = c("All stations", wxstn_sites$Site)),
+                                               choices = c("All stations", levels(wxstn_sites$Site))),
                                    downloadButton("download", "Download")
                             ),
 
