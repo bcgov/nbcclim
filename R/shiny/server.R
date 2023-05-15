@@ -308,6 +308,7 @@ server <- function(input, output) {
       addProviderTiles("Esri.WorldImagery", group = "Satellite") %>%
       addLayersControl(baseGroups = c("Default", "Satellite"), options = layersControlOptions(collapsed = FALSE)) %>%
       addAwesomeMarkers(data = rt, ~Longitude, ~Latitude, layerId = ~Site, icon = icons,
+                 label = rt$Site,
                  popup = paste("<b>", rt$Site, "</b>", "<br>",
                                "Latitude: ", rt$Latitude, "<br>",
                                "Longitude: ", rt$Longitude, "<br>",
