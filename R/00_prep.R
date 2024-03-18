@@ -21,7 +21,7 @@ if (!dir.exists("data/processed")) {
   dir.create("data/processed")
 }
 
-new_data_dir <- "data/VFoordCleanedHourly_All/"
+new_data_dir <- "data/PCICs_Shiny cleaned hourly data/"
 
 ## station list to be updated
 ## reading in updated files with new wind records
@@ -31,35 +31,35 @@ updates <- dir(new_data_dir, pattern = "csv", full.names = TRUE)
 ## left is Vanesssa's csv reference, right is raw data's station names
 sites <- readxl::read_excel("data/NBCClimateStns_VF.xlsx") %>%
   mutate(station_name = case_when(station_name == "BarrenWx" ~ "Barren",
-                                   station_name == "BednestiWx" ~ "BednestiTamarac",
+                                   # station_name == "BednestiWx" ~ "BednestiTamarac",
                                    station_name == "BlackhawkWx" ~ "Blackhawk",
                                    station_name == "BoulderWx" ~ "BoulderCr",
                                    station_name == "BowronPit" ~ "BowronPit",
-                                   station_name == "BulkleyWx" ~ "BulkleyPGTIS1",
+                                   station_name == "BulkleyWx" ~ "Bulkley PGTIS 1",
                                    station_name == "Canoe Mountain Stn" ~ "Canoe",
                                    station_name == "Chapman" ~ "Chapman",
                                    station_name == "ChiefLakeWx" ~ "ChiefLk",
                                    station_name == "CoalmineWx" ~ "Coalmine",
-                                   station_name == "CPFWx" ~ "CPFPGTIS3",
+                                   station_name == "CPFWx" ~ "CPF PGTIS 3",
                                    station_name == "CrystalWx" ~ "CrystalLk",
                                    station_name == "DunsterWx" ~ "Dunster",
                                    station_name == "EndakoWx" ~ "Endako",
                                    station_name == "GeorgeWx" ~ "George",
-                                   station_name == "GunnelWx" ~ "Gunnel",
+                                   # station_name == "GunnelWx" ~ "Gunnel",
                                    station_name == "HourglassWx" ~ "Hourglass",
                                    station_name == "Hudson Bay Mtn2" ~ "HudsonBayMtn2",
                                    station_name == "Kluskus" ~ "Kluskus",
                                    station_name == "MacJxnWx" ~ "MacJxn",
-                                   station_name == "McDonnellWx" ~ "McDonnel",
                                    station_name == "MiddleforkWx" ~ "Middlefork",
                                    station_name == "NondaWx" ~ "NondaWx",
-                                   station_name == "North Fraser" ~ "NorthFraser",
-                                   station_name == "Stone Creek" ~ "StoneCreek",
+                                   station_name == "BednestiWx" ~ "Tamarac",
+                                   station_name == "North Fraser" ~ "North Fraser",
                                    station_name == "PinkWx" ~ "PinkMtnWx",
                                    station_name == "SaxtonWx" ~ "SaxtonLakeWx",
+                                   station_name == "Stone Creek" ~ "Stone Creek",
                                    station_name == "SumWxCC" ~ "Sunbeam",
                                    station_name == "ThompsonWx" ~ "Thompson",
-                                   station_name == "Willow-BowronWx" ~ "WillowBowronPGTIS2",
+                                   station_name == "Willow-BowronWx" ~ "WillowBowron PGTIS 2",
                                    TRUE ~ station_name
                                    ))
 
@@ -77,11 +77,24 @@ optional_col_lookup <- c(SD_avg = "Snow depth",
 for (i in 1:length(updates)) {
   print(i)
   df <- read.csv(updates[i], check.names = FALSE, encoding = "UTF-8")
-  names(df)[1] <- "Date"
-  names(df)[2] <- "Day"
+
+  # some dfs don't have the "Date" column:
+  if (grepl("date", gsub("[[:space:]]", "", tolower(names(df)[1])))) {
+    names(df)[1] <- "Date"
+    names(df)[2] <- "Day"
+
+    df$Day <- substr(df$Date, 1, 10)
+  } else {
+    # No datetime column present, add it with Day column for analysis consistency
+    names(df)[1] <- "Day"
+    df$Date <- df$Day
+
+    # reorder columns
+    df <- df %>%
+      select(Date, Day, everything())
+  }
 
   fname <- str_match(basename(updates[i]), "(.*)\\..*$")[,2]
-
 
   ## look for weird names that cannot be detected by the grep() function below
   print(glue::glue("-------------------------------------------- processing {updates[i]}"))
@@ -91,12 +104,13 @@ for (i in 1:length(updates)) {
   print(names(df))
 
 
-  ## keep the first 11 columns of interest as well as soil, water content, wetness and snow depth
-
+  ## keep the first 11 columns of interest as well as soil, water content, wetness
+  # and snow depth
   df <- df[, c(1:11,
-               grep("^Water Content, m.*5 cm$", names(df)), # Water Content, m³/m³ 5 cm and 15 cm
-               grep("^Water Content, m.*30 cm$", names(df)), # Water Content, m³/m³ 30 cm
-               grep("^Soil Temp.*C$", names(df)), # Soil Temp, °C
+               # Water Content, m≥/m≥ 5 cm and Water Content, m≥/m≥ 15 cm
+               which(stringr::str_detect(names(df), "^Water Content.*5 cm$")),
+               which(stringr::str_detect(names(df), "^Water Content.*30 cm$")), # Water Content, m≥/m≥ 30 cm
+               which(stringr::str_detect(names(df), "^Soil Temp.*C$")), # Soil Temp, °C
                grep("Wetness", names(df)), # Wetness, %
                grep("Snow depth, cm", names(df)))] # Snow depth
   df$key = seq(1, nrow(df), 1)
@@ -105,37 +119,36 @@ for (i in 1:length(updates)) {
   `%nin%` <- Negate(`%in%`)
 
   ## take the first few words before the comma separated names
-  ## take the first few words before the comma separated names
   for (i in 1:length(names(df))) {
     if (str_detect(names(df)[i], "Water")) {
       if (str_detect(names(df)[i], "15 cm")) {
 
-        names(df)[i] <- paste(strsplit(names(df)[i], ",")[[1]][1], "15cm")
+        names(df)[i] <- paste(str_split(names(df)[i], ",")[[1]][1], "15cm")
         df$`Water Content 15cm`[toupper(df$`Water Content 15cm`) == "NAN"] <- NA
 
       } else if (str_detect(names(df)[i], "30 cm")) {
-        names(df)[i] <- paste(strsplit(names(df)[i], ",")[[1]][1], "30cm")
+        names(df)[i] <- paste(str_split(names(df)[i], ",")[[1]][1], "30cm")
         df$`Water Content 30cm`[toupper(df$`Water Content 30cm`) == "NAN"] <- NA
 
       } else{
-        names(df)[i] <- paste(strsplit(names(df)[i], ",")[[1]][1], "5cm")
+        names(df)[i] <- paste(str_split(names(df)[i], ",")[[1]][1], "5cm")
         df$`Water Content 5cm`[toupper(df$`Water Content 5cm`) == "NAN"] <- NA
       }
 
     } else {
 
-      names(df)[i] <- strsplit(names(df)[i], ",")[[1]][1]
+      names(df)[i] <- strsplit(str_remove(names(df)[i], "\\\\"), ",")[[1]][1]
     }
   }
 
 
-  # for (col in c('Rain', 'Pressure', 'Temp', 'RH', 'DewPt', 'Wind Speed',
-  #               'Gust Speed', 'Wind Direction', 'Solar Radiation')) {
-  #   if (col %nin% names(df)) {
-  #     df[, col] <- NA
-  #     print(glue("WARNING - COLUMN '{col}' NOT FOUND IN DF-----"))
-  #   }
-  # }
+  for (col in c('Rain', 'Pressure', 'Temp', 'RH', 'DewPt', 'Wind Speed',
+                'Gust Speed', 'Wind Direction', 'Solar Radiation')) {
+    if (col %nin% names(df)) {
+      df[, col] <- NA
+      print(glue("WARNING - COLUMN '{col}' NOT FOUND IN DF-----"))
+    }
+  }
 
   if (length(names(df)) < 18) {
     print('Not all columns are present')
@@ -157,6 +170,10 @@ for (i in 1:length(updates)) {
   df$`Gust Speed`[toupper(df$`Gust Speed`) == "NAN"] <- NA
   df$`Wind Direction`[toupper(df$`Wind Direction`) == "NAN"] <- NA
   df$`Solar Radiation`[toupper(df$`Solar Radiation`) == "NAN"] <- NA
+  df <- df %>%
+    mutate(across(any_of(optional_cols),
+                  ~ case_when(. == "NAN" ~ NA,
+                              TRUE ~ .)))
 
   ## do a count and filter out daily records that are less than 12 observations
   ## for any variable, if we have more than 12 records

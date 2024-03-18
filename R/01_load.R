@@ -14,10 +14,10 @@
 library(tidyverse)
 library(glue)
 
-YEAR =  2023
+YEAR = year(today())
 
 ## concat new data with full dataset
-wxstn <- read.csv("data/wxstn_df.csv") %>%
+wxstn <- read.csv("r/shiny/data/wxstn_df.csv") %>%
   select(Site, Longitude,	Latitude, Elevation, Date, Rain_sum, Pressure_avg, Temp_max, Temp_min, Temp_avg, RH_avg,
          DP_avg, WS_avg, GS_max, WD_avg, SR_avg, WC_avg_5cm, WC_avg_15cm, WC_avg_30cm, ST_avg, W_avg, SD_avg) %>%
   mutate(Date = as.Date(Date))
@@ -28,13 +28,12 @@ wxstn <- read.csv("data/wxstn_df.csv") %>%
 ## validate lat long elev are numeric
 is.numeric(wxstn$Latitude)
 is.numeric(wxstn$Longitude)
-is.numeric(wxstn$elevation)
+is.numeric(wxstn$Elevation)
+
 
 ## validate there is no NA in the wxstn Site
 print(unique(wxstn$Site))
 
-
-wxstn_sites <- read.csv("data/wxstn_sites.csv")
 
 ## reading in updated files with new wind records
 wx_updated <- dir("data/processed", pattern = "_wx.csv", full.names = TRUE)

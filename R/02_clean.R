@@ -13,18 +13,21 @@
 library(tidyverse)
 library(glue)
 
-YEAR = 2023
+YEAR = year(today())
 
 wxstn_df = read.csv(glue("data/wxstn_{YEAR}.csv"))
 
 # join all year's hourly wind data
-hourly <- dir("data/", pattern = "hourly", full.names = TRUE)
+hourly <- dir("data/", pattern = "^hourly.*.csv$", full.names = TRUE)
 
 for(i in hourly) {
   wind_ls <- purrr::map(hourly, read.csv)
 }
 
 wind_df <- plyr::join_all(wind_ls, type = "full")
+
+# 2024 data included all historical records take those directly
+wind_df <- read.csv("data/hourly_2024.csv")
 wind_df$Day <- as.Date(wind_df$Day, "%Y-%m-%d")
 wind_df$months <- months(wind_df$Day, abbreviate = TRUE)
 
