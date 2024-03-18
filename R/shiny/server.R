@@ -81,7 +81,7 @@ server <- function(input, output) {
                      variable == "Precipitation (mm)" | variable == "Pressure (mb)") %>%
         ggplot(ggplot_long(), mapping = aes(dates, value, group = years, colour = years,
                                             text = paste("<br>Date:", as.Date(Date), "<br>Value:", value))) +
-        geom_line(size = 0.3, alpha = 0.7) +
+        geom_line(linewidth = 0.3, alpha = 0.7) +
         xlab("") +
         ylab("") +
         facet_grid(variable ~ ., scales = "free_y") +
@@ -132,7 +132,7 @@ server <- function(input, output) {
 
       } else {
         ggplot(ggplot_wind(), aes(WD, fill = WS)) +
-          geom_histogram(stat = "identity", mapping = aes(y = n, width = 1), alpha = 0.8,
+          geom_histogram(stat = "identity", mapping = aes(y = n), alpha = 0.8,
                          colour = "grey30") +
           scale_x_discrete(breaks = c(0, 90, 180, 270), labels = c("N", "E", "S", "W")) +
           scale_fill_viridis_d(guide_legend(title = "Wind Speed\n(km/h)"), direction = -1,

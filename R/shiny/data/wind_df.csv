@@ -1,186 +1,190 @@
 "Site","WS","gseason","WD","n"
 "Barren","(9, Inf]","Summer","30",1
-"Barren","(9, Inf]","Summer","60",23
+"Barren","(9, Inf]","Summer","60",25
 "Barren","(9, Inf]","Summer","90",4
 "Barren","(9, Inf]","Summer","180",1
-"Barren","(9, Inf]","Summer","210",35
-"Barren","(9, Inf]","Summer","240",280
-"Barren","(9, Inf]","Summer","270",76
-"Barren","(9, Inf]","Summer","300",12
+"Barren","(9, Inf]","Summer","210",49
+"Barren","(9, Inf]","Summer","240",556
+"Barren","(9, Inf]","Summer","270",176
+"Barren","(9, Inf]","Summer","300",17
 "Barren","(9, Inf]","Summer","330",2
-"Barren","(9, Inf]","Winter","30",1
-"Barren","(9, Inf]","Winter","60",45
-"Barren","(9, Inf]","Winter","90",5
-"Barren","(9, Inf]","Winter","150",2
-"Barren","(9, Inf]","Winter","210",87
-"Barren","(9, Inf]","Winter","240",233
-"Barren","(9, Inf]","Winter","270",23
-"Barren","(9, Inf]","Winter","300",2
+"Barren","(9, Inf]","Winter","30",16
+"Barren","(9, Inf]","Winter","60",130
+"Barren","(9, Inf]","Winter","90",10
+"Barren","(9, Inf]","Winter","120",1
+"Barren","(9, Inf]","Winter","150",3
+"Barren","(9, Inf]","Winter","210",131
+"Barren","(9, Inf]","Winter","240",390
+"Barren","(9, Inf]","Winter","270",43
+"Barren","(9, Inf]","Winter","300",4
 "Barren","(9, Inf]","Winter","330",2
-"Barren","(6,9]","Summer","30",7
-"Barren","(6,9]","Summer","60",26
-"Barren","(6,9]","Summer","90",12
+"Barren","(6,9]","Summer","0",2
+"Barren","(6,9]","Summer","30",11
+"Barren","(6,9]","Summer","60",36
+"Barren","(6,9]","Summer","90",14
 "Barren","(6,9]","Summer","150",4
-"Barren","(6,9]","Summer","180",1
-"Barren","(6,9]","Summer","210",56
-"Barren","(6,9]","Summer","240",222
-"Barren","(6,9]","Summer","270",101
-"Barren","(6,9]","Summer","300",12
+"Barren","(6,9]","Summer","180",6
+"Barren","(6,9]","Summer","210",97
+"Barren","(6,9]","Summer","240",426
+"Barren","(6,9]","Summer","270",166
+"Barren","(6,9]","Summer","300",16
 "Barren","(6,9]","Summer","330",3
-"Barren","(6,9]","Winter","0",1
-"Barren","(6,9]","Winter","30",4
-"Barren","(6,9]","Winter","60",43
-"Barren","(6,9]","Winter","90",8
+"Barren","(6,9]","Winter","0",2
+"Barren","(6,9]","Winter","30",14
+"Barren","(6,9]","Winter","60",124
+"Barren","(6,9]","Winter","90",20
 "Barren","(6,9]","Winter","120",4
-"Barren","(6,9]","Winter","180",1
-"Barren","(6,9]","Winter","210",80
-"Barren","(6,9]","Winter","240",111
-"Barren","(6,9]","Winter","270",14
-"Barren","(6,9]","Winter","300",1
-"Barren","(3,6]","Summer","0",16
-"Barren","(3,6]","Summer","30",40
-"Barren","(3,6]","Summer","60",87
-"Barren","(3,6]","Summer","90",92
-"Barren","(3,6]","Summer","120",88
-"Barren","(3,6]","Summer","150",62
-"Barren","(3,6]","Summer","180",64
-"Barren","(3,6]","Summer","210",306
-"Barren","(3,6]","Summer","240",635
-"Barren","(3,6]","Summer","270",202
-"Barren","(3,6]","Summer","300",37
-"Barren","(3,6]","Summer","330",12
-"Barren","(3,6]","Winter","0",15
-"Barren","(3,6]","Winter","30",64
-"Barren","(3,6]","Winter","60",154
-"Barren","(3,6]","Winter","90",41
-"Barren","(3,6]","Winter","120",19
-"Barren","(3,6]","Winter","150",40
-"Barren","(3,6]","Winter","180",40
-"Barren","(3,6]","Winter","210",207
-"Barren","(3,6]","Winter","240",301
-"Barren","(3,6]","Winter","270",47
-"Barren","(3,6]","Winter","300",6
-"Barren","(3,6]","Winter","330",6
-"Barren","(-Inf,3]","Summer","0",60
-"Barren","(-Inf,3]","Summer","30",177
-"Barren","(-Inf,3]","Summer","60",143
-"Barren","(-Inf,3]","Summer","90",86
-"Barren","(-Inf,3]","Summer","120",106
-"Barren","(-Inf,3]","Summer","150",158
-"Barren","(-Inf,3]","Summer","180",129
-"Barren","(-Inf,3]","Summer","210",490
-"Barren","(-Inf,3]","Summer","240",926
-"Barren","(-Inf,3]","Summer","270",401
-"Barren","(-Inf,3]","Summer","300",46
-"Barren","(-Inf,3]","Summer","330",54
-"Barren","(-Inf,3]","Winter","0",172
-"Barren","(-Inf,3]","Winter","30",433
-"Barren","(-Inf,3]","Winter","60",633
-"Barren","(-Inf,3]","Winter","90",234
-"Barren","(-Inf,3]","Winter","120",146
-"Barren","(-Inf,3]","Winter","150",115
-"Barren","(-Inf,3]","Winter","180",157
-"Barren","(-Inf,3]","Winter","210",371
-"Barren","(-Inf,3]","Winter","240",729
-"Barren","(-Inf,3]","Winter","270",344
-"Barren","(-Inf,3]","Winter","300",86
-"Barren","(-Inf,3]","Winter","330",61
+"Barren","(6,9]","Winter","150",2
+"Barren","(6,9]","Winter","180",5
+"Barren","(6,9]","Winter","210",131
+"Barren","(6,9]","Winter","240",216
+"Barren","(6,9]","Winter","270",27
+"Barren","(6,9]","Winter","300",3
+"Barren","(6,9]","Winter","330",2
+"Barren","(3,6]","Summer","0",19
+"Barren","(3,6]","Summer","30",58
+"Barren","(3,6]","Summer","60",154
+"Barren","(3,6]","Summer","90",196
+"Barren","(3,6]","Summer","120",154
+"Barren","(3,6]","Summer","150",83
+"Barren","(3,6]","Summer","180",115
+"Barren","(3,6]","Summer","210",551
+"Barren","(3,6]","Summer","240",1218
+"Barren","(3,6]","Summer","270",392
+"Barren","(3,6]","Summer","300",53
+"Barren","(3,6]","Summer","330",18
+"Barren","(3,6]","Winter","0",44
+"Barren","(3,6]","Winter","30",128
+"Barren","(3,6]","Winter","60",333
+"Barren","(3,6]","Winter","90",125
+"Barren","(3,6]","Winter","120",45
+"Barren","(3,6]","Winter","150",60
+"Barren","(3,6]","Winter","180",70
+"Barren","(3,6]","Winter","210",383
+"Barren","(3,6]","Winter","240",563
+"Barren","(3,6]","Winter","270",101
+"Barren","(3,6]","Winter","300",13
+"Barren","(3,6]","Winter","330",11
+"Barren","(-Inf,3]","Summer","0",85
+"Barren","(-Inf,3]","Summer","30",214
+"Barren","(-Inf,3]","Summer","60",210
+"Barren","(-Inf,3]","Summer","90",137
+"Barren","(-Inf,3]","Summer","120",159
+"Barren","(-Inf,3]","Summer","150",191
+"Barren","(-Inf,3]","Summer","180",208
+"Barren","(-Inf,3]","Summer","210",723
+"Barren","(-Inf,3]","Summer","240",1691
+"Barren","(-Inf,3]","Summer","270",637
+"Barren","(-Inf,3]","Summer","300",75
+"Barren","(-Inf,3]","Summer","330",84
+"Barren","(-Inf,3]","Winter","0",353
+"Barren","(-Inf,3]","Winter","30",1029
+"Barren","(-Inf,3]","Winter","60",1261
+"Barren","(-Inf,3]","Winter","90",499
+"Barren","(-Inf,3]","Winter","120",209
+"Barren","(-Inf,3]","Winter","150",172
+"Barren","(-Inf,3]","Winter","180",266
+"Barren","(-Inf,3]","Winter","210",732
+"Barren","(-Inf,3]","Winter","240",1515
+"Barren","(-Inf,3]","Winter","270",710
+"Barren","(-Inf,3]","Winter","300",165
+"Barren","(-Inf,3]","Winter","330",109
 "Blackhawk","(9, Inf]","Summer","0",26
-"Blackhawk","(9, Inf]","Summer","30",42
-"Blackhawk","(9, Inf]","Summer","60",686
-"Blackhawk","(9, Inf]","Summer","90",565
+"Blackhawk","(9, Inf]","Summer","30",38
+"Blackhawk","(9, Inf]","Summer","60",699
+"Blackhawk","(9, Inf]","Summer","90",564
 "Blackhawk","(9, Inf]","Summer","120",96
 "Blackhawk","(9, Inf]","Summer","150",33
 "Blackhawk","(9, Inf]","Summer","180",22
-"Blackhawk","(9, Inf]","Summer","210",2126
-"Blackhawk","(9, Inf]","Summer","240",2117
+"Blackhawk","(9, Inf]","Summer","210",2268
+"Blackhawk","(9, Inf]","Summer","240",2254
 "Blackhawk","(9, Inf]","Summer","270",93
 "Blackhawk","(9, Inf]","Summer","300",23
-"Blackhawk","(9, Inf]","Summer","330",12
+"Blackhawk","(9, Inf]","Summer","330",19
 "Blackhawk","(9, Inf]","Winter","0",23
-"Blackhawk","(9, Inf]","Winter","30",36
-"Blackhawk","(9, Inf]","Winter","60",786
+"Blackhawk","(9, Inf]","Winter","30",37
+"Blackhawk","(9, Inf]","Winter","60",794
 "Blackhawk","(9, Inf]","Winter","90",387
 "Blackhawk","(9, Inf]","Winter","120",29
 "Blackhawk","(9, Inf]","Winter","150",22
 "Blackhawk","(9, Inf]","Winter","180",28
-"Blackhawk","(9, Inf]","Winter","210",2954
-"Blackhawk","(9, Inf]","Winter","240",2621
+"Blackhawk","(9, Inf]","Winter","210",3254
+"Blackhawk","(9, Inf]","Winter","240",2815
 "Blackhawk","(9, Inf]","Winter","270",37
 "Blackhawk","(9, Inf]","Winter","300",18
 "Blackhawk","(9, Inf]","Winter","330",25
-"Blackhawk","(6,9]","Summer","0",65
-"Blackhawk","(6,9]","Summer","30",108
-"Blackhawk","(6,9]","Summer","60",581
-"Blackhawk","(6,9]","Summer","90",345
-"Blackhawk","(6,9]","Summer","120",128
-"Blackhawk","(6,9]","Summer","150",73
-"Blackhawk","(6,9]","Summer","180",106
-"Blackhawk","(6,9]","Summer","210",1203
-"Blackhawk","(6,9]","Summer","240",1245
-"Blackhawk","(6,9]","Summer","270",244
-"Blackhawk","(6,9]","Summer","300",151
-"Blackhawk","(6,9]","Summer","330",74
-"Blackhawk","(6,9]","Winter","0",116
-"Blackhawk","(6,9]","Winter","30",131
-"Blackhawk","(6,9]","Winter","60",359
-"Blackhawk","(6,9]","Winter","90",167
+"Blackhawk","(6,9]","Summer","0",70
+"Blackhawk","(6,9]","Summer","30",112
+"Blackhawk","(6,9]","Summer","60",630
+"Blackhawk","(6,9]","Summer","90",355
+"Blackhawk","(6,9]","Summer","120",129
+"Blackhawk","(6,9]","Summer","150",74
+"Blackhawk","(6,9]","Summer","180",109
+"Blackhawk","(6,9]","Summer","210",1352
+"Blackhawk","(6,9]","Summer","240",1399
+"Blackhawk","(6,9]","Summer","270",261
+"Blackhawk","(6,9]","Summer","300",154
+"Blackhawk","(6,9]","Summer","330",83
+"Blackhawk","(6,9]","Winter","0",128
+"Blackhawk","(6,9]","Winter","30",152
+"Blackhawk","(6,9]","Winter","60",373
+"Blackhawk","(6,9]","Winter","90",169
 "Blackhawk","(6,9]","Winter","120",116
-"Blackhawk","(6,9]","Winter","150",39
-"Blackhawk","(6,9]","Winter","180",95
-"Blackhawk","(6,9]","Winter","210",1284
-"Blackhawk","(6,9]","Winter","240",1494
-"Blackhawk","(6,9]","Winter","270",207
-"Blackhawk","(6,9]","Winter","300",139
-"Blackhawk","(6,9]","Winter","330",119
-"Blackhawk","(3,6]","Summer","0",238
-"Blackhawk","(3,6]","Summer","30",302
-"Blackhawk","(3,6]","Summer","60",621
-"Blackhawk","(3,6]","Summer","90",475
-"Blackhawk","(3,6]","Summer","120",142
-"Blackhawk","(3,6]","Summer","150",87
-"Blackhawk","(3,6]","Summer","180",157
-"Blackhawk","(3,6]","Summer","210",1094
-"Blackhawk","(3,6]","Summer","240",1315
-"Blackhawk","(3,6]","Summer","270",413
-"Blackhawk","(3,6]","Summer","300",225
-"Blackhawk","(3,6]","Summer","330",205
-"Blackhawk","(3,6]","Winter","0",346
-"Blackhawk","(3,6]","Winter","30",311
-"Blackhawk","(3,6]","Winter","60",452
-"Blackhawk","(3,6]","Winter","90",241
-"Blackhawk","(3,6]","Winter","120",101
-"Blackhawk","(3,6]","Winter","150",72
-"Blackhawk","(3,6]","Winter","180",228
-"Blackhawk","(3,6]","Winter","210",1407
-"Blackhawk","(3,6]","Winter","240",1754
-"Blackhawk","(3,6]","Winter","270",455
-"Blackhawk","(3,6]","Winter","300",280
-"Blackhawk","(3,6]","Winter","330",289
-"Blackhawk","(-Inf,3]","Summer","0",900
-"Blackhawk","(-Inf,3]","Summer","30",1270
-"Blackhawk","(-Inf,3]","Summer","60",1961
-"Blackhawk","(-Inf,3]","Summer","90",1097
-"Blackhawk","(-Inf,3]","Summer","120",517
-"Blackhawk","(-Inf,3]","Summer","150",510
-"Blackhawk","(-Inf,3]","Summer","180",852
-"Blackhawk","(-Inf,3]","Summer","210",3354
-"Blackhawk","(-Inf,3]","Summer","240",4412
-"Blackhawk","(-Inf,3]","Summer","270",1704
-"Blackhawk","(-Inf,3]","Summer","300",792
-"Blackhawk","(-Inf,3]","Summer","330",670
-"Blackhawk","(-Inf,3]","Winter","0",2267
-"Blackhawk","(-Inf,3]","Winter","30",2177
-"Blackhawk","(-Inf,3]","Winter","60",3145
-"Blackhawk","(-Inf,3]","Winter","90",1525
-"Blackhawk","(-Inf,3]","Winter","120",560
-"Blackhawk","(-Inf,3]","Winter","150",816
-"Blackhawk","(-Inf,3]","Winter","180",1314
-"Blackhawk","(-Inf,3]","Winter","210",4311
-"Blackhawk","(-Inf,3]","Winter","240",5669
-"Blackhawk","(-Inf,3]","Winter","270",3396
-"Blackhawk","(-Inf,3]","Winter","300",1777
-"Blackhawk","(-Inf,3]","Winter","330",1447
+"Blackhawk","(6,9]","Winter","150",41
+"Blackhawk","(6,9]","Winter","180",97
+"Blackhawk","(6,9]","Winter","210",1515
+"Blackhawk","(6,9]","Winter","240",1696
+"Blackhawk","(6,9]","Winter","270",214
+"Blackhawk","(6,9]","Winter","300",143
+"Blackhawk","(6,9]","Winter","330",122
+"Blackhawk","(3,6]","Summer","0",257
+"Blackhawk","(3,6]","Summer","30",324
+"Blackhawk","(3,6]","Summer","60",709
+"Blackhawk","(3,6]","Summer","90",509
+"Blackhawk","(3,6]","Summer","120",144
+"Blackhawk","(3,6]","Summer","150",96
+"Blackhawk","(3,6]","Summer","180",173
+"Blackhawk","(3,6]","Summer","210",1229
+"Blackhawk","(3,6]","Summer","240",1473
+"Blackhawk","(3,6]","Summer","270",487
+"Blackhawk","(3,6]","Summer","300",250
+"Blackhawk","(3,6]","Summer","330",239
+"Blackhawk","(3,6]","Winter","0",393
+"Blackhawk","(3,6]","Winter","30",367
+"Blackhawk","(3,6]","Winter","60",513
+"Blackhawk","(3,6]","Winter","90",262
+"Blackhawk","(3,6]","Winter","120",102
+"Blackhawk","(3,6]","Winter","150",77
+"Blackhawk","(3,6]","Winter","180",258
+"Blackhawk","(3,6]","Winter","210",1612
+"Blackhawk","(3,6]","Winter","240",2006
+"Blackhawk","(3,6]","Winter","270",483
+"Blackhawk","(3,6]","Winter","300",299
+"Blackhawk","(3,6]","Winter","330",322
+"Blackhawk","(-Inf,3]","Summer","0",979
+"Blackhawk","(-Inf,3]","Summer","30",1385
+"Blackhawk","(-Inf,3]","Summer","60",2267
+"Blackhawk","(-Inf,3]","Summer","90",1204
+"Blackhawk","(-Inf,3]","Summer","120",597
+"Blackhawk","(-Inf,3]","Summer","150",600
+"Blackhawk","(-Inf,3]","Summer","180",978
+"Blackhawk","(-Inf,3]","Summer","210",3847
+"Blackhawk","(-Inf,3]","Summer","240",5018
+"Blackhawk","(-Inf,3]","Summer","270",1905
+"Blackhawk","(-Inf,3]","Summer","300",886
+"Blackhawk","(-Inf,3]","Summer","330",719
+"Blackhawk","(-Inf,3]","Winter","0",2490
+"Blackhawk","(-Inf,3]","Winter","30",2458
+"Blackhawk","(-Inf,3]","Winter","60",3532
+"Blackhawk","(-Inf,3]","Winter","90",1655
+"Blackhawk","(-Inf,3]","Winter","120",649
+"Blackhawk","(-Inf,3]","Winter","150",894
+"Blackhawk","(-Inf,3]","Winter","180",1520
+"Blackhawk","(-Inf,3]","Winter","210",5082
+"Blackhawk","(-Inf,3]","Winter","240",6222
+"Blackhawk","(-Inf,3]","Winter","270",3667
+"Blackhawk","(-Inf,3]","Winter","300",1956
+"Blackhawk","(-Inf,3]","Winter","330",1630
 "Boulder Creek","(9, Inf]","Summer","60",1
 "Boulder Creek","(9, Inf]","Summer","150",1
 "Boulder Creek","(9, Inf]","Winter","0",3
@@ -194,7 +198,7 @@
 "Boulder Creek","(6,9]","Summer","60",48
 "Boulder Creek","(6,9]","Summer","90",33
 "Boulder Creek","(6,9]","Summer","120",33
-"Boulder Creek","(6,9]","Summer","150",19
+"Boulder Creek","(6,9]","Summer","150",17
 "Boulder Creek","(6,9]","Summer","180",2
 "Boulder Creek","(6,9]","Summer","210",1
 "Boulder Creek","(6,9]","Summer","240",5
@@ -213,135 +217,54 @@
 "Boulder Creek","(6,9]","Winter","270",8
 "Boulder Creek","(6,9]","Winter","300",4
 "Boulder Creek","(6,9]","Winter","330",1
-"Boulder Creek","(3,6]","Summer","0",273
+"Boulder Creek","(3,6]","Summer","0",277
 "Boulder Creek","(3,6]","Summer","30",445
 "Boulder Creek","(3,6]","Summer","60",347
-"Boulder Creek","(3,6]","Summer","90",217
-"Boulder Creek","(3,6]","Summer","120",145
+"Boulder Creek","(3,6]","Summer","90",220
+"Boulder Creek","(3,6]","Summer","120",148
 "Boulder Creek","(3,6]","Summer","150",95
-"Boulder Creek","(3,6]","Summer","180",115
+"Boulder Creek","(3,6]","Summer","180",114
 "Boulder Creek","(3,6]","Summer","210",269
 "Boulder Creek","(3,6]","Summer","240",734
-"Boulder Creek","(3,6]","Summer","270",1183
-"Boulder Creek","(3,6]","Summer","300",535
-"Boulder Creek","(3,6]","Summer","330",250
+"Boulder Creek","(3,6]","Summer","270",1184
+"Boulder Creek","(3,6]","Summer","300",546
+"Boulder Creek","(3,6]","Summer","330",268
 "Boulder Creek","(3,6]","Winter","0",162
 "Boulder Creek","(3,6]","Winter","30",834
 "Boulder Creek","(3,6]","Winter","60",1122
-"Boulder Creek","(3,6]","Winter","90",666
-"Boulder Creek","(3,6]","Winter","120",334
-"Boulder Creek","(3,6]","Winter","150",249
-"Boulder Creek","(3,6]","Winter","180",131
+"Boulder Creek","(3,6]","Winter","90",673
+"Boulder Creek","(3,6]","Winter","120",359
+"Boulder Creek","(3,6]","Winter","150",265
+"Boulder Creek","(3,6]","Winter","180",132
 "Boulder Creek","(3,6]","Winter","210",102
 "Boulder Creek","(3,6]","Winter","240",133
-"Boulder Creek","(3,6]","Winter","270",164
+"Boulder Creek","(3,6]","Winter","270",165
 "Boulder Creek","(3,6]","Winter","300",57
 "Boulder Creek","(3,6]","Winter","330",28
-"Boulder Creek","(-Inf,3]","Summer","0",1821
-"Boulder Creek","(-Inf,3]","Summer","30",3804
-"Boulder Creek","(-Inf,3]","Summer","60",4053
-"Boulder Creek","(-Inf,3]","Summer","90",2975
-"Boulder Creek","(-Inf,3]","Summer","120",3345
-"Boulder Creek","(-Inf,3]","Summer","150",2548
-"Boulder Creek","(-Inf,3]","Summer","180",2229
-"Boulder Creek","(-Inf,3]","Summer","210",2277
-"Boulder Creek","(-Inf,3]","Summer","240",2222
-"Boulder Creek","(-Inf,3]","Summer","270",2215
-"Boulder Creek","(-Inf,3]","Summer","300",2008
-"Boulder Creek","(-Inf,3]","Summer","330",1917
-"Boulder Creek","(-Inf,3]","Winter","0",1900
-"Boulder Creek","(-Inf,3]","Winter","30",5935
-"Boulder Creek","(-Inf,3]","Winter","60",9064
-"Boulder Creek","(-Inf,3]","Winter","90",6687
-"Boulder Creek","(-Inf,3]","Winter","120",6722
-"Boulder Creek","(-Inf,3]","Winter","150",5973
-"Boulder Creek","(-Inf,3]","Winter","180",2894
-"Boulder Creek","(-Inf,3]","Winter","210",1690
-"Boulder Creek","(-Inf,3]","Winter","240",1566
-"Boulder Creek","(-Inf,3]","Winter","270",1343
-"Boulder Creek","(-Inf,3]","Winter","300",1041
-"Boulder Creek","(-Inf,3]","Winter","330",1001
-"Bowron Pit","(9, Inf]","Summer","0",17
-"Bowron Pit","(9, Inf]","Summer","30",31
-"Bowron Pit","(9, Inf]","Summer","60",9
-"Bowron Pit","(9, Inf]","Summer","90",3
-"Bowron Pit","(9, Inf]","Summer","120",10
-"Bowron Pit","(9, Inf]","Summer","150",10
-"Bowron Pit","(9, Inf]","Winter","0",46
-"Bowron Pit","(9, Inf]","Winter","30",54
-"Bowron Pit","(9, Inf]","Winter","60",13
-"Bowron Pit","(9, Inf]","Winter","120",83
-"Bowron Pit","(9, Inf]","Winter","150",212
-"Bowron Pit","(9, Inf]","Winter","180",42
-"Bowron Pit","(9, Inf]","Winter","210",7
-"Bowron Pit","(9, Inf]","Winter","300",1
-"Bowron Pit","(9, Inf]","Winter","330",4
-"Bowron Pit","(6,9]","Summer","0",25
-"Bowron Pit","(6,9]","Summer","30",38
-"Bowron Pit","(6,9]","Summer","60",10
-"Bowron Pit","(6,9]","Summer","90",2
-"Bowron Pit","(6,9]","Summer","120",11
-"Bowron Pit","(6,9]","Summer","150",27
-"Bowron Pit","(6,9]","Summer","180",5
-"Bowron Pit","(6,9]","Summer","330",3
-"Bowron Pit","(6,9]","Winter","0",42
-"Bowron Pit","(6,9]","Winter","30",16
-"Bowron Pit","(6,9]","Winter","60",9
-"Bowron Pit","(6,9]","Winter","90",4
-"Bowron Pit","(6,9]","Winter","120",73
-"Bowron Pit","(6,9]","Winter","150",150
-"Bowron Pit","(6,9]","Winter","180",41
-"Bowron Pit","(6,9]","Winter","210",1
-"Bowron Pit","(6,9]","Winter","300",1
-"Bowron Pit","(6,9]","Winter","330",12
-"Bowron Pit","(3,6]","Summer","0",188
-"Bowron Pit","(3,6]","Summer","30",141
-"Bowron Pit","(3,6]","Summer","60",74
-"Bowron Pit","(3,6]","Summer","90",51
-"Bowron Pit","(3,6]","Summer","120",180
-"Bowron Pit","(3,6]","Summer","150",191
-"Bowron Pit","(3,6]","Summer","180",58
-"Bowron Pit","(3,6]","Summer","210",17
-"Bowron Pit","(3,6]","Summer","240",4
-"Bowron Pit","(3,6]","Summer","270",3
-"Bowron Pit","(3,6]","Summer","300",8
-"Bowron Pit","(3,6]","Summer","330",51
-"Bowron Pit","(3,6]","Winter","0",174
-"Bowron Pit","(3,6]","Winter","30",46
-"Bowron Pit","(3,6]","Winter","60",48
-"Bowron Pit","(3,6]","Winter","90",42
-"Bowron Pit","(3,6]","Winter","120",364
-"Bowron Pit","(3,6]","Winter","150",600
-"Bowron Pit","(3,6]","Winter","180",209
-"Bowron Pit","(3,6]","Winter","210",33
-"Bowron Pit","(3,6]","Winter","240",24
-"Bowron Pit","(3,6]","Winter","270",15
-"Bowron Pit","(3,6]","Winter","300",34
-"Bowron Pit","(3,6]","Winter","330",207
-"Bowron Pit","(-Inf,3]","Summer","0",1501
-"Bowron Pit","(-Inf,3]","Summer","30",787
-"Bowron Pit","(-Inf,3]","Summer","60",513
-"Bowron Pit","(-Inf,3]","Summer","90",776
-"Bowron Pit","(-Inf,3]","Summer","120",1580
-"Bowron Pit","(-Inf,3]","Summer","150",1781
-"Bowron Pit","(-Inf,3]","Summer","180",949
-"Bowron Pit","(-Inf,3]","Summer","210",490
-"Bowron Pit","(-Inf,3]","Summer","240",406
-"Bowron Pit","(-Inf,3]","Summer","270",393
-"Bowron Pit","(-Inf,3]","Summer","300",530
-"Bowron Pit","(-Inf,3]","Summer","330",811
-"Bowron Pit","(-Inf,3]","Winter","0",1270
-"Bowron Pit","(-Inf,3]","Winter","30",654
-"Bowron Pit","(-Inf,3]","Winter","60",636
-"Bowron Pit","(-Inf,3]","Winter","90",959
-"Bowron Pit","(-Inf,3]","Winter","120",1962
-"Bowron Pit","(-Inf,3]","Winter","150",2422
-"Bowron Pit","(-Inf,3]","Winter","180",1571
-"Bowron Pit","(-Inf,3]","Winter","210",775
-"Bowron Pit","(-Inf,3]","Winter","240",507
-"Bowron Pit","(-Inf,3]","Winter","270",704
-"Bowron Pit","(-Inf,3]","Winter","300",1650
-"Bowron Pit","(-Inf,3]","Winter","330",1842
+"Boulder Creek","(-Inf,3]","Summer","0",2015
+"Boulder Creek","(-Inf,3]","Summer","30",3960
+"Boulder Creek","(-Inf,3]","Summer","60",4180
+"Boulder Creek","(-Inf,3]","Summer","90",3270
+"Boulder Creek","(-Inf,3]","Summer","120",3811
+"Boulder Creek","(-Inf,3]","Summer","150",2923
+"Boulder Creek","(-Inf,3]","Summer","180",2610
+"Boulder Creek","(-Inf,3]","Summer","210",2546
+"Boulder Creek","(-Inf,3]","Summer","240",2489
+"Boulder Creek","(-Inf,3]","Summer","270",2614
+"Boulder Creek","(-Inf,3]","Summer","300",2481
+"Boulder Creek","(-Inf,3]","Summer","330",2245
+"Boulder Creek","(-Inf,3]","Winter","0",1985
+"Boulder Creek","(-Inf,3]","Winter","30",6041
+"Boulder Creek","(-Inf,3]","Winter","60",9319
+"Boulder Creek","(-Inf,3]","Winter","90",7445
+"Boulder Creek","(-Inf,3]","Winter","120",8110
+"Boulder Creek","(-Inf,3]","Winter","150",7041
+"Boulder Creek","(-Inf,3]","Winter","180",3334
+"Boulder Creek","(-Inf,3]","Winter","210",1963
+"Boulder Creek","(-Inf,3]","Winter","240",1752
+"Boulder Creek","(-Inf,3]","Winter","270",1484
+"Boulder Creek","(-Inf,3]","Winter","300",1226
+"Boulder Creek","(-Inf,3]","Winter","330",1154
 "Bulkley","(6,9]","Summer","0",9
 "Bulkley","(6,9]","Summer","60",1
 "Bulkley","(6,9]","Summer","120",3
@@ -352,164 +275,259 @@
 "Bulkley","(6,9]","Winter","0",32
 "Bulkley","(6,9]","Winter","30",3
 "Bulkley","(6,9]","Winter","120",42
-"Bulkley","(6,9]","Winter","150",823
+"Bulkley","(6,9]","Winter","150",858
 "Bulkley","(6,9]","Winter","180",37
-"Bulkley","(6,9]","Winter","210",1
-"Bulkley","(6,9]","Winter","240",6
+"Bulkley","(6,9]","Winter","210",2
+"Bulkley","(6,9]","Winter","240",7
 "Bulkley","(6,9]","Winter","270",8
 "Bulkley","(6,9]","Winter","300",12
-"Bulkley","(6,9]","Winter","330",125
-"Bulkley","(3,6]","Summer","0",367
-"Bulkley","(3,6]","Summer","30",85
-"Bulkley","(3,6]","Summer","60",37
-"Bulkley","(3,6]","Summer","90",135
-"Bulkley","(3,6]","Summer","120",455
-"Bulkley","(3,6]","Summer","150",450
-"Bulkley","(3,6]","Summer","180",59
-"Bulkley","(3,6]","Summer","210",149
-"Bulkley","(3,6]","Summer","240",209
-"Bulkley","(3,6]","Summer","270",272
-"Bulkley","(3,6]","Summer","300",518
-"Bulkley","(3,6]","Summer","330",863
-"Bulkley","(3,6]","Winter","0",192
-"Bulkley","(3,6]","Winter","30",28
-"Bulkley","(3,6]","Winter","60",26
-"Bulkley","(3,6]","Winter","90",141
-"Bulkley","(3,6]","Winter","120",1940
-"Bulkley","(3,6]","Winter","150",4944
-"Bulkley","(3,6]","Winter","180",447
-"Bulkley","(3,6]","Winter","210",151
-"Bulkley","(3,6]","Winter","240",226
-"Bulkley","(3,6]","Winter","270",232
-"Bulkley","(3,6]","Winter","300",936
-"Bulkley","(3,6]","Winter","330",1187
-"Bulkley","(-Inf,3]","Summer","0",3433
-"Bulkley","(-Inf,3]","Summer","30",2581
-"Bulkley","(-Inf,3]","Summer","60",3641
-"Bulkley","(-Inf,3]","Summer","90",4289
-"Bulkley","(-Inf,3]","Summer","120",6081
-"Bulkley","(-Inf,3]","Summer","150",3826
-"Bulkley","(-Inf,3]","Summer","180",2708
-"Bulkley","(-Inf,3]","Summer","210",2985
-"Bulkley","(-Inf,3]","Summer","240",3223
-"Bulkley","(-Inf,3]","Summer","270",5780
-"Bulkley","(-Inf,3]","Summer","300",7694
-"Bulkley","(-Inf,3]","Summer","330",5873
-"Bulkley","(-Inf,3]","Winter","0",3432
-"Bulkley","(-Inf,3]","Winter","30",1721
-"Bulkley","(-Inf,3]","Winter","60",2344
-"Bulkley","(-Inf,3]","Winter","90",3502
-"Bulkley","(-Inf,3]","Winter","120",7586
-"Bulkley","(-Inf,3]","Winter","150",7421
-"Bulkley","(-Inf,3]","Winter","180",3443
-"Bulkley","(-Inf,3]","Winter","210",2979
-"Bulkley","(-Inf,3]","Winter","240",2979
-"Bulkley","(-Inf,3]","Winter","270",4971
-"Bulkley","(-Inf,3]","Winter","300",10482
-"Bulkley","(-Inf,3]","Winter","330",9467
-"Canoe","(9, Inf]","Summer","0",1342
-"Canoe","(9, Inf]","Summer","30",1452
-"Canoe","(9, Inf]","Summer","60",742
-"Canoe","(9, Inf]","Summer","90",400
-"Canoe","(9, Inf]","Summer","120",926
-"Canoe","(9, Inf]","Summer","150",6423
-"Canoe","(9, Inf]","Summer","180",6418
-"Canoe","(9, Inf]","Summer","210",1869
-"Canoe","(9, Inf]","Summer","240",784
-"Canoe","(9, Inf]","Summer","270",259
-"Canoe","(9, Inf]","Summer","300",137
-"Canoe","(9, Inf]","Summer","330",314
-"Canoe","(9, Inf]","Winter","0",1217
-"Canoe","(9, Inf]","Winter","30",1240
-"Canoe","(9, Inf]","Winter","60",923
-"Canoe","(9, Inf]","Winter","90",391
-"Canoe","(9, Inf]","Winter","120",773
-"Canoe","(9, Inf]","Winter","150",9756
-"Canoe","(9, Inf]","Winter","180",7324
-"Canoe","(9, Inf]","Winter","210",961
-"Canoe","(9, Inf]","Winter","240",303
-"Canoe","(9, Inf]","Winter","270",88
-"Canoe","(9, Inf]","Winter","300",44
-"Canoe","(9, Inf]","Winter","330",165
-"Canoe","(6,9]","Summer","0",285
-"Canoe","(6,9]","Summer","30",301
-"Canoe","(6,9]","Summer","60",157
-"Canoe","(6,9]","Summer","90",122
-"Canoe","(6,9]","Summer","120",254
-"Canoe","(6,9]","Summer","150",324
-"Canoe","(6,9]","Summer","180",228
-"Canoe","(6,9]","Summer","210",170
-"Canoe","(6,9]","Summer","240",148
-"Canoe","(6,9]","Summer","270",97
-"Canoe","(6,9]","Summer","300",99
-"Canoe","(6,9]","Summer","330",146
-"Canoe","(6,9]","Winter","0",167
-"Canoe","(6,9]","Winter","30",239
-"Canoe","(6,9]","Winter","60",109
-"Canoe","(6,9]","Winter","90",99
-"Canoe","(6,9]","Winter","120",184
-"Canoe","(6,9]","Winter","150",333
-"Canoe","(6,9]","Winter","180",170
-"Canoe","(6,9]","Winter","210",57
-"Canoe","(6,9]","Winter","240",50
-"Canoe","(6,9]","Winter","270",30
-"Canoe","(6,9]","Winter","300",22
-"Canoe","(6,9]","Winter","330",49
-"Canoe","(3,6]","Summer","0",176
-"Canoe","(3,6]","Summer","30",174
-"Canoe","(3,6]","Summer","60",128
-"Canoe","(3,6]","Summer","90",159
-"Canoe","(3,6]","Summer","120",259
-"Canoe","(3,6]","Summer","150",173
-"Canoe","(3,6]","Summer","180",105
-"Canoe","(3,6]","Summer","210",82
-"Canoe","(3,6]","Summer","240",99
-"Canoe","(3,6]","Summer","270",84
-"Canoe","(3,6]","Summer","300",86
-"Canoe","(3,6]","Summer","330",116
-"Canoe","(3,6]","Winter","0",154
-"Canoe","(3,6]","Winter","30",181
-"Canoe","(3,6]","Winter","60",156
-"Canoe","(3,6]","Winter","90",146
-"Canoe","(3,6]","Winter","120",207
-"Canoe","(3,6]","Winter","150",273
-"Canoe","(3,6]","Winter","180",132
-"Canoe","(3,6]","Winter","210",62
-"Canoe","(3,6]","Winter","240",36
-"Canoe","(3,6]","Winter","270",28
-"Canoe","(3,6]","Winter","300",31
-"Canoe","(3,6]","Winter","330",58
-"Canoe","(-Inf,3]","Summer","0",248
-"Canoe","(-Inf,3]","Summer","30",174
-"Canoe","(-Inf,3]","Summer","60",112
-"Canoe","(-Inf,3]","Summer","90",122
-"Canoe","(-Inf,3]","Summer","120",170
-"Canoe","(-Inf,3]","Summer","150",197
-"Canoe","(-Inf,3]","Summer","180",113
-"Canoe","(-Inf,3]","Summer","210",52
-"Canoe","(-Inf,3]","Summer","240",52
-"Canoe","(-Inf,3]","Summer","270",56
-"Canoe","(-Inf,3]","Summer","300",65
-"Canoe","(-Inf,3]","Summer","330",110
-"Canoe","(-Inf,3]","Winter","0",686
-"Canoe","(-Inf,3]","Winter","30",497
-"Canoe","(-Inf,3]","Winter","60",600
-"Canoe","(-Inf,3]","Winter","90",569
-"Canoe","(-Inf,3]","Winter","120",628
-"Canoe","(-Inf,3]","Winter","150",4456
-"Canoe","(-Inf,3]","Winter","180",2043
+"Bulkley","(6,9]","Winter","330",138
+"Bulkley","(3,6]","Summer","0",372
+"Bulkley","(3,6]","Summer","30",94
+"Bulkley","(3,6]","Summer","60",39
+"Bulkley","(3,6]","Summer","90",167
+"Bulkley","(3,6]","Summer","120",491
+"Bulkley","(3,6]","Summer","150",461
+"Bulkley","(3,6]","Summer","180",60
+"Bulkley","(3,6]","Summer","210",152
+"Bulkley","(3,6]","Summer","240",217
+"Bulkley","(3,6]","Summer","270",282
+"Bulkley","(3,6]","Summer","300",530
+"Bulkley","(3,6]","Summer","330",882
+"Bulkley","(3,6]","Winter","0",203
+"Bulkley","(3,6]","Winter","30",33
+"Bulkley","(3,6]","Winter","60",29
+"Bulkley","(3,6]","Winter","90",149
+"Bulkley","(3,6]","Winter","120",2098
+"Bulkley","(3,6]","Winter","150",5317
+"Bulkley","(3,6]","Winter","180",455
+"Bulkley","(3,6]","Winter","210",162
+"Bulkley","(3,6]","Winter","240",241
+"Bulkley","(3,6]","Winter","270",236
+"Bulkley","(3,6]","Winter","300",964
+"Bulkley","(3,6]","Winter","330",1340
+"Bulkley","(-Inf,3]","Summer","0",3718
+"Bulkley","(-Inf,3]","Summer","30",2928
+"Bulkley","(-Inf,3]","Summer","60",4139
+"Bulkley","(-Inf,3]","Summer","90",4634
+"Bulkley","(-Inf,3]","Summer","120",6359
+"Bulkley","(-Inf,3]","Summer","150",3938
+"Bulkley","(-Inf,3]","Summer","180",2910
+"Bulkley","(-Inf,3]","Summer","210",3204
+"Bulkley","(-Inf,3]","Summer","240",3419
+"Bulkley","(-Inf,3]","Summer","270",6024
+"Bulkley","(-Inf,3]","Summer","300",8015
+"Bulkley","(-Inf,3]","Summer","330",6328
+"Bulkley","(-Inf,3]","Winter","0",3812
+"Bulkley","(-Inf,3]","Winter","30",1963
+"Bulkley","(-Inf,3]","Winter","60",2631
+"Bulkley","(-Inf,3]","Winter","90",3796
+"Bulkley","(-Inf,3]","Winter","120",8117
+"Bulkley","(-Inf,3]","Winter","150",7870
+"Bulkley","(-Inf,3]","Winter","180",3612
+"Bulkley","(-Inf,3]","Winter","210",3162
+"Bulkley","(-Inf,3]","Winter","240",3111
+"Bulkley","(-Inf,3]","Winter","270",5107
+"Bulkley","(-Inf,3]","Winter","300",10868
+"Bulkley","(-Inf,3]","Winter","330",10371
+"Canoe","(9, Inf]","Summer","0",1658
+"Canoe","(9, Inf]","Summer","30",1870
+"Canoe","(9, Inf]","Summer","60",834
+"Canoe","(9, Inf]","Summer","90",451
+"Canoe","(9, Inf]","Summer","120",1028
+"Canoe","(9, Inf]","Summer","150",7362
+"Canoe","(9, Inf]","Summer","180",6995
+"Canoe","(9, Inf]","Summer","210",2051
+"Canoe","(9, Inf]","Summer","240",896
+"Canoe","(9, Inf]","Summer","270",301
+"Canoe","(9, Inf]","Summer","300",171
+"Canoe","(9, Inf]","Summer","330",349
+"Canoe","(9, Inf]","Winter","0",1347
+"Canoe","(9, Inf]","Winter","30",1416
+"Canoe","(9, Inf]","Winter","60",1012
+"Canoe","(9, Inf]","Winter","90",434
+"Canoe","(9, Inf]","Winter","120",980
+"Canoe","(9, Inf]","Winter","150",11735
+"Canoe","(9, Inf]","Winter","180",7848
+"Canoe","(9, Inf]","Winter","210",1046
+"Canoe","(9, Inf]","Winter","240",337
+"Canoe","(9, Inf]","Winter","270",99
+"Canoe","(9, Inf]","Winter","300",48
+"Canoe","(9, Inf]","Winter","330",183
+"Canoe","(6,9]","Summer","0",343
+"Canoe","(6,9]","Summer","30",349
+"Canoe","(6,9]","Summer","60",179
+"Canoe","(6,9]","Summer","90",138
+"Canoe","(6,9]","Summer","120",302
+"Canoe","(6,9]","Summer","150",376
+"Canoe","(6,9]","Summer","180",243
+"Canoe","(6,9]","Summer","210",193
+"Canoe","(6,9]","Summer","240",173
+"Canoe","(6,9]","Summer","270",112
+"Canoe","(6,9]","Summer","300",115
+"Canoe","(6,9]","Summer","330",167
+"Canoe","(6,9]","Winter","0",194
+"Canoe","(6,9]","Winter","30",272
+"Canoe","(6,9]","Winter","60",125
+"Canoe","(6,9]","Winter","90",127
+"Canoe","(6,9]","Winter","120",221
+"Canoe","(6,9]","Winter","150",360
+"Canoe","(6,9]","Winter","180",189
+"Canoe","(6,9]","Winter","210",64
+"Canoe","(6,9]","Winter","240",53
+"Canoe","(6,9]","Winter","270",32
+"Canoe","(6,9]","Winter","300",25
+"Canoe","(6,9]","Winter","330",63
+"Canoe","(3,6]","Summer","0",196
+"Canoe","(3,6]","Summer","30",209
+"Canoe","(3,6]","Summer","60",153
+"Canoe","(3,6]","Summer","90",212
+"Canoe","(3,6]","Summer","120",317
+"Canoe","(3,6]","Summer","150",194
+"Canoe","(3,6]","Summer","180",116
+"Canoe","(3,6]","Summer","210",92
+"Canoe","(3,6]","Summer","240",115
+"Canoe","(3,6]","Summer","270",89
+"Canoe","(3,6]","Summer","300",99
+"Canoe","(3,6]","Summer","330",131
+"Canoe","(3,6]","Winter","0",171
+"Canoe","(3,6]","Winter","30",207
+"Canoe","(3,6]","Winter","60",168
+"Canoe","(3,6]","Winter","90",182
+"Canoe","(3,6]","Winter","120",232
+"Canoe","(3,6]","Winter","150",295
+"Canoe","(3,6]","Winter","180",146
+"Canoe","(3,6]","Winter","210",64
+"Canoe","(3,6]","Winter","240",40
+"Canoe","(3,6]","Winter","270",31
+"Canoe","(3,6]","Winter","300",33
+"Canoe","(3,6]","Winter","330",64
+"Canoe","(-Inf,3]","Summer","0",258
+"Canoe","(-Inf,3]","Summer","30",191
+"Canoe","(-Inf,3]","Summer","60",124
+"Canoe","(-Inf,3]","Summer","90",140
+"Canoe","(-Inf,3]","Summer","120",186
+"Canoe","(-Inf,3]","Summer","150",208
+"Canoe","(-Inf,3]","Summer","180",116
+"Canoe","(-Inf,3]","Summer","210",57
+"Canoe","(-Inf,3]","Summer","240",62
+"Canoe","(-Inf,3]","Summer","270",60
+"Canoe","(-Inf,3]","Summer","300",67
+"Canoe","(-Inf,3]","Summer","330",112
+"Canoe","(-Inf,3]","Winter","0",692
+"Canoe","(-Inf,3]","Winter","30",511
+"Canoe","(-Inf,3]","Winter","60",610
+"Canoe","(-Inf,3]","Winter","90",585
+"Canoe","(-Inf,3]","Winter","120",651
+"Canoe","(-Inf,3]","Winter","150",4465
+"Canoe","(-Inf,3]","Winter","180",2052
 "Canoe","(-Inf,3]","Winter","210",249
-"Canoe","(-Inf,3]","Winter","240",111
-"Canoe","(-Inf,3]","Winter","270",202
-"Canoe","(-Inf,3]","Winter","300",58
-"Canoe","(-Inf,3]","Winter","330",186
-"Central Plateau Finlay","(9, Inf]","Winter","0",1
+"Canoe","(-Inf,3]","Winter","240",112
+"Canoe","(-Inf,3]","Winter","270",196
+"Canoe","(-Inf,3]","Winter","300",60
+"Canoe","(-Inf,3]","Winter","330",190
+"Caribou Pass","(9, Inf]","Summer","0",3
+"Caribou Pass","(9, Inf]","Summer","30",1
+"Caribou Pass","(9, Inf]","Summer","60",18
+"Caribou Pass","(9, Inf]","Summer","90",115
+"Caribou Pass","(9, Inf]","Summer","120",114
+"Caribou Pass","(9, Inf]","Summer","150",171
+"Caribou Pass","(9, Inf]","Summer","180",91
+"Caribou Pass","(9, Inf]","Summer","210",192
+"Caribou Pass","(9, Inf]","Summer","240",239
+"Caribou Pass","(9, Inf]","Summer","270",113
+"Caribou Pass","(9, Inf]","Summer","300",125
+"Caribou Pass","(9, Inf]","Summer","330",16
+"Caribou Pass","(9, Inf]","Winter","0",8
+"Caribou Pass","(9, Inf]","Winter","30",8
+"Caribou Pass","(9, Inf]","Winter","60",128
+"Caribou Pass","(9, Inf]","Winter","90",423
+"Caribou Pass","(9, Inf]","Winter","120",220
+"Caribou Pass","(9, Inf]","Winter","150",362
+"Caribou Pass","(9, Inf]","Winter","180",190
+"Caribou Pass","(9, Inf]","Winter","210",234
+"Caribou Pass","(9, Inf]","Winter","240",189
+"Caribou Pass","(9, Inf]","Winter","270",79
+"Caribou Pass","(9, Inf]","Winter","300",108
+"Caribou Pass","(9, Inf]","Winter","330",17
+"Caribou Pass","(6,9]","Summer","60",7
+"Caribou Pass","(6,9]","Summer","90",12
+"Caribou Pass","(6,9]","Summer","120",8
+"Caribou Pass","(6,9]","Summer","150",7
+"Caribou Pass","(6,9]","Summer","180",2
+"Caribou Pass","(6,9]","Summer","210",13
+"Caribou Pass","(6,9]","Summer","240",7
+"Caribou Pass","(6,9]","Summer","270",16
+"Caribou Pass","(6,9]","Summer","300",16
+"Caribou Pass","(6,9]","Summer","330",6
+"Caribou Pass","(6,9]","Winter","0",1
+"Caribou Pass","(6,9]","Winter","30",5
+"Caribou Pass","(6,9]","Winter","60",20
+"Caribou Pass","(6,9]","Winter","90",28
+"Caribou Pass","(6,9]","Winter","120",20
+"Caribou Pass","(6,9]","Winter","150",11
+"Caribou Pass","(6,9]","Winter","180",12
+"Caribou Pass","(6,9]","Winter","210",11
+"Caribou Pass","(6,9]","Winter","240",3
+"Caribou Pass","(6,9]","Winter","270",7
+"Caribou Pass","(6,9]","Winter","300",9
+"Caribou Pass","(6,9]","Winter","330",4
+"Caribou Pass","(3,6]","Summer","30",4
+"Caribou Pass","(3,6]","Summer","60",1
+"Caribou Pass","(3,6]","Summer","90",12
+"Caribou Pass","(3,6]","Summer","120",3
+"Caribou Pass","(3,6]","Summer","150",4
+"Caribou Pass","(3,6]","Summer","180",3
+"Caribou Pass","(3,6]","Summer","210",3
+"Caribou Pass","(3,6]","Summer","240",3
+"Caribou Pass","(3,6]","Summer","270",6
+"Caribou Pass","(3,6]","Summer","300",4
+"Caribou Pass","(3,6]","Summer","330",3
+"Caribou Pass","(3,6]","Winter","0",2
+"Caribou Pass","(3,6]","Winter","30",12
+"Caribou Pass","(3,6]","Winter","60",10
+"Caribou Pass","(3,6]","Winter","90",4
+"Caribou Pass","(3,6]","Winter","120",8
+"Caribou Pass","(3,6]","Winter","150",14
+"Caribou Pass","(3,6]","Winter","180",4
+"Caribou Pass","(3,6]","Winter","210",4
+"Caribou Pass","(3,6]","Winter","240",6
+"Caribou Pass","(3,6]","Winter","270",8
+"Caribou Pass","(3,6]","Winter","300",2
+"Caribou Pass","(3,6]","Winter","330",9
+"Caribou Pass","(-Inf,3]","Summer","0",2
+"Caribou Pass","(-Inf,3]","Summer","30",5
+"Caribou Pass","(-Inf,3]","Summer","60",2
+"Caribou Pass","(-Inf,3]","Summer","90",3
+"Caribou Pass","(-Inf,3]","Summer","120",2
+"Caribou Pass","(-Inf,3]","Summer","150",2
+"Caribou Pass","(-Inf,3]","Summer","180",3
+"Caribou Pass","(-Inf,3]","Summer","210",2
+"Caribou Pass","(-Inf,3]","Summer","240",6
+"Caribou Pass","(-Inf,3]","Summer","270",5
+"Caribou Pass","(-Inf,3]","Summer","300",6
+"Caribou Pass","(-Inf,3]","Summer","330",5
+"Caribou Pass","(-Inf,3]","Winter","0",3
+"Caribou Pass","(-Inf,3]","Winter","30",2
+"Caribou Pass","(-Inf,3]","Winter","60",38
+"Caribou Pass","(-Inf,3]","Winter","90",28
+"Caribou Pass","(-Inf,3]","Winter","120",9
+"Caribou Pass","(-Inf,3]","Winter","150",9
+"Caribou Pass","(-Inf,3]","Winter","180",17
+"Caribou Pass","(-Inf,3]","Winter","210",6
+"Caribou Pass","(-Inf,3]","Winter","240",3
+"Caribou Pass","(-Inf,3]","Winter","270",2
+"Caribou Pass","(-Inf,3]","Winter","300",2
+"Caribou Pass","(-Inf,3]","Winter","330",5
+"Central Plateau Finlay","(9, Inf]","Summer","0",2243
+"Central Plateau Finlay","(9, Inf]","Winter","0",1903
 "Central Plateau Finlay","(9, Inf]","Winter","150",1
+"Central Plateau Finlay","(6,9]","Summer","0",44
 "Central Plateau Finlay","(6,9]","Summer","120",6
 "Central Plateau Finlay","(6,9]","Summer","150",3
 "Central Plateau Finlay","(6,9]","Summer","270",1
 "Central Plateau Finlay","(6,9]","Summer","300",1
-"Central Plateau Finlay","(6,9]","Winter","0",1
+"Central Plateau Finlay","(6,9]","Winter","0",69
 "Central Plateau Finlay","(6,9]","Winter","120",392
 "Central Plateau Finlay","(6,9]","Winter","150",527
 "Central Plateau Finlay","(6,9]","Winter","270",4
@@ -529,32 +547,32 @@
 "Central Plateau Finlay","(3,6]","Winter","30",3
 "Central Plateau Finlay","(3,6]","Winter","60",4
 "Central Plateau Finlay","(3,6]","Winter","90",193
-"Central Plateau Finlay","(3,6]","Winter","120",5285
-"Central Plateau Finlay","(3,6]","Winter","150",2597
+"Central Plateau Finlay","(3,6]","Winter","120",5289
+"Central Plateau Finlay","(3,6]","Winter","150",2599
 "Central Plateau Finlay","(3,6]","Winter","180",85
 "Central Plateau Finlay","(3,6]","Winter","210",71
 "Central Plateau Finlay","(3,6]","Winter","240",87
 "Central Plateau Finlay","(3,6]","Winter","270",299
 "Central Plateau Finlay","(3,6]","Winter","300",304
 "Central Plateau Finlay","(3,6]","Winter","330",230
-"Central Plateau Finlay","(-Inf,3]","Summer","0",1984
-"Central Plateau Finlay","(-Inf,3]","Summer","30",2865
+"Central Plateau Finlay","(-Inf,3]","Summer","0",3368
+"Central Plateau Finlay","(-Inf,3]","Summer","30",2864
 "Central Plateau Finlay","(-Inf,3]","Summer","60",2906
-"Central Plateau Finlay","(-Inf,3]","Summer","90",5688
+"Central Plateau Finlay","(-Inf,3]","Summer","90",5687
 "Central Plateau Finlay","(-Inf,3]","Summer","120",6961
 "Central Plateau Finlay","(-Inf,3]","Summer","150",3751
 "Central Plateau Finlay","(-Inf,3]","Summer","180",4592
-"Central Plateau Finlay","(-Inf,3]","Summer","210",8087
-"Central Plateau Finlay","(-Inf,3]","Summer","240",7171
-"Central Plateau Finlay","(-Inf,3]","Summer","270",4917
+"Central Plateau Finlay","(-Inf,3]","Summer","210",8085
+"Central Plateau Finlay","(-Inf,3]","Summer","240",7168
+"Central Plateau Finlay","(-Inf,3]","Summer","270",4916
 "Central Plateau Finlay","(-Inf,3]","Summer","300",2715
-"Central Plateau Finlay","(-Inf,3]","Summer","330",1952
-"Central Plateau Finlay","(-Inf,3]","Winter","0",2052
+"Central Plateau Finlay","(-Inf,3]","Summer","330",1951
+"Central Plateau Finlay","(-Inf,3]","Winter","0",4993
 "Central Plateau Finlay","(-Inf,3]","Winter","30",1659
 "Central Plateau Finlay","(-Inf,3]","Winter","60",2055
 "Central Plateau Finlay","(-Inf,3]","Winter","90",6544
-"Central Plateau Finlay","(-Inf,3]","Winter","120",12524
-"Central Plateau Finlay","(-Inf,3]","Winter","150",5060
+"Central Plateau Finlay","(-Inf,3]","Winter","120",12527
+"Central Plateau Finlay","(-Inf,3]","Winter","150",5062
 "Central Plateau Finlay","(-Inf,3]","Winter","180",4396
 "Central Plateau Finlay","(-Inf,3]","Winter","210",5484
 "Central Plateau Finlay","(-Inf,3]","Winter","240",6350
@@ -562,291 +580,253 @@
 "Central Plateau Finlay","(-Inf,3]","Winter","300",6039
 "Central Plateau Finlay","(-Inf,3]","Winter","330",2916
 "Chapman","(9, Inf]","Summer","240",2
-"Chapman","(9, Inf]","Summer","270",3
+"Chapman","(9, Inf]","Summer","270",6
 "Chapman","(9, Inf]","Summer","300",1
-"Chapman","(9, Inf]","Winter","240",6
+"Chapman","(9, Inf]","Summer","330",1
+"Chapman","(9, Inf]","Winter","240",9
 "Chapman","(6,9]","Summer","60",1
-"Chapman","(6,9]","Summer","240",2
-"Chapman","(6,9]","Summer","270",8
-"Chapman","(6,9]","Summer","300",13
+"Chapman","(6,9]","Summer","240",3
+"Chapman","(6,9]","Summer","270",14
+"Chapman","(6,9]","Summer","300",31
 "Chapman","(6,9]","Winter","30",3
-"Chapman","(6,9]","Winter","60",9
+"Chapman","(6,9]","Winter","60",10
 "Chapman","(6,9]","Winter","90",2
 "Chapman","(6,9]","Winter","210",1
-"Chapman","(6,9]","Winter","240",4
+"Chapman","(6,9]","Winter","240",7
 "Chapman","(6,9]","Winter","270",5
-"Chapman","(6,9]","Winter","300",1
-"Chapman","(3,6]","Summer","0",8
-"Chapman","(3,6]","Summer","30",13
-"Chapman","(3,6]","Summer","60",30
-"Chapman","(3,6]","Summer","90",16
-"Chapman","(3,6]","Summer","120",3
-"Chapman","(3,6]","Summer","150",1
-"Chapman","(3,6]","Summer","180",5
-"Chapman","(3,6]","Summer","210",26
-"Chapman","(3,6]","Summer","240",89
-"Chapman","(3,6]","Summer","270",163
-"Chapman","(3,6]","Summer","300",174
-"Chapman","(3,6]","Summer","330",21
-"Chapman","(3,6]","Winter","0",10
-"Chapman","(3,6]","Winter","30",18
-"Chapman","(3,6]","Winter","60",27
-"Chapman","(3,6]","Winter","90",17
-"Chapman","(3,6]","Winter","120",3
+"Chapman","(6,9]","Winter","300",2
+"Chapman","(3,6]","Summer","0",18
+"Chapman","(3,6]","Summer","30",22
+"Chapman","(3,6]","Summer","60",38
+"Chapman","(3,6]","Summer","90",18
+"Chapman","(3,6]","Summer","120",6
+"Chapman","(3,6]","Summer","150",2
+"Chapman","(3,6]","Summer","180",13
+"Chapman","(3,6]","Summer","210",52
+"Chapman","(3,6]","Summer","240",131
+"Chapman","(3,6]","Summer","270",299
+"Chapman","(3,6]","Summer","300",288
+"Chapman","(3,6]","Summer","330",39
+"Chapman","(3,6]","Winter","0",12
+"Chapman","(3,6]","Winter","30",19
+"Chapman","(3,6]","Winter","60",35
+"Chapman","(3,6]","Winter","90",23
+"Chapman","(3,6]","Winter","120",5
 "Chapman","(3,6]","Winter","150",4
-"Chapman","(3,6]","Winter","180",9
-"Chapman","(3,6]","Winter","210",26
-"Chapman","(3,6]","Winter","240",55
-"Chapman","(3,6]","Winter","270",38
-"Chapman","(3,6]","Winter","300",23
-"Chapman","(3,6]","Winter","330",7
-"Chapman","(-Inf,3]","Summer","0",238
-"Chapman","(-Inf,3]","Summer","30",323
-"Chapman","(-Inf,3]","Summer","60",559
-"Chapman","(-Inf,3]","Summer","90",275
-"Chapman","(-Inf,3]","Summer","120",180
-"Chapman","(-Inf,3]","Summer","150",144
-"Chapman","(-Inf,3]","Summer","180",171
-"Chapman","(-Inf,3]","Summer","210",342
-"Chapman","(-Inf,3]","Summer","240",656
-"Chapman","(-Inf,3]","Summer","270",1212
-"Chapman","(-Inf,3]","Summer","300",714
-"Chapman","(-Inf,3]","Summer","330",307
-"Chapman","(-Inf,3]","Winter","0",360
-"Chapman","(-Inf,3]","Winter","30",425
-"Chapman","(-Inf,3]","Winter","60",864
-"Chapman","(-Inf,3]","Winter","90",577
-"Chapman","(-Inf,3]","Winter","120",194
-"Chapman","(-Inf,3]","Winter","150",181
-"Chapman","(-Inf,3]","Winter","180",181
-"Chapman","(-Inf,3]","Winter","210",294
-"Chapman","(-Inf,3]","Winter","240",431
-"Chapman","(-Inf,3]","Winter","270",1050
-"Chapman","(-Inf,3]","Winter","300",572
-"Chapman","(-Inf,3]","Winter","330",315
-"Chief Lake","(9, Inf]","Winter","0",6
+"Chapman","(3,6]","Winter","180",10
+"Chapman","(3,6]","Winter","210",33
+"Chapman","(3,6]","Winter","240",72
+"Chapman","(3,6]","Winter","270",71
+"Chapman","(3,6]","Winter","300",39
+"Chapman","(3,6]","Winter","330",12
+"Chapman","(-Inf,3]","Summer","0",380
+"Chapman","(-Inf,3]","Summer","30",491
+"Chapman","(-Inf,3]","Summer","60",780
+"Chapman","(-Inf,3]","Summer","90",463
+"Chapman","(-Inf,3]","Summer","120",315
+"Chapman","(-Inf,3]","Summer","150",237
+"Chapman","(-Inf,3]","Summer","180",304
+"Chapman","(-Inf,3]","Summer","210",535
+"Chapman","(-Inf,3]","Summer","240",1025
+"Chapman","(-Inf,3]","Summer","270",1994
+"Chapman","(-Inf,3]","Summer","300",1158
+"Chapman","(-Inf,3]","Summer","330",476
+"Chapman","(-Inf,3]","Winter","0",656
+"Chapman","(-Inf,3]","Winter","30",885
+"Chapman","(-Inf,3]","Winter","60",1495
+"Chapman","(-Inf,3]","Winter","90",1045
+"Chapman","(-Inf,3]","Winter","120",357
+"Chapman","(-Inf,3]","Winter","150",331
+"Chapman","(-Inf,3]","Winter","180",304
+"Chapman","(-Inf,3]","Winter","210",494
+"Chapman","(-Inf,3]","Winter","240",863
+"Chapman","(-Inf,3]","Winter","270",1600
+"Chapman","(-Inf,3]","Winter","300",992
+"Chapman","(-Inf,3]","Winter","330",780
+"Chief Lake","(9, Inf]","Winter","0",21
 "Chief Lake","(9, Inf]","Winter","330",2
+"Chief Lake","(6,9]","Summer","240",1
 "Chief Lake","(6,9]","Summer","330",1
-"Chief Lake","(6,9]","Winter","0",12
-"Chief Lake","(6,9]","Winter","330",13
-"Chief Lake","(3,6]","Summer","0",9
-"Chief Lake","(3,6]","Summer","90",1
-"Chief Lake","(3,6]","Summer","270",2
+"Chief Lake","(6,9]","Winter","0",97
+"Chief Lake","(6,9]","Winter","210",1
+"Chief Lake","(6,9]","Winter","330",21
+"Chief Lake","(3,6]","Summer","0",76
+"Chief Lake","(3,6]","Summer","30",3
+"Chief Lake","(3,6]","Summer","60",7
+"Chief Lake","(3,6]","Summer","90",7
+"Chief Lake","(3,6]","Summer","120",3
+"Chief Lake","(3,6]","Summer","150",5
+"Chief Lake","(3,6]","Summer","180",4
+"Chief Lake","(3,6]","Summer","210",38
+"Chief Lake","(3,6]","Summer","240",5
+"Chief Lake","(3,6]","Summer","270",3
 "Chief Lake","(3,6]","Summer","300",6
-"Chief Lake","(3,6]","Summer","330",16
-"Chief Lake","(3,6]","Winter","0",52
-"Chief Lake","(3,6]","Winter","120",2
-"Chief Lake","(3,6]","Winter","150",3
-"Chief Lake","(3,6]","Winter","180",1
-"Chief Lake","(3,6]","Winter","210",5
-"Chief Lake","(3,6]","Winter","240",2
-"Chief Lake","(3,6]","Winter","270",1
-"Chief Lake","(3,6]","Winter","300",1
-"Chief Lake","(3,6]","Winter","330",117
-"Chief Lake","(-Inf,3]","Summer","0",185
-"Chief Lake","(-Inf,3]","Summer","30",381
-"Chief Lake","(-Inf,3]","Summer","60",402
-"Chief Lake","(-Inf,3]","Summer","90",440
-"Chief Lake","(-Inf,3]","Summer","120",269
-"Chief Lake","(-Inf,3]","Summer","150",505
-"Chief Lake","(-Inf,3]","Summer","180",427
-"Chief Lake","(-Inf,3]","Summer","210",362
-"Chief Lake","(-Inf,3]","Summer","240",195
-"Chief Lake","(-Inf,3]","Summer","270",240
-"Chief Lake","(-Inf,3]","Summer","300",202
-"Chief Lake","(-Inf,3]","Summer","330",210
-"Chief Lake","(-Inf,3]","Winter","0",165
-"Chief Lake","(-Inf,3]","Winter","30",261
-"Chief Lake","(-Inf,3]","Winter","60",631
-"Chief Lake","(-Inf,3]","Winter","90",872
-"Chief Lake","(-Inf,3]","Winter","120",403
-"Chief Lake","(-Inf,3]","Winter","150",328
-"Chief Lake","(-Inf,3]","Winter","180",466
-"Chief Lake","(-Inf,3]","Winter","210",645
-"Chief Lake","(-Inf,3]","Winter","240",335
-"Chief Lake","(-Inf,3]","Winter","270",245
-"Chief Lake","(-Inf,3]","Winter","300",162
-"Chief Lake","(-Inf,3]","Winter","330",622
-"ChiefLk","(9, Inf]","Winter","0",14
-"ChiefLk","(6,9]","Summer","240",1
-"ChiefLk","(6,9]","Winter","0",52
-"ChiefLk","(6,9]","Winter","210",1
-"ChiefLk","(6,9]","Winter","330",8
-"ChiefLk","(3,6]","Summer","0",69
-"ChiefLk","(3,6]","Summer","30",3
-"ChiefLk","(3,6]","Summer","60",7
-"ChiefLk","(3,6]","Summer","90",6
-"ChiefLk","(3,6]","Summer","120",3
-"ChiefLk","(3,6]","Summer","150",5
-"ChiefLk","(3,6]","Summer","180",4
-"ChiefLk","(3,6]","Summer","210",38
-"ChiefLk","(3,6]","Summer","240",5
-"ChiefLk","(3,6]","Summer","270",1
-"ChiefLk","(3,6]","Summer","330",39
-"ChiefLk","(3,6]","Winter","0",136
-"ChiefLk","(3,6]","Winter","120",19
-"ChiefLk","(3,6]","Winter","150",23
-"ChiefLk","(3,6]","Winter","180",3
-"ChiefLk","(3,6]","Winter","210",40
-"ChiefLk","(3,6]","Winter","240",11
-"ChiefLk","(3,6]","Winter","270",10
-"ChiefLk","(3,6]","Winter","300",2
-"ChiefLk","(3,6]","Winter","330",186
-"ChiefLk","(-Inf,3]","Summer","0",375
-"ChiefLk","(-Inf,3]","Summer","30",281
-"ChiefLk","(-Inf,3]","Summer","60",637
-"ChiefLk","(-Inf,3]","Summer","90",994
-"ChiefLk","(-Inf,3]","Summer","120",573
-"ChiefLk","(-Inf,3]","Summer","150",570
-"ChiefLk","(-Inf,3]","Summer","180",988
-"ChiefLk","(-Inf,3]","Summer","210",1761
-"ChiefLk","(-Inf,3]","Summer","240",1055
-"ChiefLk","(-Inf,3]","Summer","270",528
-"ChiefLk","(-Inf,3]","Summer","300",399
-"ChiefLk","(-Inf,3]","Summer","330",920
-"ChiefLk","(-Inf,3]","Winter","0",466
-"ChiefLk","(-Inf,3]","Winter","30",405
-"ChiefLk","(-Inf,3]","Winter","60",1325
-"ChiefLk","(-Inf,3]","Winter","90",1448
-"ChiefLk","(-Inf,3]","Winter","120",859
-"ChiefLk","(-Inf,3]","Winter","150",684
-"ChiefLk","(-Inf,3]","Winter","180",774
-"ChiefLk","(-Inf,3]","Winter","210",1190
-"ChiefLk","(-Inf,3]","Winter","240",734
-"ChiefLk","(-Inf,3]","Winter","270",369
-"ChiefLk","(-Inf,3]","Winter","300",282
-"ChiefLk","(-Inf,3]","Winter","330",1159
-"Coalmine","(-Inf,3]","Summer","0",553
-"Coalmine","(-Inf,3]","Summer","30",379
-"Coalmine","(-Inf,3]","Summer","60",521
-"Coalmine","(-Inf,3]","Summer","90",1071
-"Coalmine","(-Inf,3]","Summer","120",2832
-"Coalmine","(-Inf,3]","Summer","150",3484
-"Coalmine","(-Inf,3]","Summer","180",978
-"Coalmine","(-Inf,3]","Summer","210",511
-"Coalmine","(-Inf,3]","Summer","240",647
-"Coalmine","(-Inf,3]","Summer","270",1387
-"Coalmine","(-Inf,3]","Summer","300",1632
-"Coalmine","(-Inf,3]","Summer","330",1085
-"Coalmine","(-Inf,3]","Winter","0",314
-"Coalmine","(-Inf,3]","Winter","30",292
-"Coalmine","(-Inf,3]","Winter","60",501
-"Coalmine","(-Inf,3]","Winter","90",1092
-"Coalmine","(-Inf,3]","Winter","120",4291
-"Coalmine","(-Inf,3]","Winter","150",7321
-"Coalmine","(-Inf,3]","Winter","180",1146
-"Coalmine","(-Inf,3]","Winter","210",702
-"Coalmine","(-Inf,3]","Winter","240",717
-"Coalmine","(-Inf,3]","Winter","270",1442
-"Coalmine","(-Inf,3]","Winter","300",1571
-"Coalmine","(-Inf,3]","Winter","330",1035
+"Chief Lake","(3,6]","Summer","330",57
+"Chief Lake","(3,6]","Winter","0",343
+"Chief Lake","(3,6]","Winter","120",21
+"Chief Lake","(3,6]","Winter","150",29
+"Chief Lake","(3,6]","Winter","180",6
+"Chief Lake","(3,6]","Winter","210",49
+"Chief Lake","(3,6]","Winter","240",13
+"Chief Lake","(3,6]","Winter","270",11
+"Chief Lake","(3,6]","Winter","300",3
+"Chief Lake","(3,6]","Winter","330",358
+"Chief Lake","(-Inf,3]","Summer","0",771
+"Chief Lake","(-Inf,3]","Summer","30",851
+"Chief Lake","(-Inf,3]","Summer","60",1211
+"Chief Lake","(-Inf,3]","Summer","90",1927
+"Chief Lake","(-Inf,3]","Summer","120",1082
+"Chief Lake","(-Inf,3]","Summer","150",1211
+"Chief Lake","(-Inf,3]","Summer","180",1682
+"Chief Lake","(-Inf,3]","Summer","210",2653
+"Chief Lake","(-Inf,3]","Summer","240",1745
+"Chief Lake","(-Inf,3]","Summer","270",960
+"Chief Lake","(-Inf,3]","Summer","300",765
+"Chief Lake","(-Inf,3]","Summer","330",1654
+"Chief Lake","(-Inf,3]","Winter","0",995
+"Chief Lake","(-Inf,3]","Winter","30",894
+"Chief Lake","(-Inf,3]","Winter","60",2395
+"Chief Lake","(-Inf,3]","Winter","90",3311
+"Chief Lake","(-Inf,3]","Winter","120",1718
+"Chief Lake","(-Inf,3]","Winter","150",1211
+"Chief Lake","(-Inf,3]","Winter","180",1520
+"Chief Lake","(-Inf,3]","Winter","210",2342
+"Chief Lake","(-Inf,3]","Winter","240",1315
+"Chief Lake","(-Inf,3]","Winter","270",796
+"Chief Lake","(-Inf,3]","Winter","300",585
+"Chief Lake","(-Inf,3]","Winter","330",2319
+"Coalmine","(-Inf,3]","Summer","0",676
+"Coalmine","(-Inf,3]","Summer","30",499
+"Coalmine","(-Inf,3]","Summer","60",667
+"Coalmine","(-Inf,3]","Summer","90",1335
+"Coalmine","(-Inf,3]","Summer","120",3400
+"Coalmine","(-Inf,3]","Summer","150",4056
+"Coalmine","(-Inf,3]","Summer","180",1168
+"Coalmine","(-Inf,3]","Summer","210",673
+"Coalmine","(-Inf,3]","Summer","240",824
+"Coalmine","(-Inf,3]","Summer","270",1804
+"Coalmine","(-Inf,3]","Summer","300",2203
+"Coalmine","(-Inf,3]","Summer","330",1318
+"Coalmine","(-Inf,3]","Winter","0",401
+"Coalmine","(-Inf,3]","Winter","30",377
+"Coalmine","(-Inf,3]","Winter","60",674
+"Coalmine","(-Inf,3]","Winter","90",1345
+"Coalmine","(-Inf,3]","Winter","120",5213
+"Coalmine","(-Inf,3]","Winter","150",8738
+"Coalmine","(-Inf,3]","Winter","180",1664
+"Coalmine","(-Inf,3]","Winter","210",1002
+"Coalmine","(-Inf,3]","Winter","240",977
+"Coalmine","(-Inf,3]","Winter","270",1905
+"Coalmine","(-Inf,3]","Winter","300",1946
+"Coalmine","(-Inf,3]","Winter","330",1222
 "Crystal Lake","(9, Inf]","Summer","0",47
 "Crystal Lake","(9, Inf]","Summer","30",132
-"Crystal Lake","(9, Inf]","Summer","60",421
+"Crystal Lake","(9, Inf]","Summer","60",422
 "Crystal Lake","(9, Inf]","Summer","90",98
-"Crystal Lake","(9, Inf]","Summer","120",106
-"Crystal Lake","(9, Inf]","Summer","150",136
-"Crystal Lake","(9, Inf]","Summer","180",197
-"Crystal Lake","(9, Inf]","Summer","210",448
-"Crystal Lake","(9, Inf]","Summer","240",950
-"Crystal Lake","(9, Inf]","Summer","270",834
-"Crystal Lake","(9, Inf]","Summer","300",98
+"Crystal Lake","(9, Inf]","Summer","120",110
+"Crystal Lake","(9, Inf]","Summer","150",137
+"Crystal Lake","(9, Inf]","Summer","180",200
+"Crystal Lake","(9, Inf]","Summer","210",450
+"Crystal Lake","(9, Inf]","Summer","240",951
+"Crystal Lake","(9, Inf]","Summer","270",838
+"Crystal Lake","(9, Inf]","Summer","300",99
 "Crystal Lake","(9, Inf]","Summer","330",49
 "Crystal Lake","(9, Inf]","Winter","0",177
-"Crystal Lake","(9, Inf]","Winter","30",347
-"Crystal Lake","(9, Inf]","Winter","60",281
+"Crystal Lake","(9, Inf]","Winter","30",351
+"Crystal Lake","(9, Inf]","Winter","60",284
 "Crystal Lake","(9, Inf]","Winter","90",31
 "Crystal Lake","(9, Inf]","Winter","120",170
-"Crystal Lake","(9, Inf]","Winter","150",524
-"Crystal Lake","(9, Inf]","Winter","180",311
-"Crystal Lake","(9, Inf]","Winter","210",176
-"Crystal Lake","(9, Inf]","Winter","240",548
-"Crystal Lake","(9, Inf]","Winter","270",480
-"Crystal Lake","(9, Inf]","Winter","300",106
+"Crystal Lake","(9, Inf]","Winter","150",526
+"Crystal Lake","(9, Inf]","Winter","180",332
+"Crystal Lake","(9, Inf]","Winter","210",182
+"Crystal Lake","(9, Inf]","Winter","240",556
+"Crystal Lake","(9, Inf]","Winter","270",492
+"Crystal Lake","(9, Inf]","Winter","300",109
 "Crystal Lake","(9, Inf]","Winter","330",269
-"Crystal Lake","(6,9]","Summer","0",205
-"Crystal Lake","(6,9]","Summer","30",200
-"Crystal Lake","(6,9]","Summer","60",197
+"Crystal Lake","(6,9]","Summer","0",206
+"Crystal Lake","(6,9]","Summer","30",204
+"Crystal Lake","(6,9]","Summer","60",212
 "Crystal Lake","(6,9]","Summer","90",96
-"Crystal Lake","(6,9]","Summer","120",168
-"Crystal Lake","(6,9]","Summer","150",653
-"Crystal Lake","(6,9]","Summer","180",1242
-"Crystal Lake","(6,9]","Summer","210",1200
-"Crystal Lake","(6,9]","Summer","240",810
-"Crystal Lake","(6,9]","Summer","270",491
-"Crystal Lake","(6,9]","Summer","300",241
-"Crystal Lake","(6,9]","Summer","330",396
-"Crystal Lake","(6,9]","Winter","0",484
-"Crystal Lake","(6,9]","Winter","30",267
-"Crystal Lake","(6,9]","Winter","60",145
+"Crystal Lake","(6,9]","Summer","120",172
+"Crystal Lake","(6,9]","Summer","150",658
+"Crystal Lake","(6,9]","Summer","180",1262
+"Crystal Lake","(6,9]","Summer","210",1225
+"Crystal Lake","(6,9]","Summer","240",852
+"Crystal Lake","(6,9]","Summer","270",513
+"Crystal Lake","(6,9]","Summer","300",242
+"Crystal Lake","(6,9]","Summer","330",397
+"Crystal Lake","(6,9]","Winter","0",486
+"Crystal Lake","(6,9]","Winter","30",283
+"Crystal Lake","(6,9]","Winter","60",147
 "Crystal Lake","(6,9]","Winter","90",99
-"Crystal Lake","(6,9]","Winter","120",153
-"Crystal Lake","(6,9]","Winter","150",1862
-"Crystal Lake","(6,9]","Winter","180",1402
-"Crystal Lake","(6,9]","Winter","210",540
-"Crystal Lake","(6,9]","Winter","240",304
-"Crystal Lake","(6,9]","Winter","270",191
+"Crystal Lake","(6,9]","Winter","120",155
+"Crystal Lake","(6,9]","Winter","150",1903
+"Crystal Lake","(6,9]","Winter","180",1450
+"Crystal Lake","(6,9]","Winter","210",550
+"Crystal Lake","(6,9]","Winter","240",318
+"Crystal Lake","(6,9]","Winter","270",194
 "Crystal Lake","(6,9]","Winter","300",381
-"Crystal Lake","(6,9]","Winter","330",892
-"Crystal Lake","(3,6]","Summer","0",413
-"Crystal Lake","(3,6]","Summer","30",259
-"Crystal Lake","(3,6]","Summer","60",139
-"Crystal Lake","(3,6]","Summer","90",103
-"Crystal Lake","(3,6]","Summer","120",251
-"Crystal Lake","(3,6]","Summer","150",1203
-"Crystal Lake","(3,6]","Summer","180",1737
-"Crystal Lake","(3,6]","Summer","210",1149
-"Crystal Lake","(3,6]","Summer","240",599
-"Crystal Lake","(3,6]","Summer","270",410
-"Crystal Lake","(3,6]","Summer","300",535
-"Crystal Lake","(3,6]","Summer","330",772
-"Crystal Lake","(3,6]","Winter","0",513
-"Crystal Lake","(3,6]","Winter","30",245
-"Crystal Lake","(3,6]","Winter","60",155
+"Crystal Lake","(6,9]","Winter","330",891
+"Crystal Lake","(3,6]","Summer","0",422
+"Crystal Lake","(3,6]","Summer","30",262
+"Crystal Lake","(3,6]","Summer","60",148
+"Crystal Lake","(3,6]","Summer","90",107
+"Crystal Lake","(3,6]","Summer","120",260
+"Crystal Lake","(3,6]","Summer","150",1255
+"Crystal Lake","(3,6]","Summer","180",1868
+"Crystal Lake","(3,6]","Summer","210",1246
+"Crystal Lake","(3,6]","Summer","240",678
+"Crystal Lake","(3,6]","Summer","270",472
+"Crystal Lake","(3,6]","Summer","300",550
+"Crystal Lake","(3,6]","Summer","330",783
+"Crystal Lake","(3,6]","Winter","0",525
+"Crystal Lake","(3,6]","Winter","30",264
+"Crystal Lake","(3,6]","Winter","60",160
 "Crystal Lake","(3,6]","Winter","90",161
-"Crystal Lake","(3,6]","Winter","120",306
-"Crystal Lake","(3,6]","Winter","150",2429
-"Crystal Lake","(3,6]","Winter","180",1920
-"Crystal Lake","(3,6]","Winter","210",747
-"Crystal Lake","(3,6]","Winter","240",241
-"Crystal Lake","(3,6]","Winter","270",146
-"Crystal Lake","(3,6]","Winter","300",662
-"Crystal Lake","(3,6]","Winter","330",1070
-"Crystal Lake","(-Inf,3]","Summer","0",1030
-"Crystal Lake","(-Inf,3]","Summer","30",787
-"Crystal Lake","(-Inf,3]","Summer","60",778
-"Crystal Lake","(-Inf,3]","Summer","90",814
-"Crystal Lake","(-Inf,3]","Summer","120",1220
-"Crystal Lake","(-Inf,3]","Summer","150",2418
-"Crystal Lake","(-Inf,3]","Summer","180",2528
-"Crystal Lake","(-Inf,3]","Summer","210",1758
-"Crystal Lake","(-Inf,3]","Summer","240",1107
-"Crystal Lake","(-Inf,3]","Summer","270",1053
-"Crystal Lake","(-Inf,3]","Summer","300",1293
-"Crystal Lake","(-Inf,3]","Summer","330",1495
-"Crystal Lake","(-Inf,3]","Winter","0",1493
-"Crystal Lake","(-Inf,3]","Winter","30",1047
-"Crystal Lake","(-Inf,3]","Winter","60",1307
-"Crystal Lake","(-Inf,3]","Winter","90",1263
-"Crystal Lake","(-Inf,3]","Winter","120",1635
-"Crystal Lake","(-Inf,3]","Winter","150",4182
-"Crystal Lake","(-Inf,3]","Winter","180",3338
-"Crystal Lake","(-Inf,3]","Winter","210",2015
-"Crystal Lake","(-Inf,3]","Winter","240",1031
-"Crystal Lake","(-Inf,3]","Winter","270",632
-"Crystal Lake","(-Inf,3]","Winter","300",2260
-"Crystal Lake","(-Inf,3]","Winter","330",2743
+"Crystal Lake","(3,6]","Winter","120",317
+"Crystal Lake","(3,6]","Winter","150",2581
+"Crystal Lake","(3,6]","Winter","180",2043
+"Crystal Lake","(3,6]","Winter","210",774
+"Crystal Lake","(3,6]","Winter","240",258
+"Crystal Lake","(3,6]","Winter","270",158
+"Crystal Lake","(3,6]","Winter","300",676
+"Crystal Lake","(3,6]","Winter","330",1074
+"Crystal Lake","(-Inf,3]","Summer","0",1196
+"Crystal Lake","(-Inf,3]","Summer","30",915
+"Crystal Lake","(-Inf,3]","Summer","60",944
+"Crystal Lake","(-Inf,3]","Summer","90",905
+"Crystal Lake","(-Inf,3]","Summer","120",1407
+"Crystal Lake","(-Inf,3]","Summer","150",2801
+"Crystal Lake","(-Inf,3]","Summer","180",2907
+"Crystal Lake","(-Inf,3]","Summer","210",2023
+"Crystal Lake","(-Inf,3]","Summer","240",1244
+"Crystal Lake","(-Inf,3]","Summer","270",1195
+"Crystal Lake","(-Inf,3]","Summer","300",1487
+"Crystal Lake","(-Inf,3]","Summer","330",1676
+"Crystal Lake","(-Inf,3]","Winter","0",1573
+"Crystal Lake","(-Inf,3]","Winter","30",1117
+"Crystal Lake","(-Inf,3]","Winter","60",1345
+"Crystal Lake","(-Inf,3]","Winter","90",1340
+"Crystal Lake","(-Inf,3]","Winter","120",1784
+"Crystal Lake","(-Inf,3]","Winter","150",4530
+"Crystal Lake","(-Inf,3]","Winter","180",3725
+"Crystal Lake","(-Inf,3]","Winter","210",2214
+"Crystal Lake","(-Inf,3]","Winter","240",1090
+"Crystal Lake","(-Inf,3]","Winter","270",696
+"Crystal Lake","(-Inf,3]","Winter","300",2392
+"Crystal Lake","(-Inf,3]","Winter","330",2885
 "Dunster","(9, Inf]","Summer","0",1
 "Dunster","(9, Inf]","Summer","90",1
 "Dunster","(9, Inf]","Summer","120",6
-"Dunster","(9, Inf]","Summer","270",18
-"Dunster","(9, Inf]","Summer","300",277
+"Dunster","(9, Inf]","Summer","150",1
+"Dunster","(9, Inf]","Summer","270",21
+"Dunster","(9, Inf]","Summer","300",278
 "Dunster","(9, Inf]","Summer","330",41
 "Dunster","(9, Inf]","Winter","90",1
-"Dunster","(9, Inf]","Winter","120",493
+"Dunster","(9, Inf]","Winter","120",494
 "Dunster","(9, Inf]","Winter","150",15
-"Dunster","(9, Inf]","Winter","270",14
-"Dunster","(9, Inf]","Winter","300",309
+"Dunster","(9, Inf]","Winter","270",16
+"Dunster","(9, Inf]","Winter","300",313
 "Dunster","(9, Inf]","Winter","330",71
 "Dunster","(6,9]","Summer","0",1
 "Dunster","(6,9]","Summer","30",2
@@ -857,66 +837,66 @@
 "Dunster","(6,9]","Summer","180",1
 "Dunster","(6,9]","Summer","210",2
 "Dunster","(6,9]","Summer","240",1
-"Dunster","(6,9]","Summer","270",49
-"Dunster","(6,9]","Summer","300",1539
+"Dunster","(6,9]","Summer","270",58
+"Dunster","(6,9]","Summer","300",1541
 "Dunster","(6,9]","Summer","330",161
 "Dunster","(6,9]","Winter","0",1
 "Dunster","(6,9]","Winter","60",1
 "Dunster","(6,9]","Winter","90",2
-"Dunster","(6,9]","Winter","120",3630
+"Dunster","(6,9]","Winter","120",3652
 "Dunster","(6,9]","Winter","150",347
 "Dunster","(6,9]","Winter","240",1
-"Dunster","(6,9]","Winter","270",45
-"Dunster","(6,9]","Winter","300",1065
+"Dunster","(6,9]","Winter","270",51
+"Dunster","(6,9]","Winter","300",1071
 "Dunster","(6,9]","Winter","330",220
 "Dunster","(3,6]","Summer","0",18
 "Dunster","(3,6]","Summer","30",11
 "Dunster","(3,6]","Summer","60",17
 "Dunster","(3,6]","Summer","90",41
-"Dunster","(3,6]","Summer","120",938
+"Dunster","(3,6]","Summer","120",942
 "Dunster","(3,6]","Summer","150",672
 "Dunster","(3,6]","Summer","180",122
 "Dunster","(3,6]","Summer","210",189
 "Dunster","(3,6]","Summer","240",37
-"Dunster","(3,6]","Summer","270",695
-"Dunster","(3,6]","Summer","300",2782
+"Dunster","(3,6]","Summer","270",842
+"Dunster","(3,6]","Summer","300",2860
 "Dunster","(3,6]","Summer","330",310
 "Dunster","(3,6]","Winter","0",7
 "Dunster","(3,6]","Winter","30",7
 "Dunster","(3,6]","Winter","60",13
-"Dunster","(3,6]","Winter","90",56
-"Dunster","(3,6]","Winter","120",5626
-"Dunster","(3,6]","Winter","150",1871
+"Dunster","(3,6]","Winter","90",61
+"Dunster","(3,6]","Winter","120",6202
+"Dunster","(3,6]","Winter","150",1872
 "Dunster","(3,6]","Winter","180",334
-"Dunster","(3,6]","Winter","210",294
-"Dunster","(3,6]","Winter","240",74
-"Dunster","(3,6]","Winter","270",529
-"Dunster","(3,6]","Winter","300",1769
-"Dunster","(3,6]","Winter","330",359
-"Dunster","(-Inf,3]","Summer","0",271
-"Dunster","(-Inf,3]","Summer","30",180
-"Dunster","(-Inf,3]","Summer","60",254
-"Dunster","(-Inf,3]","Summer","90",607
-"Dunster","(-Inf,3]","Summer","120",3406
-"Dunster","(-Inf,3]","Summer","150",3796
-"Dunster","(-Inf,3]","Summer","180",2891
-"Dunster","(-Inf,3]","Summer","210",2192
-"Dunster","(-Inf,3]","Summer","240",1978
-"Dunster","(-Inf,3]","Summer","270",4612
-"Dunster","(-Inf,3]","Summer","300",3297
-"Dunster","(-Inf,3]","Summer","330",826
-"Dunster","(-Inf,3]","Winter","0",162
-"Dunster","(-Inf,3]","Winter","30",81
-"Dunster","(-Inf,3]","Winter","60",113
-"Dunster","(-Inf,3]","Winter","90",676
-"Dunster","(-Inf,3]","Winter","120",7464
-"Dunster","(-Inf,3]","Winter","150",4019
-"Dunster","(-Inf,3]","Winter","180",2181
-"Dunster","(-Inf,3]","Winter","210",1326
-"Dunster","(-Inf,3]","Winter","240",1236
-"Dunster","(-Inf,3]","Winter","270",2973
-"Dunster","(-Inf,3]","Winter","300",2711
-"Dunster","(-Inf,3]","Winter","330",1088
+"Dunster","(3,6]","Winter","210",295
+"Dunster","(3,6]","Winter","240",75
+"Dunster","(3,6]","Winter","270",611
+"Dunster","(3,6]","Winter","300",1863
+"Dunster","(3,6]","Winter","330",360
+"Dunster","(-Inf,3]","Summer","0",304
+"Dunster","(-Inf,3]","Summer","30",206
+"Dunster","(-Inf,3]","Summer","60",298
+"Dunster","(-Inf,3]","Summer","90",691
+"Dunster","(-Inf,3]","Summer","120",3715
+"Dunster","(-Inf,3]","Summer","150",4226
+"Dunster","(-Inf,3]","Summer","180",3340
+"Dunster","(-Inf,3]","Summer","210",2513
+"Dunster","(-Inf,3]","Summer","240",2260
+"Dunster","(-Inf,3]","Summer","270",5415
+"Dunster","(-Inf,3]","Summer","300",3692
+"Dunster","(-Inf,3]","Summer","330",892
+"Dunster","(-Inf,3]","Winter","0",173
+"Dunster","(-Inf,3]","Winter","30",95
+"Dunster","(-Inf,3]","Winter","60",136
+"Dunster","(-Inf,3]","Winter","90",965
+"Dunster","(-Inf,3]","Winter","120",10249
+"Dunster","(-Inf,3]","Winter","150",4689
+"Dunster","(-Inf,3]","Winter","180",2741
+"Dunster","(-Inf,3]","Winter","210",1663
+"Dunster","(-Inf,3]","Winter","240",1597
+"Dunster","(-Inf,3]","Winter","270",3758
+"Dunster","(-Inf,3]","Winter","300",2959
+"Dunster","(-Inf,3]","Winter","330",1110
 "Endako","(9, Inf]","Summer","0",137
 "Endako","(9, Inf]","Summer","30",264
 "Endako","(9, Inf]","Summer","60",187
@@ -930,7 +910,7 @@
 "Endako","(9, Inf]","Summer","300",654
 "Endako","(9, Inf]","Summer","330",49
 "Endako","(9, Inf]","Winter","0",115
-"Endako","(9, Inf]","Winter","30",532
+"Endako","(9, Inf]","Winter","30",540
 "Endako","(9, Inf]","Winter","60",546
 "Endako","(9, Inf]","Winter","90",137
 "Endako","(9, Inf]","Winter","120",165
@@ -942,11 +922,11 @@
 "Endako","(9, Inf]","Winter","300",203
 "Endako","(9, Inf]","Winter","330",23
 "Endako","(6,9]","Summer","0",303
-"Endako","(6,9]","Summer","30",986
+"Endako","(6,9]","Summer","30",983
 "Endako","(6,9]","Summer","60",310
 "Endako","(6,9]","Summer","90",227
 "Endako","(6,9]","Summer","120",379
-"Endako","(6,9]","Summer","150",425
+"Endako","(6,9]","Summer","150",424
 "Endako","(6,9]","Summer","180",525
 "Endako","(6,9]","Summer","210",881
 "Endako","(6,9]","Summer","240",1263
@@ -954,7 +934,7 @@
 "Endako","(6,9]","Summer","300",710
 "Endako","(6,9]","Summer","330",140
 "Endako","(6,9]","Winter","0",544
-"Endako","(6,9]","Winter","30",1445
+"Endako","(6,9]","Winter","30",1467
 "Endako","(6,9]","Winter","60",960
 "Endako","(6,9]","Winter","90",960
 "Endako","(6,9]","Winter","120",871
@@ -965,54 +945,54 @@
 "Endako","(6,9]","Winter","270",460
 "Endako","(6,9]","Winter","300",231
 "Endako","(6,9]","Winter","330",75
-"Endako","(3,6]","Summer","0",1083
+"Endako","(3,6]","Summer","0",1085
 "Endako","(3,6]","Summer","30",3132
 "Endako","(3,6]","Summer","60",688
 "Endako","(3,6]","Summer","90",599
 "Endako","(3,6]","Summer","120",710
-"Endako","(3,6]","Summer","150",812
-"Endako","(3,6]","Summer","180",866
+"Endako","(3,6]","Summer","150",809
+"Endako","(3,6]","Summer","180",864
 "Endako","(3,6]","Summer","210",1108
-"Endako","(3,6]","Summer","240",1148
-"Endako","(3,6]","Summer","270",1104
-"Endako","(3,6]","Summer","300",813
+"Endako","(3,6]","Summer","240",1150
+"Endako","(3,6]","Summer","270",1105
+"Endako","(3,6]","Summer","300",814
 "Endako","(3,6]","Summer","330",499
-"Endako","(3,6]","Winter","0",1299
-"Endako","(3,6]","Winter","30",4434
-"Endako","(3,6]","Winter","60",2177
-"Endako","(3,6]","Winter","90",2323
-"Endako","(3,6]","Winter","120",1788
-"Endako","(3,6]","Winter","150",978
-"Endako","(3,6]","Winter","180",590
-"Endako","(3,6]","Winter","210",496
-"Endako","(3,6]","Winter","240",552
-"Endako","(3,6]","Winter","270",474
+"Endako","(3,6]","Winter","0",1301
+"Endako","(3,6]","Winter","30",4512
+"Endako","(3,6]","Winter","60",2207
+"Endako","(3,6]","Winter","90",2327
+"Endako","(3,6]","Winter","120",1789
+"Endako","(3,6]","Winter","150",981
+"Endako","(3,6]","Winter","180",597
+"Endako","(3,6]","Winter","210",500
+"Endako","(3,6]","Winter","240",557
+"Endako","(3,6]","Winter","270",481
 "Endako","(3,6]","Winter","300",366
 "Endako","(3,6]","Winter","330",267
-"Endako","(-Inf,3]","Summer","0",4009
-"Endako","(-Inf,3]","Summer","30",5198
-"Endako","(-Inf,3]","Summer","60",1766
-"Endako","(-Inf,3]","Summer","90",1360
-"Endako","(-Inf,3]","Summer","120",1578
-"Endako","(-Inf,3]","Summer","150",1895
-"Endako","(-Inf,3]","Summer","180",1606
-"Endako","(-Inf,3]","Summer","210",1770
-"Endako","(-Inf,3]","Summer","240",2115
-"Endako","(-Inf,3]","Summer","270",3608
-"Endako","(-Inf,3]","Summer","300",2988
-"Endako","(-Inf,3]","Summer","330",2025
-"Endako","(-Inf,3]","Winter","0",6135
-"Endako","(-Inf,3]","Winter","30",9686
-"Endako","(-Inf,3]","Winter","60",6429
-"Endako","(-Inf,3]","Winter","90",5308
-"Endako","(-Inf,3]","Winter","120",5005
-"Endako","(-Inf,3]","Winter","150",3676
-"Endako","(-Inf,3]","Winter","180",2368
-"Endako","(-Inf,3]","Winter","210",1695
-"Endako","(-Inf,3]","Winter","240",1834
-"Endako","(-Inf,3]","Winter","270",2165
-"Endako","(-Inf,3]","Winter","300",1747
-"Endako","(-Inf,3]","Winter","330",1594
+"Endako","(-Inf,3]","Summer","0",4357
+"Endako","(-Inf,3]","Summer","30",5759
+"Endako","(-Inf,3]","Summer","60",1909
+"Endako","(-Inf,3]","Summer","90",1429
+"Endako","(-Inf,3]","Summer","120",1703
+"Endako","(-Inf,3]","Summer","150",2197
+"Endako","(-Inf,3]","Summer","180",1793
+"Endako","(-Inf,3]","Summer","210",1962
+"Endako","(-Inf,3]","Summer","240",2375
+"Endako","(-Inf,3]","Summer","270",4042
+"Endako","(-Inf,3]","Summer","300",3396
+"Endako","(-Inf,3]","Summer","330",2266
+"Endako","(-Inf,3]","Winter","0",6420
+"Endako","(-Inf,3]","Winter","30",10546
+"Endako","(-Inf,3]","Winter","60",7008
+"Endako","(-Inf,3]","Winter","90",5773
+"Endako","(-Inf,3]","Winter","120",5635
+"Endako","(-Inf,3]","Winter","150",4270
+"Endako","(-Inf,3]","Winter","180",2564
+"Endako","(-Inf,3]","Winter","210",1835
+"Endako","(-Inf,3]","Winter","240",1984
+"Endako","(-Inf,3]","Winter","270",2305
+"Endako","(-Inf,3]","Winter","300",1866
+"Endako","(-Inf,3]","Winter","330",1704
 "George Lake","(9, Inf]","Summer","0",87
 "George Lake","(9, Inf]","Summer","30",33
 "George Lake","(9, Inf]","Summer","60",64
@@ -1039,7 +1019,7 @@
 "George Lake","(9, Inf]","Winter","330",77
 "George Lake","(6,9]","Summer","0",381
 "George Lake","(6,9]","Summer","30",286
-"George Lake","(6,9]","Summer","60",174
+"George Lake","(6,9]","Summer","60",171
 "George Lake","(6,9]","Summer","90",297
 "George Lake","(6,9]","Summer","120",380
 "George Lake","(6,9]","Summer","150",812
@@ -1048,7 +1028,7 @@
 "George Lake","(6,9]","Summer","240",293
 "George Lake","(6,9]","Summer","270",321
 "George Lake","(6,9]","Summer","300",244
-"George Lake","(6,9]","Summer","330",230
+"George Lake","(6,9]","Summer","330",229
 "George Lake","(6,9]","Winter","0",689
 "George Lake","(6,9]","Winter","30",156
 "George Lake","(6,9]","Winter","60",107
@@ -1070,11 +1050,11 @@
 "George Lake","(3,6]","Summer","180",1156
 "George Lake","(3,6]","Summer","210",770
 "George Lake","(3,6]","Summer","240",588
-"George Lake","(3,6]","Summer","270",703
-"George Lake","(3,6]","Summer","300",568
-"George Lake","(3,6]","Summer","330",520
+"George Lake","(3,6]","Summer","270",702
+"George Lake","(3,6]","Summer","300",567
+"George Lake","(3,6]","Summer","330",519
 "George Lake","(3,6]","Winter","0",1188
-"George Lake","(3,6]","Winter","30",506
+"George Lake","(3,6]","Winter","30",508
 "George Lake","(3,6]","Winter","60",306
 "George Lake","(3,6]","Winter","90",586
 "George Lake","(3,6]","Winter","120",666
@@ -1085,413 +1065,317 @@
 "George Lake","(3,6]","Winter","270",719
 "George Lake","(3,6]","Winter","300",519
 "George Lake","(3,6]","Winter","330",1274
-"George Lake","(-Inf,3]","Summer","0",3034
-"George Lake","(-Inf,3]","Summer","30",2731
-"George Lake","(-Inf,3]","Summer","60",2697
-"George Lake","(-Inf,3]","Summer","90",2789
-"George Lake","(-Inf,3]","Summer","120",3279
-"George Lake","(-Inf,3]","Summer","150",3003
-"George Lake","(-Inf,3]","Summer","180",3498
-"George Lake","(-Inf,3]","Summer","210",2897
-"George Lake","(-Inf,3]","Summer","240",2517
-"George Lake","(-Inf,3]","Summer","270",3319
-"George Lake","(-Inf,3]","Summer","300",2932
-"George Lake","(-Inf,3]","Summer","330",3052
-"George Lake","(-Inf,3]","Winter","0",6306
-"George Lake","(-Inf,3]","Winter","30",3584
-"George Lake","(-Inf,3]","Winter","60",2385
-"George Lake","(-Inf,3]","Winter","90",2915
-"George Lake","(-Inf,3]","Winter","120",4409
-"George Lake","(-Inf,3]","Winter","150",6838
-"George Lake","(-Inf,3]","Winter","180",6344
-"George Lake","(-Inf,3]","Winter","210",4291
-"George Lake","(-Inf,3]","Winter","240",2725
-"George Lake","(-Inf,3]","Winter","270",3462
-"George Lake","(-Inf,3]","Winter","300",3634
-"George Lake","(-Inf,3]","Winter","330",4767
-"Gunnel","(9, Inf]","Summer","0",609
-"Gunnel","(9, Inf]","Summer","30",716
-"Gunnel","(9, Inf]","Summer","60",860
-"Gunnel","(9, Inf]","Summer","90",526
-"Gunnel","(9, Inf]","Summer","120",787
-"Gunnel","(9, Inf]","Summer","150",303
-"Gunnel","(9, Inf]","Summer","180",587
-"Gunnel","(9, Inf]","Summer","210",980
-"Gunnel","(9, Inf]","Summer","240",203
-"Gunnel","(9, Inf]","Summer","270",420
-"Gunnel","(9, Inf]","Summer","300",919
-"Gunnel","(9, Inf]","Summer","330",803
-"Gunnel","(9, Inf]","Winter","0",465
-"Gunnel","(9, Inf]","Winter","30",452
-"Gunnel","(9, Inf]","Winter","60",295
-"Gunnel","(9, Inf]","Winter","90",680
-"Gunnel","(9, Inf]","Winter","120",1678
-"Gunnel","(9, Inf]","Winter","150",622
-"Gunnel","(9, Inf]","Winter","180",1782
-"Gunnel","(9, Inf]","Winter","210",2673
-"Gunnel","(9, Inf]","Winter","240",303
-"Gunnel","(9, Inf]","Winter","270",612
-"Gunnel","(9, Inf]","Winter","300",1081
-"Gunnel","(9, Inf]","Winter","330",685
-"Gunnel","(6,9]","Summer","0",171
-"Gunnel","(6,9]","Summer","30",296
-"Gunnel","(6,9]","Summer","60",338
-"Gunnel","(6,9]","Summer","90",190
-"Gunnel","(6,9]","Summer","120",356
-"Gunnel","(6,9]","Summer","150",211
-"Gunnel","(6,9]","Summer","180",399
-"Gunnel","(6,9]","Summer","210",443
-"Gunnel","(6,9]","Summer","240",170
-"Gunnel","(6,9]","Summer","270",193
-"Gunnel","(6,9]","Summer","300",223
-"Gunnel","(6,9]","Summer","330",207
-"Gunnel","(6,9]","Winter","0",158
-"Gunnel","(6,9]","Winter","30",194
-"Gunnel","(6,9]","Winter","60",189
-"Gunnel","(6,9]","Winter","90",205
-"Gunnel","(6,9]","Winter","120",581
-"Gunnel","(6,9]","Winter","150",323
-"Gunnel","(6,9]","Winter","180",511
-"Gunnel","(6,9]","Winter","210",457
-"Gunnel","(6,9]","Winter","240",171
-"Gunnel","(6,9]","Winter","270",198
-"Gunnel","(6,9]","Winter","300",168
-"Gunnel","(6,9]","Winter","330",235
-"Gunnel","(3,6]","Summer","0",226
-"Gunnel","(3,6]","Summer","30",280
-"Gunnel","(3,6]","Summer","60",304
-"Gunnel","(3,6]","Summer","90",245
-"Gunnel","(3,6]","Summer","120",297
-"Gunnel","(3,6]","Summer","150",185
-"Gunnel","(3,6]","Summer","180",249
-"Gunnel","(3,6]","Summer","210",329
-"Gunnel","(3,6]","Summer","240",183
-"Gunnel","(3,6]","Summer","270",163
-"Gunnel","(3,6]","Summer","300",192
-"Gunnel","(3,6]","Summer","330",194
-"Gunnel","(3,6]","Winter","0",194
-"Gunnel","(3,6]","Winter","30",187
-"Gunnel","(3,6]","Winter","60",182
-"Gunnel","(3,6]","Winter","90",198
-"Gunnel","(3,6]","Winter","120",506
-"Gunnel","(3,6]","Winter","150",280
-"Gunnel","(3,6]","Winter","180",400
-"Gunnel","(3,6]","Winter","210",327
-"Gunnel","(3,6]","Winter","240",170
-"Gunnel","(3,6]","Winter","270",159
-"Gunnel","(3,6]","Winter","300",189
-"Gunnel","(3,6]","Winter","330",218
-"Gunnel","(-Inf,3]","Summer","0",110
-"Gunnel","(-Inf,3]","Summer","30",255
-"Gunnel","(-Inf,3]","Summer","60",655
-"Gunnel","(-Inf,3]","Summer","90",172
-"Gunnel","(-Inf,3]","Summer","120",123
-"Gunnel","(-Inf,3]","Summer","150",88
-"Gunnel","(-Inf,3]","Summer","180",101
-"Gunnel","(-Inf,3]","Summer","210",107
-"Gunnel","(-Inf,3]","Summer","240",51
-"Gunnel","(-Inf,3]","Summer","270",73
-"Gunnel","(-Inf,3]","Summer","300",98
-"Gunnel","(-Inf,3]","Summer","330",130
-"Gunnel","(-Inf,3]","Winter","0",161
-"Gunnel","(-Inf,3]","Winter","30",221
-"Gunnel","(-Inf,3]","Winter","60",178
-"Gunnel","(-Inf,3]","Winter","90",220
-"Gunnel","(-Inf,3]","Winter","120",463
-"Gunnel","(-Inf,3]","Winter","150",218
-"Gunnel","(-Inf,3]","Winter","180",202
-"Gunnel","(-Inf,3]","Winter","210",173
-"Gunnel","(-Inf,3]","Winter","240",122
-"Gunnel","(-Inf,3]","Winter","270",174
-"Gunnel","(-Inf,3]","Winter","300",288
-"Gunnel","(-Inf,3]","Winter","330",219
-"Hourglass","(9, Inf]","Summer","0",132
-"Hourglass","(9, Inf]","Summer","30",151
-"Hourglass","(9, Inf]","Summer","60",235
-"Hourglass","(9, Inf]","Summer","90",299
-"Hourglass","(9, Inf]","Summer","120",73
-"Hourglass","(9, Inf]","Summer","150",41
-"Hourglass","(9, Inf]","Summer","180",702
-"Hourglass","(9, Inf]","Summer","210",3026
-"Hourglass","(9, Inf]","Summer","240",3917
-"Hourglass","(9, Inf]","Summer","270",1334
-"Hourglass","(9, Inf]","Summer","300",319
-"Hourglass","(9, Inf]","Summer","330",187
-"Hourglass","(9, Inf]","Winter","0",173
-"Hourglass","(9, Inf]","Winter","30",254
-"Hourglass","(9, Inf]","Winter","60",136
-"Hourglass","(9, Inf]","Winter","90",90
+"George Lake","(-Inf,3]","Summer","0",3483
+"George Lake","(-Inf,3]","Summer","30",3493
+"George Lake","(-Inf,3]","Summer","60",3402
+"George Lake","(-Inf,3]","Summer","90",3193
+"George Lake","(-Inf,3]","Summer","120",3558
+"George Lake","(-Inf,3]","Summer","150",3170
+"George Lake","(-Inf,3]","Summer","180",3654
+"George Lake","(-Inf,3]","Summer","210",2993
+"George Lake","(-Inf,3]","Summer","240",2664
+"George Lake","(-Inf,3]","Summer","270",3457
+"George Lake","(-Inf,3]","Summer","300",3106
+"George Lake","(-Inf,3]","Summer","330",3220
+"George Lake","(-Inf,3]","Winter","0",6711
+"George Lake","(-Inf,3]","Winter","30",4092
+"George Lake","(-Inf,3]","Winter","60",3078
+"George Lake","(-Inf,3]","Winter","90",3640
+"George Lake","(-Inf,3]","Winter","120",4853
+"George Lake","(-Inf,3]","Winter","150",7260
+"George Lake","(-Inf,3]","Winter","180",6663
+"George Lake","(-Inf,3]","Winter","210",4551
+"George Lake","(-Inf,3]","Winter","240",3054
+"George Lake","(-Inf,3]","Winter","270",3746
+"George Lake","(-Inf,3]","Winter","300",3800
+"George Lake","(-Inf,3]","Winter","330",5079
+"Hourglass","(9, Inf]","Summer","0",157
+"Hourglass","(9, Inf]","Summer","30",157
+"Hourglass","(9, Inf]","Summer","60",244
+"Hourglass","(9, Inf]","Summer","90",333
+"Hourglass","(9, Inf]","Summer","120",77
+"Hourglass","(9, Inf]","Summer","150",42
+"Hourglass","(9, Inf]","Summer","180",703
+"Hourglass","(9, Inf]","Summer","210",3170
+"Hourglass","(9, Inf]","Summer","240",4778
+"Hourglass","(9, Inf]","Summer","270",1622
+"Hourglass","(9, Inf]","Summer","300",348
+"Hourglass","(9, Inf]","Summer","330",205
+"Hourglass","(9, Inf]","Winter","0",192
+"Hourglass","(9, Inf]","Winter","30",265
+"Hourglass","(9, Inf]","Winter","60",142
+"Hourglass","(9, Inf]","Winter","90",103
 "Hourglass","(9, Inf]","Winter","120",42
-"Hourglass","(9, Inf]","Winter","150",70
-"Hourglass","(9, Inf]","Winter","180",1230
-"Hourglass","(9, Inf]","Winter","210",3852
-"Hourglass","(9, Inf]","Winter","240",5354
-"Hourglass","(9, Inf]","Winter","270",1531
-"Hourglass","(9, Inf]","Winter","300",319
-"Hourglass","(9, Inf]","Winter","330",306
-"Hourglass","(6,9]","Summer","0",192
-"Hourglass","(6,9]","Summer","30",223
-"Hourglass","(6,9]","Summer","60",299
-"Hourglass","(6,9]","Summer","90",284
-"Hourglass","(6,9]","Summer","120",166
-"Hourglass","(6,9]","Summer","150",125
-"Hourglass","(6,9]","Summer","180",718
-"Hourglass","(6,9]","Summer","210",1196
-"Hourglass","(6,9]","Summer","240",1610
-"Hourglass","(6,9]","Summer","270",772
-"Hourglass","(6,9]","Summer","300",363
-"Hourglass","(6,9]","Summer","330",317
-"Hourglass","(6,9]","Winter","0",392
-"Hourglass","(6,9]","Winter","30",322
-"Hourglass","(6,9]","Winter","60",197
-"Hourglass","(6,9]","Winter","90",154
-"Hourglass","(6,9]","Winter","120",119
-"Hourglass","(6,9]","Winter","150",155
-"Hourglass","(6,9]","Winter","180",655
-"Hourglass","(6,9]","Winter","210",980
-"Hourglass","(6,9]","Winter","240",1345
-"Hourglass","(6,9]","Winter","270",520
-"Hourglass","(6,9]","Winter","300",275
-"Hourglass","(6,9]","Winter","330",448
-"Hourglass","(3,6]","Summer","0",215
-"Hourglass","(3,6]","Summer","30",251
-"Hourglass","(3,6]","Summer","60",329
-"Hourglass","(3,6]","Summer","90",312
-"Hourglass","(3,6]","Summer","120",292
-"Hourglass","(3,6]","Summer","150",251
-"Hourglass","(3,6]","Summer","180",621
-"Hourglass","(3,6]","Summer","210",1159
-"Hourglass","(3,6]","Summer","240",1527
-"Hourglass","(3,6]","Summer","270",629
-"Hourglass","(3,6]","Summer","300",385
-"Hourglass","(3,6]","Summer","330",347
-"Hourglass","(3,6]","Winter","0",628
-"Hourglass","(3,6]","Winter","30",419
-"Hourglass","(3,6]","Winter","60",303
-"Hourglass","(3,6]","Winter","90",306
-"Hourglass","(3,6]","Winter","120",335
-"Hourglass","(3,6]","Winter","150",382
-"Hourglass","(3,6]","Winter","180",701
-"Hourglass","(3,6]","Winter","210",1078
-"Hourglass","(3,6]","Winter","240",1204
-"Hourglass","(3,6]","Winter","270",473
-"Hourglass","(3,6]","Winter","300",294
-"Hourglass","(3,6]","Winter","330",581
-"Hourglass","(-Inf,3]","Summer","0",352
-"Hourglass","(-Inf,3]","Summer","30",353
-"Hourglass","(-Inf,3]","Summer","60",431
-"Hourglass","(-Inf,3]","Summer","90",436
-"Hourglass","(-Inf,3]","Summer","120",552
-"Hourglass","(-Inf,3]","Summer","150",487
-"Hourglass","(-Inf,3]","Summer","180",755
-"Hourglass","(-Inf,3]","Summer","210",1367
-"Hourglass","(-Inf,3]","Summer","240",1141
-"Hourglass","(-Inf,3]","Summer","270",628
-"Hourglass","(-Inf,3]","Summer","300",467
-"Hourglass","(-Inf,3]","Summer","330",418
-"Hourglass","(-Inf,3]","Winter","0",980
-"Hourglass","(-Inf,3]","Winter","30",1103
-"Hourglass","(-Inf,3]","Winter","60",845
-"Hourglass","(-Inf,3]","Winter","90",737
-"Hourglass","(-Inf,3]","Winter","120",989
-"Hourglass","(-Inf,3]","Winter","150",918
-"Hourglass","(-Inf,3]","Winter","180",1329
-"Hourglass","(-Inf,3]","Winter","210",1675
-"Hourglass","(-Inf,3]","Winter","240",1213
-"Hourglass","(-Inf,3]","Winter","270",783
-"Hourglass","(-Inf,3]","Winter","300",837
-"Hourglass","(-Inf,3]","Winter","330",898
-"Hudson Bay Mountain","(9, Inf]","Summer","0",544
-"Hudson Bay Mountain","(9, Inf]","Summer","30",681
-"Hudson Bay Mountain","(9, Inf]","Summer","60",450
-"Hudson Bay Mountain","(9, Inf]","Summer","90",402
-"Hudson Bay Mountain","(9, Inf]","Summer","120",287
-"Hudson Bay Mountain","(9, Inf]","Summer","150",215
-"Hudson Bay Mountain","(9, Inf]","Summer","180",811
-"Hudson Bay Mountain","(9, Inf]","Summer","210",1476
-"Hudson Bay Mountain","(9, Inf]","Summer","240",1440
-"Hudson Bay Mountain","(9, Inf]","Summer","270",2421
-"Hudson Bay Mountain","(9, Inf]","Summer","300",1566
-"Hudson Bay Mountain","(9, Inf]","Summer","330",293
-"Hudson Bay Mountain","(9, Inf]","Winter","0",572
-"Hudson Bay Mountain","(9, Inf]","Winter","30",811
-"Hudson Bay Mountain","(9, Inf]","Winter","60",970
-"Hudson Bay Mountain","(9, Inf]","Winter","90",1001
-"Hudson Bay Mountain","(9, Inf]","Winter","120",858
-"Hudson Bay Mountain","(9, Inf]","Winter","150",445
-"Hudson Bay Mountain","(9, Inf]","Winter","180",1092
-"Hudson Bay Mountain","(9, Inf]","Winter","210",2548
-"Hudson Bay Mountain","(9, Inf]","Winter","240",2574
-"Hudson Bay Mountain","(9, Inf]","Winter","270",2867
-"Hudson Bay Mountain","(9, Inf]","Winter","300",1096
-"Hudson Bay Mountain","(9, Inf]","Winter","330",213
-"Hudson Bay Mountain","(6,9]","Summer","0",88
-"Hudson Bay Mountain","(6,9]","Summer","30",152
-"Hudson Bay Mountain","(6,9]","Summer","60",125
-"Hudson Bay Mountain","(6,9]","Summer","90",108
-"Hudson Bay Mountain","(6,9]","Summer","120",133
-"Hudson Bay Mountain","(6,9]","Summer","150",106
-"Hudson Bay Mountain","(6,9]","Summer","180",139
-"Hudson Bay Mountain","(6,9]","Summer","210",206
-"Hudson Bay Mountain","(6,9]","Summer","240",116
-"Hudson Bay Mountain","(6,9]","Summer","270",73
-"Hudson Bay Mountain","(6,9]","Summer","300",62
-"Hudson Bay Mountain","(6,9]","Summer","330",75
-"Hudson Bay Mountain","(6,9]","Winter","0",105
-"Hudson Bay Mountain","(6,9]","Winter","30",132
-"Hudson Bay Mountain","(6,9]","Winter","60",148
-"Hudson Bay Mountain","(6,9]","Winter","90",203
-"Hudson Bay Mountain","(6,9]","Winter","120",191
-"Hudson Bay Mountain","(6,9]","Winter","150",160
-"Hudson Bay Mountain","(6,9]","Winter","180",173
-"Hudson Bay Mountain","(6,9]","Winter","210",296
-"Hudson Bay Mountain","(6,9]","Winter","240",245
-"Hudson Bay Mountain","(6,9]","Winter","270",143
-"Hudson Bay Mountain","(6,9]","Winter","300",71
-"Hudson Bay Mountain","(6,9]","Winter","330",65
-"Hudson Bay Mountain","(3,6]","Summer","0",92
-"Hudson Bay Mountain","(3,6]","Summer","30",118
-"Hudson Bay Mountain","(3,6]","Summer","60",109
-"Hudson Bay Mountain","(3,6]","Summer","90",97
-"Hudson Bay Mountain","(3,6]","Summer","120",101
-"Hudson Bay Mountain","(3,6]","Summer","150",76
-"Hudson Bay Mountain","(3,6]","Summer","180",101
-"Hudson Bay Mountain","(3,6]","Summer","210",120
-"Hudson Bay Mountain","(3,6]","Summer","240",104
-"Hudson Bay Mountain","(3,6]","Summer","270",70
-"Hudson Bay Mountain","(3,6]","Summer","300",53
-"Hudson Bay Mountain","(3,6]","Summer","330",70
-"Hudson Bay Mountain","(3,6]","Winter","0",95
-"Hudson Bay Mountain","(3,6]","Winter","30",116
-"Hudson Bay Mountain","(3,6]","Winter","60",172
-"Hudson Bay Mountain","(3,6]","Winter","90",157
-"Hudson Bay Mountain","(3,6]","Winter","120",153
-"Hudson Bay Mountain","(3,6]","Winter","150",109
-"Hudson Bay Mountain","(3,6]","Winter","180",113
-"Hudson Bay Mountain","(3,6]","Winter","210",161
-"Hudson Bay Mountain","(3,6]","Winter","240",162
-"Hudson Bay Mountain","(3,6]","Winter","270",110
-"Hudson Bay Mountain","(3,6]","Winter","300",81
-"Hudson Bay Mountain","(3,6]","Winter","330",86
-"Hudson Bay Mountain","(-Inf,3]","Summer","0",43
-"Hudson Bay Mountain","(-Inf,3]","Summer","30",38
-"Hudson Bay Mountain","(-Inf,3]","Summer","60",51
-"Hudson Bay Mountain","(-Inf,3]","Summer","90",45
-"Hudson Bay Mountain","(-Inf,3]","Summer","120",47
-"Hudson Bay Mountain","(-Inf,3]","Summer","150",55
-"Hudson Bay Mountain","(-Inf,3]","Summer","180",57
-"Hudson Bay Mountain","(-Inf,3]","Summer","210",54
-"Hudson Bay Mountain","(-Inf,3]","Summer","240",51
-"Hudson Bay Mountain","(-Inf,3]","Summer","270",37
-"Hudson Bay Mountain","(-Inf,3]","Summer","300",46
-"Hudson Bay Mountain","(-Inf,3]","Summer","330",35
-"Hudson Bay Mountain","(-Inf,3]","Winter","0",78
-"Hudson Bay Mountain","(-Inf,3]","Winter","30",103
-"Hudson Bay Mountain","(-Inf,3]","Winter","60",140
-"Hudson Bay Mountain","(-Inf,3]","Winter","90",129
-"Hudson Bay Mountain","(-Inf,3]","Winter","120",178
-"Hudson Bay Mountain","(-Inf,3]","Winter","150",129
-"Hudson Bay Mountain","(-Inf,3]","Winter","180",386
-"Hudson Bay Mountain","(-Inf,3]","Winter","210",256
-"Hudson Bay Mountain","(-Inf,3]","Winter","240",140
-"Hudson Bay Mountain","(-Inf,3]","Winter","270",175
-"Hudson Bay Mountain","(-Inf,3]","Winter","300",94
-"Hudson Bay Mountain","(-Inf,3]","Winter","330",78
-"Kluskus","(9, Inf]","Summer","0",62
-"Kluskus","(9, Inf]","Summer","30",61
+"Hourglass","(9, Inf]","Winter","150",72
+"Hourglass","(9, Inf]","Winter","180",1233
+"Hourglass","(9, Inf]","Winter","210",4234
+"Hourglass","(9, Inf]","Winter","240",7241
+"Hourglass","(9, Inf]","Winter","270",1876
+"Hourglass","(9, Inf]","Winter","300",330
+"Hourglass","(9, Inf]","Winter","330",338
+"Hourglass","(6,9]","Summer","0",223
+"Hourglass","(6,9]","Summer","30",239
+"Hourglass","(6,9]","Summer","60",329
+"Hourglass","(6,9]","Summer","90",357
+"Hourglass","(6,9]","Summer","120",191
+"Hourglass","(6,9]","Summer","150",133
+"Hourglass","(6,9]","Summer","180",720
+"Hourglass","(6,9]","Summer","210",1340
+"Hourglass","(6,9]","Summer","240",2160
+"Hourglass","(6,9]","Summer","270",948
+"Hourglass","(6,9]","Summer","300",428
+"Hourglass","(6,9]","Summer","330",385
+"Hourglass","(6,9]","Winter","0",436
+"Hourglass","(6,9]","Winter","30",345
+"Hourglass","(6,9]","Winter","60",230
+"Hourglass","(6,9]","Winter","90",178
+"Hourglass","(6,9]","Winter","120",129
+"Hourglass","(6,9]","Winter","150",157
+"Hourglass","(6,9]","Winter","180",678
+"Hourglass","(6,9]","Winter","210",1224
+"Hourglass","(6,9]","Winter","240",2010
+"Hourglass","(6,9]","Winter","270",682
+"Hourglass","(6,9]","Winter","300",312
+"Hourglass","(6,9]","Winter","330",512
+"Hourglass","(3,6]","Summer","0",256
+"Hourglass","(3,6]","Summer","30",298
+"Hourglass","(3,6]","Summer","60",403
+"Hourglass","(3,6]","Summer","90",398
+"Hourglass","(3,6]","Summer","120",341
+"Hourglass","(3,6]","Summer","150",280
+"Hourglass","(3,6]","Summer","180",655
+"Hourglass","(3,6]","Summer","210",1476
+"Hourglass","(3,6]","Summer","240",2122
+"Hourglass","(3,6]","Summer","270",821
+"Hourglass","(3,6]","Summer","300",487
+"Hourglass","(3,6]","Summer","330",447
+"Hourglass","(3,6]","Winter","0",730
+"Hourglass","(3,6]","Winter","30",480
+"Hourglass","(3,6]","Winter","60",377
+"Hourglass","(3,6]","Winter","90",384
+"Hourglass","(3,6]","Winter","120",393
+"Hourglass","(3,6]","Winter","150",396
+"Hourglass","(3,6]","Winter","180",772
+"Hourglass","(3,6]","Winter","210",1454
+"Hourglass","(3,6]","Winter","240",1787
+"Hourglass","(3,6]","Winter","270",627
+"Hourglass","(3,6]","Winter","300",352
+"Hourglass","(3,6]","Winter","330",684
+"Hourglass","(-Inf,3]","Summer","0",435
+"Hourglass","(-Inf,3]","Summer","30",426
+"Hourglass","(-Inf,3]","Summer","60",518
+"Hourglass","(-Inf,3]","Summer","90",512
+"Hourglass","(-Inf,3]","Summer","120",743
+"Hourglass","(-Inf,3]","Summer","150",642
+"Hourglass","(-Inf,3]","Summer","180",1019
+"Hourglass","(-Inf,3]","Summer","210",2008
+"Hourglass","(-Inf,3]","Summer","240",1606
+"Hourglass","(-Inf,3]","Summer","270",861
+"Hourglass","(-Inf,3]","Summer","300",605
+"Hourglass","(-Inf,3]","Summer","330",536
+"Hourglass","(-Inf,3]","Winter","0",1239
+"Hourglass","(-Inf,3]","Winter","30",1355
+"Hourglass","(-Inf,3]","Winter","60",1049
+"Hourglass","(-Inf,3]","Winter","90",912
+"Hourglass","(-Inf,3]","Winter","120",1324
+"Hourglass","(-Inf,3]","Winter","150",1234
+"Hourglass","(-Inf,3]","Winter","180",1915
+"Hourglass","(-Inf,3]","Winter","210",2682
+"Hourglass","(-Inf,3]","Winter","240",1892
+"Hourglass","(-Inf,3]","Winter","270",1022
+"Hourglass","(-Inf,3]","Winter","300",1009
+"Hourglass","(-Inf,3]","Winter","330",1104
+"Hudson Bay Mountain","(9, Inf]","Summer","0",765
+"Hudson Bay Mountain","(9, Inf]","Summer","30",776
+"Hudson Bay Mountain","(9, Inf]","Summer","60",520
+"Hudson Bay Mountain","(9, Inf]","Summer","90",439
+"Hudson Bay Mountain","(9, Inf]","Summer","120",326
+"Hudson Bay Mountain","(9, Inf]","Summer","150",284
+"Hudson Bay Mountain","(9, Inf]","Summer","180",1149
+"Hudson Bay Mountain","(9, Inf]","Summer","210",1793
+"Hudson Bay Mountain","(9, Inf]","Summer","240",1895
+"Hudson Bay Mountain","(9, Inf]","Summer","270",3022
+"Hudson Bay Mountain","(9, Inf]","Summer","300",1765
+"Hudson Bay Mountain","(9, Inf]","Summer","330",352
+"Hudson Bay Mountain","(9, Inf]","Winter","0",708
+"Hudson Bay Mountain","(9, Inf]","Winter","30",1006
+"Hudson Bay Mountain","(9, Inf]","Winter","60",1329
+"Hudson Bay Mountain","(9, Inf]","Winter","90",1234
+"Hudson Bay Mountain","(9, Inf]","Winter","120",1086
+"Hudson Bay Mountain","(9, Inf]","Winter","150",586
+"Hudson Bay Mountain","(9, Inf]","Winter","180",1666
+"Hudson Bay Mountain","(9, Inf]","Winter","210",3191
+"Hudson Bay Mountain","(9, Inf]","Winter","240",3237
+"Hudson Bay Mountain","(9, Inf]","Winter","270",3447
+"Hudson Bay Mountain","(9, Inf]","Winter","300",1212
+"Hudson Bay Mountain","(9, Inf]","Winter","330",241
+"Hudson Bay Mountain","(6,9]","Summer","0",143
+"Hudson Bay Mountain","(6,9]","Summer","30",202
+"Hudson Bay Mountain","(6,9]","Summer","60",165
+"Hudson Bay Mountain","(6,9]","Summer","90",140
+"Hudson Bay Mountain","(6,9]","Summer","120",168
+"Hudson Bay Mountain","(6,9]","Summer","150",145
+"Hudson Bay Mountain","(6,9]","Summer","180",195
+"Hudson Bay Mountain","(6,9]","Summer","210",254
+"Hudson Bay Mountain","(6,9]","Summer","240",141
+"Hudson Bay Mountain","(6,9]","Summer","270",88
+"Hudson Bay Mountain","(6,9]","Summer","300",85
+"Hudson Bay Mountain","(6,9]","Summer","330",115
+"Hudson Bay Mountain","(6,9]","Winter","0",137
+"Hudson Bay Mountain","(6,9]","Winter","30",158
+"Hudson Bay Mountain","(6,9]","Winter","60",187
+"Hudson Bay Mountain","(6,9]","Winter","90",248
+"Hudson Bay Mountain","(6,9]","Winter","120",226
+"Hudson Bay Mountain","(6,9]","Winter","150",195
+"Hudson Bay Mountain","(6,9]","Winter","180",220
+"Hudson Bay Mountain","(6,9]","Winter","210",362
+"Hudson Bay Mountain","(6,9]","Winter","240",279
+"Hudson Bay Mountain","(6,9]","Winter","270",164
+"Hudson Bay Mountain","(6,9]","Winter","300",87
+"Hudson Bay Mountain","(6,9]","Winter","330",69
+"Hudson Bay Mountain","(3,6]","Summer","0",134
+"Hudson Bay Mountain","(3,6]","Summer","30",171
+"Hudson Bay Mountain","(3,6]","Summer","60",158
+"Hudson Bay Mountain","(3,6]","Summer","90",139
+"Hudson Bay Mountain","(3,6]","Summer","120",147
+"Hudson Bay Mountain","(3,6]","Summer","150",111
+"Hudson Bay Mountain","(3,6]","Summer","180",139
+"Hudson Bay Mountain","(3,6]","Summer","210",161
+"Hudson Bay Mountain","(3,6]","Summer","240",128
+"Hudson Bay Mountain","(3,6]","Summer","270",87
+"Hudson Bay Mountain","(3,6]","Summer","300",74
+"Hudson Bay Mountain","(3,6]","Summer","330",87
+"Hudson Bay Mountain","(3,6]","Winter","0",114
+"Hudson Bay Mountain","(3,6]","Winter","30",150
+"Hudson Bay Mountain","(3,6]","Winter","60",205
+"Hudson Bay Mountain","(3,6]","Winter","90",183
+"Hudson Bay Mountain","(3,6]","Winter","120",183
+"Hudson Bay Mountain","(3,6]","Winter","150",145
+"Hudson Bay Mountain","(3,6]","Winter","180",148
+"Hudson Bay Mountain","(3,6]","Winter","210",201
+"Hudson Bay Mountain","(3,6]","Winter","240",197
+"Hudson Bay Mountain","(3,6]","Winter","270",128
+"Hudson Bay Mountain","(3,6]","Winter","300",94
+"Hudson Bay Mountain","(3,6]","Winter","330",100
+"Hudson Bay Mountain","(-Inf,3]","Summer","0",62
+"Hudson Bay Mountain","(-Inf,3]","Summer","30",58
+"Hudson Bay Mountain","(-Inf,3]","Summer","60",69
+"Hudson Bay Mountain","(-Inf,3]","Summer","90",65
+"Hudson Bay Mountain","(-Inf,3]","Summer","120",74
+"Hudson Bay Mountain","(-Inf,3]","Summer","150",79
+"Hudson Bay Mountain","(-Inf,3]","Summer","180",83
+"Hudson Bay Mountain","(-Inf,3]","Summer","210",88
+"Hudson Bay Mountain","(-Inf,3]","Summer","240",77
+"Hudson Bay Mountain","(-Inf,3]","Summer","270",57
+"Hudson Bay Mountain","(-Inf,3]","Summer","300",59
+"Hudson Bay Mountain","(-Inf,3]","Summer","330",57
+"Hudson Bay Mountain","(-Inf,3]","Winter","0",106
+"Hudson Bay Mountain","(-Inf,3]","Winter","30",141
+"Hudson Bay Mountain","(-Inf,3]","Winter","60",181
+"Hudson Bay Mountain","(-Inf,3]","Winter","90",162
+"Hudson Bay Mountain","(-Inf,3]","Winter","120",214
+"Hudson Bay Mountain","(-Inf,3]","Winter","150",241
+"Hudson Bay Mountain","(-Inf,3]","Winter","180",442
+"Hudson Bay Mountain","(-Inf,3]","Winter","210",318
+"Hudson Bay Mountain","(-Inf,3]","Winter","240",180
+"Hudson Bay Mountain","(-Inf,3]","Winter","270",219
+"Hudson Bay Mountain","(-Inf,3]","Winter","300",120
+"Hudson Bay Mountain","(-Inf,3]","Winter","330",103
+"Kluskus","(9, Inf]","Summer","0",67
+"Kluskus","(9, Inf]","Summer","30",63
 "Kluskus","(9, Inf]","Summer","60",10
 "Kluskus","(9, Inf]","Summer","90",3
-"Kluskus","(9, Inf]","Summer","120",4
-"Kluskus","(9, Inf]","Summer","150",22
+"Kluskus","(9, Inf]","Summer","120",9
+"Kluskus","(9, Inf]","Summer","150",29
 "Kluskus","(9, Inf]","Summer","180",10
-"Kluskus","(9, Inf]","Summer","210",111
-"Kluskus","(9, Inf]","Summer","240",230
+"Kluskus","(9, Inf]","Summer","210",116
+"Kluskus","(9, Inf]","Summer","240",239
 "Kluskus","(9, Inf]","Summer","270",22
 "Kluskus","(9, Inf]","Summer","300",2
 "Kluskus","(9, Inf]","Summer","330",9
-"Kluskus","(9, Inf]","Winter","0",130
-"Kluskus","(9, Inf]","Winter","30",86
+"Kluskus","(9, Inf]","Winter","0",163
+"Kluskus","(9, Inf]","Winter","30",93
 "Kluskus","(9, Inf]","Winter","60",7
-"Kluskus","(9, Inf]","Winter","120",2
-"Kluskus","(9, Inf]","Winter","150",92
-"Kluskus","(9, Inf]","Winter","180",95
-"Kluskus","(9, Inf]","Winter","210",858
-"Kluskus","(9, Inf]","Winter","240",979
-"Kluskus","(9, Inf]","Winter","270",72
+"Kluskus","(9, Inf]","Winter","120",7
+"Kluskus","(9, Inf]","Winter","150",137
+"Kluskus","(9, Inf]","Winter","180",110
+"Kluskus","(9, Inf]","Winter","210",930
+"Kluskus","(9, Inf]","Winter","240",1032
+"Kluskus","(9, Inf]","Winter","270",83
 "Kluskus","(9, Inf]","Winter","300",15
 "Kluskus","(9, Inf]","Winter","330",7
-"Kluskus","(6,9]","Summer","0",437
-"Kluskus","(6,9]","Summer","30",176
+"Kluskus","(6,9]","Summer","0",444
+"Kluskus","(6,9]","Summer","30",182
 "Kluskus","(6,9]","Summer","60",71
 "Kluskus","(6,9]","Summer","90",44
-"Kluskus","(6,9]","Summer","120",47
-"Kluskus","(6,9]","Summer","150",102
-"Kluskus","(6,9]","Summer","180",109
-"Kluskus","(6,9]","Summer","210",440
-"Kluskus","(6,9]","Summer","240",1098
-"Kluskus","(6,9]","Summer","270",441
-"Kluskus","(6,9]","Summer","300",94
-"Kluskus","(6,9]","Summer","330",164
-"Kluskus","(6,9]","Winter","0",401
-"Kluskus","(6,9]","Winter","30",182
-"Kluskus","(6,9]","Winter","60",38
-"Kluskus","(6,9]","Winter","90",28
-"Kluskus","(6,9]","Winter","120",49
-"Kluskus","(6,9]","Winter","150",301
-"Kluskus","(6,9]","Winter","180",308
-"Kluskus","(6,9]","Winter","210",867
-"Kluskus","(6,9]","Winter","240",894
-"Kluskus","(6,9]","Winter","270",246
+"Kluskus","(6,9]","Summer","120",61
+"Kluskus","(6,9]","Summer","150",121
+"Kluskus","(6,9]","Summer","180",112
+"Kluskus","(6,9]","Summer","210",454
+"Kluskus","(6,9]","Summer","240",1172
+"Kluskus","(6,9]","Summer","270",496
+"Kluskus","(6,9]","Summer","300",112
+"Kluskus","(6,9]","Summer","330",174
+"Kluskus","(6,9]","Winter","0",451
+"Kluskus","(6,9]","Winter","30",197
+"Kluskus","(6,9]","Winter","60",43
+"Kluskus","(6,9]","Winter","90",32
+"Kluskus","(6,9]","Winter","120",64
+"Kluskus","(6,9]","Winter","150",374
+"Kluskus","(6,9]","Winter","180",335
+"Kluskus","(6,9]","Winter","210",923
+"Kluskus","(6,9]","Winter","240",969
+"Kluskus","(6,9]","Winter","270",276
 "Kluskus","(6,9]","Winter","300",88
-"Kluskus","(6,9]","Winter","330",72
-"Kluskus","(3,6]","Summer","0",754
-"Kluskus","(3,6]","Summer","30",302
-"Kluskus","(3,6]","Summer","60",206
-"Kluskus","(3,6]","Summer","90",167
-"Kluskus","(3,6]","Summer","120",206
-"Kluskus","(3,6]","Summer","150",283
-"Kluskus","(3,6]","Summer","180",237
-"Kluskus","(3,6]","Summer","210",696
-"Kluskus","(3,6]","Summer","240",1460
-"Kluskus","(3,6]","Summer","270",923
-"Kluskus","(3,6]","Summer","300",425
-"Kluskus","(3,6]","Summer","330",532
-"Kluskus","(3,6]","Winter","0",627
-"Kluskus","(3,6]","Winter","30",299
-"Kluskus","(3,6]","Winter","60",233
-"Kluskus","(3,6]","Winter","90",206
-"Kluskus","(3,6]","Winter","120",294
-"Kluskus","(3,6]","Winter","150",663
-"Kluskus","(3,6]","Winter","180",515
-"Kluskus","(3,6]","Winter","210",799
-"Kluskus","(3,6]","Winter","240",898
-"Kluskus","(3,6]","Winter","270",446
-"Kluskus","(3,6]","Winter","300",185
-"Kluskus","(3,6]","Winter","330",215
-"Kluskus","(-Inf,3]","Summer","0",2285
-"Kluskus","(-Inf,3]","Summer","30",1244
-"Kluskus","(-Inf,3]","Summer","60",816
-"Kluskus","(-Inf,3]","Summer","90",712
-"Kluskus","(-Inf,3]","Summer","120",850
-"Kluskus","(-Inf,3]","Summer","150",1009
-"Kluskus","(-Inf,3]","Summer","180",938
-"Kluskus","(-Inf,3]","Summer","210",1633
-"Kluskus","(-Inf,3]","Summer","240",1887
-"Kluskus","(-Inf,3]","Summer","270",1622
-"Kluskus","(-Inf,3]","Summer","300",1669
-"Kluskus","(-Inf,3]","Summer","330",2164
-"Kluskus","(-Inf,3]","Winter","0",2519
-"Kluskus","(-Inf,3]","Winter","30",1593
-"Kluskus","(-Inf,3]","Winter","60",1573
-"Kluskus","(-Inf,3]","Winter","90",2059
-"Kluskus","(-Inf,3]","Winter","120",3036
-"Kluskus","(-Inf,3]","Winter","150",3032
-"Kluskus","(-Inf,3]","Winter","180",2044
-"Kluskus","(-Inf,3]","Winter","210",2349
-"Kluskus","(-Inf,3]","Winter","240",2051
-"Kluskus","(-Inf,3]","Winter","270",1368
-"Kluskus","(-Inf,3]","Winter","300",1382
-"Kluskus","(-Inf,3]","Winter","330",1861
+"Kluskus","(6,9]","Winter","330",76
+"Kluskus","(3,6]","Summer","0",795
+"Kluskus","(3,6]","Summer","30",323
+"Kluskus","(3,6]","Summer","60",228
+"Kluskus","(3,6]","Summer","90",204
+"Kluskus","(3,6]","Summer","120",249
+"Kluskus","(3,6]","Summer","150",322
+"Kluskus","(3,6]","Summer","180",253
+"Kluskus","(3,6]","Summer","210",757
+"Kluskus","(3,6]","Summer","240",1646
+"Kluskus","(3,6]","Summer","270",1090
+"Kluskus","(3,6]","Summer","300",492
+"Kluskus","(3,6]","Summer","330",603
+"Kluskus","(3,6]","Winter","0",685
+"Kluskus","(3,6]","Winter","30",323
+"Kluskus","(3,6]","Winter","60",247
+"Kluskus","(3,6]","Winter","90",231
+"Kluskus","(3,6]","Winter","120",341
+"Kluskus","(3,6]","Winter","150",752
+"Kluskus","(3,6]","Winter","180",544
+"Kluskus","(3,6]","Winter","210",879
+"Kluskus","(3,6]","Winter","240",1014
+"Kluskus","(3,6]","Winter","270",550
+"Kluskus","(3,6]","Winter","300",207
+"Kluskus","(3,6]","Winter","330",242
+"Kluskus","(-Inf,3]","Summer","0",2515
+"Kluskus","(-Inf,3]","Summer","30",1435
+"Kluskus","(-Inf,3]","Summer","60",909
+"Kluskus","(-Inf,3]","Summer","90",882
+"Kluskus","(-Inf,3]","Summer","120",976
+"Kluskus","(-Inf,3]","Summer","150",1123
+"Kluskus","(-Inf,3]","Summer","180",1026
+"Kluskus","(-Inf,3]","Summer","210",1785
+"Kluskus","(-Inf,3]","Summer","240",2236
+"Kluskus","(-Inf,3]","Summer","270",2022
+"Kluskus","(-Inf,3]","Summer","300",2074
+"Kluskus","(-Inf,3]","Summer","330",2499
+"Kluskus","(-Inf,3]","Winter","0",2761
+"Kluskus","(-Inf,3]","Winter","30",1731
+"Kluskus","(-Inf,3]","Winter","60",1855
+"Kluskus","(-Inf,3]","Winter","90",2469
+"Kluskus","(-Inf,3]","Winter","120",3514
+"Kluskus","(-Inf,3]","Winter","150",3515
+"Kluskus","(-Inf,3]","Winter","180",2243
+"Kluskus","(-Inf,3]","Winter","210",2548
+"Kluskus","(-Inf,3]","Winter","240",2300
+"Kluskus","(-Inf,3]","Winter","270",1644
+"Kluskus","(-Inf,3]","Winter","300",1736
+"Kluskus","(-Inf,3]","Winter","330",2217
 "Mackenzie Junction","(9, Inf]","Summer","0",242
 "Mackenzie Junction","(9, Inf]","Summer","30",214
 "Mackenzie Junction","(9, Inf]","Summer","60",356
@@ -1507,791 +1391,739 @@
 "Mackenzie Junction","(9, Inf]","Winter","0",172
 "Mackenzie Junction","(9, Inf]","Winter","30",86
 "Mackenzie Junction","(9, Inf]","Winter","60",845
-"Mackenzie Junction","(9, Inf]","Winter","90",892
-"Mackenzie Junction","(9, Inf]","Winter","120",453
-"Mackenzie Junction","(9, Inf]","Winter","150",587
-"Mackenzie Junction","(9, Inf]","Winter","180",147
+"Mackenzie Junction","(9, Inf]","Winter","90",890
+"Mackenzie Junction","(9, Inf]","Winter","120",455
+"Mackenzie Junction","(9, Inf]","Winter","150",594
+"Mackenzie Junction","(9, Inf]","Winter","180",148
 "Mackenzie Junction","(9, Inf]","Winter","210",90
-"Mackenzie Junction","(9, Inf]","Winter","240",163
-"Mackenzie Junction","(9, Inf]","Winter","270",1016
-"Mackenzie Junction","(9, Inf]","Winter","300",513
-"Mackenzie Junction","(9, Inf]","Winter","330",194
+"Mackenzie Junction","(9, Inf]","Winter","240",164
+"Mackenzie Junction","(9, Inf]","Winter","270",1025
+"Mackenzie Junction","(9, Inf]","Winter","300",514
+"Mackenzie Junction","(9, Inf]","Winter","330",207
 "Mackenzie Junction","(6,9]","Summer","0",225
 "Mackenzie Junction","(6,9]","Summer","30",233
 "Mackenzie Junction","(6,9]","Summer","60",1158
-"Mackenzie Junction","(6,9]","Summer","90",1817
+"Mackenzie Junction","(6,9]","Summer","90",1819
 "Mackenzie Junction","(6,9]","Summer","120",1073
-"Mackenzie Junction","(6,9]","Summer","150",1233
-"Mackenzie Junction","(6,9]","Summer","180",662
-"Mackenzie Junction","(6,9]","Summer","210",404
+"Mackenzie Junction","(6,9]","Summer","150",1236
+"Mackenzie Junction","(6,9]","Summer","180",670
+"Mackenzie Junction","(6,9]","Summer","210",406
 "Mackenzie Junction","(6,9]","Summer","240",510
 "Mackenzie Junction","(6,9]","Summer","270",956
-"Mackenzie Junction","(6,9]","Summer","300",494
-"Mackenzie Junction","(6,9]","Summer","330",193
-"Mackenzie Junction","(6,9]","Winter","0",128
-"Mackenzie Junction","(6,9]","Winter","30",111
+"Mackenzie Junction","(6,9]","Summer","300",497
+"Mackenzie Junction","(6,9]","Summer","330",196
+"Mackenzie Junction","(6,9]","Winter","0",132
+"Mackenzie Junction","(6,9]","Winter","30",113
 "Mackenzie Junction","(6,9]","Winter","60",1902
-"Mackenzie Junction","(6,9]","Winter","90",2704
-"Mackenzie Junction","(6,9]","Winter","120",923
-"Mackenzie Junction","(6,9]","Winter","150",662
-"Mackenzie Junction","(6,9]","Winter","180",239
-"Mackenzie Junction","(6,9]","Winter","210",148
-"Mackenzie Junction","(6,9]","Winter","240",371
-"Mackenzie Junction","(6,9]","Winter","270",1287
-"Mackenzie Junction","(6,9]","Winter","300",655
-"Mackenzie Junction","(6,9]","Winter","330",223
-"Mackenzie Junction","(3,6]","Summer","0",260
-"Mackenzie Junction","(3,6]","Summer","30",280
-"Mackenzie Junction","(3,6]","Summer","60",1530
-"Mackenzie Junction","(3,6]","Summer","90",3604
-"Mackenzie Junction","(3,6]","Summer","120",1660
-"Mackenzie Junction","(3,6]","Summer","150",1217
-"Mackenzie Junction","(3,6]","Summer","180",877
-"Mackenzie Junction","(3,6]","Summer","210",622
-"Mackenzie Junction","(3,6]","Summer","240",713
-"Mackenzie Junction","(3,6]","Summer","270",981
-"Mackenzie Junction","(3,6]","Summer","300",748
-"Mackenzie Junction","(3,6]","Summer","330",247
-"Mackenzie Junction","(3,6]","Winter","0",124
-"Mackenzie Junction","(3,6]","Winter","30",121
-"Mackenzie Junction","(3,6]","Winter","60",1714
-"Mackenzie Junction","(3,6]","Winter","90",4678
-"Mackenzie Junction","(3,6]","Winter","120",1788
-"Mackenzie Junction","(3,6]","Winter","150",732
-"Mackenzie Junction","(3,6]","Winter","180",480
-"Mackenzie Junction","(3,6]","Winter","210",263
-"Mackenzie Junction","(3,6]","Winter","240",752
-"Mackenzie Junction","(3,6]","Winter","270",1340
-"Mackenzie Junction","(3,6]","Winter","300",749
-"Mackenzie Junction","(3,6]","Winter","330",249
-"Mackenzie Junction","(-Inf,3]","Summer","0",686
-"Mackenzie Junction","(-Inf,3]","Summer","30",1063
-"Mackenzie Junction","(-Inf,3]","Summer","60",2888
-"Mackenzie Junction","(-Inf,3]","Summer","90",5746
-"Mackenzie Junction","(-Inf,3]","Summer","120",2627
-"Mackenzie Junction","(-Inf,3]","Summer","150",1239
-"Mackenzie Junction","(-Inf,3]","Summer","180",818
-"Mackenzie Junction","(-Inf,3]","Summer","210",710
-"Mackenzie Junction","(-Inf,3]","Summer","240",853
-"Mackenzie Junction","(-Inf,3]","Summer","270",1245
-"Mackenzie Junction","(-Inf,3]","Summer","300",896
-"Mackenzie Junction","(-Inf,3]","Summer","330",502
-"Mackenzie Junction","(-Inf,3]","Winter","0",653
-"Mackenzie Junction","(-Inf,3]","Winter","30",1027
-"Mackenzie Junction","(-Inf,3]","Winter","60",3448
-"Mackenzie Junction","(-Inf,3]","Winter","90",7997
-"Mackenzie Junction","(-Inf,3]","Winter","120",4670
-"Mackenzie Junction","(-Inf,3]","Winter","150",1938
-"Mackenzie Junction","(-Inf,3]","Winter","180",1474
-"Mackenzie Junction","(-Inf,3]","Winter","210",1440
-"Mackenzie Junction","(-Inf,3]","Winter","240",2702
-"Mackenzie Junction","(-Inf,3]","Winter","270",3653
-"Mackenzie Junction","(-Inf,3]","Winter","300",1496
-"Mackenzie Junction","(-Inf,3]","Winter","330",779
-"McDonnel","(9, Inf]","Summer","210",1
-"McDonnel","(9, Inf]","Summer","240",7
-"McDonnel","(9, Inf]","Summer","270",2
-"McDonnel","(9, Inf]","Winter","30",1
-"McDonnel","(9, Inf]","Winter","240",5
-"McDonnel","(9, Inf]","Winter","270",4
-"McDonnel","(6,9]","Summer","210",6
-"McDonnel","(6,9]","Summer","240",25
-"McDonnel","(6,9]","Summer","270",20
-"McDonnel","(6,9]","Summer","300",3
-"McDonnel","(6,9]","Winter","30",1
-"McDonnel","(6,9]","Winter","60",2
-"McDonnel","(6,9]","Winter","90",5
-"McDonnel","(6,9]","Winter","120",7
-"McDonnel","(6,9]","Winter","210",2
-"McDonnel","(6,9]","Winter","240",3
-"McDonnel","(6,9]","Winter","270",4
-"McDonnel","(3,6]","Summer","0",26
-"McDonnel","(3,6]","Summer","30",16
-"McDonnel","(3,6]","Summer","60",8
-"McDonnel","(3,6]","Summer","90",23
-"McDonnel","(3,6]","Summer","120",29
-"McDonnel","(3,6]","Summer","150",8
-"McDonnel","(3,6]","Summer","180",33
-"McDonnel","(3,6]","Summer","210",100
-"McDonnel","(3,6]","Summer","240",148
-"McDonnel","(3,6]","Summer","270",213
-"McDonnel","(3,6]","Summer","300",107
-"McDonnel","(3,6]","Summer","330",45
-"McDonnel","(3,6]","Winter","0",13
-"McDonnel","(3,6]","Winter","30",17
-"McDonnel","(3,6]","Winter","60",43
-"McDonnel","(3,6]","Winter","90",172
-"McDonnel","(3,6]","Winter","120",55
-"McDonnel","(3,6]","Winter","150",8
-"McDonnel","(3,6]","Winter","180",24
-"McDonnel","(3,6]","Winter","210",40
-"McDonnel","(3,6]","Winter","240",33
-"McDonnel","(3,6]","Winter","270",32
-"McDonnel","(3,6]","Winter","300",8
-"McDonnel","(3,6]","Winter","330",21
-"McDonnel","(-Inf,3]","Summer","0",162
-"McDonnel","(-Inf,3]","Summer","30",121
-"McDonnel","(-Inf,3]","Summer","60",110
-"McDonnel","(-Inf,3]","Summer","90",244
-"McDonnel","(-Inf,3]","Summer","120",262
-"McDonnel","(-Inf,3]","Summer","150",653
-"McDonnel","(-Inf,3]","Summer","180",1159
-"McDonnel","(-Inf,3]","Summer","210",714
-"McDonnel","(-Inf,3]","Summer","240",491
-"McDonnel","(-Inf,3]","Summer","270",475
-"McDonnel","(-Inf,3]","Summer","300",276
-"McDonnel","(-Inf,3]","Summer","330",218
-"McDonnel","(-Inf,3]","Winter","0",246
-"McDonnel","(-Inf,3]","Winter","30",140
-"McDonnel","(-Inf,3]","Winter","60",180
-"McDonnel","(-Inf,3]","Winter","90",400
-"McDonnel","(-Inf,3]","Winter","120",386
-"McDonnel","(-Inf,3]","Winter","150",514
-"McDonnel","(-Inf,3]","Winter","180",997
-"McDonnel","(-Inf,3]","Winter","210",776
-"McDonnel","(-Inf,3]","Winter","240",416
-"McDonnel","(-Inf,3]","Winter","270",578
-"McDonnel","(-Inf,3]","Winter","300",289
-"McDonnel","(-Inf,3]","Winter","330",290
+"Mackenzie Junction","(6,9]","Winter","90",2710
+"Mackenzie Junction","(6,9]","Winter","120",931
+"Mackenzie Junction","(6,9]","Winter","150",671
+"Mackenzie Junction","(6,9]","Winter","180",251
+"Mackenzie Junction","(6,9]","Winter","210",153
+"Mackenzie Junction","(6,9]","Winter","240",376
+"Mackenzie Junction","(6,9]","Winter","270",1290
+"Mackenzie Junction","(6,9]","Winter","300",663
+"Mackenzie Junction","(6,9]","Winter","330",233
+"Mackenzie Junction","(3,6]","Summer","0",264
+"Mackenzie Junction","(3,6]","Summer","30",284
+"Mackenzie Junction","(3,6]","Summer","60",1537
+"Mackenzie Junction","(3,6]","Summer","90",3625
+"Mackenzie Junction","(3,6]","Summer","120",1669
+"Mackenzie Junction","(3,6]","Summer","150",1263
+"Mackenzie Junction","(3,6]","Summer","180",914
+"Mackenzie Junction","(3,6]","Summer","210",647
+"Mackenzie Junction","(3,6]","Summer","240",719
+"Mackenzie Junction","(3,6]","Summer","270",997
+"Mackenzie Junction","(3,6]","Summer","300",788
+"Mackenzie Junction","(3,6]","Summer","330",261
+"Mackenzie Junction","(3,6]","Winter","0",140
+"Mackenzie Junction","(3,6]","Winter","30",129
+"Mackenzie Junction","(3,6]","Winter","60",1718
+"Mackenzie Junction","(3,6]","Winter","90",4869
+"Mackenzie Junction","(3,6]","Winter","120",1936
+"Mackenzie Junction","(3,6]","Winter","150",790
+"Mackenzie Junction","(3,6]","Winter","180",539
+"Mackenzie Junction","(3,6]","Winter","210",278
+"Mackenzie Junction","(3,6]","Winter","240",766
+"Mackenzie Junction","(3,6]","Winter","270",1382
+"Mackenzie Junction","(3,6]","Winter","300",809
+"Mackenzie Junction","(3,6]","Winter","330",289
+"Mackenzie Junction","(-Inf,3]","Summer","0",760
+"Mackenzie Junction","(-Inf,3]","Summer","30",1199
+"Mackenzie Junction","(-Inf,3]","Summer","60",3098
+"Mackenzie Junction","(-Inf,3]","Summer","90",6761
+"Mackenzie Junction","(-Inf,3]","Summer","120",3249
+"Mackenzie Junction","(-Inf,3]","Summer","150",1549
+"Mackenzie Junction","(-Inf,3]","Summer","180",1034
+"Mackenzie Junction","(-Inf,3]","Summer","210",868
+"Mackenzie Junction","(-Inf,3]","Summer","240",1027
+"Mackenzie Junction","(-Inf,3]","Summer","270",1509
+"Mackenzie Junction","(-Inf,3]","Summer","300",1058
+"Mackenzie Junction","(-Inf,3]","Summer","330",582
+"Mackenzie Junction","(-Inf,3]","Winter","0",745
+"Mackenzie Junction","(-Inf,3]","Winter","30",1134
+"Mackenzie Junction","(-Inf,3]","Winter","60",3641
+"Mackenzie Junction","(-Inf,3]","Winter","90",9102
+"Mackenzie Junction","(-Inf,3]","Winter","120",5475
+"Mackenzie Junction","(-Inf,3]","Winter","150",2205
+"Mackenzie Junction","(-Inf,3]","Winter","180",1666
+"Mackenzie Junction","(-Inf,3]","Winter","210",1581
+"Mackenzie Junction","(-Inf,3]","Winter","240",2824
+"Mackenzie Junction","(-Inf,3]","Winter","270",4029
+"Mackenzie Junction","(-Inf,3]","Winter","300",1705
+"Mackenzie Junction","(-Inf,3]","Winter","330",891
 "Middlefork Creek","(9, Inf]","Summer","0",10
 "Middlefork Creek","(9, Inf]","Summer","30",15
 "Middlefork Creek","(9, Inf]","Summer","60",98
 "Middlefork Creek","(9, Inf]","Summer","90",1354
-"Middlefork Creek","(9, Inf]","Summer","120",574
-"Middlefork Creek","(9, Inf]","Summer","150",85
-"Middlefork Creek","(9, Inf]","Summer","180",122
-"Middlefork Creek","(9, Inf]","Summer","210",358
-"Middlefork Creek","(9, Inf]","Summer","240",621
-"Middlefork Creek","(9, Inf]","Summer","270",1329
-"Middlefork Creek","(9, Inf]","Summer","300",863
-"Middlefork Creek","(9, Inf]","Summer","330",189
+"Middlefork Creek","(9, Inf]","Summer","120",695
+"Middlefork Creek","(9, Inf]","Summer","150",94
+"Middlefork Creek","(9, Inf]","Summer","180",126
+"Middlefork Creek","(9, Inf]","Summer","210",364
+"Middlefork Creek","(9, Inf]","Summer","240",641
+"Middlefork Creek","(9, Inf]","Summer","270",1374
+"Middlefork Creek","(9, Inf]","Summer","300",947
+"Middlefork Creek","(9, Inf]","Summer","330",215
 "Middlefork Creek","(9, Inf]","Winter","0",3
 "Middlefork Creek","(9, Inf]","Winter","30",3
 "Middlefork Creek","(9, Inf]","Winter","60",306
 "Middlefork Creek","(9, Inf]","Winter","90",2902
-"Middlefork Creek","(9, Inf]","Winter","120",1204
-"Middlefork Creek","(9, Inf]","Winter","150",144
-"Middlefork Creek","(9, Inf]","Winter","180",107
-"Middlefork Creek","(9, Inf]","Winter","210",225
-"Middlefork Creek","(9, Inf]","Winter","240",468
-"Middlefork Creek","(9, Inf]","Winter","270",2345
-"Middlefork Creek","(9, Inf]","Winter","300",1809
-"Middlefork Creek","(9, Inf]","Winter","330",391
-"Middlefork Creek","(6,9]","Summer","0",89
-"Middlefork Creek","(6,9]","Summer","30",128
+"Middlefork Creek","(9, Inf]","Winter","120",1525
+"Middlefork Creek","(9, Inf]","Winter","150",164
+"Middlefork Creek","(9, Inf]","Winter","180",111
+"Middlefork Creek","(9, Inf]","Winter","210",231
+"Middlefork Creek","(9, Inf]","Winter","240",479
+"Middlefork Creek","(9, Inf]","Winter","270",2387
+"Middlefork Creek","(9, Inf]","Winter","300",1974
+"Middlefork Creek","(9, Inf]","Winter","330",482
+"Middlefork Creek","(6,9]","Summer","0",95
+"Middlefork Creek","(6,9]","Summer","30",129
 "Middlefork Creek","(6,9]","Summer","60",574
-"Middlefork Creek","(6,9]","Summer","90",1616
-"Middlefork Creek","(6,9]","Summer","120",688
-"Middlefork Creek","(6,9]","Summer","150",230
-"Middlefork Creek","(6,9]","Summer","180",230
-"Middlefork Creek","(6,9]","Summer","210",412
-"Middlefork Creek","(6,9]","Summer","240",506
-"Middlefork Creek","(6,9]","Summer","270",1433
-"Middlefork Creek","(6,9]","Summer","300",1211
-"Middlefork Creek","(6,9]","Summer","330",367
+"Middlefork Creek","(6,9]","Summer","90",1618
+"Middlefork Creek","(6,9]","Summer","120",802
+"Middlefork Creek","(6,9]","Summer","150",266
+"Middlefork Creek","(6,9]","Summer","180",240
+"Middlefork Creek","(6,9]","Summer","210",433
+"Middlefork Creek","(6,9]","Summer","240",544
+"Middlefork Creek","(6,9]","Summer","270",1476
+"Middlefork Creek","(6,9]","Summer","300",1291
+"Middlefork Creek","(6,9]","Summer","330",399
 "Middlefork Creek","(6,9]","Winter","0",29
 "Middlefork Creek","(6,9]","Winter","30",60
 "Middlefork Creek","(6,9]","Winter","60",570
-"Middlefork Creek","(6,9]","Winter","90",2241
-"Middlefork Creek","(6,9]","Winter","120",962
-"Middlefork Creek","(6,9]","Winter","150",215
-"Middlefork Creek","(6,9]","Winter","180",159
-"Middlefork Creek","(6,9]","Winter","210",232
-"Middlefork Creek","(6,9]","Winter","240",269
-"Middlefork Creek","(6,9]","Winter","270",1654
-"Middlefork Creek","(6,9]","Winter","300",1525
-"Middlefork Creek","(6,9]","Winter","330",322
-"Middlefork Creek","(3,6]","Summer","0",301
-"Middlefork Creek","(3,6]","Summer","30",343
-"Middlefork Creek","(3,6]","Summer","60",914
-"Middlefork Creek","(3,6]","Summer","90",1384
-"Middlefork Creek","(3,6]","Summer","120",1359
-"Middlefork Creek","(3,6]","Summer","150",425
-"Middlefork Creek","(3,6]","Summer","180",293
-"Middlefork Creek","(3,6]","Summer","210",348
-"Middlefork Creek","(3,6]","Summer","240",556
-"Middlefork Creek","(3,6]","Summer","270",1411
-"Middlefork Creek","(3,6]","Summer","300",1603
-"Middlefork Creek","(3,6]","Summer","330",942
-"Middlefork Creek","(3,6]","Winter","0",158
-"Middlefork Creek","(3,6]","Winter","30",191
-"Middlefork Creek","(3,6]","Winter","60",927
-"Middlefork Creek","(3,6]","Winter","90",1838
-"Middlefork Creek","(3,6]","Winter","120",1751
-"Middlefork Creek","(3,6]","Winter","150",409
-"Middlefork Creek","(3,6]","Winter","180",196
-"Middlefork Creek","(3,6]","Winter","210",222
-"Middlefork Creek","(3,6]","Winter","240",335
-"Middlefork Creek","(3,6]","Winter","270",1654
-"Middlefork Creek","(3,6]","Winter","300",2120
-"Middlefork Creek","(3,6]","Winter","330",793
-"Middlefork Creek","(-Inf,3]","Summer","0",1812
-"Middlefork Creek","(-Inf,3]","Summer","30",1257
-"Middlefork Creek","(-Inf,3]","Summer","60",1801
-"Middlefork Creek","(-Inf,3]","Summer","90",1974
-"Middlefork Creek","(-Inf,3]","Summer","120",1827
-"Middlefork Creek","(-Inf,3]","Summer","150",578
-"Middlefork Creek","(-Inf,3]","Summer","180",321
-"Middlefork Creek","(-Inf,3]","Summer","210",513
-"Middlefork Creek","(-Inf,3]","Summer","240",1220
-"Middlefork Creek","(-Inf,3]","Summer","270",3736
-"Middlefork Creek","(-Inf,3]","Summer","300",5334
-"Middlefork Creek","(-Inf,3]","Summer","330",3310
-"Middlefork Creek","(-Inf,3]","Winter","0",1922
-"Middlefork Creek","(-Inf,3]","Winter","30",1213
-"Middlefork Creek","(-Inf,3]","Winter","60",2986
-"Middlefork Creek","(-Inf,3]","Winter","90",3859
-"Middlefork Creek","(-Inf,3]","Winter","120",2812
-"Middlefork Creek","(-Inf,3]","Winter","150",819
-"Middlefork Creek","(-Inf,3]","Winter","180",406
-"Middlefork Creek","(-Inf,3]","Winter","210",528
-"Middlefork Creek","(-Inf,3]","Winter","240",1689
-"Middlefork Creek","(-Inf,3]","Winter","270",7648
-"Middlefork Creek","(-Inf,3]","Winter","300",10347
-"Middlefork Creek","(-Inf,3]","Winter","330",5097
-"Nonda","(9, Inf]","Summer","0",277
-"Nonda","(9, Inf]","Summer","30",224
-"Nonda","(9, Inf]","Summer","60",832
-"Nonda","(9, Inf]","Summer","90",724
-"Nonda","(9, Inf]","Summer","120",1039
-"Nonda","(9, Inf]","Summer","150",2059
-"Nonda","(9, Inf]","Summer","180",1119
-"Nonda","(9, Inf]","Summer","210",1975
-"Nonda","(9, Inf]","Summer","240",6303
-"Nonda","(9, Inf]","Summer","270",4876
-"Nonda","(9, Inf]","Summer","300",938
-"Nonda","(9, Inf]","Summer","330",1456
-"Nonda","(9, Inf]","Winter","0",128
-"Nonda","(9, Inf]","Winter","30",79
-"Nonda","(9, Inf]","Winter","60",336
-"Nonda","(9, Inf]","Winter","90",376
-"Nonda","(9, Inf]","Winter","120",1178
-"Nonda","(9, Inf]","Winter","150",4109
-"Nonda","(9, Inf]","Winter","180",2536
-"Nonda","(9, Inf]","Winter","210",5847
-"Nonda","(9, Inf]","Winter","240",9619
-"Nonda","(9, Inf]","Winter","270",3830
-"Nonda","(9, Inf]","Winter","300",700
-"Nonda","(9, Inf]","Winter","330",1283
-"Nonda","(6,9]","Summer","0",156
-"Nonda","(6,9]","Summer","30",152
-"Nonda","(6,9]","Summer","60",160
-"Nonda","(6,9]","Summer","90",186
-"Nonda","(6,9]","Summer","120",284
-"Nonda","(6,9]","Summer","150",653
-"Nonda","(6,9]","Summer","180",340
-"Nonda","(6,9]","Summer","210",222
-"Nonda","(6,9]","Summer","240",297
-"Nonda","(6,9]","Summer","270",263
-"Nonda","(6,9]","Summer","300",166
-"Nonda","(6,9]","Summer","330",207
-"Nonda","(6,9]","Winter","0",80
-"Nonda","(6,9]","Winter","30",62
-"Nonda","(6,9]","Winter","60",83
-"Nonda","(6,9]","Winter","90",95
-"Nonda","(6,9]","Winter","120",362
-"Nonda","(6,9]","Winter","150",1131
-"Nonda","(6,9]","Winter","180",495
-"Nonda","(6,9]","Winter","210",314
-"Nonda","(6,9]","Winter","240",411
-"Nonda","(6,9]","Winter","270",282
-"Nonda","(6,9]","Winter","300",178
-"Nonda","(6,9]","Winter","330",264
-"Nonda","(3,6]","Summer","0",96
-"Nonda","(3,6]","Summer","30",108
-"Nonda","(3,6]","Summer","60",123
-"Nonda","(3,6]","Summer","90",108
-"Nonda","(3,6]","Summer","120",143
-"Nonda","(3,6]","Summer","150",317
-"Nonda","(3,6]","Summer","180",206
-"Nonda","(3,6]","Summer","210",121
-"Nonda","(3,6]","Summer","240",176
-"Nonda","(3,6]","Summer","270",214
-"Nonda","(3,6]","Summer","300",110
-"Nonda","(3,6]","Summer","330",126
-"Nonda","(3,6]","Winter","0",84
-"Nonda","(3,6]","Winter","30",53
-"Nonda","(3,6]","Winter","60",79
-"Nonda","(3,6]","Winter","90",95
-"Nonda","(3,6]","Winter","120",251
-"Nonda","(3,6]","Winter","150",659
-"Nonda","(3,6]","Winter","180",320
-"Nonda","(3,6]","Winter","210",227
-"Nonda","(3,6]","Winter","240",337
-"Nonda","(3,6]","Winter","270",223
-"Nonda","(3,6]","Winter","300",146
-"Nonda","(3,6]","Winter","330",180
-"Nonda","(-Inf,3]","Summer","0",64
-"Nonda","(-Inf,3]","Summer","30",98
-"Nonda","(-Inf,3]","Summer","60",121
-"Nonda","(-Inf,3]","Summer","90",85
-"Nonda","(-Inf,3]","Summer","120",171
-"Nonda","(-Inf,3]","Summer","150",370
-"Nonda","(-Inf,3]","Summer","180",149
-"Nonda","(-Inf,3]","Summer","210",144
-"Nonda","(-Inf,3]","Summer","240",304
+"Middlefork Creek","(6,9]","Winter","90",2242
+"Middlefork Creek","(6,9]","Winter","120",1155
+"Middlefork Creek","(6,9]","Winter","150",249
+"Middlefork Creek","(6,9]","Winter","180",168
+"Middlefork Creek","(6,9]","Winter","210",245
+"Middlefork Creek","(6,9]","Winter","240",280
+"Middlefork Creek","(6,9]","Winter","270",1677
+"Middlefork Creek","(6,9]","Winter","300",1648
+"Middlefork Creek","(6,9]","Winter","330",405
+"Middlefork Creek","(3,6]","Summer","0",332
+"Middlefork Creek","(3,6]","Summer","30",362
+"Middlefork Creek","(3,6]","Summer","60",927
+"Middlefork Creek","(3,6]","Summer","90",1442
+"Middlefork Creek","(3,6]","Summer","120",1745
+"Middlefork Creek","(3,6]","Summer","150",529
+"Middlefork Creek","(3,6]","Summer","180",341
+"Middlefork Creek","(3,6]","Summer","210",405
+"Middlefork Creek","(3,6]","Summer","240",636
+"Middlefork Creek","(3,6]","Summer","270",1489
+"Middlefork Creek","(3,6]","Summer","300",1810
+"Middlefork Creek","(3,6]","Summer","330",1089
+"Middlefork Creek","(3,6]","Winter","0",166
+"Middlefork Creek","(3,6]","Winter","30",197
+"Middlefork Creek","(3,6]","Winter","60",931
+"Middlefork Creek","(3,6]","Winter","90",1878
+"Middlefork Creek","(3,6]","Winter","120",2189
+"Middlefork Creek","(3,6]","Winter","150",494
+"Middlefork Creek","(3,6]","Winter","180",233
+"Middlefork Creek","(3,6]","Winter","210",260
+"Middlefork Creek","(3,6]","Winter","240",383
+"Middlefork Creek","(3,6]","Winter","270",1688
+"Middlefork Creek","(3,6]","Winter","300",2386
+"Middlefork Creek","(3,6]","Winter","330",1002
+"Middlefork Creek","(-Inf,3]","Summer","0",2321
+"Middlefork Creek","(-Inf,3]","Summer","30",1433
+"Middlefork Creek","(-Inf,3]","Summer","60",1908
+"Middlefork Creek","(-Inf,3]","Summer","90",2167
+"Middlefork Creek","(-Inf,3]","Summer","120",2218
+"Middlefork Creek","(-Inf,3]","Summer","150",683
+"Middlefork Creek","(-Inf,3]","Summer","180",357
+"Middlefork Creek","(-Inf,3]","Summer","210",543
+"Middlefork Creek","(-Inf,3]","Summer","240",1271
+"Middlefork Creek","(-Inf,3]","Summer","270",3914
+"Middlefork Creek","(-Inf,3]","Summer","300",5847
+"Middlefork Creek","(-Inf,3]","Summer","330",3962
+"Middlefork Creek","(-Inf,3]","Winter","0",2321
+"Middlefork Creek","(-Inf,3]","Winter","30",1333
+"Middlefork Creek","(-Inf,3]","Winter","60",3079
+"Middlefork Creek","(-Inf,3]","Winter","90",4052
+"Middlefork Creek","(-Inf,3]","Winter","120",3321
+"Middlefork Creek","(-Inf,3]","Winter","150",954
+"Middlefork Creek","(-Inf,3]","Winter","180",448
+"Middlefork Creek","(-Inf,3]","Winter","210",563
+"Middlefork Creek","(-Inf,3]","Winter","240",1747
+"Middlefork Creek","(-Inf,3]","Winter","270",7790
+"Middlefork Creek","(-Inf,3]","Winter","300",11011
+"Middlefork Creek","(-Inf,3]","Winter","330",6188
+"Nonda","(9, Inf]","Summer","0",316
+"Nonda","(9, Inf]","Summer","30",254
+"Nonda","(9, Inf]","Summer","60",868
+"Nonda","(9, Inf]","Summer","90",746
+"Nonda","(9, Inf]","Summer","120",1093
+"Nonda","(9, Inf]","Summer","150",2318
+"Nonda","(9, Inf]","Summer","180",1369
+"Nonda","(9, Inf]","Summer","210",2252
+"Nonda","(9, Inf]","Summer","240",6979
+"Nonda","(9, Inf]","Summer","270",5472
+"Nonda","(9, Inf]","Summer","300",1046
+"Nonda","(9, Inf]","Summer","330",1738
+"Nonda","(9, Inf]","Winter","0",137
+"Nonda","(9, Inf]","Winter","30",87
+"Nonda","(9, Inf]","Winter","60",392
+"Nonda","(9, Inf]","Winter","90",420
+"Nonda","(9, Inf]","Winter","120",1285
+"Nonda","(9, Inf]","Winter","150",4707
+"Nonda","(9, Inf]","Winter","180",3015
+"Nonda","(9, Inf]","Winter","210",6846
+"Nonda","(9, Inf]","Winter","240",10772
+"Nonda","(9, Inf]","Winter","270",4195
+"Nonda","(9, Inf]","Winter","300",790
+"Nonda","(9, Inf]","Winter","330",1409
+"Nonda","(6,9]","Summer","0",169
+"Nonda","(6,9]","Summer","30",172
+"Nonda","(6,9]","Summer","60",171
+"Nonda","(6,9]","Summer","90",202
+"Nonda","(6,9]","Summer","120",297
+"Nonda","(6,9]","Summer","150",699
+"Nonda","(6,9]","Summer","180",377
+"Nonda","(6,9]","Summer","210",252
+"Nonda","(6,9]","Summer","240",313
+"Nonda","(6,9]","Summer","270",274
+"Nonda","(6,9]","Summer","300",198
+"Nonda","(6,9]","Summer","330",237
+"Nonda","(6,9]","Winter","0",93
+"Nonda","(6,9]","Winter","30",69
+"Nonda","(6,9]","Winter","60",99
+"Nonda","(6,9]","Winter","90",110
+"Nonda","(6,9]","Winter","120",395
+"Nonda","(6,9]","Winter","150",1282
+"Nonda","(6,9]","Winter","180",589
+"Nonda","(6,9]","Winter","210",351
+"Nonda","(6,9]","Winter","240",445
+"Nonda","(6,9]","Winter","270",306
+"Nonda","(6,9]","Winter","300",193
+"Nonda","(6,9]","Winter","330",286
+"Nonda","(3,6]","Summer","0",107
+"Nonda","(3,6]","Summer","30",126
+"Nonda","(3,6]","Summer","60",132
+"Nonda","(3,6]","Summer","90",117
+"Nonda","(3,6]","Summer","120",158
+"Nonda","(3,6]","Summer","150",350
+"Nonda","(3,6]","Summer","180",228
+"Nonda","(3,6]","Summer","210",142
+"Nonda","(3,6]","Summer","240",186
+"Nonda","(3,6]","Summer","270",232
+"Nonda","(3,6]","Summer","300",136
+"Nonda","(3,6]","Summer","330",152
+"Nonda","(3,6]","Winter","0",100
+"Nonda","(3,6]","Winter","30",65
+"Nonda","(3,6]","Winter","60",93
+"Nonda","(3,6]","Winter","90",102
+"Nonda","(3,6]","Winter","120",281
+"Nonda","(3,6]","Winter","150",799
+"Nonda","(3,6]","Winter","180",386
+"Nonda","(3,6]","Winter","210",252
+"Nonda","(3,6]","Winter","240",363
+"Nonda","(3,6]","Winter","270",245
+"Nonda","(3,6]","Winter","300",171
+"Nonda","(3,6]","Winter","330",199
+"Nonda","(-Inf,3]","Summer","0",69
+"Nonda","(-Inf,3]","Summer","30",103
+"Nonda","(-Inf,3]","Summer","60",123
+"Nonda","(-Inf,3]","Summer","90",88
+"Nonda","(-Inf,3]","Summer","120",177
+"Nonda","(-Inf,3]","Summer","150",385
+"Nonda","(-Inf,3]","Summer","180",152
+"Nonda","(-Inf,3]","Summer","210",151
+"Nonda","(-Inf,3]","Summer","240",310
 "Nonda","(-Inf,3]","Summer","270",323
-"Nonda","(-Inf,3]","Summer","300",158
-"Nonda","(-Inf,3]","Summer","330",191
-"Nonda","(-Inf,3]","Winter","0",106
-"Nonda","(-Inf,3]","Winter","30",115
-"Nonda","(-Inf,3]","Winter","60",134
-"Nonda","(-Inf,3]","Winter","90",165
-"Nonda","(-Inf,3]","Winter","120",559
-"Nonda","(-Inf,3]","Winter","150",1417
-"Nonda","(-Inf,3]","Winter","180",386
-"Nonda","(-Inf,3]","Winter","210",413
-"Nonda","(-Inf,3]","Winter","240",531
-"Nonda","(-Inf,3]","Winter","270",306
-"Nonda","(-Inf,3]","Winter","300",234
-"Nonda","(-Inf,3]","Winter","330",305
-"North Fraser","(9, Inf]","Summer","0",3
+"Nonda","(-Inf,3]","Summer","300",163
+"Nonda","(-Inf,3]","Summer","330",198
+"Nonda","(-Inf,3]","Winter","0",116
+"Nonda","(-Inf,3]","Winter","30",122
+"Nonda","(-Inf,3]","Winter","60",149
+"Nonda","(-Inf,3]","Winter","90",181
+"Nonda","(-Inf,3]","Winter","120",591
+"Nonda","(-Inf,3]","Winter","150",1517
+"Nonda","(-Inf,3]","Winter","180",413
+"Nonda","(-Inf,3]","Winter","210",421
+"Nonda","(-Inf,3]","Winter","240",542
+"Nonda","(-Inf,3]","Winter","270",323
+"Nonda","(-Inf,3]","Winter","300",246
+"Nonda","(-Inf,3]","Winter","330",321
+"North Fraser","(9, Inf]","Summer","0",16
+"North Fraser","(9, Inf]","Summer","30",3
 "North Fraser","(9, Inf]","Summer","60",1
+"North Fraser","(9, Inf]","Summer","90",1
+"North Fraser","(9, Inf]","Summer","180",1
+"North Fraser","(9, Inf]","Summer","210",2
 "North Fraser","(9, Inf]","Summer","240",6
-"North Fraser","(9, Inf]","Summer","270",1
-"North Fraser","(9, Inf]","Summer","330",5
+"North Fraser","(9, Inf]","Summer","270",2
+"North Fraser","(9, Inf]","Summer","300",6
+"North Fraser","(9, Inf]","Summer","330",18
 "North Fraser","(9, Inf]","Winter","240",1
 "North Fraser","(9, Inf]","Winter","330",1
-"North Fraser","(6,9]","Summer","0",15
-"North Fraser","(6,9]","Summer","30",1
-"North Fraser","(6,9]","Summer","60",20
-"North Fraser","(6,9]","Summer","90",9
-"North Fraser","(6,9]","Summer","120",1
-"North Fraser","(6,9]","Summer","180",13
-"North Fraser","(6,9]","Summer","210",28
-"North Fraser","(6,9]","Summer","240",68
-"North Fraser","(6,9]","Summer","270",25
-"North Fraser","(6,9]","Summer","300",12
-"North Fraser","(6,9]","Summer","330",19
+"North Fraser","(6,9]","Summer","0",37
+"North Fraser","(6,9]","Summer","30",42
+"North Fraser","(6,9]","Summer","60",77
+"North Fraser","(6,9]","Summer","90",40
+"North Fraser","(6,9]","Summer","120",11
+"North Fraser","(6,9]","Summer","150",15
+"North Fraser","(6,9]","Summer","180",46
+"North Fraser","(6,9]","Summer","210",84
+"North Fraser","(6,9]","Summer","240",104
+"North Fraser","(6,9]","Summer","270",47
+"North Fraser","(6,9]","Summer","300",31
+"North Fraser","(6,9]","Summer","330",54
 "North Fraser","(6,9]","Winter","60",3
 "North Fraser","(6,9]","Winter","90",1
 "North Fraser","(6,9]","Winter","180",1
 "North Fraser","(6,9]","Winter","210",5
 "North Fraser","(6,9]","Winter","240",11
-"North Fraser","(3,6]","Summer","0",25
-"North Fraser","(3,6]","Summer","30",33
-"North Fraser","(3,6]","Summer","60",143
-"North Fraser","(3,6]","Summer","90",117
-"North Fraser","(3,6]","Summer","120",88
-"North Fraser","(3,6]","Summer","150",57
-"North Fraser","(3,6]","Summer","180",75
-"North Fraser","(3,6]","Summer","210",114
-"North Fraser","(3,6]","Summer","240",108
-"North Fraser","(3,6]","Summer","270",73
-"North Fraser","(3,6]","Summer","300",53
-"North Fraser","(3,6]","Summer","330",38
-"North Fraser","(3,6]","Winter","0",1
-"North Fraser","(3,6]","Winter","30",4
-"North Fraser","(3,6]","Winter","60",68
-"North Fraser","(3,6]","Winter","90",39
-"North Fraser","(3,6]","Winter","120",10
-"North Fraser","(3,6]","Winter","150",8
+"North Fraser","(3,6]","Summer","0",134
+"North Fraser","(3,6]","Summer","30",189
+"North Fraser","(3,6]","Summer","60",355
+"North Fraser","(3,6]","Summer","90",348
+"North Fraser","(3,6]","Summer","120",239
+"North Fraser","(3,6]","Summer","150",229
+"North Fraser","(3,6]","Summer","180",273
+"North Fraser","(3,6]","Summer","210",319
+"North Fraser","(3,6]","Summer","240",279
+"North Fraser","(3,6]","Summer","270",155
+"North Fraser","(3,6]","Summer","300",116
+"North Fraser","(3,6]","Summer","330",112
+"North Fraser","(3,6]","Winter","0",2
+"North Fraser","(3,6]","Winter","30",5
+"North Fraser","(3,6]","Winter","60",78
+"North Fraser","(3,6]","Winter","90",62
+"North Fraser","(3,6]","Winter","120",20
+"North Fraser","(3,6]","Winter","150",13
 "North Fraser","(3,6]","Winter","180",8
-"North Fraser","(3,6]","Winter","210",13
-"North Fraser","(3,6]","Winter","240",5
-"North Fraser","(3,6]","Winter","270",5
+"North Fraser","(3,6]","Winter","210",15
+"North Fraser","(3,6]","Winter","240",9
+"North Fraser","(3,6]","Winter","270",7
 "North Fraser","(3,6]","Winter","300",12
 "North Fraser","(3,6]","Winter","330",1
-"North Fraser","(-Inf,3]","Summer","0",40
-"North Fraser","(-Inf,3]","Summer","30",329
-"North Fraser","(-Inf,3]","Summer","60",415
-"North Fraser","(-Inf,3]","Summer","90",230
-"North Fraser","(-Inf,3]","Summer","120",94
-"North Fraser","(-Inf,3]","Summer","150",67
-"North Fraser","(-Inf,3]","Summer","180",55
-"North Fraser","(-Inf,3]","Summer","210",61
-"North Fraser","(-Inf,3]","Summer","240",52
-"North Fraser","(-Inf,3]","Summer","270",37
-"North Fraser","(-Inf,3]","Summer","300",28
-"North Fraser","(-Inf,3]","Summer","330",22
-"North Fraser","(-Inf,3]","Winter","0",10
-"North Fraser","(-Inf,3]","Winter","30",36
-"North Fraser","(-Inf,3]","Winter","60",61
-"North Fraser","(-Inf,3]","Winter","90",48
-"North Fraser","(-Inf,3]","Winter","120",19
-"North Fraser","(-Inf,3]","Winter","150",11
-"North Fraser","(-Inf,3]","Winter","180",14
-"North Fraser","(-Inf,3]","Winter","210",11
-"North Fraser","(-Inf,3]","Winter","240",12
-"North Fraser","(-Inf,3]","Winter","270",7
-"North Fraser","(-Inf,3]","Winter","300",10
-"North Fraser","(-Inf,3]","Winter","330",7
-"Pink Mountain","(9, Inf]","Summer","0",1064
-"Pink Mountain","(9, Inf]","Summer","30",1292
-"Pink Mountain","(9, Inf]","Summer","60",1274
-"Pink Mountain","(9, Inf]","Summer","90",1016
-"Pink Mountain","(9, Inf]","Summer","120",1013
-"Pink Mountain","(9, Inf]","Summer","150",565
-"Pink Mountain","(9, Inf]","Summer","180",616
-"Pink Mountain","(9, Inf]","Summer","210",2593
-"Pink Mountain","(9, Inf]","Summer","240",4193
-"Pink Mountain","(9, Inf]","Summer","270",1615
-"Pink Mountain","(9, Inf]","Summer","300",917
-"Pink Mountain","(9, Inf]","Summer","330",929
-"Pink Mountain","(9, Inf]","Winter","0",1352
-"Pink Mountain","(9, Inf]","Winter","30",1593
-"Pink Mountain","(9, Inf]","Winter","60",1254
-"Pink Mountain","(9, Inf]","Winter","90",682
-"Pink Mountain","(9, Inf]","Winter","120",563
-"Pink Mountain","(9, Inf]","Winter","150",731
-"Pink Mountain","(9, Inf]","Winter","180",1284
-"Pink Mountain","(9, Inf]","Winter","210",4644
-"Pink Mountain","(9, Inf]","Winter","240",6419
-"Pink Mountain","(9, Inf]","Winter","270",2160
-"Pink Mountain","(9, Inf]","Winter","300",1157
-"Pink Mountain","(9, Inf]","Winter","330",1468
-"Pink Mountain","(6,9]","Summer","0",142
-"Pink Mountain","(6,9]","Summer","30",219
-"Pink Mountain","(6,9]","Summer","60",227
-"Pink Mountain","(6,9]","Summer","90",168
-"Pink Mountain","(6,9]","Summer","120",130
-"Pink Mountain","(6,9]","Summer","150",97
-"Pink Mountain","(6,9]","Summer","180",113
-"Pink Mountain","(6,9]","Summer","210",262
-"Pink Mountain","(6,9]","Summer","240",415
-"Pink Mountain","(6,9]","Summer","270",273
-"Pink Mountain","(6,9]","Summer","300",96
-"Pink Mountain","(6,9]","Summer","330",106
-"Pink Mountain","(6,9]","Winter","0",134
-"Pink Mountain","(6,9]","Winter","30",139
-"Pink Mountain","(6,9]","Winter","60",186
-"Pink Mountain","(6,9]","Winter","90",116
-"Pink Mountain","(6,9]","Winter","120",94
-"Pink Mountain","(6,9]","Winter","150",105
-"Pink Mountain","(6,9]","Winter","180",80
-"Pink Mountain","(6,9]","Winter","210",225
-"Pink Mountain","(6,9]","Winter","240",385
-"Pink Mountain","(6,9]","Winter","270",276
-"Pink Mountain","(6,9]","Winter","300",115
-"Pink Mountain","(6,9]","Winter","330",104
-"Pink Mountain","(3,6]","Summer","0",66
-"Pink Mountain","(3,6]","Summer","30",92
-"Pink Mountain","(3,6]","Summer","60",110
-"Pink Mountain","(3,6]","Summer","90",76
-"Pink Mountain","(3,6]","Summer","120",66
-"Pink Mountain","(3,6]","Summer","150",60
-"Pink Mountain","(3,6]","Summer","180",60
-"Pink Mountain","(3,6]","Summer","210",122
-"Pink Mountain","(3,6]","Summer","240",188
-"Pink Mountain","(3,6]","Summer","270",162
-"Pink Mountain","(3,6]","Summer","300",84
-"Pink Mountain","(3,6]","Summer","330",55
-"Pink Mountain","(3,6]","Winter","0",90
-"Pink Mountain","(3,6]","Winter","30",88
-"Pink Mountain","(3,6]","Winter","60",92
-"Pink Mountain","(3,6]","Winter","90",81
-"Pink Mountain","(3,6]","Winter","120",74
-"Pink Mountain","(3,6]","Winter","150",79
-"Pink Mountain","(3,6]","Winter","180",85
-"Pink Mountain","(3,6]","Winter","210",143
-"Pink Mountain","(3,6]","Winter","240",246
-"Pink Mountain","(3,6]","Winter","270",219
-"Pink Mountain","(3,6]","Winter","300",117
-"Pink Mountain","(3,6]","Winter","330",99
-"Pink Mountain","(-Inf,3]","Summer","0",41
-"Pink Mountain","(-Inf,3]","Summer","30",71
-"Pink Mountain","(-Inf,3]","Summer","60",20
+"North Fraser","(-Inf,3]","Summer","0",369
+"North Fraser","(-Inf,3]","Summer","30",946
+"North Fraser","(-Inf,3]","Summer","60",1140
+"North Fraser","(-Inf,3]","Summer","90",665
+"North Fraser","(-Inf,3]","Summer","120",388
+"North Fraser","(-Inf,3]","Summer","150",294
+"North Fraser","(-Inf,3]","Summer","180",219
+"North Fraser","(-Inf,3]","Summer","210",199
+"North Fraser","(-Inf,3]","Summer","240",157
+"North Fraser","(-Inf,3]","Summer","270",104
+"North Fraser","(-Inf,3]","Summer","300",81
+"North Fraser","(-Inf,3]","Summer","330",91
+"North Fraser","(-Inf,3]","Winter","0",15
+"North Fraser","(-Inf,3]","Winter","30",50
+"North Fraser","(-Inf,3]","Winter","60",102
+"North Fraser","(-Inf,3]","Winter","90",77
+"North Fraser","(-Inf,3]","Winter","120",37
+"North Fraser","(-Inf,3]","Winter","150",22
+"North Fraser","(-Inf,3]","Winter","180",23
+"North Fraser","(-Inf,3]","Winter","210",19
+"North Fraser","(-Inf,3]","Winter","240",14
+"North Fraser","(-Inf,3]","Winter","270",12
+"North Fraser","(-Inf,3]","Winter","300",14
+"North Fraser","(-Inf,3]","Winter","330",8
+"Pink Mountain","(9, Inf]","Summer","0",1271
+"Pink Mountain","(9, Inf]","Summer","30",1458
+"Pink Mountain","(9, Inf]","Summer","60",1437
+"Pink Mountain","(9, Inf]","Summer","90",1174
+"Pink Mountain","(9, Inf]","Summer","120",1232
+"Pink Mountain","(9, Inf]","Summer","150",686
+"Pink Mountain","(9, Inf]","Summer","180",707
+"Pink Mountain","(9, Inf]","Summer","210",3052
+"Pink Mountain","(9, Inf]","Summer","240",4809
+"Pink Mountain","(9, Inf]","Summer","270",2039
+"Pink Mountain","(9, Inf]","Summer","300",1053
+"Pink Mountain","(9, Inf]","Summer","330",1096
+"Pink Mountain","(9, Inf]","Winter","0",1508
+"Pink Mountain","(9, Inf]","Winter","30",1818
+"Pink Mountain","(9, Inf]","Winter","60",1494
+"Pink Mountain","(9, Inf]","Winter","90",878
+"Pink Mountain","(9, Inf]","Winter","120",786
+"Pink Mountain","(9, Inf]","Winter","150",952
+"Pink Mountain","(9, Inf]","Winter","180",1682
+"Pink Mountain","(9, Inf]","Winter","210",5824
+"Pink Mountain","(9, Inf]","Winter","240",7412
+"Pink Mountain","(9, Inf]","Winter","270",2435
+"Pink Mountain","(9, Inf]","Winter","300",1257
+"Pink Mountain","(9, Inf]","Winter","330",1602
+"Pink Mountain","(6,9]","Summer","0",169
+"Pink Mountain","(6,9]","Summer","30",246
+"Pink Mountain","(6,9]","Summer","60",271
+"Pink Mountain","(6,9]","Summer","90",200
+"Pink Mountain","(6,9]","Summer","120",170
+"Pink Mountain","(6,9]","Summer","150",114
+"Pink Mountain","(6,9]","Summer","180",135
+"Pink Mountain","(6,9]","Summer","210",294
+"Pink Mountain","(6,9]","Summer","240",483
+"Pink Mountain","(6,9]","Summer","270",333
+"Pink Mountain","(6,9]","Summer","300",113
+"Pink Mountain","(6,9]","Summer","330",133
+"Pink Mountain","(6,9]","Winter","0",161
+"Pink Mountain","(6,9]","Winter","30",157
+"Pink Mountain","(6,9]","Winter","60",221
+"Pink Mountain","(6,9]","Winter","90",165
+"Pink Mountain","(6,9]","Winter","120",112
+"Pink Mountain","(6,9]","Winter","150",127
+"Pink Mountain","(6,9]","Winter","180",94
+"Pink Mountain","(6,9]","Winter","210",268
+"Pink Mountain","(6,9]","Winter","240",436
+"Pink Mountain","(6,9]","Winter","270",305
+"Pink Mountain","(6,9]","Winter","300",124
+"Pink Mountain","(6,9]","Winter","330",124
+"Pink Mountain","(3,6]","Summer","0",85
+"Pink Mountain","(3,6]","Summer","30",105
+"Pink Mountain","(3,6]","Summer","60",129
+"Pink Mountain","(3,6]","Summer","90",86
+"Pink Mountain","(3,6]","Summer","120",90
+"Pink Mountain","(3,6]","Summer","150",70
+"Pink Mountain","(3,6]","Summer","180",71
+"Pink Mountain","(3,6]","Summer","210",145
+"Pink Mountain","(3,6]","Summer","240",240
+"Pink Mountain","(3,6]","Summer","270",208
+"Pink Mountain","(3,6]","Summer","300",107
+"Pink Mountain","(3,6]","Summer","330",69
+"Pink Mountain","(3,6]","Winter","0",108
+"Pink Mountain","(3,6]","Winter","30",98
+"Pink Mountain","(3,6]","Winter","60",108
+"Pink Mountain","(3,6]","Winter","90",116
+"Pink Mountain","(3,6]","Winter","120",98
+"Pink Mountain","(3,6]","Winter","150",96
+"Pink Mountain","(3,6]","Winter","180",106
+"Pink Mountain","(3,6]","Winter","210",190
+"Pink Mountain","(3,6]","Winter","240",282
+"Pink Mountain","(3,6]","Winter","270",249
+"Pink Mountain","(3,6]","Winter","300",126
+"Pink Mountain","(3,6]","Winter","330",112
+"Pink Mountain","(-Inf,3]","Summer","0",45
+"Pink Mountain","(-Inf,3]","Summer","30",76
+"Pink Mountain","(-Inf,3]","Summer","60",25
 "Pink Mountain","(-Inf,3]","Summer","90",14
-"Pink Mountain","(-Inf,3]","Summer","120",24
-"Pink Mountain","(-Inf,3]","Summer","150",24
-"Pink Mountain","(-Inf,3]","Summer","180",22
-"Pink Mountain","(-Inf,3]","Summer","210",39
-"Pink Mountain","(-Inf,3]","Summer","240",62
-"Pink Mountain","(-Inf,3]","Summer","270",61
-"Pink Mountain","(-Inf,3]","Summer","300",40
-"Pink Mountain","(-Inf,3]","Summer","330",40
-"Pink Mountain","(-Inf,3]","Winter","0",113
-"Pink Mountain","(-Inf,3]","Winter","30",73
-"Pink Mountain","(-Inf,3]","Winter","60",53
-"Pink Mountain","(-Inf,3]","Winter","90",43
-"Pink Mountain","(-Inf,3]","Winter","120",52
-"Pink Mountain","(-Inf,3]","Winter","150",49
-"Pink Mountain","(-Inf,3]","Winter","180",86
-"Pink Mountain","(-Inf,3]","Winter","210",119
-"Pink Mountain","(-Inf,3]","Winter","240",190
-"Pink Mountain","(-Inf,3]","Winter","270",146
-"Pink Mountain","(-Inf,3]","Winter","300",78
-"Pink Mountain","(-Inf,3]","Winter","330",81
+"Pink Mountain","(-Inf,3]","Summer","120",31
+"Pink Mountain","(-Inf,3]","Summer","150",26
+"Pink Mountain","(-Inf,3]","Summer","180",23
+"Pink Mountain","(-Inf,3]","Summer","210",43
+"Pink Mountain","(-Inf,3]","Summer","240",71
+"Pink Mountain","(-Inf,3]","Summer","270",71
+"Pink Mountain","(-Inf,3]","Summer","300",48
+"Pink Mountain","(-Inf,3]","Summer","330",45
+"Pink Mountain","(-Inf,3]","Winter","0",127
+"Pink Mountain","(-Inf,3]","Winter","30",109
+"Pink Mountain","(-Inf,3]","Winter","60",69
+"Pink Mountain","(-Inf,3]","Winter","90",56
+"Pink Mountain","(-Inf,3]","Winter","120",67
+"Pink Mountain","(-Inf,3]","Winter","150",67
+"Pink Mountain","(-Inf,3]","Winter","180",105
+"Pink Mountain","(-Inf,3]","Winter","210",128
+"Pink Mountain","(-Inf,3]","Winter","240",213
+"Pink Mountain","(-Inf,3]","Winter","270",162
+"Pink Mountain","(-Inf,3]","Winter","300",103
+"Pink Mountain","(-Inf,3]","Winter","330",91
 "Saxton Lake","(9, Inf]","Summer","0",6
 "Saxton Lake","(9, Inf]","Summer","30",16
 "Saxton Lake","(9, Inf]","Summer","60",911
-"Saxton Lake","(9, Inf]","Summer","90",4753
-"Saxton Lake","(9, Inf]","Summer","120",552
-"Saxton Lake","(9, Inf]","Summer","150",116
-"Saxton Lake","(9, Inf]","Summer","180",6
+"Saxton Lake","(9, Inf]","Summer","90",4754
+"Saxton Lake","(9, Inf]","Summer","120",599
+"Saxton Lake","(9, Inf]","Summer","150",146
+"Saxton Lake","(9, Inf]","Summer","180",8
 "Saxton Lake","(9, Inf]","Summer","210",14
-"Saxton Lake","(9, Inf]","Summer","240",199
-"Saxton Lake","(9, Inf]","Summer","270",3755
-"Saxton Lake","(9, Inf]","Summer","300",667
+"Saxton Lake","(9, Inf]","Summer","240",201
+"Saxton Lake","(9, Inf]","Summer","270",4362
+"Saxton Lake","(9, Inf]","Summer","300",788
 "Saxton Lake","(9, Inf]","Summer","330",57
 "Saxton Lake","(9, Inf]","Winter","0",34
 "Saxton Lake","(9, Inf]","Winter","30",103
 "Saxton Lake","(9, Inf]","Winter","60",614
 "Saxton Lake","(9, Inf]","Winter","90",2174
-"Saxton Lake","(9, Inf]","Winter","120",1983
+"Saxton Lake","(9, Inf]","Winter","120",1985
 "Saxton Lake","(9, Inf]","Winter","150",1159
 "Saxton Lake","(9, Inf]","Winter","180",34
 "Saxton Lake","(9, Inf]","Winter","210",35
 "Saxton Lake","(9, Inf]","Winter","240",272
-"Saxton Lake","(9, Inf]","Winter","270",2755
-"Saxton Lake","(9, Inf]","Winter","300",2289
+"Saxton Lake","(9, Inf]","Winter","270",2784
+"Saxton Lake","(9, Inf]","Winter","300",2300
 "Saxton Lake","(9, Inf]","Winter","330",661
 "Saxton Lake","(6,9]","Summer","0",74
 "Saxton Lake","(6,9]","Summer","30",98
 "Saxton Lake","(6,9]","Summer","60",1338
-"Saxton Lake","(6,9]","Summer","90",3055
-"Saxton Lake","(6,9]","Summer","120",1152
-"Saxton Lake","(6,9]","Summer","150",200
-"Saxton Lake","(6,9]","Summer","180",72
+"Saxton Lake","(6,9]","Summer","90",3057
+"Saxton Lake","(6,9]","Summer","120",1197
+"Saxton Lake","(6,9]","Summer","150",217
+"Saxton Lake","(6,9]","Summer","180",73
 "Saxton Lake","(6,9]","Summer","210",95
-"Saxton Lake","(6,9]","Summer","240",670
-"Saxton Lake","(6,9]","Summer","270",2412
-"Saxton Lake","(6,9]","Summer","300",1102
-"Saxton Lake","(6,9]","Summer","330",194
+"Saxton Lake","(6,9]","Summer","240",672
+"Saxton Lake","(6,9]","Summer","270",2639
+"Saxton Lake","(6,9]","Summer","300",1204
+"Saxton Lake","(6,9]","Summer","330",196
 "Saxton Lake","(6,9]","Winter","0",135
 "Saxton Lake","(6,9]","Winter","30",188
 "Saxton Lake","(6,9]","Winter","60",671
 "Saxton Lake","(6,9]","Winter","90",1929
-"Saxton Lake","(6,9]","Winter","120",1886
-"Saxton Lake","(6,9]","Winter","150",575
+"Saxton Lake","(6,9]","Winter","120",1889
+"Saxton Lake","(6,9]","Winter","150",578
 "Saxton Lake","(6,9]","Winter","180",106
 "Saxton Lake","(6,9]","Winter","210",165
 "Saxton Lake","(6,9]","Winter","240",480
-"Saxton Lake","(6,9]","Winter","270",2304
-"Saxton Lake","(6,9]","Winter","300",2027
+"Saxton Lake","(6,9]","Winter","270",2310
+"Saxton Lake","(6,9]","Winter","300",2030
 "Saxton Lake","(6,9]","Winter","330",493
-"Saxton Lake","(3,6]","Summer","0",287
-"Saxton Lake","(3,6]","Summer","30",393
-"Saxton Lake","(3,6]","Summer","60",1149
-"Saxton Lake","(3,6]","Summer","90",2206
-"Saxton Lake","(3,6]","Summer","120",1677
-"Saxton Lake","(3,6]","Summer","150",410
-"Saxton Lake","(3,6]","Summer","180",220
-"Saxton Lake","(3,6]","Summer","210",283
-"Saxton Lake","(3,6]","Summer","240",775
-"Saxton Lake","(3,6]","Summer","270",2518
-"Saxton Lake","(3,6]","Summer","300",1623
-"Saxton Lake","(3,6]","Summer","330",397
+"Saxton Lake","(3,6]","Summer","0",288
+"Saxton Lake","(3,6]","Summer","30",395
+"Saxton Lake","(3,6]","Summer","60",1154
+"Saxton Lake","(3,6]","Summer","90",2271
+"Saxton Lake","(3,6]","Summer","120",1875
+"Saxton Lake","(3,6]","Summer","150",487
+"Saxton Lake","(3,6]","Summer","180",236
+"Saxton Lake","(3,6]","Summer","210",302
+"Saxton Lake","(3,6]","Summer","240",823
+"Saxton Lake","(3,6]","Summer","270",2858
+"Saxton Lake","(3,6]","Summer","300",1902
+"Saxton Lake","(3,6]","Summer","330",415
 "Saxton Lake","(3,6]","Winter","0",330
 "Saxton Lake","(3,6]","Winter","30",361
-"Saxton Lake","(3,6]","Winter","60",958
-"Saxton Lake","(3,6]","Winter","90",2708
-"Saxton Lake","(3,6]","Winter","120",2596
-"Saxton Lake","(3,6]","Winter","150",732
+"Saxton Lake","(3,6]","Winter","60",961
+"Saxton Lake","(3,6]","Winter","90",2712
+"Saxton Lake","(3,6]","Winter","120",2608
+"Saxton Lake","(3,6]","Winter","150",736
 "Saxton Lake","(3,6]","Winter","180",264
 "Saxton Lake","(3,6]","Winter","210",388
-"Saxton Lake","(3,6]","Winter","240",944
-"Saxton Lake","(3,6]","Winter","270",3124
-"Saxton Lake","(3,6]","Winter","300",2024
-"Saxton Lake","(3,6]","Winter","330",510
-"Saxton Lake","(-Inf,3]","Summer","0",428
-"Saxton Lake","(-Inf,3]","Summer","30",504
-"Saxton Lake","(-Inf,3]","Summer","60",1248
-"Saxton Lake","(-Inf,3]","Summer","90",3198
-"Saxton Lake","(-Inf,3]","Summer","120",3908
-"Saxton Lake","(-Inf,3]","Summer","150",701
-"Saxton Lake","(-Inf,3]","Summer","180",388
-"Saxton Lake","(-Inf,3]","Summer","210",541
-"Saxton Lake","(-Inf,3]","Summer","240",1259
-"Saxton Lake","(-Inf,3]","Summer","270",3429
-"Saxton Lake","(-Inf,3]","Summer","300",1990
-"Saxton Lake","(-Inf,3]","Summer","330",610
-"Saxton Lake","(-Inf,3]","Winter","0",742
-"Saxton Lake","(-Inf,3]","Winter","30",865
-"Saxton Lake","(-Inf,3]","Winter","60",2251
-"Saxton Lake","(-Inf,3]","Winter","90",7781
-"Saxton Lake","(-Inf,3]","Winter","120",5868
-"Saxton Lake","(-Inf,3]","Winter","150",1238
-"Saxton Lake","(-Inf,3]","Winter","180",791
-"Saxton Lake","(-Inf,3]","Winter","210",1031
-"Saxton Lake","(-Inf,3]","Winter","240",2199
-"Saxton Lake","(-Inf,3]","Winter","270",6374
-"Saxton Lake","(-Inf,3]","Winter","300",3197
-"Saxton Lake","(-Inf,3]","Winter","330",955
-"Stone Creek","(9, Inf]","Summer","0",1
-"Stone Creek","(9, Inf]","Summer","120",1
-"Stone Creek","(9, Inf]","Summer","150",6
-"Stone Creek","(9, Inf]","Summer","180",259
-"Stone Creek","(9, Inf]","Summer","210",47
-"Stone Creek","(9, Inf]","Summer","240",18
-"Stone Creek","(9, Inf]","Summer","270",27
-"Stone Creek","(9, Inf]","Summer","300",13
-"Stone Creek","(9, Inf]","Summer","330",4
-"Stone Creek","(9, Inf]","Winter","180",157
-"Stone Creek","(9, Inf]","Winter","210",17
-"Stone Creek","(9, Inf]","Winter","240",9
-"Stone Creek","(9, Inf]","Winter","270",2
+"Saxton Lake","(3,6]","Winter","240",948
+"Saxton Lake","(3,6]","Winter","270",3152
+"Saxton Lake","(3,6]","Winter","300",2038
+"Saxton Lake","(3,6]","Winter","330",511
+"Saxton Lake","(-Inf,3]","Summer","0",442
+"Saxton Lake","(-Inf,3]","Summer","30",521
+"Saxton Lake","(-Inf,3]","Summer","60",1330
+"Saxton Lake","(-Inf,3]","Summer","90",3561
+"Saxton Lake","(-Inf,3]","Summer","120",5175
+"Saxton Lake","(-Inf,3]","Summer","150",823
+"Saxton Lake","(-Inf,3]","Summer","180",467
+"Saxton Lake","(-Inf,3]","Summer","210",625
+"Saxton Lake","(-Inf,3]","Summer","240",1381
+"Saxton Lake","(-Inf,3]","Summer","270",3628
+"Saxton Lake","(-Inf,3]","Summer","300",2135
+"Saxton Lake","(-Inf,3]","Summer","330",656
+"Saxton Lake","(-Inf,3]","Winter","0",743
+"Saxton Lake","(-Inf,3]","Winter","30",867
+"Saxton Lake","(-Inf,3]","Winter","60",2259
+"Saxton Lake","(-Inf,3]","Winter","90",7825
+"Saxton Lake","(-Inf,3]","Winter","120",6022
+"Saxton Lake","(-Inf,3]","Winter","150",1256
+"Saxton Lake","(-Inf,3]","Winter","180",799
+"Saxton Lake","(-Inf,3]","Winter","210",1043
+"Saxton Lake","(-Inf,3]","Winter","240",2205
+"Saxton Lake","(-Inf,3]","Winter","270",6414
+"Saxton Lake","(-Inf,3]","Winter","300",3204
+"Saxton Lake","(-Inf,3]","Winter","330",956
+"Stone Creek","(9, Inf]","Summer","0",7
+"Stone Creek","(9, Inf]","Summer","30",3
+"Stone Creek","(9, Inf]","Summer","60",1
+"Stone Creek","(9, Inf]","Summer","90",6
+"Stone Creek","(9, Inf]","Summer","120",32
+"Stone Creek","(9, Inf]","Summer","150",107
+"Stone Creek","(9, Inf]","Summer","180",575
+"Stone Creek","(9, Inf]","Summer","210",175
+"Stone Creek","(9, Inf]","Summer","240",131
+"Stone Creek","(9, Inf]","Summer","270",338
+"Stone Creek","(9, Inf]","Summer","300",77
+"Stone Creek","(9, Inf]","Summer","330",25
+"Stone Creek","(9, Inf]","Winter","150",10
+"Stone Creek","(9, Inf]","Winter","180",176
+"Stone Creek","(9, Inf]","Winter","210",19
+"Stone Creek","(9, Inf]","Winter","240",10
+"Stone Creek","(9, Inf]","Winter","270",5
 "Stone Creek","(9, Inf]","Winter","300",1
-"Stone Creek","(6,9]","Summer","0",31
-"Stone Creek","(6,9]","Summer","30",8
-"Stone Creek","(6,9]","Summer","90",2
-"Stone Creek","(6,9]","Summer","120",17
-"Stone Creek","(6,9]","Summer","150",7
-"Stone Creek","(6,9]","Summer","180",148
-"Stone Creek","(6,9]","Summer","210",94
-"Stone Creek","(6,9]","Summer","240",50
-"Stone Creek","(6,9]","Summer","270",58
-"Stone Creek","(6,9]","Summer","300",60
-"Stone Creek","(6,9]","Summer","330",59
+"Stone Creek","(6,9]","Summer","0",37
+"Stone Creek","(6,9]","Summer","30",10
+"Stone Creek","(6,9]","Summer","60",4
+"Stone Creek","(6,9]","Summer","90",78
+"Stone Creek","(6,9]","Summer","120",78
+"Stone Creek","(6,9]","Summer","150",77
+"Stone Creek","(6,9]","Summer","180",432
+"Stone Creek","(6,9]","Summer","210",351
+"Stone Creek","(6,9]","Summer","240",296
+"Stone Creek","(6,9]","Summer","270",507
+"Stone Creek","(6,9]","Summer","300",270
+"Stone Creek","(6,9]","Summer","330",142
 "Stone Creek","(6,9]","Winter","0",8
 "Stone Creek","(6,9]","Winter","120",3
-"Stone Creek","(6,9]","Winter","150",2
-"Stone Creek","(6,9]","Winter","180",39
-"Stone Creek","(6,9]","Winter","210",23
-"Stone Creek","(6,9]","Winter","240",9
-"Stone Creek","(6,9]","Winter","270",3
-"Stone Creek","(6,9]","Winter","330",1
-"Stone Creek","(3,6]","Summer","0",100
-"Stone Creek","(3,6]","Summer","30",42
-"Stone Creek","(3,6]","Summer","60",38
-"Stone Creek","(3,6]","Summer","90",163
-"Stone Creek","(3,6]","Summer","120",107
-"Stone Creek","(3,6]","Summer","150",54
-"Stone Creek","(3,6]","Summer","180",92
-"Stone Creek","(3,6]","Summer","210",65
-"Stone Creek","(3,6]","Summer","240",47
-"Stone Creek","(3,6]","Summer","270",73
-"Stone Creek","(3,6]","Summer","300",92
-"Stone Creek","(3,6]","Summer","330",141
+"Stone Creek","(6,9]","Winter","150",4
+"Stone Creek","(6,9]","Winter","180",54
+"Stone Creek","(6,9]","Winter","210",31
+"Stone Creek","(6,9]","Winter","240",19
+"Stone Creek","(6,9]","Winter","270",10
+"Stone Creek","(6,9]","Winter","300",3
+"Stone Creek","(6,9]","Winter","330",2
+"Stone Creek","(3,6]","Summer","0",112
+"Stone Creek","(3,6]","Summer","30",66
+"Stone Creek","(3,6]","Summer","60",110
+"Stone Creek","(3,6]","Summer","90",508
+"Stone Creek","(3,6]","Summer","120",242
+"Stone Creek","(3,6]","Summer","150",167
+"Stone Creek","(3,6]","Summer","180",280
+"Stone Creek","(3,6]","Summer","210",260
+"Stone Creek","(3,6]","Summer","240",238
+"Stone Creek","(3,6]","Summer","270",377
+"Stone Creek","(3,6]","Summer","300",601
+"Stone Creek","(3,6]","Summer","330",317
 "Stone Creek","(3,6]","Winter","0",7
-"Stone Creek","(3,6]","Winter","30",2
-"Stone Creek","(3,6]","Winter","60",5
-"Stone Creek","(3,6]","Winter","90",2
+"Stone Creek","(3,6]","Winter","30",3
+"Stone Creek","(3,6]","Winter","60",6
+"Stone Creek","(3,6]","Winter","90",7
 "Stone Creek","(3,6]","Winter","120",5
-"Stone Creek","(3,6]","Winter","150",10
-"Stone Creek","(3,6]","Winter","180",16
-"Stone Creek","(3,6]","Winter","210",9
-"Stone Creek","(3,6]","Winter","240",9
-"Stone Creek","(3,6]","Winter","270",5
-"Stone Creek","(3,6]","Winter","300",5
-"Stone Creek","(3,6]","Winter","330",18
-"Stone Creek","(-Inf,3]","Summer","0",74
-"Stone Creek","(-Inf,3]","Summer","30",66
-"Stone Creek","(-Inf,3]","Summer","60",87
-"Stone Creek","(-Inf,3]","Summer","90",150
-"Stone Creek","(-Inf,3]","Summer","120",44
-"Stone Creek","(-Inf,3]","Summer","150",23
-"Stone Creek","(-Inf,3]","Summer","180",11
-"Stone Creek","(-Inf,3]","Summer","210",16
-"Stone Creek","(-Inf,3]","Summer","240",9
-"Stone Creek","(-Inf,3]","Summer","270",12
-"Stone Creek","(-Inf,3]","Summer","300",30
-"Stone Creek","(-Inf,3]","Summer","330",49
-"Stone Creek","(-Inf,3]","Winter","0",7
-"Stone Creek","(-Inf,3]","Winter","30",9
-"Stone Creek","(-Inf,3]","Winter","60",6
-"Stone Creek","(-Inf,3]","Winter","90",3
-"Stone Creek","(-Inf,3]","Winter","120",2
-"Stone Creek","(-Inf,3]","Winter","150",2
-"Stone Creek","(-Inf,3]","Winter","240",2
-"Stone Creek","(-Inf,3]","Winter","270",3
-"Stone Creek","(-Inf,3]","Winter","300",3
-"Stone Creek","(-Inf,3]","Winter","330",4
-"Sunbeam","(9, Inf]","Summer","0",903
-"Sunbeam","(9, Inf]","Summer","30",973
-"Sunbeam","(9, Inf]","Summer","60",254
-"Sunbeam","(9, Inf]","Summer","90",867
-"Sunbeam","(9, Inf]","Summer","120",3134
-"Sunbeam","(9, Inf]","Summer","150",2435
-"Sunbeam","(9, Inf]","Summer","180",1111
-"Sunbeam","(9, Inf]","Summer","210",857
-"Sunbeam","(9, Inf]","Summer","240",1109
-"Sunbeam","(9, Inf]","Summer","270",1045
-"Sunbeam","(9, Inf]","Summer","300",1384
-"Sunbeam","(9, Inf]","Summer","330",2195
-"Sunbeam","(9, Inf]","Winter","0",958
-"Sunbeam","(9, Inf]","Winter","30",1330
-"Sunbeam","(9, Inf]","Winter","60",361
-"Sunbeam","(9, Inf]","Winter","90",1552
-"Sunbeam","(9, Inf]","Winter","120",7011
-"Sunbeam","(9, Inf]","Winter","150",4965
-"Sunbeam","(9, Inf]","Winter","180",883
-"Sunbeam","(9, Inf]","Winter","210",852
-"Sunbeam","(9, Inf]","Winter","240",1480
-"Sunbeam","(9, Inf]","Winter","270",645
-"Sunbeam","(9, Inf]","Winter","300",1198
-"Sunbeam","(9, Inf]","Winter","330",2440
-"Sunbeam","(6,9]","Summer","0",175
-"Sunbeam","(6,9]","Summer","30",137
-"Sunbeam","(6,9]","Summer","60",75
-"Sunbeam","(6,9]","Summer","90",167
-"Sunbeam","(6,9]","Summer","120",312
-"Sunbeam","(6,9]","Summer","150",281
-"Sunbeam","(6,9]","Summer","180",246
-"Sunbeam","(6,9]","Summer","210",243
-"Sunbeam","(6,9]","Summer","240",340
-"Sunbeam","(6,9]","Summer","270",454
-"Sunbeam","(6,9]","Summer","300",280
-"Sunbeam","(6,9]","Summer","330",205
-"Sunbeam","(6,9]","Winter","0",164
-"Sunbeam","(6,9]","Winter","30",97
-"Sunbeam","(6,9]","Winter","60",92
-"Sunbeam","(6,9]","Winter","90",189
-"Sunbeam","(6,9]","Winter","120",360
-"Sunbeam","(6,9]","Winter","150",338
-"Sunbeam","(6,9]","Winter","180",149
-"Sunbeam","(6,9]","Winter","210",181
-"Sunbeam","(6,9]","Winter","240",214
-"Sunbeam","(6,9]","Winter","270",222
-"Sunbeam","(6,9]","Winter","300",213
-"Sunbeam","(6,9]","Winter","330",267
-"Sunbeam","(3,6]","Summer","0",194
-"Sunbeam","(3,6]","Summer","30",167
-"Sunbeam","(3,6]","Summer","60",95
-"Sunbeam","(3,6]","Summer","90",129
-"Sunbeam","(3,6]","Summer","120",146
-"Sunbeam","(3,6]","Summer","150",136
-"Sunbeam","(3,6]","Summer","180",121
-"Sunbeam","(3,6]","Summer","210",134
-"Sunbeam","(3,6]","Summer","240",161
-"Sunbeam","(3,6]","Summer","270",299
-"Sunbeam","(3,6]","Summer","300",244
-"Sunbeam","(3,6]","Summer","330",175
-"Sunbeam","(3,6]","Winter","0",223
-"Sunbeam","(3,6]","Winter","30",132
-"Sunbeam","(3,6]","Winter","60",95
-"Sunbeam","(3,6]","Winter","90",154
-"Sunbeam","(3,6]","Winter","120",234
-"Sunbeam","(3,6]","Winter","150",214
-"Sunbeam","(3,6]","Winter","180",119
-"Sunbeam","(3,6]","Winter","210",120
-"Sunbeam","(3,6]","Winter","240",152
-"Sunbeam","(3,6]","Winter","270",216
-"Sunbeam","(3,6]","Winter","300",182
-"Sunbeam","(3,6]","Winter","330",193
-"Sunbeam","(-Inf,3]","Summer","0",102
-"Sunbeam","(-Inf,3]","Summer","30",106
-"Sunbeam","(-Inf,3]","Summer","60",112
-"Sunbeam","(-Inf,3]","Summer","90",131
-"Sunbeam","(-Inf,3]","Summer","120",186
-"Sunbeam","(-Inf,3]","Summer","150",86
-"Sunbeam","(-Inf,3]","Summer","180",102
-"Sunbeam","(-Inf,3]","Summer","210",80
-"Sunbeam","(-Inf,3]","Summer","240",83
-"Sunbeam","(-Inf,3]","Summer","270",93
-"Sunbeam","(-Inf,3]","Summer","300",92
-"Sunbeam","(-Inf,3]","Summer","330",111
-"Sunbeam","(-Inf,3]","Winter","0",295
-"Sunbeam","(-Inf,3]","Winter","30",329
-"Sunbeam","(-Inf,3]","Winter","60",330
-"Sunbeam","(-Inf,3]","Winter","90",762
-"Sunbeam","(-Inf,3]","Winter","120",881
-"Sunbeam","(-Inf,3]","Winter","150",413
-"Sunbeam","(-Inf,3]","Winter","180",273
-"Sunbeam","(-Inf,3]","Winter","210",366
-"Sunbeam","(-Inf,3]","Winter","240",559
-"Sunbeam","(-Inf,3]","Winter","270",399
-"Sunbeam","(-Inf,3]","Winter","300",357
-"Sunbeam","(-Inf,3]","Winter","330",317
+"Stone Creek","(3,6]","Winter","150",13
+"Stone Creek","(3,6]","Winter","180",24
+"Stone Creek","(3,6]","Winter","210",18
+"Stone Creek","(3,6]","Winter","240",14
+"Stone Creek","(3,6]","Winter","270",10
+"Stone Creek","(3,6]","Winter","300",21
+"Stone Creek","(3,6]","Winter","330",20
+"Stone Creek","(-Inf,3]","Summer","0",95
+"Stone Creek","(-Inf,3]","Summer","30",100
+"Stone Creek","(-Inf,3]","Summer","60",150
+"Stone Creek","(-Inf,3]","Summer","90",222
+"Stone Creek","(-Inf,3]","Summer","120",109
+"Stone Creek","(-Inf,3]","Summer","150",62
+"Stone Creek","(-Inf,3]","Summer","180",111
+"Stone Creek","(-Inf,3]","Summer","210",69
+"Stone Creek","(-Inf,3]","Summer","240",91
+"Stone Creek","(-Inf,3]","Summer","270",105
+"Stone Creek","(-Inf,3]","Summer","300",131
+"Stone Creek","(-Inf,3]","Summer","330",224
+"Stone Creek","(-Inf,3]","Winter","0",9
+"Stone Creek","(-Inf,3]","Winter","30",11
+"Stone Creek","(-Inf,3]","Winter","60",11
+"Stone Creek","(-Inf,3]","Winter","90",4
+"Stone Creek","(-Inf,3]","Winter","120",3
+"Stone Creek","(-Inf,3]","Winter","150",5
+"Stone Creek","(-Inf,3]","Winter","210",4
+"Stone Creek","(-Inf,3]","Winter","240",4
+"Stone Creek","(-Inf,3]","Winter","270",6
+"Stone Creek","(-Inf,3]","Winter","300",8
+"Stone Creek","(-Inf,3]","Winter","330",9
+"Sunbeam","(9, Inf]","Summer","0",996
+"Sunbeam","(9, Inf]","Summer","30",1030
+"Sunbeam","(9, Inf]","Summer","60",261
+"Sunbeam","(9, Inf]","Summer","90",938
+"Sunbeam","(9, Inf]","Summer","120",3317
+"Sunbeam","(9, Inf]","Summer","150",2511
+"Sunbeam","(9, Inf]","Summer","180",1142
+"Sunbeam","(9, Inf]","Summer","210",878
+"Sunbeam","(9, Inf]","Summer","240",1135
+"Sunbeam","(9, Inf]","Summer","270",1075
+"Sunbeam","(9, Inf]","Summer","300",1514
+"Sunbeam","(9, Inf]","Summer","330",2478
+"Sunbeam","(9, Inf]","Winter","0",1037
+"Sunbeam","(9, Inf]","Winter","30",1476
+"Sunbeam","(9, Inf]","Winter","60",379
+"Sunbeam","(9, Inf]","Winter","90",1870
+"Sunbeam","(9, Inf]","Winter","120",8948
+"Sunbeam","(9, Inf]","Winter","150",5302
+"Sunbeam","(9, Inf]","Winter","180",938
+"Sunbeam","(9, Inf]","Winter","210",889
+"Sunbeam","(9, Inf]","Winter","240",1497
+"Sunbeam","(9, Inf]","Winter","270",693
+"Sunbeam","(9, Inf]","Winter","300",1369
+"Sunbeam","(9, Inf]","Winter","330",2687
+"Sunbeam","(6,9]","Summer","0",245
+"Sunbeam","(6,9]","Summer","30",166
+"Sunbeam","(6,9]","Summer","60",92
+"Sunbeam","(6,9]","Summer","90",265
+"Sunbeam","(6,9]","Summer","120",505
+"Sunbeam","(6,9]","Summer","150",421
+"Sunbeam","(6,9]","Summer","180",341
+"Sunbeam","(6,9]","Summer","210",315
+"Sunbeam","(6,9]","Summer","240",424
+"Sunbeam","(6,9]","Summer","270",537
+"Sunbeam","(6,9]","Summer","300",395
+"Sunbeam","(6,9]","Summer","330",305
+"Sunbeam","(6,9]","Winter","0",188
+"Sunbeam","(6,9]","Winter","30",115
+"Sunbeam","(6,9]","Winter","60",110
+"Sunbeam","(6,9]","Winter","90",279
+"Sunbeam","(6,9]","Winter","120",576
+"Sunbeam","(6,9]","Winter","150",452
+"Sunbeam","(6,9]","Winter","180",201
+"Sunbeam","(6,9]","Winter","210",244
+"Sunbeam","(6,9]","Winter","240",251
+"Sunbeam","(6,9]","Winter","270",268
+"Sunbeam","(6,9]","Winter","300",276
+"Sunbeam","(6,9]","Winter","330",359
+"Sunbeam","(3,6]","Summer","0",280
+"Sunbeam","(3,6]","Summer","30",199
+"Sunbeam","(3,6]","Summer","60",137
+"Sunbeam","(3,6]","Summer","90",221
+"Sunbeam","(3,6]","Summer","120",256
+"Sunbeam","(3,6]","Summer","150",226
+"Sunbeam","(3,6]","Summer","180",191
+"Sunbeam","(3,6]","Summer","210",210
+"Sunbeam","(3,6]","Summer","240",239
+"Sunbeam","(3,6]","Summer","270",453
+"Sunbeam","(3,6]","Summer","300",332
+"Sunbeam","(3,6]","Summer","330",246
+"Sunbeam","(3,6]","Winter","0",254
+"Sunbeam","(3,6]","Winter","30",157
+"Sunbeam","(3,6]","Winter","60",108
+"Sunbeam","(3,6]","Winter","90",195
+"Sunbeam","(3,6]","Winter","120",311
+"Sunbeam","(3,6]","Winter","150",265
+"Sunbeam","(3,6]","Winter","180",159
+"Sunbeam","(3,6]","Winter","210",164
+"Sunbeam","(3,6]","Winter","240",211
+"Sunbeam","(3,6]","Winter","270",274
+"Sunbeam","(3,6]","Winter","300",235
+"Sunbeam","(3,6]","Winter","330",245
+"Sunbeam","(-Inf,3]","Summer","0",156
+"Sunbeam","(-Inf,3]","Summer","30",152
+"Sunbeam","(-Inf,3]","Summer","60",156
+"Sunbeam","(-Inf,3]","Summer","90",183
+"Sunbeam","(-Inf,3]","Summer","120",244
+"Sunbeam","(-Inf,3]","Summer","150",129
+"Sunbeam","(-Inf,3]","Summer","180",139
+"Sunbeam","(-Inf,3]","Summer","210",114
+"Sunbeam","(-Inf,3]","Summer","240",126
+"Sunbeam","(-Inf,3]","Summer","270",155
+"Sunbeam","(-Inf,3]","Summer","300",136
+"Sunbeam","(-Inf,3]","Summer","330",152
+"Sunbeam","(-Inf,3]","Winter","0",333
+"Sunbeam","(-Inf,3]","Winter","30",354
+"Sunbeam","(-Inf,3]","Winter","60",352
+"Sunbeam","(-Inf,3]","Winter","90",793
+"Sunbeam","(-Inf,3]","Winter","120",939
+"Sunbeam","(-Inf,3]","Winter","150",433
+"Sunbeam","(-Inf,3]","Winter","180",288
+"Sunbeam","(-Inf,3]","Winter","210",392
+"Sunbeam","(-Inf,3]","Winter","240",588
+"Sunbeam","(-Inf,3]","Winter","270",438
+"Sunbeam","(-Inf,3]","Winter","300",387
+"Sunbeam","(-Inf,3]","Winter","330",359
 "Thompson","(9, Inf]","Summer","0",78
 "Thompson","(9, Inf]","Summer","30",24
 "Thompson","(9, Inf]","Summer","60",21
 "Thompson","(9, Inf]","Summer","90",54
 "Thompson","(9, Inf]","Summer","120",73
 "Thompson","(9, Inf]","Summer","150",259
-"Thompson","(9, Inf]","Summer","180",531
-"Thompson","(9, Inf]","Summer","210",528
-"Thompson","(9, Inf]","Summer","240",536
+"Thompson","(9, Inf]","Summer","180",525
+"Thompson","(9, Inf]","Summer","210",526
+"Thompson","(9, Inf]","Summer","240",532
 "Thompson","(9, Inf]","Summer","270",798
 "Thompson","(9, Inf]","Summer","300",642
 "Thompson","(9, Inf]","Summer","330",980
@@ -2311,11 +2143,11 @@
 "Thompson","(6,9]","Summer","30",150
 "Thompson","(6,9]","Summer","60",146
 "Thompson","(6,9]","Summer","90",173
-"Thompson","(6,9]","Summer","120",327
-"Thompson","(6,9]","Summer","150",784
-"Thompson","(6,9]","Summer","180",1167
-"Thompson","(6,9]","Summer","210",610
-"Thompson","(6,9]","Summer","240",472
+"Thompson","(6,9]","Summer","120",326
+"Thompson","(6,9]","Summer","150",783
+"Thompson","(6,9]","Summer","180",1164
+"Thompson","(6,9]","Summer","210",609
+"Thompson","(6,9]","Summer","240",471
 "Thompson","(6,9]","Summer","270",882
 "Thompson","(6,9]","Summer","300",817
 "Thompson","(6,9]","Summer","330",756
@@ -2334,12 +2166,12 @@
 "Thompson","(3,6]","Summer","0",480
 "Thompson","(3,6]","Summer","30",268
 "Thompson","(3,6]","Summer","60",290
-"Thompson","(3,6]","Summer","90",386
-"Thompson","(3,6]","Summer","120",937
+"Thompson","(3,6]","Summer","90",385
+"Thompson","(3,6]","Summer","120",934
 "Thompson","(3,6]","Summer","150",1280
 "Thompson","(3,6]","Summer","180",1034
 "Thompson","(3,6]","Summer","210",626
-"Thompson","(3,6]","Summer","240",688
+"Thompson","(3,6]","Summer","240",686
 "Thompson","(3,6]","Summer","270",1003
 "Thompson","(3,6]","Summer","300",1174
 "Thompson","(3,6]","Summer","330",765
@@ -2347,46 +2179,46 @@
 "Thompson","(3,6]","Winter","30",550
 "Thompson","(3,6]","Winter","60",752
 "Thompson","(3,6]","Winter","90",1667
-"Thompson","(3,6]","Winter","120",2670
-"Thompson","(3,6]","Winter","150",2056
-"Thompson","(3,6]","Winter","180",1217
-"Thompson","(3,6]","Winter","210",496
-"Thompson","(3,6]","Winter","240",369
-"Thompson","(3,6]","Winter","270",449
-"Thompson","(3,6]","Winter","300",588
+"Thompson","(3,6]","Winter","120",2666
+"Thompson","(3,6]","Winter","150",2053
+"Thompson","(3,6]","Winter","180",1225
+"Thompson","(3,6]","Winter","210",501
+"Thompson","(3,6]","Winter","240",370
+"Thompson","(3,6]","Winter","270",453
+"Thompson","(3,6]","Winter","300",589
 "Thompson","(3,6]","Winter","330",445
-"Thompson","(-Inf,3]","Summer","0",896
-"Thompson","(-Inf,3]","Summer","30",609
-"Thompson","(-Inf,3]","Summer","60",724
-"Thompson","(-Inf,3]","Summer","90",1072
-"Thompson","(-Inf,3]","Summer","120",1602
-"Thompson","(-Inf,3]","Summer","150",3268
-"Thompson","(-Inf,3]","Summer","180",2620
-"Thompson","(-Inf,3]","Summer","210",1626
-"Thompson","(-Inf,3]","Summer","240",1666
-"Thompson","(-Inf,3]","Summer","270",2350
-"Thompson","(-Inf,3]","Summer","300",3396
-"Thompson","(-Inf,3]","Summer","330",2572
-"Thompson","(-Inf,3]","Winter","0",2433
-"Thompson","(-Inf,3]","Winter","30",2243
-"Thompson","(-Inf,3]","Winter","60",3140
-"Thompson","(-Inf,3]","Winter","90",5210
-"Thompson","(-Inf,3]","Winter","120",5492
-"Thompson","(-Inf,3]","Winter","150",6540
-"Thompson","(-Inf,3]","Winter","180",3894
-"Thompson","(-Inf,3]","Winter","210",1555
-"Thompson","(-Inf,3]","Winter","240",1309
-"Thompson","(-Inf,3]","Winter","270",1807
-"Thompson","(-Inf,3]","Winter","300",2366
-"Thompson","(-Inf,3]","Winter","330",2651
+"Thompson","(-Inf,3]","Summer","0",996
+"Thompson","(-Inf,3]","Summer","30",628
+"Thompson","(-Inf,3]","Summer","60",746
+"Thompson","(-Inf,3]","Summer","90",1126
+"Thompson","(-Inf,3]","Summer","120",1723
+"Thompson","(-Inf,3]","Summer","150",3680
+"Thompson","(-Inf,3]","Summer","180",3094
+"Thompson","(-Inf,3]","Summer","210",1862
+"Thompson","(-Inf,3]","Summer","240",1886
+"Thompson","(-Inf,3]","Summer","270",2660
+"Thompson","(-Inf,3]","Summer","300",4172
+"Thompson","(-Inf,3]","Summer","330",3064
+"Thompson","(-Inf,3]","Winter","0",2656
+"Thompson","(-Inf,3]","Winter","30",2362
+"Thompson","(-Inf,3]","Winter","60",3280
+"Thompson","(-Inf,3]","Winter","90",5608
+"Thompson","(-Inf,3]","Winter","120",6227
+"Thompson","(-Inf,3]","Winter","150",7721
+"Thompson","(-Inf,3]","Winter","180",4502
+"Thompson","(-Inf,3]","Winter","210",1786
+"Thompson","(-Inf,3]","Winter","240",1458
+"Thompson","(-Inf,3]","Winter","270",1974
+"Thompson","(-Inf,3]","Winter","300",2564
+"Thompson","(-Inf,3]","Winter","330",2965
 "Willow-Bowron","(6,9]","Summer","30",1
 "Willow-Bowron","(6,9]","Summer","60",3
 "Willow-Bowron","(6,9]","Winter","0",10
 "Willow-Bowron","(6,9]","Winter","270",14
 "Willow-Bowron","(6,9]","Winter","300",52
 "Willow-Bowron","(6,9]","Winter","330",37
-"Willow-Bowron","(3,6]","Summer","0",97
-"Willow-Bowron","(3,6]","Summer","30",82
+"Willow-Bowron","(3,6]","Summer","0",101
+"Willow-Bowron","(3,6]","Summer","30",85
 "Willow-Bowron","(3,6]","Summer","60",86
 "Willow-Bowron","(3,6]","Summer","90",36
 "Willow-Bowron","(3,6]","Summer","120",2
@@ -2394,39 +2226,133 @@
 "Willow-Bowron","(3,6]","Summer","240",9
 "Willow-Bowron","(3,6]","Summer","270",67
 "Willow-Bowron","(3,6]","Summer","300",126
-"Willow-Bowron","(3,6]","Summer","330",113
-"Willow-Bowron","(3,6]","Winter","0",496
-"Willow-Bowron","(3,6]","Winter","30",321
+"Willow-Bowron","(3,6]","Summer","330",114
+"Willow-Bowron","(3,6]","Winter","0",515
+"Willow-Bowron","(3,6]","Winter","30",324
 "Willow-Bowron","(3,6]","Winter","60",129
 "Willow-Bowron","(3,6]","Winter","90",18
 "Willow-Bowron","(3,6]","Winter","120",2
 "Willow-Bowron","(3,6]","Winter","180",3
 "Willow-Bowron","(3,6]","Winter","210",4
 "Willow-Bowron","(3,6]","Winter","240",26
-"Willow-Bowron","(3,6]","Winter","270",310
-"Willow-Bowron","(3,6]","Winter","300",925
-"Willow-Bowron","(3,6]","Winter","330",869
-"Willow-Bowron","(-Inf,3]","Summer","0",3944
-"Willow-Bowron","(-Inf,3]","Summer","30",3652
-"Willow-Bowron","(-Inf,3]","Summer","60",4181
-"Willow-Bowron","(-Inf,3]","Summer","90",4301
-"Willow-Bowron","(-Inf,3]","Summer","120",1718
-"Willow-Bowron","(-Inf,3]","Summer","150",850
-"Willow-Bowron","(-Inf,3]","Summer","180",903
-"Willow-Bowron","(-Inf,3]","Summer","210",1103
-"Willow-Bowron","(-Inf,3]","Summer","240",2031
-"Willow-Bowron","(-Inf,3]","Summer","270",4215
-"Willow-Bowron","(-Inf,3]","Summer","300",6904
-"Willow-Bowron","(-Inf,3]","Summer","330",5041
-"Willow-Bowron","(-Inf,3]","Winter","0",5776
-"Willow-Bowron","(-Inf,3]","Winter","30",4822
-"Willow-Bowron","(-Inf,3]","Winter","60",4196
-"Willow-Bowron","(-Inf,3]","Winter","90",3343
-"Willow-Bowron","(-Inf,3]","Winter","120",1638
-"Willow-Bowron","(-Inf,3]","Winter","150",1038
-"Willow-Bowron","(-Inf,3]","Winter","180",1290
-"Willow-Bowron","(-Inf,3]","Winter","210",1354
-"Willow-Bowron","(-Inf,3]","Winter","240",1456
-"Willow-Bowron","(-Inf,3]","Winter","270",4104
-"Willow-Bowron","(-Inf,3]","Winter","300",8509
-"Willow-Bowron","(-Inf,3]","Winter","330",6533
+"Willow-Bowron","(3,6]","Winter","270",313
+"Willow-Bowron","(3,6]","Winter","300",927
+"Willow-Bowron","(3,6]","Winter","330",939
+"Willow-Bowron","(-Inf,3]","Summer","0",4370
+"Willow-Bowron","(-Inf,3]","Summer","30",4141
+"Willow-Bowron","(-Inf,3]","Summer","60",4608
+"Willow-Bowron","(-Inf,3]","Summer","90",4890
+"Willow-Bowron","(-Inf,3]","Summer","120",1919
+"Willow-Bowron","(-Inf,3]","Summer","150",949
+"Willow-Bowron","(-Inf,3]","Summer","180",958
+"Willow-Bowron","(-Inf,3]","Summer","210",1168
+"Willow-Bowron","(-Inf,3]","Summer","240",2143
+"Willow-Bowron","(-Inf,3]","Summer","270",4603
+"Willow-Bowron","(-Inf,3]","Summer","300",7398
+"Willow-Bowron","(-Inf,3]","Summer","330",5335
+"Willow-Bowron","(-Inf,3]","Winter","0",6440
+"Willow-Bowron","(-Inf,3]","Winter","30",5601
+"Willow-Bowron","(-Inf,3]","Winter","60",4766
+"Willow-Bowron","(-Inf,3]","Winter","90",3747
+"Willow-Bowron","(-Inf,3]","Winter","120",1712
+"Willow-Bowron","(-Inf,3]","Winter","150",1048
+"Willow-Bowron","(-Inf,3]","Winter","180",1306
+"Willow-Bowron","(-Inf,3]","Winter","210",1400
+"Willow-Bowron","(-Inf,3]","Winter","240",1660
+"Willow-Bowron","(-Inf,3]","Winter","270",4463
+"Willow-Bowron","(-Inf,3]","Winter","300",9332
+"Willow-Bowron","(-Inf,3]","Winter","330",7377
+"character(0)","(9, Inf]","Summer","0",17
+"character(0)","(9, Inf]","Summer","30",31
+"character(0)","(9, Inf]","Summer","60",9
+"character(0)","(9, Inf]","Summer","90",3
+"character(0)","(9, Inf]","Summer","120",11
+"character(0)","(9, Inf]","Summer","150",11
+"character(0)","(9, Inf]","Summer","180",1
+"character(0)","(9, Inf]","Summer","210",1
+"character(0)","(9, Inf]","Summer","240",52
+"character(0)","(9, Inf]","Summer","270",17
+"character(0)","(9, Inf]","Summer","300",1
+"character(0)","(9, Inf]","Winter","0",64
+"character(0)","(9, Inf]","Winter","30",70
+"character(0)","(9, Inf]","Winter","60",17
+"character(0)","(9, Inf]","Winter","120",98
+"character(0)","(9, Inf]","Winter","150",281
+"character(0)","(9, Inf]","Winter","180",59
+"character(0)","(9, Inf]","Winter","210",8
+"character(0)","(9, Inf]","Winter","240",14
+"character(0)","(9, Inf]","Winter","270",9
+"character(0)","(9, Inf]","Winter","300",1
+"character(0)","(9, Inf]","Winter","330",4
+"character(0)","(6,9]","Summer","0",25
+"character(0)","(6,9]","Summer","30",38
+"character(0)","(6,9]","Summer","60",10
+"character(0)","(6,9]","Summer","90",2
+"character(0)","(6,9]","Summer","120",15
+"character(0)","(6,9]","Summer","150",30
+"character(0)","(6,9]","Summer","180",5
+"character(0)","(6,9]","Summer","210",10
+"character(0)","(6,9]","Summer","240",103
+"character(0)","(6,9]","Summer","270",79
+"character(0)","(6,9]","Summer","300",10
+"character(0)","(6,9]","Summer","330",5
+"character(0)","(6,9]","Winter","0",63
+"character(0)","(6,9]","Winter","30",34
+"character(0)","(6,9]","Winter","60",26
+"character(0)","(6,9]","Winter","90",9
+"character(0)","(6,9]","Winter","120",91
+"character(0)","(6,9]","Winter","150",243
+"character(0)","(6,9]","Winter","180",50
+"character(0)","(6,9]","Winter","210",3
+"character(0)","(6,9]","Winter","240",14
+"character(0)","(6,9]","Winter","270",10
+"character(0)","(6,9]","Winter","300",3
+"character(0)","(6,9]","Winter","330",15
+"character(0)","(3,6]","Summer","0",247
+"character(0)","(3,6]","Summer","30",215
+"character(0)","(3,6]","Summer","60",107
+"character(0)","(3,6]","Summer","90",88
+"character(0)","(3,6]","Summer","120",241
+"character(0)","(3,6]","Summer","150",262
+"character(0)","(3,6]","Summer","180",110
+"character(0)","(3,6]","Summer","210",139
+"character(0)","(3,6]","Summer","240",304
+"character(0)","(3,6]","Summer","270",454
+"character(0)","(3,6]","Summer","300",263
+"character(0)","(3,6]","Summer","330",163
+"character(0)","(3,6]","Winter","0",290
+"character(0)","(3,6]","Winter","30",149
+"character(0)","(3,6]","Winter","60",162
+"character(0)","(3,6]","Winter","90",299
+"character(0)","(3,6]","Winter","120",551
+"character(0)","(3,6]","Winter","150",902
+"character(0)","(3,6]","Winter","180",329
+"character(0)","(3,6]","Winter","210",97
+"character(0)","(3,6]","Winter","240",154
+"character(0)","(3,6]","Winter","270",113
+"character(0)","(3,6]","Winter","300",82
+"character(0)","(3,6]","Winter","330",269
+"character(0)","(-Inf,3]","Summer","0",2341
+"character(0)","(-Inf,3]","Summer","30",1354
+"character(0)","(-Inf,3]","Summer","60",813
+"character(0)","(-Inf,3]","Summer","90",1274
+"character(0)","(-Inf,3]","Summer","120",2432
+"character(0)","(-Inf,3]","Summer","150",3815
+"character(0)","(-Inf,3]","Summer","180",2877
+"character(0)","(-Inf,3]","Summer","210",1582
+"character(0)","(-Inf,3]","Summer","240",1194
+"character(0)","(-Inf,3]","Summer","270",1177
+"character(0)","(-Inf,3]","Summer","300",1103
+"character(0)","(-Inf,3]","Summer","330",1388
+"character(0)","(-Inf,3]","Winter","0",2001
+"character(0)","(-Inf,3]","Winter","30",1246
+"character(0)","(-Inf,3]","Winter","60",1218
+"character(0)","(-Inf,3]","Winter","90",1785
+"character(0)","(-Inf,3]","Winter","120",3140
+"character(0)","(-Inf,3]","Winter","150",4875
+"character(0)","(-Inf,3]","Winter","180",3967
+"character(0)","(-Inf,3]","Winter","210",2132
+"character(0)","(-Inf,3]","Winter","240",1325
+"character(0)","(-Inf,3]","Winter","270",1615
+"character(0)","(-Inf,3]","Winter","300",2348
+"character(0)","(-Inf,3]","Winter","330",2586
