@@ -31,17 +31,35 @@ gseason_sum <- read.csv("data/gseason_sum.csv")
 
 wxstn_df$dates <- as.Date(wxstn_df$dates)
 wxstn_df$years <- as.character(wxstn_df$years)
-wxstn_df$months <- factor(wxstn_df$months, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+wxstn_df$months <- factor(
+  wxstn_df$months,
+  levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
+             "Oct", "Nov", "Dec")
+  )
 
-df <- select(wxstn_df, c("Site", "Date", "years", "months", "dates", "Temp_avg", "RH_avg", "Rain_sum", "Pressure_avg"))
+df <- select(wxstn_df,
+             c("Site", "Date", "years", "months", "dates", "Temp_avg", "RH_avg",
+               "Rain_sum", "Pressure_avg")
+             )
 
 ## converting table to long format for ggplots
 df_long <- melt(df, id.vars = c("Site", "Date", "dates", "months", "years"))
-levels(df_long$variable) <- c("Temperature (degree C)", "Relative Humidity (%)", "Precipitation (mm)", "Pressure (mb)")
+levels(df_long$variable) <- c("Temperature (degree C)",
+                              "Relative Humidity (%)",
+                              "Precipitation (mm)",
+                              "Pressure (mb)"
+                              )
 
-wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"))
+wind_df$WS <- factor(wind_df$WS,
+                     levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf,3]"))
+
 wind_df$WD <- as.factor(wind_df$WD)
-icons <- awesomeIcons(icon = "circle",  markerColor = "blue", iconColor = "#ffffff", library = "fa")
+icons <- awesomeIcons(
+  icon = "circle",
+  markerColor = "blue",
+  iconColor = "#ffffff",
+  library = "fa"
+  )
 
 ## real time station columns to include
 col_str <- "Date_Time|Rain|Pressure|Temperature|RH|Wind.Speed|Gust.Speed|Wind.Direction|Solar"

@@ -17,9 +17,30 @@ library(glue)
 YEAR = year(today())
 
 ## concat new data with full dataset
-wxstn <- read.csv("r/shiny/data/wxstn_df.csv") %>%
-  select(Site, Longitude,	Latitude, Elevation, Date, Rain_sum, Pressure_avg, Temp_max, Temp_min, Temp_avg, RH_avg,
-         DP_avg, WS_avg, GS_max, WD_avg, SR_avg, WC_avg_5cm, WC_avg_15cm, WC_avg_30cm, ST_avg, W_avg, SD_avg) %>%
+wxstn <- read.csv("r/shiny/data/wxstn_df.csv") |>
+  select(Site,
+         Longitude,
+         Latitude,
+         Elevation,
+         Date,
+         Rain_sum,
+         Pressure_avg,
+         Temp_max,
+         Temp_min,
+         Temp_avg,
+         RH_avg,
+         DP_avg,
+         WS_avg,
+         GS_max,
+         WD_avg,
+         SR_avg,
+         WC_avg_5cm,
+         WC_avg_15cm,
+         WC_avg_30cm,
+         ST_avg,
+         W_avg,
+         SD_avg
+         ) |>
   mutate(Date = as.Date(Date))
 
 ##
@@ -40,14 +61,14 @@ wx_updated <- dir("data/processed", pattern = "_wx.csv", full.names = TRUE)
 
 ## update wxstn df
 for (i in 1:length(wx_updated)) {
-  df <- read_csv(wx_updated[i]) %>%
-    rename("Date" = "Day") %>%
+  df <- read_csv(wx_updated[i]) |>
+    rename("Date" = "Day") |>
     mutate(Date = as.Date(Date))
 
   site_name <- df$Site[1]
 
   ## filter out calculated variables from orig wxstn of the matching site
-  orig_wx <- wxstn %>%
+  orig_wx <- wxstn |>
     filter(Site == site_name)
 
   ## join updated and orig tables
@@ -62,16 +83,19 @@ for (i in 1:length(wx_updated)) {
     if (((min(range(df$Date)) - 1) == min(range(orig_wx$Date))) |
         min(range(df$Date)) == min(range(orig_wx$Date))) {
       print(paste("------------- Truncating original wxstn data for", site_name))
-      print(head(wxstn %>%
+      print(head(wxstn |>
                    filter(Site == site_name)))
 
       ## keep the rest of the sites' data from wxstn, then append new ones
-      wxstn <- wxstn %>%
+      wxstn <- wxstn |>
         filter(Site != site_name)
     }
   }
 
-  print(paste("----- Concatenating wxstn data with new data from", site_name))
+  print(paste(
+    "----- Concatenating wxstn data with new data from",
+    site_name)
+    )
 
   print(dim(orig_wx))
   print(dim(wxstn))
@@ -79,14 +103,20 @@ for (i in 1:length(wx_updated)) {
   wxstn <- plyr::join_all(list(wxstn, df), type = 'full')
 
 
-  print(paste("------------------ Orig row count for this site:", nrow(orig_wx)))
-  print(paste("------------------ Final row count for this site:", nrow(wxstn %>%
-                                                             filter(Site == site_name))))
+  print(paste(
+    "------------------ Orig row count for this site:",
+    nrow(orig_wx))
+    )
+
+  print(paste(
+    "------------------ Final row count for this site:",
+    nrow(wxstn |> filter(Site == site_name)))
+    )
 
 }
 
 
-wxstn <- wxstn %>%
+wxstn <- wxstn |>
   arrange((Site))
 
 ## join site coordinates

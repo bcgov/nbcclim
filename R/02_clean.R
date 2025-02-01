@@ -42,7 +42,13 @@ wxstn_df$Month <- substr(wxstn_df$Date, 1, 7)
 wxstn_df$years <- substr(wxstn_df$Date, 1, 4)
 
 wxstn_df$months <- months(wxstn_df$Date, abbreviate = TRUE)
-wxstn_df$months <- factor(wxstn_df$months, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+wxstn_df$months <- factor(wxstn_df$months,
+                          levels = c(
+                            "Jan", "Feb", "Mar",
+                            "Apr", "May", "Jun",
+                            "Jul", "Aug", "Sep",
+                            "Oct", "Nov", "Dec")
+                          )
 wxstn_df$dates <- substr(wxstn_df$Date, 6, 10)
 wxstn_df$dates <- as.Date(wxstn_df$dates, "%m-%d")
 
@@ -54,7 +60,7 @@ rt <- subset(wxstn_df,  Site == "Blackhawk" | Site == "Bowron Pit" | Site == "Ca
              select = c(Site, Longitude, Latitude, Elevation))
 rt <- subset(rt, !duplicated(rt$Site))
 
-rt <- rt %>%
+rt <- rt |>
   tibble::add_row(Site = 'McBride Peak', Longitude = -120.12108,
                   Latitude = 53.33869, Elevation = 2000)
 
