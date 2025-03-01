@@ -6,12 +6,22 @@
 #
 # http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS,
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and limitations under the License.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
-library(dplyr) # for data analysis
-library(reshape2) # for long dataframes
+library(glue)
+library(dplyr)
+library(readr)
+library(reshape2)
+library(lubridate)
+
+YEAR = year(today())
+
+wxstn_df <- read_rds(glue("data/wxstn_df_{YEAR}.rds"))
+wind_df <- read_rds(glue("data/wind_df_{YEAR}.rds"))
 
 ## daily wxstn data analysis ####
 ## calculating month average insolation
@@ -64,25 +74,22 @@ wind_df$WS <- factor(wind_df$WS, levels = c("(9, Inf]", "(6,9]", "(3,6]", "(-Inf
 wind_df$WD <- cut(wind_df$WD, seq(-15, 375, 30), labels = c(seq(0, 330, 30), 0))
 
 ## classifying months to 4 seasons
-wind_df$seasons <- NA
-wind_df[wind_df$months == "Dec"| wind_df$months == "Jan" |
-          wind_df$months == "Feb", "seasons"] <- "Winter"
-wind_df[wind_df$months == "Mar"| wind_df$months == "Apr" |
-          wind_df$months == "May", "seasons"] <- "Spring"
-wind_df[wind_df$months == "Jun"| wind_df$months == "Jul" |
-          wind_df$months == "Aug", "seasons"] <- "Summer"
-wind_df[wind_df$months == "Sep"| wind_df$months == "Oct" |
-          wind_df$months == "Nov", "seasons"] <- "Fall"
+wind_df <- wind_df |>
+  mutate(
+    seasons = case_when(
+      months == "Dec"| months == "Jan" | months == "Feb" ~ "Winter",
+      months == "Mar"| months == "Apr" | months == "May" ~ "Spring",
+      months == "Jun"| months == "Jul" | months == "Aug" ~ "Summer",
+      months == "Sep"| months == "Oct" | months == "Nov" ~ "Fall"
+    ),
+    ## classifying months to summer and winter growing seasons
+    gseason = case_when(
+      months == "Oct" | months == "Nov" | months == "Dec"| months == "Jan" |
+      months == "Feb" | months == "Mar" | months == "Apr" ~ "Winter",
+      TRUE ~ "Summer"
+    )
+  )
 
-## classifying months to summer and winter growing seasons
-wind_df$gseason <- NA
-wind_df[wind_df$months == "Oct" | wind_df$months == "Nov" |
-          wind_df$months == "Dec"| wind_df$months == "Jan" |
-          wind_df$months == "Feb" | wind_df$months == "Mar"|
-          wind_df$months == "Apr" , "gseason"] <- "Winter"
-wind_df[wind_df$months == "May" | wind_df$months == "Jun"|
-          wind_df$months == "Jul" | wind_df$months == "Aug" |
-          wind_df$months == "Sep", "gseason"] <- "Summer"
 
 ## counting wind directions in each categories
 wind_df <- wind_df|>
@@ -129,7 +136,9 @@ monthly <- sum_long|>
                    max = round(max(value, na.rm = TRUE), 2),
                    min = round(min(value, na.rm = TRUE), 2),
                    obs_na = sum(is.na(value)))
-monthly_sum <- melt(monthly, id.vars = c("Site", "months", "variable"), variable.name = "monthly")
+monthly_sum <- melt(monthly,
+                    id.vars = c("Site", "months", "variable"),
+                    variable.name = "monthly")
 monthly_sum <- dcast(monthly_sum, Site + months + monthly ~ variable)
 monthly_sum$WD_avg <- ifelse(
   !is.na(monthly_sum$WD_avg) & monthly_sum$WD_avg < 0,
@@ -191,10 +200,11 @@ gseason_sum$WD_avg <- ifelse(
 ## outputting cleaned and analysed tables ####
 write.csv(wxstn_df, "data/wxstn_df.csv", row.names = FALSE)
 write.csv(wind_df, "data/wind_df.csv", row.names = FALSE)
-write.csv(rt, "data/real_time_stn.csv", row.names = FALSE)
-write.csv(wxstn_sites,"data/wxstn_sites.csv", row.names = FALSE)
 write.csv(annual_sum, "data/annual_sum.csv", row.names = FALSE)
 write.csv(monthly_sum, "data/monthly_sum.csv", row.names = FALSE)
 write.csv(month_year_sum, "data/month_year_sum.csv", row.names = FALSE)
 write.csv(seasonal_sum, "data/seasonal_sum.csv", row.names = FALSE)
 write.csv(gseason_sum, "data/gseason_sum.csv", row.names = FALSE)
+
+# remove annual wxstn updates
+unlink(glue("data/wxstn_df_{YEAR}.rds"))

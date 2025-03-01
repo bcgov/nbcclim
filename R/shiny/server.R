@@ -183,14 +183,12 @@ server <- function(input, output) {
 
       } else {
         ggplot(ggplot_wind(), aes(WD, fill = WS)) +
-          geom_histogram(stat = "identity", mapping = aes(y = n), alpha = 0.8,
-                         colour = "grey30") +
+          geom_col(mapping = aes(y = n), alpha = 0.8, colour = "grey30") +
           scale_x_discrete(
             breaks = c(0, 90, 180, 270),
             labels = c("N", "E", "S", "W")
             ) +
-          scale_fill_viridis_d(
-            guide_legend(title = "Wind Speed\n(km/h)"),
+          scale_fill_viridis_d(name = "Wind Speed\n(km/h)",
             direction = -1,
             labels = c(">9", "6 - 9", "3 - 6", "<3")
             ) +
@@ -531,13 +529,25 @@ server <- function(input, output) {
 
     for (i in 1:length(old_names)) {
       col <- df |> select(matches(old_names[i])) |> colnames()
-      names(df)[names(df) == col] <- change_to[i]
+      names(df)[names(df) == col[1]] <- change_to[i]
+    }
+
+    # Error-handling for plot: fill columns that are not available with NAs
+    for (col in change_to) {
+      if ( df |> select(contains(col)) |> ncol() == 0) {
+        df[, col] <- NA
+      }
     }
 
     df$Date_Time <- as.POSIXct(df$Date_Time, format = "%m/%d/%y %H:%M:%S")
-    df$WD <- cut(df$WD_avg, 22.5*(0:16), right = FALSE, dig.lab = 4)
+    if (df |> filter(!is.na(WD_avg)) |> nrow() > 0) {
+      df$WD <- cut(df$WD_avg, 22.5*(0:16), right = FALSE, dig.lab = 4)
     levels(df$WD) <- c("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S",
                        "SSW", "SW", "WSW", "W", "WNE", "NW", "NNW")
+    } else {
+      df$WD <- NA
+    }
+
     return(df)
   }
   )

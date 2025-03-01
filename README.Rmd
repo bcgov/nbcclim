@@ -32,9 +32,19 @@ Below are snapshots of the application showing long-term and real-time climate r
 
 ![](tools/readme/Example_rt.png)
 
+### Annual Data Updates
+Each year, weather station datasets are added to the application. The following contains notes on annual data updates.
+
+1. New station data is provided as one comma separated value file (csv) for each station. The file contains all of the station's historical records up to date.
+2. Scripts from `00_prep.R` to `04_output.R` under `R/` directory are run in four steps to integrate new station data to the application.
+3. Once updated datasets are written to the `data/` folder, move them under `R/shiny/data` so the application contains updated datasets.
+4. The hourly wind data (wind_df_{YYYY}.rds) contains the archived all stations' hourly wind dataframe required to output the windrose plots. Every year, this r binary file gets read in, updated with new hourly wind data. At the end of the update cycle, retain
+a zipped file of it and commit to GitHub and remove the original .rds.
+5. Remove raw data files and commit only station metadata (xlsx) and wind_df.zip to GitHub repository.
+
 ### Project Status
 
-This project is under development.
+This project is updated annually with new weather station datasets.
 
 ### Getting Help or Reporting an Issue
 
